@@ -1,0 +1,1 @@
+First Entry: This will generate an merge conflicts
