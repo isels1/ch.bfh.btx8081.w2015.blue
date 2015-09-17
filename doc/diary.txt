@@ -2,5 +2,4 @@ First Entry: This will generate an merge conflicts
 Hallo Timson
 Hallo Zwahf
 First Entry: It works!
-
-Feierabend
+fwefd
