@@ -1,1 +1,3 @@
+First Entry: This will generate an merge conflicts
+1231231313
  merge conflict
