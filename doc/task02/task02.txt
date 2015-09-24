@@ -1,0 +1,17 @@
+1.Decide whether your SE Process for implementing the MHC-PMS should be rather plan-driven or agile by collecting pros and cons, considering
+-your findings from the first analysis
+-your customer and your users
+-your team and available time (resources)
+-...
+
+2.Based on your decison, design
+-a process model with concrete activities
+-for each activity, the goals, tasks, and potential output(s)
+-the relation among outputs of different activities
+-the required interaction with your stakeholders (= customer, users, management) and development team (= you) and required interaction
+
+
+
+Presentation of results: X2a 28.09.15, X2r 01.10.15
+-5 min per team
+-10 points for documents, 5 points for presentation
