@@ -1,7 +1,4 @@
-First Entry: This will generate an merge conflicts
-Hallo Timson
-Hallo Zwahf
-First Entry: It works!
-fwefd
-
-LALALALA POLY
+17.09.2015
+Create new project and diary
+24.09.2015
+Start Task01 
