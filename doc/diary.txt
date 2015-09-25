@@ -1,23 +1,24 @@
-17.09.2015
-Create new project and diary
+################
+#  17.09.2015  #
+################
+-Create new project and diary
 
-
-24.09.2015
-Create new group
-
-Start Task01
+################
+#  24.09.2015  #
+################
+-Create new group
+-Start Task01
 	rework text for patient management system (PMS)
 	create presentation
-
-Finish Task01
-	
-Start Task02
+-Finished Task01	
+-Start Task02
 	decide software engineering model
 	create presentation
 	start documentation
 	
-	
-25.09.2015
-Continue Task02
+################	
+#  25.09.2015  #
+################
+-Continue Task02
 	continue presentation
 	finish presentation
