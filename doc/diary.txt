@@ -21,4 +21,11 @@
 ################
 -Continue Task02
 	continue presentation
-	finish presentation
+	almost finish presentation
+	
+################	
+#  26.09.2015  #
+################
+-isels1 
+	updated and corrected pptx (finalized the content)
+	created word (with final contend)
