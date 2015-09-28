@@ -35,4 +35,9 @@
 ################
 -nosec1
 	proofread
-	
+
+################	
+#  28.09.2015  #
+################
+-nosec1, dornt1, zwahf1 & isels1
+	presentation of tasks 01 & 02
