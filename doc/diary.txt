@@ -41,3 +41,16 @@
 ################
 -nosec1, dornt1, zwahf1 & isels1
 	presentation of tasks 01 & 02
+	
+################	
+#  30.09.2015  #
+################
+-Get new targetgroup for project
+	health visitor
+	search a health visitor and arrange an appointment
+	
+################	
+#  05.10.2015  #
+################
+-Create interview for health visitor
+	interview in the afternoon
