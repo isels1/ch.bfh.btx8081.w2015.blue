@@ -57,3 +57,9 @@
 	
 -dornt1, isels1
 	interview with health visitor (Jarno Bigler)
+	
+################	
+#  07.10.2015  #
+################
+-Get description of task 03
+	define scope for our project
