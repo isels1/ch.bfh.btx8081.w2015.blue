@@ -68,4 +68,8 @@
 #  08.10.2015  #
 ################
 -nosec1, dornt1, zwahf1 & isels1
-	-Research
+task 03
+	-2.Research
+	-3.Syntese
+	-define Story boards
+	
