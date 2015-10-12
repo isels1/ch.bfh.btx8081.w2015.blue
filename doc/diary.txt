@@ -71,5 +71,21 @@
 task 03
 	-2.Research
 	-3.Syntese
-	-define Story boards
+	-define storyboards
 	
+################	
+#  12.10.2015  #
+################
+-nosec1, dornt1, zwahf1 & isels1
+task03
+	-4. discuss made storyboards
+	-5. Prototyping
+	-crate mock-up
+		-all possible views
+		-login
+		-calendar view (day, week, month)
+		-patient view (Infos, Behandlungsübersicht, Termine)
+		
+-open points
+	-validation
+	-presentation
