@@ -79,6 +79,10 @@ task 03
 -nosec1, dornt1, zwahf1 & isels1
 task03
 	-4. discuss made storyboards
+	-define 3 most importants
+		-Neuer Patient
+		-Terminvereinbarung
+		-Terminablauf mit Patient
 	-5. Prototyping
 	-crate mock-up
 		-all possible views
