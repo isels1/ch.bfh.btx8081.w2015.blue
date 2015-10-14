@@ -89,7 +89,19 @@ task03
 		-login
 		-calendar view (day, week, month)
 		-patient view (Infos, Behandlungsübersicht, Termine)
-		
+	
+################	
+#  13.10.2015  #
+################
+-nosec1
+storyboards scanning and save to document
+-zwahf1
+prototype scanning and save to document
+-dornt1
+edit documents (word and powerpoint)
+isels1
+edit documents (word and powerpoint)
+	
 -open points
 	-validation
 	-presentation
