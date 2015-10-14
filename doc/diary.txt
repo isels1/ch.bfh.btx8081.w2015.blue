@@ -101,7 +101,26 @@ prototype scanning and save to document
 edit documents (word and powerpoint)
 isels1
 edit documents (word and powerpoint)
+
+################	
+#  14.10.2015  #
+################
+-Group
+	-6. Validation
 	
--open points
-	-validation
-	-presentation
+	- finish word and powerpoint
+- Word:
+	- Add User Storys
+	- Add Storyboards hugil1
+- Powerpoint
+	- Validation and Prototyp
+
+******************************
+*** To Do list Gruppe Blau ***
+******************************
+
+
+	
+	
+	
+	
