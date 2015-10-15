@@ -119,8 +119,16 @@ edit documents (word and powerpoint)
 *** To Do list Gruppe Blau ***
 ******************************
 
+################	
+#  15.10.2015  #
+################
+-Task 03 presentation
 
-	
+******************************
+*** To Do list Gruppe Blau ***
+******************************
+	-Terminübersicht nach Terminen geordnet
+	-Verbindung zwischen Patient und Termin
 	
 	
 	
