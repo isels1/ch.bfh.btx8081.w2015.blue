@@ -122,7 +122,10 @@ edit documents (word and powerpoint)
 ################	
 #  19.10.2015  #
 ################
--Task 6
+-Start Task 06
+	design external UMLs
+	-context model
+	-activity diagram
 
 ******************************
 *** To Do list Gruppe Blau ***

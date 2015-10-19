@@ -1,0 +1,12 @@
+External Perspective
+
+1. 
+Design a context model showing the boundary of your application
+and other external systems needed to implement your system
+requirements.
+
+2. 
+Design a high level activity diagram showing the interaction and
+thereby the interfaces with external systems. Use the notation of
+activity partitions to depict the responsibility of your system and
+external systems.
