@@ -114,21 +114,23 @@ edit documents (word and powerpoint)
 	- Add Storyboards hugil1
 - Powerpoint
 	- Validation and Prototyp
-
-******************************
-*** To Do list Gruppe Blau ***
-******************************
-
 ################	
 #  15.10.2015  #
 ################
 -Task 03 presentation
 
+################	
+#  19.10.2015  #
+################
+-Task 6
+
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-	-Terminübersicht nach Terminen geordnet
-	-Verbindung zwischen Patient und Termin
+-Task 6
+
+-Terminübersicht nach Terminen geordnet
+-Verbindung zwischen Patient und Termin
 	
 	
 	
