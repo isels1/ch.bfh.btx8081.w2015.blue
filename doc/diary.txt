@@ -126,14 +126,6 @@ edit documents (word and powerpoint)
 	design external UMLs
 	-context model
 	-activity diagram
-
-******************************
-*** To Do list Gruppe Blau ***
-******************************
--Task 6
-
--Terminübersicht nach Terminen geordnet
--Verbindung zwischen Patient und Termin
 	
 ################	
 #  22.10.2015  #
@@ -143,4 +135,11 @@ edit documents (word and powerpoint)
 
 -nosec1, dornt1, zwahf1 & isels1
 	review and correction UML models
+
+	
+******************************
+*** To Do list Gruppe Blau ***
+******************************
+-Terminübersicht nach Terminen geordnet
+-Verbindung zwischen Patient und Termin
 	
