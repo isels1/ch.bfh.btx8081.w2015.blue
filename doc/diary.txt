@@ -135,5 +135,12 @@ edit documents (word and powerpoint)
 -Terminübersicht nach Terminen geordnet
 -Verbindung zwischen Patient und Termin
 	
-	
+################	
+#  22.10.2015  #
+################
+-zwahf1
+	upload UML models for task 06
+
+-nosec1, dornt1, zwahf1 & isels1
+	review and correction UML models
 	
