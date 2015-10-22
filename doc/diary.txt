@@ -134,12 +134,15 @@ edit documents (word and powerpoint)
 	upload UML models for task 06
 
 -nosec1, dornt1, zwahf1 & isels1
-	review and correction UML models
+	-review and correction UML models task06
+	-start Task 07
 
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
+-Task 07
+
 -Terminübersicht nach Terminen geordnet
 -Verbindung zwischen Patient und Termin
 	
