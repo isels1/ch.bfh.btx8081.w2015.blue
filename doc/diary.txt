@@ -105,9 +105,8 @@ edit documents (word and powerpoint)
 ################	
 #  14.10.2015  #
 ################
--Group
+Task 03	
 	-6. Validation
-	
 	- finish word and powerpoint
 - Word:
 	- Add User Storys
@@ -137,6 +136,12 @@ edit documents (word and powerpoint)
 	-review and correction UML models task06
 	-start Task 07
 
+################	
+#  26.10.2015  #
+################
+-nosec1, dornt1, zwahf1 & isels1
+	-finish domain model
+	-create CRC-cards for classes
 	
 ******************************
 *** To Do list Gruppe Blau ***
@@ -144,5 +149,4 @@ edit documents (word and powerpoint)
 -Task 07
 
 -Terminübersicht nach Terminen geordnet
--Verbindung zwischen Patient und Termin
 	
