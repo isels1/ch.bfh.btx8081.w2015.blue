@@ -142,11 +142,25 @@ Task 03
 -nosec1, dornt1, zwahf1 & isels1
 	-finish domain model
 	-create CRC-cards for classes
+
+################	
+#  29.10.2015  #
+################
+-Task 06
+	review based on modeling guidelines
+	
+-Task 07
+	create sequence models
+		-alert appointment
+		-new appointment
+	create class diagram for sequence models
+	create presentation
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
 -Task 07
-
--Terminübersicht nach Terminen geordnet
+	-finish class diagram
+	-upload sequence model by nosec1
+	-finish presentation and documentation
 	
