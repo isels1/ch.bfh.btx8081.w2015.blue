@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>286</x>
+      <y>55</y>
+      <w>231</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Person
+--
+-name:String
+-firstName:String
+-birthdate:DateTime
+-address:Address
+-phone:String
+--
++get()
++set()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>594</x>
+      <y>341</y>
+      <w>231</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++HealthVisitor
+--
+-userName:String
+-password:String
+-calendar:Calendar
+-patient:Patient[]
+--
++get()
++set()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>341</y>
+      <w>231</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Patient
+--
+-id:int
+-comment:Comment
+-treatment:Treatment
+-appointment:Appointment
+-healthVisitor:HealthVisitor
+--
++get()
++set()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>583</x>
+      <y>594</y>
+      <w>517</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Calendar
+--
+-appointments:Appointment[]
+-healthVisitor:HealthVisitor
+--
++newAppointment(): Appointment
++checkAvailbility() :boolean
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>99</x>
+      <y>286</y>
+      <w>330</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>286</y>
+      <w>330</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>99</x>
+      <y>297</y>
+      <w>33</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>297</y>
+      <w>33</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>583</x>
+      <y>792</y>
+      <w>517</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Appointment
+--
+-startTime: DateTime
+-endTime: DateTime
+-ort: String
+-patient:Patient
+-healthVisitor:HealthVisitor
+-notes:Note[]
+--
++get()
++set()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>583</x>
+      <y>1078</y>
+      <w>517</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Note
+--
+
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>594</y>
+      <w>517</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++Treatment
+--
+
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>759</y>
+      <w>517</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Class&gt;&gt;
++DetailTreatment
+--
+
+--
+
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>253</y>
+      <w>33</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
