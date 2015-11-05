@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="13.3">
-  <zoom_level>11</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>286</x>
-      <y>55</y>
-      <w>231</w>
-      <h>209</h>
+      <x>568</x>
+      <y>48</y>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Person
@@ -26,10 +26,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>594</x>
-      <y>341</y>
-      <w>231</w>
-      <h>198</h>
+      <x>792</x>
+      <y>256</y>
+      <w>168</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +HealthVisitor
@@ -47,10 +47,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>341</y>
-      <w>231</w>
-      <h>209</h>
+      <x>360</x>
+      <y>256</y>
+      <w>168</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Patient
@@ -69,10 +69,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>583</x>
-      <y>594</y>
-      <w>517</w>
-      <h>154</h>
+      <x>696</x>
+      <y>448</y>
+      <w>376</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Calendar
@@ -88,10 +88,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>99</x>
-      <y>286</y>
-      <w>330</w>
-      <h>44</h>
+      <x>432</x>
+      <y>216</y>
+      <w>240</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
@@ -99,10 +99,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>396</x>
-      <y>286</y>
-      <w>330</w>
-      <h>44</h>
+      <x>648</x>
+      <y>216</y>
+      <w>240</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;280.0;20.0</additional_attributes>
@@ -110,10 +110,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>99</x>
-      <y>297</y>
-      <w>33</w>
-      <h>66</h>
+      <x>432</x>
+      <y>224</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -121,10 +121,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>297</y>
-      <w>33</w>
-      <h>66</h>
+      <x>864</x>
+      <y>224</y>
+      <w>24</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
@@ -132,10 +132,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>583</x>
-      <y>792</y>
-      <w>517</w>
-      <h>231</h>
+      <x>696</x>
+      <y>584</y>
+      <w>376</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Appointment
@@ -155,10 +155,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>583</x>
-      <y>1078</y>
-      <w>517</w>
-      <h>121</h>
+      <x>696</x>
+      <y>784</y>
+      <w>376</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Note
@@ -172,10 +172,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>594</y>
-      <w>517</w>
-      <h>121</h>
+      <x>256</x>
+      <y>440</y>
+      <w>376</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +Treatment
@@ -189,10 +189,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>759</y>
-      <w>517</w>
-      <h>121</h>
+      <x>256</x>
+      <y>576</y>
+      <w>376</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Class&gt;&gt;
 +DetailTreatment
@@ -206,12 +206,105 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>385</x>
-      <y>253</y>
-      <w>33</w>
-      <h>77</h>
+      <x>640</x>
+      <y>192</y>
+      <w>24</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>552</y>
+      <w>24</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>880</x>
+      <y>744</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>520</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>440</x>
+      <y>400</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>872</x>
+      <y>392</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>1720</x>
+      <y>8</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>System
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>928</x>
+      <y>96</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>+get()
+allways for all attributts
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1008</x>
+      <y>160</y>
+      <w>104</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>+set()
+allways for all attributts
+bg=blue</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
