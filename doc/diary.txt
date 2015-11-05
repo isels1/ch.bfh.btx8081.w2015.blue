@@ -153,14 +153,29 @@ Task 03
 	create sequence models
 		-alert appointment
 		-new appointment
-	create class diagram for sequence models
+	create class diagram for sequence diagram
 	create presentation
+	
+################	
+#  04.11.2015  #
+################
+-Task 7
+	nosec1 update sequence diagram
+	
+################	
+#  05.11.2015  #
+################
+-Task 07
+	create doc
+	edit presentation
+	review sequence diagram
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
--Task 07
-	-finish class diagram
-	-upload sequence model by nosec1
-	-finish presentation and documentation
-	
+	- finish doc and presentation
+
+
+
+
+
