@@ -170,10 +170,16 @@ Task 03
 	edit presentation
 	review sequence diagram
 	
+################	
+#  09.11.2015  #
+################
+-Task 07
+	presentation
+	finished and review doc
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-	- finish doc and presentation
 
 
 
