@@ -1,0 +1,11 @@
+For your application
+	-model the software architecture
+		-usingUML package and class diagrams
+	-taking into account
+		-system requirements
+			-incl. the need for persistent data storage
+		-architectural design patterns
+		-the Vaadin framework
+
+Presentation of Results: (X2a) 23.11., (X2r) 26.11., 10 min per team
+-10 points for documents
