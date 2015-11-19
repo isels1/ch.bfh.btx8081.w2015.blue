@@ -1,0 +1,23 @@
+From now on, your team will work in Scrum mode. Roles are
+	-developers = you
+	-Scrum master = the most experienced developer of your group
+	-product owner = me
+	
+Based on your CS1 project results so far, conduct a
+	-product planning meeting, resulting in a product backlog that reflects
+		-user requirements and scenarios
+		-priorities defined in consensus with the product owner
+	-sprint planning meeting, resulting in a first overall sprint backlog
+		-translate product backlog items into low-level implementation tasks
+		-plan your first sprint only
+			-3 sprints in total
+	-for both, use the xls template provided
+	
+Resource Planning
+	-30 working hours/team member in total until the end of the semester
+	-sprint 1: 6 hours/team member
+	-sprint 2: 14 hours/team member
+	-sprint 3: 10 hours/team member
+	
+Presentation of results: (X2a) 23.11., (X2r) 26.11., 5 min per team
+	-5 points for backlogs
