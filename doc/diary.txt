@@ -177,10 +177,27 @@ Task 03
 	presentation
 	finished and review doc
 	
+################	
+#  19.11.2015  #
+################
+-Task 09
+	create architecture for App
+	finish architecture
+
+-Task 10
+	define roles for group
+		-product owner: J. Vogel
+		-scrum master: S. Iseli
+		-developers: C. Noser, L. Hügi, T. Dorner, F. Zwahlen
+	create product backlog
+	finsihed product backlog
+	create sprint backlog 1
+		
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-
+finish task 10
+	-sprint backlog 1
 
 
 
