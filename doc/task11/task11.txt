@@ -1,0 +1,22 @@
+From now on, your team will implement your Web application for mobiles in Scrum mode.
+	-keep product backlog and sprint backlog up to date
+	-"daily" Scrum
+		-beginning of every lecture
+		-additional meetings if needed
+	-sprints timeline
+		-sprint 1 ends week 49
+			-02.12. (X2a) / 03.12. (X2r): review and sprint 2 planning
+		-sprint 2 ends week 51
+			-17.12. (X2a) / 18.12. (X2r): review and sprint 3 planning
+		-sprint 3 ends week 3
+			-14.01. (X2a) / 15.01. (X2r): final presentation
+
+Evaluation
+	-implemented features: 15 points
+	-software quality: 15 points
+	-Scrum process: 15 points
+	
+Notes
+	-apply guidelines and patterns for design and implementation
+	-see Task 10 for requested working hours
+	-will be checked via Sprint Backlog and SVN history
