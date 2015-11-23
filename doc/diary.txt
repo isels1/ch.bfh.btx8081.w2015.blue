@@ -190,20 +190,28 @@ Task 03
 		-scrum master: S. Iseli
 		-developers: C. Noser, L. Hügi, T. Dorner, F. Zwahlen
 	create product backlog
-	finsihed product backlog
+	finished product backlog
 	create sprint backlog 1
 
 ################	
 #  20.11.2015  #
 ################
-isels1, dornt1
+isels1, dornt1, zwahf1
 -Task 10
-	edited, rearranged tasks and finished sprint baclkog for sprint 1
-		
+	edited, rearranged tasks and finished sprint backlog for sprint 1
+	
+################	
+#  23.11.2015  #
+################
+presentation Task 09 & Task 10
+
+New Task 11
+	run sprint 1 like description in sprint backlog
+
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-
+Task 11 sprint 1
 
 
 
