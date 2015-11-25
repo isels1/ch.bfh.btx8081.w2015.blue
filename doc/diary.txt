@@ -210,7 +210,7 @@ New Task 11
 ################	
 #  25.11.2015  #
 ################
--dornt1 add CalendarView
+-dornt1 & isels1 add CalendarView
 	Design calendar and add appointment
 ******************************
 *** To Do list Gruppe Blau ***
