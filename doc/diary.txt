@@ -207,7 +207,11 @@ presentation Task 09 & Task 10
 
 New Task 11
 	run sprint 1 like description in sprint backlog
-
+################	
+#  25.11.2015  #
+################
+-dornt1 add CalendarView
+	Design calendar and add appointment
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
