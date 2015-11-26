@@ -9,7 +9,8 @@ public class Calendar {
 	
 	public Calendar(ArrayList<Appointment> appointment, HealthVisitor healthvisitor)
 	{
-		
+		this.appointment = appointment;
+		this.healthvisitor = healthvisitor;
 	}
 	
 
