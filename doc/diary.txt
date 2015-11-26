@@ -212,10 +212,33 @@ New Task 11
 ################
 -dornt1 & isels1 add CalendarView
 	Design calendar and add appointment
+	
+################	
+#  26.11.2015  #
+################	
+zwahf1, isels1
+	create UIController for Appointments
+	add new Button to Calendar view
+
+Bewertung Tasks
+---------------
+Task03 17 / 25
+	-detailiertere Dokumentation
+	-Quelle Literatur fehlte
+	-Storyboards ausführlicher
+	-Besserer Prototyp
+	-Be freaky
+
+Task06 4 / 5
+	-keine modellierung der Daten Activity Diagram
+	
+Task07 12 / 15
+	-Address Klasse fehlt in Domain model
+	
+Task09 11 / 15
+	
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
 Task 11 sprint 1
-
-
-
