@@ -5,10 +5,13 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentEventProvider;
+
 import com.vaadin.ui.Calendar;
 import com.vaadin.ui.Calendar.TimeFormat;
 import com.vaadin.ui.components.calendar.event.BasicEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
+import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 public class CalendarView {
@@ -44,21 +47,12 @@ public class CalendarView {
 		cal.setStartDate(new Date());
 		cal.setEndDate(new Date());
 		
-		// Add a two-hour event
-		GregorianCalendar start = new GregorianCalendar();
-		GregorianCalendar end   = new GregorianCalendar();
-		end.add(java.util.Calendar.HOUR, 2);
-		cal.addEvent(new BasicEvent("Calendar study",
-		        "Learning how to use Vaadin Calendar",
-		        start.getTime(), end.getTime()));
+		// Add events
+		AppointmentEventProvider appointmentProvider = new AppointmentEventProvider();
 		
-		GregorianCalendar start2 = new GregorianCalendar();
-		GregorianCalendar end2   = new GregorianCalendar();
-		start2.add(java.util.Calendar.HOUR, 24);
-		end2.add(java.util.Calendar.HOUR, 28);
-		cal.addEvent(new BasicEvent("Calendar study2",
-		        "Learning how to use Vaadin Calendar",
-		        start2.getTime(), end2.getTime()));
+		for(CalendarEvent i : appointmentProvider.getEvents(new Date(), new Date())) {
+			cal.addEvent(i);
+		}
 
 		return cal;
 	}
