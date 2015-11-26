@@ -1,7 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import com.vaadin.server.Sizeable.Unit;
-import com.vaadin.ui.Calendar;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
