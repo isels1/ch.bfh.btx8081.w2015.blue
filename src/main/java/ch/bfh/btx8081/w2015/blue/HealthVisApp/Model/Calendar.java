@@ -37,6 +37,9 @@ public class Calendar {
 			Date newStartTime = app.getStartTime();
 			Date newEndTime = app.getEndTime();
 			
+			//Checks if the new Appointment is entirely before or entirely after the old one,
+			//if the end-and start-time is the same it's also ok.
+			//if not returns false.
 			if (!((newStartTime.before(oldStartTime) && 
 					(newEndTime.before(oldStartTime) || newEndTime.equals(oldStartTime)))
 				||((newStartTime.after(oldEndTime) || newStartTime.equals(oldEndTime))
