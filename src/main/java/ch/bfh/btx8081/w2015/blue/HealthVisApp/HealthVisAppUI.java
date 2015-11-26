@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp;
 import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.TabView;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
@@ -37,21 +38,8 @@ public class HealthVisAppUI extends UI {
         layout.setWidth(WIDTH);
         layout.setMargin(true);
         setContent(layout);
-     
-        TabSheet ts = new TabSheet();
-        ts.setHeight(568.0f, Unit.PERCENTAGE);
-        ts.setWidth(320.0f, Unit.PERCENTAGE);
-        ts.addStyleName(ValoTheme.TABSHEET_FRAMED);
-        ts.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
-        
-        Calendar cal = CalendarView.initCalendarView();
-        
-        final VerticalLayout l = new VerticalLayout(cal);
-        l.setWidth(568.0f, Unit.PERCENTAGE);
-        l.setHeight(320.0f, Unit.PERCENTAGE);
-        ts.addTab(l, "Calendar");
-        
-        layout.addComponent(ts);
+
+        layout.addComponent(TabView.initTabView());
     }
 
     @WebServlet(urlPatterns = "/*", name = "HealthVisAppUIServlet", asyncSupported = true)

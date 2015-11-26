@@ -13,14 +13,16 @@ import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 public class CalendarView {
 
+	final static String CALWIDTH = "260";
+	final static String CALHEIGHT= "500";
 	
 	public static Calendar initCalendarView()
 	{
 	
         CalendarEventProvider dataSource = new BasicEventProvider();
         Calendar cal = new Calendar(dataSource);
-        cal.setWidth("260px");
-        cal.setHeight("500px");
+        cal.setWidth(CALWIDTH + "px");
+        cal.setHeight(CALHEIGHT + "px");
         //show only 0600h to 2000h
         cal.setFirstVisibleHourOfDay(6);
 		cal.setLastVisibleHourOfDay(20);
@@ -33,6 +35,8 @@ public class CalendarView {
 		cal.setLocale(Locale.GERMAN);
 		cal.setTimeFormat(TimeFormat.Format24H);
 		cal.setTimeZone(TimeZone.getTimeZone("Europe/Zurich"));
+		//set Format to European standard
+		cal.setWeeklyCaptionFormat("dd.MM.yyyy");
 		
 		//show daily view of calendar
 		cal.setStartDate(new Date());
@@ -46,7 +50,15 @@ public class CalendarView {
 		        "Learning how to use Vaadin Calendar",
 		        start.getTime(), end.getTime()));
 		
-		cal.setWeeklyCaptionFormat("dd.MM.yyyy");
+		GregorianCalendar start2 = new GregorianCalendar();
+		GregorianCalendar end2   = new GregorianCalendar();
+		start2.add(java.util.Calendar.HOUR, 24);
+		end2.add(java.util.Calendar.HOUR, 28);
+		cal.addEvent(new BasicEvent("Calendar study2",
+		        "Learning how to use Vaadin Calendar",
+		        start2.getTime(), end2.getTime()));
+		
+		
 		
 
 		
