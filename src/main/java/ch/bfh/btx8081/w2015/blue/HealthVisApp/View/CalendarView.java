@@ -14,7 +14,7 @@ import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 public class CalendarView {
 
 	final static String CALWIDTH = "260";
-	final static String CALHEIGHT= "500";
+	final static String CALHEIGHT= "448";
 	
 	public static Calendar initCalendarView()
 	{
@@ -23,9 +23,11 @@ public class CalendarView {
         Calendar cal = new Calendar(dataSource);
         cal.setWidth(CALWIDTH + "px");
         cal.setHeight(CALHEIGHT + "px");
+        
         //show only 0600h to 2000h
         cal.setFirstVisibleHourOfDay(6);
 		cal.setLastVisibleHourOfDay(20);
+		
 		//show only Monday to Friday
 		// --IMPORTANT: do only if weekly view. Daily and Monthly like that is buggy as fu**
 //		cal.setFirstVisibleDayOfWeek(1);
@@ -57,11 +59,7 @@ public class CalendarView {
 		cal.addEvent(new BasicEvent("Calendar study2",
 		        "Learning how to use Vaadin Calendar",
 		        start2.getTime(), end2.getTime()));
-		
-		
-		
 
-		
 		return cal;
 	}
 }

@@ -1,6 +1,14 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
+
+import com.google.gwt.dom.client.Style.VerticalAlign;
 import com.vaadin.server.Sizeable.Unit;
+import com.vaadin.ui.Button;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Calendar;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
@@ -20,8 +28,18 @@ public class TabView {
         
         //First Tab Calendar
         //Tab sheet need a Layout you can't add a calendar directly to the Tabsheet
-        tabSheet.addTab(new VerticalLayout(CalendarView.initCalendarView()), "Calendar");
+        Calendar cal = CalendarView.initCalendarView();
+
+        final Button b = new Button("Add Apointment");
         
+        b.addClickListener(new CalendarButtonClickHandler());
+        
+        final VerticalLayout tabLayout = new VerticalLayout();
+        tabLayout.addComponent(cal);
+        tabLayout.addComponent(b);
+        
+        tabSheet.addTab(tabLayout, "Calendar");
+                
         //Second Tab Patient
         tabSheet.addTab(new VerticalLayout(), "Patient");
         
