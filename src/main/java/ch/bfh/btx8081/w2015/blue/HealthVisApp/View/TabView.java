@@ -19,19 +19,12 @@ public class TabView {
         tabSheet.addStyleName(ValoTheme.TABSHEET_FRAMED);
         tabSheet.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
         
-        Calendar cal = CalendarView.initCalendarView();
-        
+        //First Tab Calendar
         //Tab sheet need a Layout you can't add a calendar directly to the Tabsheet
-        final VerticalLayout calLayout= new VerticalLayout(cal);
-        calLayout.setWidth(WIDTH, Unit.PERCENTAGE);
-        calLayout.setHeight(HEIGHT, Unit.PERCENTAGE);
-        tabSheet.addTab(calLayout, "Calendar");
+        tabSheet.addTab(new VerticalLayout(CalendarView.initCalendarView()), "Calendar");
         
-      //Tab sheet need a Layout you can't add a calendar directly to the Tabsheet
-        final VerticalLayout patLayout= new VerticalLayout();
-        patLayout.setWidth(WIDTH, Unit.PERCENTAGE);
-        patLayout.setHeight(HEIGHT, Unit.PERCENTAGE);
-        tabSheet.addTab(patLayout, "Patient");
+        //Second Tab Patient
+        tabSheet.addTab(new VerticalLayout(), "Patient");
         
         return tabSheet;
 	}
