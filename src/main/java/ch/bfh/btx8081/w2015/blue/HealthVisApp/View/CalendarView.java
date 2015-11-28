@@ -38,8 +38,8 @@ public class CalendarView {
         cal.setHeight(CALHEIGHT + "px");
         
         //show only 0600h to 2000h
-        cal.setFirstVisibleHourOfDay(6);
-		cal.setLastVisibleHourOfDay(20);
+//        cal.setFirstVisibleHourOfDay(6);
+//		cal.setLastVisibleHourOfDay(20);
 		
 		//show only Monday to Friday
 		// --IMPORTANT: do only if weekly view. Daily and Monthly like that is buggy as fu**

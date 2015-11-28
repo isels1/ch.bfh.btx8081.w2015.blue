@@ -1,4 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
+
 import java.util.Date;
 
 public class Person {

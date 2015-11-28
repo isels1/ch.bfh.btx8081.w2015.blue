@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 public class Calendar {
@@ -9,12 +9,16 @@ public class Calendar {
     // Calendar Data
     //================================================================================
 	
-	private ArrayList<Appointment> appointment;
+	private ArrayList<Appointment> appointment = new ArrayList<Appointment>();
 	private HealthVisitor healthvisitor;
 	
 	//================================================================================
     // Constructor Section
     //================================================================================
+	
+	public Calendar(){
+		
+	}
 	
 	public Calendar(ArrayList<Appointment> appointment, HealthVisitor healthvisitor)
 	{
@@ -26,13 +30,21 @@ public class Calendar {
     // Add/Setter Section
     //================================================================================
 	
-	public void newAppointment(Date startTime, Date endTime, String ort, 
+	public void newAppointment(GregorianCalendar startTime, GregorianCalendar endTime, String ort, 
 									  Patient patient, HealthVisitor healthvisitor)
 	{
 		Appointment newAppointment = new Appointment(startTime, endTime, ort, patient, healthvisitor);
 		if(checkAvailability(newAppointment)) {
 		appointment.add(newAppointment);
 		}
+	}
+	
+	public void setAppointment(Appointment a){
+		appointment.add(a);
+	}
+	
+	public void setAppointments(ArrayList<Appointment> al){
+		appointment.addAll(al);
 	}
 	
 	public void setHealthVisitor(HealthVisitor hv){
@@ -60,12 +72,12 @@ public class Calendar {
 		for (Appointment i: appointment )
 		{
 			//Existing times to compare 
-			Date oldStartTime = i.getStartTime();
-			Date oldEndTime = i.getEndTime();
+			GregorianCalendar oldStartTime = i.getStartTime();
+			GregorianCalendar oldEndTime = i.getEndTime();
 			
 			//new time to compare
-			Date newStartTime = app.getStartTime();
-			Date newEndTime = app.getEndTime();
+			GregorianCalendar newStartTime = app.getStartTime();
+			GregorianCalendar newEndTime = app.getEndTime();
 			
 			//Checks if the new Appointment is entirely before or entirely after the old one,
 			//if the end-and start-time is the same it's also ok.
@@ -77,14 +89,9 @@ public class Calendar {
 					)  
 			{
 				return false;
-			}
-			
-
-			
-			
+			}	
 		}		
 		return true;
-		
 	}
 		
 }

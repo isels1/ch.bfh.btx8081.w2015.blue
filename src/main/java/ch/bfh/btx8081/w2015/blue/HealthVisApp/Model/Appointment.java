@@ -1,5 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
-import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Appointment {
 	
@@ -7,8 +7,8 @@ public class Appointment {
     // Appointment Data
     //================================================================================
 	
-	private Date startTime;
-	private Date endTime;
+	private GregorianCalendar startTime;
+	private GregorianCalendar endTime;
 	private String ort;
 	private Patient patient;
 	private HealthVisitor healthvisitor;
@@ -17,7 +17,12 @@ public class Appointment {
     // Constructor Section
     //================================================================================
 	
-	public Appointment(Date startTime, Date endTime, String ort, Patient patient, HealthVisitor healthvisitor){	
+	public Appointment(){
+		
+	}
+	
+	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, 
+			String ort, Patient patient, HealthVisitor healthvisitor){	
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.ort = ort;
@@ -29,11 +34,11 @@ public class Appointment {
     // Setter Section
     //================================================================================
 	
-	public void setStartTime(Date startTime) {
+	public void setStartTime(GregorianCalendar startTime) {
 		this.startTime = startTime;
 	}
 	
-	public void setEndTime(Date endTime) {
+	public void setEndTime(GregorianCalendar endTime) {
 		this.endTime = endTime;
 	}
 	
@@ -53,11 +58,11 @@ public class Appointment {
     // Getter Section
     //================================================================================
 	
-	public Date getStartTime() {
+	public GregorianCalendar getStartTime() {
 		return startTime;
 	}
 
-	public Date getEndTime() {
+	public GregorianCalendar getEndTime() {
 		return endTime;
 	}
 

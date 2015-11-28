@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
-import java.sql.Date;
+
 import java.util.ArrayList;
+import java.util.Date;
 
 
 public class HealthVisitor extends Person {
@@ -12,11 +13,16 @@ public class HealthVisitor extends Person {
 	private String userName;
 	private String password;
 	private Calendar calendar;
-	private ArrayList<Patient> patient;
+	private ArrayList<Patient> patient = new ArrayList<Patient>();
 
 	//================================================================================
     // Constructor Section
     //================================================================================
+	
+	public HealthVisitor(String name, String firstName, Date birthdate,
+			Address address, String phone){
+		super(name, firstName, birthdate, address, phone);
+	}
 	
 	public HealthVisitor(String name, String firstName, Date birthdate,
 			Address address, String phone, String userName, String password, Calendar calendar, ArrayList<Patient> patient) {
@@ -44,8 +50,12 @@ public class HealthVisitor extends Person {
 		this.calendar = calendar;
 	}
 
-	public void setPatient(ArrayList<Patient> patient) {
-		this.patient = patient;
+	public void setAllPatients(ArrayList<Patient> patient) {
+		this.patient.addAll(patient);
+	}
+	
+	public void setPatient(Patient p){
+		this.patient.add(p);
 	}
 
 	//================================================================================
