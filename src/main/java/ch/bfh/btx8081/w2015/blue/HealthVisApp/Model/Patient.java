@@ -3,13 +3,20 @@ import java.sql.Date;
 
 
 public class Patient extends Person {
-
+	
+	//================================================================================
+    // Patient Data
+    //================================================================================
+	
 	private int id;
 	private Note comment;
 	private Treatment treatment;
 	private Appointment appointment;
 	private HealthVisitor healthvisitor;
 	
+	//================================================================================
+    // Constructor Section
+    //================================================================================
 	
 	public Patient(String name, String firstName, Date birthdate,
 			Address address, String phone, int id, Note comment, Treatment treatment, Appointment appointment, HealthVisitor healthvisitor) {
@@ -19,58 +26,54 @@ public class Patient extends Person {
 		this.treatment = treatment;
 		this.appointment = appointment;
 		this.healthvisitor = healthvisitor;
-		
-
 	}
 
-
-	public int getId() {
-		return id;
-	}
-
-
+	//================================================================================
+    // Setter Section
+    //================================================================================
+	
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
-	public Note getComment() {
-		return comment;
-	}
-
 
 	public void setComment(Note comment) {
 		this.comment = comment;
 	}
 
+	public void setTreatment(Treatment treatment) {
+		this.treatment = treatment;
+	}
+
+	public void setAppointment(Appointment appointment) {
+		this.appointment = appointment;
+	}
+	
+	public void setHealthvisitor(HealthVisitor healthvisitor) {
+		this.healthvisitor = healthvisitor;
+	}
+
+	//================================================================================
+    // Getter Section
+    //================================================================================
+	
+	public int getId() {
+		return id;
+	}
+
+	public Note getComment() {
+		return comment;
+	}
 
 	public Treatment getTreatment() {
 		return treatment;
 	}
 
-
-	public void setTreatment(Treatment treatment) {
-		this.treatment = treatment;
-	}
-
-
 	public Appointment getAppointment() {
 		return appointment;
 	}
 
-
-	public void setAppointment(Appointment appointment) {
-		this.appointment = appointment;
-	}
-
-
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;
-	}
-
-
-	public void setHealthvisitor(HealthVisitor healthvisitor) {
-		this.healthvisitor = healthvisitor;
 	}
 
 }

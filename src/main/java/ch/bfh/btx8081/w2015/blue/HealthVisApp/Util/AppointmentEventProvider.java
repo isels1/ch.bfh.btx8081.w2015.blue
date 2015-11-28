@@ -11,6 +11,18 @@ import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 public class AppointmentEventProvider implements CalendarEventProvider {
 
+	//================================================================================
+    // EventProvider Data
+    //================================================================================
+	
+	//================================================================================
+    // Setter Section
+    //================================================================================
+	
+	//================================================================================
+    // Getter Section
+    //================================================================================
+	
 	@Override
 	public List<CalendarEvent> getEvents(Date startDate, Date endDate) {
 		

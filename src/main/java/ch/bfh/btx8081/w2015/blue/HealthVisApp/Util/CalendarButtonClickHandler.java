@@ -7,7 +7,15 @@ import com.vaadin.ui.Button.ClickEvent;
 
 public class CalendarButtonClickHandler implements Button.ClickListener {
 
+	//================================================================================
+    // Handler Data
+    //================================================================================
+	
 	private UIController uiController = UIController.getInstance();
+	
+	//================================================================================
+    // Handler Action
+    //================================================================================
 	
 	@Override
 	public void buttonClick(ClickEvent event) {

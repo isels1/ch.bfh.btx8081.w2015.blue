@@ -19,8 +19,16 @@ import com.vaadin.ui.VerticalLayout;
 @Widgetset("ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppWidgetset")
 public class HealthVisAppUI extends UI {
 
+	//================================================================================
+    // HealthVisAppUI Data
+    //================================================================================
+	
 	final String HEIGHT = "568";
 	final String WIDTH = "320";
+	
+	//================================================================================
+    // Initialisation Section
+    //================================================================================
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {

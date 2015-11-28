@@ -5,8 +5,16 @@ import java.util.Date;
 
 public class Calendar {
 	
+	//================================================================================
+    // Calendar Data
+    //================================================================================
+	
 	private ArrayList<Appointment> appointment;
 	private HealthVisitor healthvisitor;
+	
+	//================================================================================
+    // Constructor Section
+    //================================================================================
 	
 	public Calendar(ArrayList<Appointment> appointment, HealthVisitor healthvisitor)
 	{
@@ -14,7 +22,10 @@ public class Calendar {
 		this.healthvisitor = healthvisitor;
 	}
 	
-
+	//================================================================================
+    // Add/Setter Section
+    //================================================================================
+	
 	public void newAppointment(Date startTime, Date endTime, String ort, 
 									  Patient patient, HealthVisitor healthvisitor)
 	{
@@ -24,6 +35,25 @@ public class Calendar {
 		}
 	}
 	
+	public void setHealthVisitor(HealthVisitor hv){
+		healthvisitor = hv;
+	}
+	
+	//================================================================================
+    // Getter Section
+    //================================================================================
+	
+	public ArrayList<Appointment> getAppointments() {
+		return appointment;
+	}
+	
+	public HealthVisitor getHealthVisitor() {
+		return healthvisitor;
+	}
+	
+	//================================================================================
+    // Helper/Private Section
+    //================================================================================
 	
 	private boolean checkAvailability(Appointment app)
 	{
@@ -56,8 +86,5 @@ public class Calendar {
 		return true;
 		
 	}
-	
-	
-	
-	
+		
 }

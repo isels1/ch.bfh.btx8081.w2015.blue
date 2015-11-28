@@ -1,29 +1,39 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentEventProvider;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
+import com.vaadin.ui.Button;
 import com.vaadin.ui.Calendar;
+import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Calendar.TimeFormat;
-import com.vaadin.ui.components.calendar.event.BasicEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 public class CalendarView {
 
+	//================================================================================
+    // Calendar Data
+    //================================================================================
+	
 	final static String CALWIDTH = "260";
 	final static String CALHEIGHT= "448";
+	private static Calendar cal = null;
 	
-	public static Calendar initCalendarView()
+	//================================================================================
+    // Initialisation Section
+    //================================================================================
+	
+	public static VerticalLayout initCalendarView()
 	{
 	
         CalendarEventProvider dataSource = new BasicEventProvider();
-        Calendar cal = new Calendar(dataSource);
+        cal = new Calendar(dataSource);
         cal.setWidth(CALWIDTH + "px");
         cal.setHeight(CALHEIGHT + "px");
         
@@ -54,6 +64,14 @@ public class CalendarView {
 			cal.addEvent(i);
 		}
 
-		return cal;
+		Button addApp = new Button("Add Apointment");
+        
+		addApp.addClickListener(new CalendarButtonClickHandler());
+        
+        VerticalLayout calendarTab = new VerticalLayout();
+        calendarTab.addComponent(cal);
+        calendarTab.addComponent(addApp);
+		
+		return calendarTab;
 	}
 }
