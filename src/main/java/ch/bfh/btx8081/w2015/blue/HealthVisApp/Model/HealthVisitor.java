@@ -73,21 +73,21 @@ public class HealthVisitor extends Person {
     //================================================================================
 	/**
 	 * The getter for the userName
-	 * @param userName The Username /String
+	 * @return The Username /String
 	 */
 	public String getUserName() {
 		return userName;
 	}
 	/**
 	 * The getter for the password
-	 * @param password The Password /String
+	 * @return The Password /String
 	 */
 	public String getPassword() {
 		return password;
 	}
 	/**
 	 * The getter for the calendar
-	 * @param calendar The Calendar /Calendar
+	 * @return The Calendar /Calendar
 	 */
 	public Calendar getCalendar() {
 		return calendar;

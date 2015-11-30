@@ -70,35 +70,35 @@ public class Person {
     //================================================================================
 	/**
 	 * The getter for the name
-	 * @param name The Name (last Name) /String
+	 * @return The Name (last Name) /String
 	 */
     public String getName() {
 		return name;
 	}
 	/**
 	 * The getter for the firstName
-	 * @param firstName The Name (first Name) /String
+	 * @return firstName The Name (first Name) /String
 	 */
 	public String getFirstName() {
 		return firstName;
 	}
 	/**
 	 * The getter for the birthdate
-	 * @param birtdate The birthdate /Date
+	 * @return The birthdate /Date
 	 */
 	public Date getBirthdate() {
 		return birthdate;
 	}
 	/**
 	 * The getter for the address
-	 * @param address The Address /Address
+	 * @return The Address /Address
 	 */
 	public Address getAddress() {
 		return address;
 	}
 	/**
 	 * The getter for the phone
-	 * @param phone The Phone Number /String
+	 * @return The Phone Number /String
 	 */
 	public String getPhone() {
 		return phone;

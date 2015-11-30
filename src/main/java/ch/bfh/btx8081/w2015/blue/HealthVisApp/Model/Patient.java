@@ -72,35 +72,35 @@ public class Patient extends Person {
     //================================================================================
 	/**
 	 * The getter for the id
-	 * @param id The Id /Int
+	 * @return The Id /Int
 	 */
 	public int getId() {
 		return id;
 	}
 	/**
 	 * The getter for the comment
-	 * @param comment The Comment /Note
+	 * @return The Comment /Note
 	 */
 	public Note getComment() {
 		return comment;
 	}
 	/**
 	 * The getter for the treatment
-	 * @param treatment The Treatment /Treatment
+	 * @return The Treatment /Treatment
 	 */
 	public Treatment getTreatment() {
 		return treatment;
 	}
 	/**
 	 * The getter for the appointment
-	 * @param appointment The Appointment /Appointment
+	 * @return The Appointment /Appointment
 	 */
 	public Appointment getAppointment() {
 		return appointment;
 	}
 	/**
 	 * The getter for the healthvisitor
-	 * @param healthvisitor The Healthvisitor /Healthvisitor
+	 * @return The Healthvisitor /Healthvisitor
 	 */
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;

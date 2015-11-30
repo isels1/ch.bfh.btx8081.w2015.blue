@@ -77,39 +77,39 @@ public class Appointment {
     //================================================================================
 	/**
 	 * Getter for the startTime
-	 * @param startTime The start Time of the Appointment /GregorianCalendar
+	 * @return startTime The start Time of the Appointment /GregorianCalendar
 	 */
 	public GregorianCalendar getStartTime() {
 		return startTime;
 	}
 	
 	/**
-	 * Setter for the endTime
-	 * @param endTime The end Time of the Appointment /GregorianCalendar
+	 * Getter for the endTime
+	 * @return endTime The end Time of the Appointment /GregorianCalendar
 	 */
 	public GregorianCalendar getEndTime() {
 		return endTime;
 	}
 	
 	/**
-	 * Setter for the location
-	 * @param location The Location of the Appointment /String
+	 * Getter for the location
+	 * @return The Location of the Appointment /String
 	 */
 	public String getlocation() {
 		return location;
 	}
 
 	/**
-	 * Setter for the patient
-	 * @param patient The Patient who belongs to the Appointment /Patient
+	 * Getter for the patient
+	 * @return The Patient who belongs to the Appointment /Patient
 	 */
 	public Patient getPatient() {
 		return patient;
 	}
 
 	/**
-	 * Setter for the healthVisitor
-	 * @param healthVisitor The Healthvisitor who belongs to the Appointment /HealthVisitor
+	 * Getter for the healthVisitor
+	 * @return  The Healthvisitor who belongs to the Appointment /HealthVisitor
 	 */
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;
