@@ -1,5 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
-import java.sql.Date;
+import java.util.Date;
 
 
 public class Patient extends Person {
