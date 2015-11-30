@@ -22,7 +22,7 @@ public class Appointment {
 	}
 	
 	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, 
-			String location, Patient patient, HealthVisitor healthvisitor){	
+			HealthVisitor healthvisitor){	
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.location = location;
