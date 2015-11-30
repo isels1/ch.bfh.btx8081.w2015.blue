@@ -18,6 +18,7 @@ public class HealthVisitor extends Person {
 	//================================================================================
     // Constructor Section
     //================================================================================
+
 	
 	public HealthVisitor(String name, String firstName, Date birthdate,
 			Address address, String phone){
@@ -37,15 +38,24 @@ public class HealthVisitor extends Person {
 	//================================================================================
     // Setter Section
     //================================================================================
-	
+	/**
+	 * The setter for the userName
+	 * @param userName The Username /String
+	 */
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	
+	/**
+	 * The setter for the password
+	 * @param password The Password /String
+	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	/**
+	 * The setter for the calendar
+	 * @param calendar The Calendar /Calendar
+	 */
 	public void setCalendar(Calendar calendar) {
 		this.calendar = calendar;
 	}
@@ -59,17 +69,26 @@ public class HealthVisitor extends Person {
 	}
 
 	//================================================================================
-    // Setter Section
+    // Getter Section
     //================================================================================
-
+	/**
+	 * The getter for the userName
+	 * @param userName The Username /String
+	 */
 	public String getUserName() {
 		return userName;
 	}
-
+	/**
+	 * The getter for the password
+	 * @param password The Password /String
+	 */
 	public String getPassword() {
 		return password;
 	}
-
+	/**
+	 * The getter for the calendar
+	 * @param calendar The Calendar /Calendar
+	 */
 	public Calendar getCalendar() {
 		return calendar;
 	}

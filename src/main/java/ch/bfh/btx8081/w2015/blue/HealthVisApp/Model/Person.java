@@ -29,23 +29,38 @@ public class Person {
     //================================================================================
     // Setter Section
     //================================================================================
-
+	/**
+	 * The setter for the name
+	 * @param name The Name (last Name) /String
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	/**
+	 * The setter for the firstName
+	 * @param firstName The Name (first Name) /String
+	 */
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
-
+	/**
+	 * The setter for the birthdate
+	 * @param birtdate The birthdate /Date
+	 */
 	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
-
+	/**
+	 * The setter for the address
+	 * @param address The Address /Address
+	 */
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-
+	/**
+	 * The setter for the phone
+	 * @param phone The Phone Number /String
+	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
@@ -53,23 +68,38 @@ public class Person {
     //================================================================================
     // Getter Section
     //================================================================================
-	
+	/**
+	 * The getter for the name
+	 * @param name The Name (last Name) /String
+	 */
     public String getName() {
 		return name;
 	}
-
+	/**
+	 * The getter for the firstName
+	 * @param firstName The Name (first Name) /String
+	 */
 	public String getFirstName() {
 		return firstName;
 	}
-
+	/**
+	 * The getter for the birthdate
+	 * @param birtdate The birthdate /Date
+	 */
 	public Date getBirthdate() {
 		return birthdate;
 	}
-
+	/**
+	 * The getter for the address
+	 * @param address The Address /Address
+	 */
 	public Address getAddress() {
 		return address;
 	}
-
+	/**
+	 * The getter for the phone
+	 * @param phone The Phone Number /String
+	 */
 	public String getPhone() {
 		return phone;
 	}

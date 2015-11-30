@@ -38,15 +38,24 @@ public class Calendar {
 		appointment.add(newAppointment);
 		}
 	}
-	
+	/**
+	 * Setter for the appointment
+	 * @param a add a single Appointment /appointment
+	 */
 	public void setAppointment(Appointment a){
 		appointment.add(a);
 	}
-	
+	/**
+	 * Setter for the appointment
+	 * @param al add all Appointments /appointment
+	 */
 	public void setAppointments(ArrayList<Appointment> al){
 		appointment.addAll(al);
 	}
-	
+	/**
+	 * Setter for the healthvisitor
+	 * @param hv Add a Healthvisitor  /healthvisitor
+	 */
 	public void setHealthVisitor(HealthVisitor hv){
 		healthvisitor = hv;
 	}
@@ -54,11 +63,17 @@ public class Calendar {
 	//================================================================================
     // Getter Section
     //================================================================================
-	
+	/**
+	 * Getter for the appointment
+	 * @return Returns all Appointments: ArrayList<Appointment>
+	 */
 	public ArrayList<Appointment> getAppointments() {
 		return appointment;
 	}
-	
+	/**
+	 * Getter for the healthvisitor
+	 * @return the Healthvisitor  /healthvisitor
+	 */
 	public HealthVisitor getHealthVisitor() {
 		return healthvisitor;
 	}

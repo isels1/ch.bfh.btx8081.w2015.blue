@@ -9,7 +9,7 @@ public class Appointment {
 	
 	private GregorianCalendar startTime;
 	private GregorianCalendar endTime;
-	private String ort;
+	private String location;
 	private Patient patient;
 	private HealthVisitor healthvisitor;
 	
@@ -22,10 +22,10 @@ public class Appointment {
 	}
 	
 	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, 
-			String ort, Patient patient, HealthVisitor healthvisitor){	
+			String location, Patient patient, HealthVisitor healthvisitor){	
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.ort = ort;
+		this.location = location;
 		this.patient = patient;
 		this.healthvisitor = healthvisitor;
 	}
@@ -33,23 +33,41 @@ public class Appointment {
 	//================================================================================
     // Setter Section
     //================================================================================
-	
+	/**
+	 * Setter for the startTime
+	 * @param startTime The start Time of the Appointment /GregorianCalendar
+	 */
 	public void setStartTime(GregorianCalendar startTime) {
 		this.startTime = startTime;
 	}
 	
+	/**
+	 * Setter for the endTime
+	 * @param endTime The end Time of the Appointment /GregorianCalendar
+	 */
 	public void setEndTime(GregorianCalendar endTime) {
 		this.endTime = endTime;
 	}
 	
-	public void setOrt(String ort) {
-		this.ort = ort;
+	/**
+	 * Setter for the location
+	 * @param location The Location of the Appointment /String
+	 */
+	public void setlocation(String location) {
+		this.location = location;
 	}
-	
+	/**
+	 * Setter for the patient
+	 * @param patient The Patient who belongs to the Appointment /Patient
+	 */
 	public void setPatient(Patient patient) {
 		this.patient = patient;
 	}
 	
+	/**
+	 * Setter for the healthVisitor
+	 * @param healthVisitor The Healthvisitor who belongs to the Appointment /HealthVisitor
+	 */
 	public void setHealthvisitor(HealthVisitor healthvisitor) {
 		this.healthvisitor = healthvisitor;
 	}
@@ -57,26 +75,42 @@ public class Appointment {
 	//================================================================================
     // Getter Section
     //================================================================================
-	
+	/**
+	 * Getter for the startTime
+	 * @param startTime The start Time of the Appointment /GregorianCalendar
+	 */
 	public GregorianCalendar getStartTime() {
 		return startTime;
 	}
-
+	
+	/**
+	 * Setter for the endTime
+	 * @param endTime The end Time of the Appointment /GregorianCalendar
+	 */
 	public GregorianCalendar getEndTime() {
 		return endTime;
 	}
-
 	
-	public String getOrt() {
-		return ort;
+	/**
+	 * Setter for the location
+	 * @param location The Location of the Appointment /String
+	 */
+	public String getlocation() {
+		return location;
 	}
 
-
+	/**
+	 * Setter for the patient
+	 * @param patient The Patient who belongs to the Appointment /Patient
+	 */
 	public Patient getPatient() {
 		return patient;
 	}
 
-
+	/**
+	 * Setter for the healthVisitor
+	 * @param healthVisitor The Healthvisitor who belongs to the Appointment /HealthVisitor
+	 */
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;
 	}
