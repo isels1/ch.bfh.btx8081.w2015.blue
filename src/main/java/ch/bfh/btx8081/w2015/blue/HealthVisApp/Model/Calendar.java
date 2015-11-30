@@ -30,10 +30,10 @@ public class Calendar {
     // Add/Setter Section
     //================================================================================
 	
-	public void newAppointment(GregorianCalendar startTime, GregorianCalendar endTime, String ort, 
+	public void newAppointment(GregorianCalendar startTime, GregorianCalendar endTime, String location, 
 									  Patient patient, HealthVisitor healthvisitor)
 	{
-		Appointment newAppointment = new Appointment(startTime, endTime, ort, patient, healthvisitor);
+		Appointment newAppointment = new Appointment(startTime, endTime, location, patient, healthvisitor);
 		if(checkAvailability(newAppointment)) {
 		appointment.add(newAppointment);
 		}
