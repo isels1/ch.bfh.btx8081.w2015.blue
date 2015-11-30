@@ -236,7 +236,19 @@ Task07 12 / 15
 	-Address Klasse fehlt in Domain model
 	
 Task09 11 / 15
-	
+
+################	
+#  27.11.2015  #
+################	
+zwahf1
+	create appointment event provider
+
+################	
+#  30.11.2015  #
+################	
+daily scrum
+	classes finished
+	review by isels1	
 	
 ******************************
 *** To Do list Gruppe Blau ***
