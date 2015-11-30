@@ -25,8 +25,8 @@ public class Appointment {
 			HealthVisitor healthvisitor){	
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.location = location;
-		this.patient = patient;
+		//this.location = location;
+		//this.patient = patient;
 		this.healthvisitor = healthvisitor;
 	}
 
