@@ -90,7 +90,7 @@ public class Calendar {
 			GregorianCalendar oldStartTime = i.getStartTime();
 			GregorianCalendar oldEndTime = i.getEndTime();
 			
-			//new time to compare
+			//new times to compare
 			GregorianCalendar newStartTime = app.getStartTime();
 			GregorianCalendar newEndTime = app.getEndTime();
 			
