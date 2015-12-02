@@ -1,0 +1,9 @@
+Implement a concrete feature of your application via the State Pattern
+-analyse all features where your application has state-dependent behavior and select the most complex / likely to change one
+-discuss the advantages and disadvantages of the state pattern for your selected feature
+-design and implement the state pattern
+Presentation of results (10 min): 17.12./18.12.
+-code walkthrough
+-10 points for code and presentation
+Note
+-implementation of the state pattern is part of sprint 2.
