@@ -250,7 +250,29 @@ daily scrum
 	classes finished
 	review by isels1	
 	
+	
+################	
+#  30.11.2015  #
+################
+daily scrum
+	finish sprint 1
+	plan sprint 2
+	
+Got new Task
+	Use State-Pattern
+	
+Review sprint 1 with product owner
+	ein bisschen spaghetti
+	2 intefaces Calendar & Patient
+		falls brauchen -> packagehierarchy ändern
+	buttonClickHandler gehört zu Controller-package
+	nicht static verwenden -> lieber Objekt generieren
+		lösung durch private Konstruktor
+	
+
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-Task 11 sprint 1
+Umsetzung review
+
+Task 11 sprint 2
