@@ -41,14 +41,14 @@ public class AppointmentEventProvider implements CalendarEventProvider {
 		ArrayList<Appointment> al = calendarObject.getAppointments();
 		
 		for(Appointment a : al){
-			BasicEvent e = new BasicEvent(a.getOrt(),
+			BasicEvent e = new BasicEvent(a.getlocation(),
 					a.getHealthvisitor().getName() + " " + a.getHealthvisitor().getFirstName(),
 					a.getStartTime().getTime(), a.getEndTime().getTime());
 			
 			events.add(e);
 		}
 		
-//        GregorianCalendar start1 = new GregorianCalendar();
+//      GregorianCalendar start1 = new GregorianCalendar();
 //		GregorianCalendar end1   = new GregorianCalendar();
 //		start1.add(java.util.Calendar.HOUR, 2);
 //		end1.add(java.util.Calendar.HOUR, 4);
@@ -72,9 +72,9 @@ public class AppointmentEventProvider implements CalendarEventProvider {
 //		        "Learning much more",
 //		        start3.getTime(), end3.getTime());
 //		
-//        events.add(event1);
-//        events.add(event2);
-//        events.add(event3);
+//      events.add(event1);
+//      events.add(event2);
+//      events.add(event3);
 		return events;
 	}
 
