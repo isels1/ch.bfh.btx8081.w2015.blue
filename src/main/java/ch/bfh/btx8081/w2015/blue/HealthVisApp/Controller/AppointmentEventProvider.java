@@ -36,7 +36,7 @@ public class AppointmentEventProvider implements CalendarEventProvider {
 		
 		List<CalendarEvent> events = new ArrayList<CalendarEvent>();
 
-		Calendar calendarObject= ddc.getHealthVisitor().getCalendar();
+		Calendar calendarObject= ddc.getCalendar();
 		
 		ArrayList<Appointment> al = calendarObject.getAppointments();
 		
