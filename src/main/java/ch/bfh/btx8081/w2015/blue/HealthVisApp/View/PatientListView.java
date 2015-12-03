@@ -1,21 +1,21 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
-public class AppointmentPopUpView {
+public class PatientListView {
 
-	private static AppointmentPopUpView appPopUpView = null;
+	private static PatientListView patListView = null;
 	
 	//================================================================================
     // Constructor Section
     //================================================================================
 	
-	private AppointmentPopUpView() {
+	private PatientListView() {
 		
 	}
 	
-	public static AppointmentPopUpView getInstance() {
-		if (appPopUpView == null) {
-			appPopUpView = new AppointmentPopUpView();
+	public static PatientListView getInstance() {
+		if (patListView == null) {
+			patListView = new PatientListView();
 		}
-		return appPopUpView;
+		return patListView;
 	}
 }
