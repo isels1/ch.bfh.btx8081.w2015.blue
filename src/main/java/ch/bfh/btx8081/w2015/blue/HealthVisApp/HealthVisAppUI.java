@@ -38,7 +38,8 @@ public class HealthVisAppUI extends UI {
         layout.setMargin(true);
         setContent(layout);
 
-        layout.addComponent(TabView.initTabView());
+        TabView tabView = TabView.getInstance();
+        layout.addComponent(tabView.getTabSheet());
     }
 
     @WebServlet(urlPatterns = "/*", name = "HealthVisAppUIServlet", asyncSupported = true)

@@ -13,13 +13,14 @@ public class TabView {
 	
 	final static float WIDTH= 315.0f;
 	final static float HEIGHT= 568.0f;
-	private static TabSheet tabSheet = null;
+	private static TabView tabView = null;
+	private TabSheet tabSheet;
 	
 	//================================================================================
     // Initialisation Section
     //================================================================================
 	
-	public static TabSheet initTabView()
+	private TabView()
 	{
         tabSheet = new TabSheet();
         tabSheet.setHeight(HEIGHT, Unit.PERCENTAGE);
@@ -29,13 +30,24 @@ public class TabView {
         
         //First Tab Calendar
         //Tab sheet need a Layout you can't add a calendar directly to the Tabsheet
-        VerticalLayout tabLayout = CalendarView.initCalendarView();
+        CalendarView cal = CalendarView.getInstance(); 
+        VerticalLayout tabLayout = cal.getCalendarView();
         
         tabSheet.addTab(tabLayout, "Calendar");
                 
         //Second Tab Patient
         tabSheet.addTab(new VerticalLayout(), "Patient");
-        
-        return tabSheet;
+       
+	}
+	
+	public static TabView getInstance() {
+		if (tabView == null) {
+			tabView = new TabView();
+		}
+		return tabView;
+	}
+	
+	public TabSheet getTabSheet (){
+		return tabSheet;
 	}
 }
