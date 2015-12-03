@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentEventProvider;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Button;
