@@ -212,6 +212,7 @@ New Task 11
 ################
 -dornt1 & isels1 add CalendarView
 	Design calendar and add appointment
+-hugil1, nosec1 write Classes for model
 	
 ################	
 #  26.11.2015  #
@@ -219,6 +220,9 @@ New Task 11
 zwahf1, isels1
 	create UIController for Appointments
 	add new Button to Calendar view
+-hugil1, nosec1 continue writing Classes,
+	javadoc. Start Tests.
+
 
 Bewertung Tasks
 ---------------
