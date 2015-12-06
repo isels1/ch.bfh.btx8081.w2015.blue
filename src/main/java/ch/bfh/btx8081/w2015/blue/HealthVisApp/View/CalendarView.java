@@ -7,6 +7,7 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 
+import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -18,6 +19,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.Calendar;
 import com.vaadin.ui.themes.ValoTheme;
 import com.vaadin.ui.Calendar.TimeFormat;
+import com.vaadin.ui.components.calendar.CalendarComponentEvents.DateClickEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
@@ -43,8 +45,13 @@ public class CalendarView {
 			
 			private static CalendarView calView = null;
 			private VerticalLayout calendarTab;
-			private Calendar cal = null;
+			private Calendar calendar = null;
 			
+			private Button b_MonthlyView;
+			private Button b_WeeklyView;
+			private Button b_DailyView;
+			private Button b_addApp;
+
 			HorizontalLayout headerLayout  = null;
 		//================================================================================
 	    // Constructor Section
@@ -61,21 +68,21 @@ public class CalendarView {
 			
 			//Fill the Calendar whit all existing Appointments
 			for(CalendarEvent i : appointmentProvider.getEvents(new Date(), new Date())) {
-				cal.addEvent(i);
+				calendar.addEvent(i);
 			}
 			
 			//Add Button for new Appointments
-			Button addApp = new Button("Add Apointment");
-			addApp.setWidth(CALWIDTH);
-			addApp.setIcon(FontAwesome.CALENDAR);
+			b_addApp = new Button("Add Apointment");
+			b_addApp.setWidth(CALWIDTH);
+			b_addApp.setIcon(FontAwesome.CALENDAR);
 	
-			addApp.addClickListener(new CalendarButtonClickHandler());
+			b_addApp.addClickListener(new CalendarButtonClickHandler());
 	        
 			//Add all Components of this View to the Vertical Layout
 	        calendarTab = new VerticalLayout();
 	        calendarTab.addComponent(headerLayout);
-	        calendarTab.addComponent(cal);
-	        calendarTab.addComponent(addApp);
+	        calendarTab.addComponent(calendar);
+	        calendarTab.addComponent(b_addApp);
 		}
 		//================================================================================
 	    // Public Methods
@@ -98,6 +105,90 @@ public class CalendarView {
 		public VerticalLayout getCalendarView(){	
 			return calendarTab;
 		}
+		/**
+		 * @return the b_MonthlyView
+		 */
+		public Button getB_MonthlyView() {
+			return b_MonthlyView;
+		}
+		/**
+		 * @return the b_WeeklyView
+		 */
+		public Button getB_WeeklyView() {
+			return b_WeeklyView;
+		}
+		/**
+		 * @return the b_DailyView
+		 */
+		public Button getB_DailyView() {
+			return b_DailyView;
+		}
+		/**
+		 * @return the b_addApp
+		 */
+		public Button getB_addApp() {
+			return b_addApp;
+		}
+		/**
+		 * set the view of the calendar to the actual Week
+		 * only show Monday to Friday
+		 * 
+		 * Problem the CSS file must be modified 
+		 */
+		//================================================================================
+	    // Methods to change the view (Monthly, Weekly and Daily)
+	    //================================================================================
+		public void changeToWeekly()
+		{
+			
+			// Change the date range to the current week
+	          GregorianCalendar weekstart = new GregorianCalendar();
+	          GregorianCalendar weekend   = new GregorianCalendar();
+
+	          weekstart.setFirstDayOfWeek(java.util.Calendar.SUNDAY);
+	          weekstart.set(java.util.Calendar.HOUR_OF_DAY, 6);
+	          weekstart.set(java.util.Calendar.DAY_OF_WEEK,
+	                       java.util.Calendar.FRIDAY);
+	          weekend.set(java.util.Calendar.HOUR_OF_DAY, 20);
+	          weekend.set(java.util.Calendar.DAY_OF_WEEK,
+	                       java.util.Calendar.MONDAY);
+	          calendar.setStartDate(weekstart.getTime());
+	          calendar.setEndDate(weekend.getTime());
+	          
+	          calendar.setFirstVisibleDayOfWeek(1);
+	          calendar.setLastVisibleDayOfWeek(5);
+			
+		}
+		/**
+		 * set the view of the calendar to the actual Day
+		 *
+		 */
+		public void changeToDaily()
+		{
+			calendar.setStartDate(new Date());
+			calendar.setEndDate(new Date());
+			
+			calendar.setFirstVisibleDayOfWeek(1);
+			calendar.setLastVisibleDayOfWeek(7);
+		}
+		/**
+		 * set the view of the calendar to the actual Month
+		 *
+		 * Problem the CSS file must be modified 
+		 */
+		public void changeToMonthly()
+		{
+
+			// Set start date to first date in this month
+			GregorianCalendar calStart = new GregorianCalendar();
+			calendar.setStartDate(calStart.getTime());
+
+			// Set end date to last day of this month
+			GregorianCalendar calEnd = new GregorianCalendar();
+			calEnd.set(java.util.Calendar.DATE, 1);
+			calEnd.roll(java.util.Calendar.DATE, -1);
+			calendar.setEndDate(calEnd.getTime());
+		}
 		//================================================================================
 	    // Private Methods
 	    //================================================================================
@@ -107,29 +198,26 @@ public class CalendarView {
 		private void initCalendar(){
 			CalendarEventProvider dataSource = new BasicEventProvider();
 	        
-	        cal = new Calendar(dataSource);
-	        cal.setWidth(CALWIDTH + "px");
-	        cal.setHeight(CALHEIGHT + "px");
+	        calendar = new Calendar(dataSource);
+	        calendar.setWidth(CALWIDTH + "px");
+	        calendar.setHeight(CALHEIGHT + "px");
 	        
 	        //show only 0600h to 2000h
-	        cal.setFirstVisibleHourOfDay(6);
-			cal.setLastVisibleHourOfDay(20);
+	        calendar.setFirstVisibleHourOfDay(6);
+			calendar.setLastVisibleHourOfDay(20);
 			
-			//show only Monday to Friday
-			// --IMPORTANT: do only if weekly view. Daily and Monthly like that is buggy as fu**
-			cal.setFirstVisibleDayOfWeek(1);
-			cal.setLastVisibleDayOfWeek(5);
 			
 			//German Language and time zone 
-			cal.setLocale(Locale.GERMAN);
-			cal.setTimeFormat(TimeFormat.Format24H);
-			cal.setTimeZone(TimeZone.getTimeZone("Europe/Zurich"));
+			calendar.setLocale(Locale.GERMAN);
+			calendar.setTimeFormat(TimeFormat.Format24H);
+			calendar.setTimeZone(TimeZone.getTimeZone("Europe/Zurich"));
 			//set Format to European standard
-			cal.setWeeklyCaptionFormat("dd.MM.yyyy");
+			calendar.setWeeklyCaptionFormat("dd.MM.yyyy");
 			
 			//show daily view of calendar
-			cal.setStartDate(new Date());
-			cal.setEndDate(new Date());
+			calendar.setStartDate(new Date());
+			calendar.setEndDate(new Date());
+			
 		}
 		/**
 		 * Create all Buttons and add it to a Horizontal Layout
@@ -138,16 +226,23 @@ public class CalendarView {
 			
 		headerLayout = new HorizontalLayout();
 		
-		Button b_MonthlyView = new Button("Month");
+		b_MonthlyView = new Button("Month");
 		b_MonthlyView.setWidth(BUTTONWIDTH);
-		Button b_WeeklyView = new Button("Week");
+		b_MonthlyView.addClickListener(new CalendarButtonClickHandler());
+		
+		b_WeeklyView = new Button("Week");
 		b_WeeklyView.setWidth(BUTTONWIDTH);
-		Button b_DailyView = new Button("Day");
+		b_WeeklyView.addClickListener(new CalendarButtonClickHandler());
+		
+		b_DailyView = new Button("Day");
 		b_DailyView.setWidth(BUTTONWIDTH);
+		b_DailyView.addClickListener(new CalendarButtonClickHandler());
 		
 		headerLayout.addComponent(b_MonthlyView);
 		headerLayout.addComponent(b_WeeklyView);
 		headerLayout.addComponent(b_DailyView);
 		}
+		
+		
 	}
 

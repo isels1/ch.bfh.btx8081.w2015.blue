@@ -126,20 +126,20 @@ public class DummyDataCreator {
 	private ArrayList<Patient> createPatients(){
 		ArrayList<Patient> pl = new ArrayList<Patient>();
 		
-		Address add1 = new Address('f', "Anna", "Meier", "Str1", 1, 3001, "City1", "CH");
-		Date bd1 = new Date();
-		Patient p1 = new Patient("Meier", "Anna", bd1, add1, "05678294", 1);
-		pl.add(p1);
-		
-		Address add2 = new Address('m', "Peter", "Müller", "Str2", 2, 3002, "City2", "CH");
-		Date bd2 = new Date();
-		Patient p2 = new Patient("Müller", "Peter", bd2, add2, "056767855", 2);
-		pl.add(p2);
-		
-		Address add3 = new Address('f', "Maria", "Keller", "Str3", 3, 3003, "City3", "CH");
-		Date bd3 = new Date();
-		Patient p3 = new Patient("Keller", "Maria", bd3, add3, "056787789", 3);
-		pl.add(p3);
+//		Address add1 = new Address('f', "Anna", "Meier", "Str1", 1, 3001, "City1", "CH");
+//		Date bd1 = new Date();
+//		Patient p1 = new Patient("Meier", "Anna", bd1, add1, "05678294", 1);
+//		pl.add(p1);
+//		
+//		Address add2 = new Address('m', "Peter", "Müller", "Str2", 2, 3002, "City2", "CH");
+//		Date bd2 = new Date();
+//		Patient p2 = new Patient("Müller", "Peter", bd2, add2, "056767855", 2);
+//		pl.add(p2);
+//		
+//		Address add3 = new Address('f', "Maria", "Keller", "Str3", 3, 3003, "City3", "CH");
+//		Date bd3 = new Date();
+//		Patient p3 = new Patient("Keller", "Maria", bd3, add3, "056787789", 3);
+//		pl.add(p3);
 		
 		
 		
