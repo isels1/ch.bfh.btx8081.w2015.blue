@@ -1,6 +1,9 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.Date;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+
 
 public class Patient extends Person {
 	
@@ -13,6 +16,7 @@ public class Patient extends Person {
 	private Treatment treatment;
 	private Appointment appointment;
 	private HealthVisitor healthvisitor;
+	private PatientState state;
 	
 	//================================================================================
     // Constructor Section
@@ -32,6 +36,7 @@ public class Patient extends Person {
 		this.treatment = treatment;
 		this.appointment = appointment;
 		this.healthvisitor = healthvisitor;
+		this.state = new PatientStateNew();
 	}
 
 	//================================================================================
@@ -72,6 +77,10 @@ public class Patient extends Person {
 	public void setHealthvisitor(HealthVisitor healthvisitor) {
 		this.healthvisitor = healthvisitor;
 	}
+	
+	public void setPatientState(PatientState state){
+		this.state = state;
+	}
 
 	//================================================================================
     // Getter Section
@@ -110,6 +119,10 @@ public class Patient extends Person {
 	 */
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;
+	}
+	
+	public PatientState getPatientState(){
+		return state;
 	}
 
 }

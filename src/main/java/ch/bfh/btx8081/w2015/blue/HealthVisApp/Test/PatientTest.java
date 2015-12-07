@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 

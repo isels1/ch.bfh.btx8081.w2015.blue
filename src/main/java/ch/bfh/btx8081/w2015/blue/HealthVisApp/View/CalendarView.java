@@ -4,25 +4,22 @@ import java.util.Date;
 
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.VerticalLayout;
 
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.UIController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Calendar;
-import com.vaadin.ui.themes.ValoTheme;
 import com.vaadin.ui.Calendar.TimeFormat;
-import com.vaadin.ui.components.calendar.CalendarComponentEvents.DateClickEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
+
 /**
  * This class Crates a Vertical Layout for the Calendar View
  * 
@@ -52,7 +49,7 @@ public class CalendarView {
 			private Button b_DailyView;
 			private Button b_addApp;
 
-			HorizontalLayout headerLayout  = null;
+		
 		//================================================================================
 	    // Constructor Section
 	    //================================================================================
@@ -87,6 +84,7 @@ public class CalendarView {
 		//================================================================================
 	    // Public Methods
 	    //================================================================================
+	
 		/**
 		 * This Methode Creates and Instance of the CalendarView Class if it not already exists
 		 * @return A instance of the CalendarView class
@@ -98,6 +96,7 @@ public class CalendarView {
 			}
 			return calView;
 		}
+		
 		/**
 		 * 
 		 * @return the Calendar Object of the CalendarView class in a Vertical Layout
@@ -105,63 +104,45 @@ public class CalendarView {
 		public VerticalLayout getCalendarView(){	
 			return calendarTab;
 		}
+		
 		/**
 		 * @return the b_MonthlyView
 		 */
 		public Button getB_MonthlyView() {
 			return b_MonthlyView;
 		}
+		
 		/**
 		 * @return the b_WeeklyView
 		 */
 		public Button getB_WeeklyView() {
 			return b_WeeklyView;
 		}
+		
 		/**
 		 * @return the b_DailyView
 		 */
 		public Button getB_DailyView() {
 			return b_DailyView;
 		}
+		
 		/**
 		 * @return the b_addApp
 		 */
 		public Button getB_addApp() {
 			return b_addApp;
 		}
-		/**
-		 * set the view of the calendar to the actual Week
-		 * only show Monday to Friday
-		 * 
-		 * Problem the CSS file must be modified 
-		 */
+		
 		//================================================================================
 	    // Methods to change the view (Monthly, Weekly and Daily)
 	    //================================================================================
-		public void changeToWeekly()
-		{
-			
-			// Change the date range to the current week
-	          GregorianCalendar weekstart = new GregorianCalendar();
-	          GregorianCalendar weekend   = new GregorianCalendar();
-
-	          weekstart.setFirstDayOfWeek(java.util.Calendar.SUNDAY);
-	          weekstart.set(java.util.Calendar.HOUR_OF_DAY, 0);
-	          weekstart.set(java.util.Calendar.DAY_OF_WEEK,
-	                       java.util.Calendar.SUNDAY);
-	          weekend.set(java.util.Calendar.HOUR_OF_DAY, 23);
-	          weekend.set(java.util.Calendar.DAY_OF_WEEK,
-	                       java.util.Calendar.SATURDAY);
-	          calendar.setStartDate(weekstart.getTime());
-	          calendar.setEndDate(weekend.getTime());
-	          
-	          calendar.setFirstVisibleDayOfWeek(2);
-	          calendar.setLastVisibleDayOfWeek(6);
-			
-		}
+		//4-TIM:
+		//
+//		.HealthVisAppTheme.v-app, .HealthVisAppTheme.v-app-loading { font-size: 12px; }
+//		.HealthVisAppTheme .v-calendar-header-day { font-size: 8px; }
+		
 		/**
-		 * set the view of the calendar to the actual Day
-		 *
+		 * Set the view of the calendar to the actual Day
 		 */
 		public void changeToDaily()
 		{
@@ -171,8 +152,37 @@ public class CalendarView {
 			calendar.setFirstVisibleDayOfWeek(1);
 			calendar.setLastVisibleDayOfWeek(7);
 		}
+		
 		/**
-		 * set the view of the calendar to the actual Month
+		 * Set the view of the calendar to the actual Week
+		 * only show Monday to Friday
+		 * 
+		 * Problem the CSS file must be modified 
+		 */
+		public void changeToWeekly()
+		{
+			
+			// Change the date range to the current week
+			GregorianCalendar weekstart = new GregorianCalendar();
+			GregorianCalendar weekend   = new GregorianCalendar();
+			
+			weekstart.setFirstDayOfWeek(java.util.Calendar.SUNDAY);
+			weekstart.set(java.util.Calendar.HOUR_OF_DAY, 0);
+			weekstart.set(java.util.Calendar.DAY_OF_WEEK,
+			               java.util.Calendar.SUNDAY);
+			weekend.set(java.util.Calendar.HOUR_OF_DAY, 23);
+			weekend.set(java.util.Calendar.DAY_OF_WEEK,
+			               java.util.Calendar.SATURDAY);
+			calendar.setStartDate(weekstart.getTime());
+			calendar.setEndDate(weekend.getTime());
+			  
+			calendar.setFirstVisibleDayOfWeek(1);
+			calendar.setLastVisibleDayOfWeek(5);
+			
+		}
+		
+		/**
+		 * Set the view of the calendar to the actual Month
 		 *
 		 * Problem the CSS file must be modified 
 		 */
@@ -191,9 +201,11 @@ public class CalendarView {
 			calEnd.roll(java.util.Calendar.DATE, -1);
 			calendar.setEndDate(calEnd.getTime());
 		}
+		
 		//================================================================================
 	    // Private Methods
 	    //================================================================================
+		
 		/**
 		 * Init the Calendar 
 		 */
@@ -217,28 +229,29 @@ public class CalendarView {
 			
 			changeToDaily();
 		}
+		
 		/**
 		 * Create all Buttons and add it to a Horizontal Layout
 		 */
 		private void initHeaderLayout(){
 			
-		headerLayout = new HorizontalLayout();
-		
-		b_MonthlyView = new Button("Month");
-		b_MonthlyView.setWidth(BUTTONWIDTH);
-		b_MonthlyView.addClickListener(new CalendarButtonClickHandler());
-		
-		b_WeeklyView = new Button("Week");
-		b_WeeklyView.setWidth(BUTTONWIDTH);
-		b_WeeklyView.addClickListener(new CalendarButtonClickHandler());
-		
-		b_DailyView = new Button("Day");
-		b_DailyView.setWidth(BUTTONWIDTH);
-		b_DailyView.addClickListener(new CalendarButtonClickHandler());
-		
-		headerLayout.addComponent(b_MonthlyView);
-		headerLayout.addComponent(b_WeeklyView);
-		headerLayout.addComponent(b_DailyView);
+			headerLayout = new HorizontalLayout();
+			
+			b_MonthlyView = new Button("Month");
+			b_MonthlyView.setWidth(BUTTONWIDTH);
+			b_MonthlyView.addClickListener(new CalendarButtonClickHandler());
+			
+			b_WeeklyView = new Button("Week");
+			b_WeeklyView.setWidth(BUTTONWIDTH);
+			b_WeeklyView.addClickListener(new CalendarButtonClickHandler());
+			
+			b_DailyView = new Button("Day");
+			b_DailyView.setWidth(BUTTONWIDTH);
+			b_DailyView.addClickListener(new CalendarButtonClickHandler());
+			
+			headerLayout.addComponent(b_MonthlyView);
+			headerLayout.addComponent(b_WeeklyView);
+			headerLayout.addComponent(b_DailyView);
 		}
 		
 		

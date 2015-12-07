@@ -23,16 +23,14 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
 		//IMPLEMENT ADD APPOINTMENT POPUP
 		CalendarView calView = CalendarView.getInstance();
 		
-		if(calView.getB_DailyView() == event.getSource()){
-			calView.changeToDaily();
+		if(calView.getB_DailyView() == event.getSource() ||
+				calView.getB_MonthlyView() == event.getSource() ||
+				calView.getB_WeeklyView() == event.getSource()){
+			
+			uiController.changeCalendarViewController(event);
 		}
-		if(calView.getB_MonthlyView() == event.getSource()){
-			calView.changeToMonthly();
-		}
-		if(calView.getB_WeeklyView() == event.getSource()){
-			calView.changeToWeekly();
-		}
-		if(calView.getB_addApp() == event.getSource()){
+		
+		if(calView.getB_addApp() != event.getSource()){
 			
 		}
 	}

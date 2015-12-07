@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
@@ -31,7 +31,7 @@ public class CalendarTest {
 		Appointment a = new Appointment();
 		Appointment b = new Appointment();
 		Appointment c = new Appointment();
-		Appointment d = new Appointment();
+//		Appointment d = new Appointment();
 		ArrayList<Appointment> appList = new ArrayList<Appointment>();
 		appList.add(b);
 		appList.add(c);

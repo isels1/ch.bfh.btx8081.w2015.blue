@@ -1,13 +1,12 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Date;
 
 import org.junit.Test;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Person;
 
 public class PersonTest {

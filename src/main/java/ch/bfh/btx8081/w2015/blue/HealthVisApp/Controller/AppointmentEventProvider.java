@@ -50,5 +50,4 @@ public class AppointmentEventProvider implements CalendarEventProvider {
 		
 		return events;
 	}
-
 }
