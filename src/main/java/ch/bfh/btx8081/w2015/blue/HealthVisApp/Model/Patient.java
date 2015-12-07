@@ -17,6 +17,12 @@ public class Patient extends Person {
 	//================================================================================
     // Constructor Section
     //================================================================================
+	public Patient(String name, String firstName, Date birthdate,
+			Address address, String phone, int id) {
+		super(name, firstName, birthdate, address, phone);
+		this.id = id;
+	}
+	
 	
 	public Patient(String name, String firstName, Date birthdate,
 			Address address, String phone, int id, Note comment, Treatment treatment, Appointment appointment, HealthVisitor healthvisitor) {
