@@ -38,7 +38,7 @@ public class CalendarView {
 		//================================================================================
 	    // CalendarView Data
 	    //================================================================================
-			final static String CALWIDTH = "282";
+			final static String CALWIDTH = "285";
 			final static String CALHEIGHT= "410";
 			
 			final static String BUTTONWIDTH = "94";
@@ -155,8 +155,8 @@ public class CalendarView {
 	          calendar.setStartDate(weekstart.getTime());
 	          calendar.setEndDate(weekend.getTime());
 	          
-	          calendar.setFirstVisibleDayOfWeek(1);
-	          calendar.setLastVisibleDayOfWeek(5);
+	          calendar.setFirstVisibleDayOfWeek(2);
+	          calendar.setLastVisibleDayOfWeek(6);
 			
 		}
 		/**
@@ -178,6 +178,8 @@ public class CalendarView {
 		 */
 		public void changeToMonthly()
 		{
+			calendar.setFirstVisibleDayOfWeek(1);
+			calendar.setLastVisibleDayOfWeek(7);
 
 			// Set start date to first date in this month
 			GregorianCalendar calStart = new GregorianCalendar();
@@ -206,18 +208,14 @@ public class CalendarView {
 	        calendar.setFirstVisibleHourOfDay(6);
 			calendar.setLastVisibleHourOfDay(20);
 			
-			
 			//German Language and time zone 
-			calendar.setLocale(Locale.GERMAN);
+			calendar.setLocale(new Locale("en", "US"));
 			calendar.setTimeFormat(TimeFormat.Format24H);
 			calendar.setTimeZone(TimeZone.getTimeZone("Europe/Zurich"));
 			//set Format to European standard
 			calendar.setWeeklyCaptionFormat("dd.MM.yyyy");
 			
-			//show daily view of calendar
-			calendar.setStartDate(new Date());
-			calendar.setEndDate(new Date());
-			
+			changeToDaily();
 		}
 		/**
 		 * Create all Buttons and add it to a Horizontal Layout
