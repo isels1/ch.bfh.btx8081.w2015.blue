@@ -288,6 +288,12 @@ isels1 nosec1 hügil1
 ################	
 #  06.12.2015  #
 ################
+nosec1
+	create Patient dummy data
+
+################	
+#  06.12.2015  #
+################
 dornt1
 	add Buttons to change the CalenarView
 	add Methods to change the CalendarView
