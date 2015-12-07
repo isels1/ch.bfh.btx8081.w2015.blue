@@ -292,6 +292,18 @@ dornt1
 	add Buttons to change the CalenarView
 	add Methods to change the CalendarView
 	
+################	
+#  07.12.2015  #
+################
+daily scrum
+	calendar view überarbeitet
+	add states
+	add popup classes
+	show new 24 hour
+	
+zwahf1
+	adapt class address to new constructor
+	adapt dummydata for patient on new address
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
