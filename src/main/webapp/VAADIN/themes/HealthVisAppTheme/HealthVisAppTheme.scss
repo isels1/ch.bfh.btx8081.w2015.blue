@@ -32,5 +32,6 @@
 @mixin HealthVisAppTheme {
   @include valo;
 
-  // Insert your own theme rules here
+  .HealthVisAppTheme.v-app, .HealthVisAppTheme.v-app-loading { font-size: 12px; }
+	.HealthVisAppTheme .v-calendar-header-day { font-size: 8px; }
 }
