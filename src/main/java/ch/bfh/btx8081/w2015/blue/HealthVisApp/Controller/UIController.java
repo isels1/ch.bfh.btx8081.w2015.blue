@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
 import com.vaadin.ui.Button.ClickEvent;
@@ -42,7 +43,16 @@ public class UIController {
 		}
 	}
 	
-	public void getAppointmentPopUp() {
+	public AppointmentPopUpView getAppointmentPopUp() {
+		AppointmentPopUpView appView;
+		return appView = new AppointmentPopUpView();
+	}
+	
+	public void saveAppointment() {
+		
+	}
+	
+	public void closeAppointmentPopUp() {
 		
 	}
 }

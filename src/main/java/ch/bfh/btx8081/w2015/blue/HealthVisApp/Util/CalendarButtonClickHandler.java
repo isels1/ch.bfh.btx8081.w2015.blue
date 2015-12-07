@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.UIController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
 import com.vaadin.ui.Button;
@@ -12,6 +13,7 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
     // Handler Data
     //================================================================================
 	
+	private AppointmentPopUpView appointment = null;
 	private UIController uiController = UIController.getInstance();
 	
 	//================================================================================
@@ -20,7 +22,6 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
 	
 	@Override
 	public void buttonClick(ClickEvent event) {
-		//IMPLEMENT ADD APPOINTMENT POPUP
 		CalendarView calView = CalendarView.getInstance();
 		
 		if(calView.getB_DailyView() == event.getSource() ||
@@ -31,7 +32,15 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
 		}
 		
 		if(calView.getB_addApp() == event.getSource()){
-			uiController.getAppointmentPopUp();
+			appointment = uiController.getAppointmentPopUp();
+		}
+		
+		if(appointment.getButtonSave() == event.getSource()) {
+			//Save strings from fields
+		}
+		
+		if(appointment.getButtonCancel() == event.getSource()) {
+			//Close PopUpView
 		}
 	}
 }
