@@ -43,6 +43,7 @@ public class CalendarView {
 			private static CalendarView calView = null;
 			private VerticalLayout calendarTab;
 			private Calendar calendar = null;
+			private HorizontalLayout headerLayout = null;
 			
 			private Button b_MonthlyView;
 			private Button b_WeeklyView;
