@@ -17,27 +17,6 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * 	<ul>
  * 		<li>
  * 			<font face="courier new">
- * 				aGender:
- * 			</font>
- * 			<i>char</i>
- * 			- The gender of the person as m or w
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				aName:
- * 			</font> 
- * 			<i>String</i>
- * 			- The name of the person
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				aSurname:
- * 			</font>
- * 			<i>String</i>
- * 			- The surname of the person
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
  * 				aStreet:
  * 			</font> 
  * 			<i>String</i>
@@ -52,10 +31,10 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * 		</li>
  * 		<li>
  * 			<font face="courier new">
- * 				aPlz:
+ * 				aZIP:
  * 			</font> 
  * 			<i>integer</i>
- * 			- The plz of the city
+ * 			- The ZIP of the city
  * 		</li>
  * 		<li>
  * 			<font face="courier new">
@@ -64,40 +43,10 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * 			<i>String</i>
  * 			- The name of the city where the person lives in
  * 		</li>
- *		<li>
- *			<font face="courier new">
- *				aCountry:
- * 			</font> 
- * 			<i>String</i>
- * 			- The name of the country
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				aTel:
- * 			</font> 
- * 			<i>String</i>
- * 			- The phone number
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				aMobile:
- * 			</font> 
- * 			<i>String</i>
- * 			- The mobile phone number
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				aFax:
- * 			</font> 
- * 			<i>String</i>
- * 			- The fax number
- * 		</li>
  *	 </ul>
  * <br>
  * To create a new address you need necessary at least following informations:
  * 	<ul>
- * 		<li>aGender</li>
- * 		<li>aSurname</li>
  * 		<li>aStreet</li>
  * 		<li>aStreetNr</li>
  * 		<li>aPlz</li>
@@ -109,10 +58,10 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * </b>
  * <br>
  * <span style="margin-left:60px;">
- * 		30.09.2014
+ * 		07.12.2015
  * </span>
  * <br><br>
- * @author Stefan Iseli
+ * @author isels1, zwahf1
  * @version 1.0
  */
 public class Address {
@@ -121,17 +70,10 @@ public class Address {
     // Address Data
     //================================================================================
 
-	private char aGender;
-	private String aName;
-	private String aSurname;
 	private String aStreet;
 	private int aStreetNr;
-	private int aPlz;
+	private int aZIP;
 	private String aCity;
-	private String aCountry;
-	private String aTel;
-	private String aMobile;
-	private String aFax;
 	
 	//================================================================================
     // Constructor
@@ -150,129 +92,27 @@ public class Address {
 	 * This constructor initialize the address with the necessary information
 	 * <br>
 	 * <br>
-	 * @param gender The gender of the person /char
-	 * @param surname The surname of the person /string
 	 * @param street The street name /string
 	 * @param streetNr The house number /integer
-	 * @param plz The plz of the city /integer
+	 * @param zip The ZIP of the city /integer
 	 * @param city The city in which the person lives in /string
 	 */
-	public Address(char gender, 
-			String surname, 
+	public Address( 
 			String street, 
 			int streetNr, 
-			int plz, 
+			int zip, 
 			String city) {
 
-		setGender(gender);
-		setSurname(surname);
 		setStreet(street);
 		setStreetNr(streetNr);
-		setPlz(plz);
+		setZIP(zip);
 		setCity(city);
-	}
-	
-	/**
-	 * This constructor initialize the address with additional information
-	 * <br>
-	 * <br>
-	 * @param gender The gender of the person /char
-	 * @param name The surname of the person /string
-	 * @param surname The surname of the person /string
-	 * @param street The street name /string
-	 * @param streetNr The house number /integer
-	 * @param plz The plz of the city /integer
-	 * @param city The city in which the person lives in /string
-	 * @param country The city in which the person lives in /string
-	 */
-	public Address(char gender, 
-			String name,
-			String surname, 
-			String street, 
-			int streetNr, 
-			int plz, 
-			String city,
-			String country) {
-		
-		setGender(gender);
-		setName(name);
-		setSurname(surname);
-		setStreet(street);
-		setStreetNr(streetNr);
-		setPlz(plz);
-		setCity(city);
-		setCountry(country);
-	}
-	
-	/**
-	 * This constructor initialize the address with full information
-	 * <br>
-	 * <br>
-	 * @param gender The gender of the person /char
-	 * @param name The surname of the person /string
-	 * @param surname The surname of the person /string
-	 * @param street The street name /string
-	 * @param streetNr The house number /integer
-	 * @param plz The plz of the city /integer
-	 * @param city The city in which the person lives in /string
-	 * @param country The city in which the person lives in /string
-	 * @param tel The phone number /String
-	 * @param mobile The mobile phone number /String
-	 * @param fax The fax number /String
-	 */
-	public Address(char gender, 
-			String name,
-			String surname, 
-			String street, 
-			int streetNr, 
-			int plz, 
-			String city,
-			String country,
-			String tel,
-			String mobile,
-			String fax) {
-		
-		setGender(gender);
-		setName(name);
-		setSurname(surname);
-		setStreet(street);
-		setStreetNr(streetNr);
-		setPlz(plz);
-		setCity(city);
-		setCountry(country);
-		setTel(tel);
-		setMobile(mobile);
-		setFax(fax);
 	}
 	
 	//================================================================================
     // Setter Section
     //================================================================================
-	
-	/**
-	 * Setter for the gender
-	 * @param gender The gender of a person (m = 0/w = 1) /char
-	 */
-	public void setGender(char gender) {
-		aGender = gender;
-	}
-	
-	/**
-	 * Setter for the name
-	 * @param name The name of a person /string
-	 */
-	public void setName(String name) {
-		aName = name;
-	}
-	
-	/**
-	 * Setter for the surname
-	 * @param surname The surname of a person /string
-	 */
-	public void setSurname(String surname) {
-		aSurname = surname;
-	}
-	
+
 	/**
 	 * Setter for the street
 	 * @param street The street /string
@@ -290,11 +130,11 @@ public class Address {
 	}
 	
 	/**
-	 * Setter for the plz
-	 * @param plz The plz of the city /integer
+	 * Setter for the ZIP
+	 * @param zip The ZIP of the city /integer
 	 */
-	public void setPlz(int plz) {
-		aPlz = plz;
+	public void setZIP(int zip) {
+		aZIP = zip;
 	}
 	
 	/**
@@ -305,66 +145,10 @@ public class Address {
 		aCity = city;
 	}
 	
-	/**
-	 * The setter for the country
-	 * @param country The name of the country /string
-	 */
-	public void setCountry(String country) {
-		aCountry = country;
-	}
-	
-	/**
-	 * The setter for the phone number
-	 * @param tel The phone number /String
-	 */
-	public void setTel(String tel) {
-		aTel = tel;
-	}
-	
-	/**
-	 * The setter for the mobile phone number
-	 * @param mobile The mobile phone number /String
-	 */
-	public void setMobile(String mobile) {
-		aMobile = mobile;
-	}
-	
-	/**
-	 * The setter for the fax number
-	 * @param fax The fax number /String
-	 */
-	public void setFax(String fax) {
-		aFax = fax;
-	}
-	
 	//================================================================================
     // Getter Section
     //================================================================================
-	
-	/**
-	 * The getter of the gender
-	 * @return Gender (m = 0/w = 1): char
-	 */
-	public char getGender() {
-		return aGender;
-	}
-	
-	/**
-	 * The getter of the name
-	 * @return Name: string
-	 */
-	public String getName() {
-		return aName;
-	}
-	
-	/**
-	 * The getter of the surname
-	 * @return Surname: string
-	 */
-	public String getSurname() {
-		return aSurname;
-	}
-	
+
 	/**
 	 * The getter of the street
 	 * @return Street: string
@@ -382,11 +166,11 @@ public class Address {
 	}
 	
 	/**
-	 * The getter of the plz
+	 * The getter of the ZIP
 	 * @return PLZ: integer
 	 */
-	public int getPlz() {
-		return aPlz;
+	public int getZIP() {
+		return aZIP;
 	}
 	
 	/**
@@ -395,37 +179,5 @@ public class Address {
 	 */
 	public String getCity() {
 		return aCity;
-	}
-	
-	/**
-	 * The getter of the country
-	 * @return Country: string
-	 */
-	public String getCountry() {
-		return aCountry;
-	}
-	
-	/**
-	 * The getter of the phone number
-	 * @return Telephone: String
-	 */
-	public String getTel() {
-		return aTel;
-	}
-	
-	/**
-	 * The getter of the mobile phone number
-	 * @return Mobile: String
-	 */
-	public String getMobile() {
-		return aMobile;
-	}
-	
-	/**
-	 * The getter of the fax number
-	 * @return Fax: String
-	 */
-	public String getFax() {
-		return aFax;
 	}
 }
