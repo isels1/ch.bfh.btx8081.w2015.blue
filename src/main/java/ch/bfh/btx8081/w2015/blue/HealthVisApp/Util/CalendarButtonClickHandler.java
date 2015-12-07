@@ -30,8 +30,8 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
 			uiController.changeCalendarViewController(event);
 		}
 		
-		if(calView.getB_addApp() != event.getSource()){
-			
+		if(calView.getB_addApp() == event.getSource()){
+			uiController.getAppointmentPopUp();
 		}
 	}
 }

@@ -42,4 +42,7 @@ public class UIController {
 		}
 	}
 	
+	public void getAppointmentPopUp() {
+		
+	}
 }
