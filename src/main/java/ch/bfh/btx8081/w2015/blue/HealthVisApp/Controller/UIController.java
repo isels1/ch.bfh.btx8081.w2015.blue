@@ -43,16 +43,20 @@ public class UIController {
 		}
 	}
 	
-	public AppointmentPopUpView getAppointmentPopUp() {
-		AppointmentPopUpView appView;
-		return appView = new AppointmentPopUpView();
+	public void getAppointmentPopUp() {
+		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
 	}
 	
 	public void saveAppointment() {
-		
+		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
+		String patient = appView.getTextFieldPatient();
+//		Date date = (Date) appView.getTextFieldDate();
+		appView.getTextFieldFrom();
+		appView.getTextFieldTo();
+		appView.getTextFieldComent();
 	}
 	
 	public void closeAppointmentPopUp() {
-		
+		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
 	}
 }

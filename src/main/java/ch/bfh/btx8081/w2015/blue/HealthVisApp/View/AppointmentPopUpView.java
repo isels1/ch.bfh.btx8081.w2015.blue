@@ -18,13 +18,8 @@ public class AppointmentPopUpView {
 	final static String COMPHEIGHT = "92";
 	final static String COMPWIDTH = "155";
 	
+	private static AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
-	HorizontalLayout layPat = null;
-	HorizontalLayout layDate = null;
-	HorizontalLayout layFrom = null;
-	HorizontalLayout layTo = null;
-	HorizontalLayout layCom = null;
-	HorizontalLayout layBut = null;
 	
 	Label labPat;
 	Label labDate;
@@ -45,7 +40,7 @@ public class AppointmentPopUpView {
     // Constructor Section
     //================================================================================
 	
-	public AppointmentPopUpView() {
+	private AppointmentPopUpView() {
 		
 		//create window
 		final Window window = new Window("Add new appointment");
@@ -65,22 +60,22 @@ public class AppointmentPopUpView {
 		
 		VerticalLayout layAll = new VerticalLayout();
 		
-		layPat = new HorizontalLayout();
+		HorizontalLayout layPat = new HorizontalLayout();
 		layPat.setHeight(COMPHEIGHT);
 		
-		layDate = new HorizontalLayout();
+		HorizontalLayout layDate = new HorizontalLayout();
 		layDate.setHeight(COMPHEIGHT);
 		
-		layFrom = new HorizontalLayout();
+		HorizontalLayout layFrom = new HorizontalLayout();
 		layFrom.setHeight(COMPHEIGHT);
 		
-		layTo = new HorizontalLayout();
+		HorizontalLayout layTo = new HorizontalLayout();
 		layTo.setHeight(COMPHEIGHT);
 		
-		layCom = new HorizontalLayout();
+		HorizontalLayout layCom = new HorizontalLayout();
 		layCom.setHeight(COMPHEIGHT);
 		
-		layBut = new HorizontalLayout();
+		HorizontalLayout layBut = new HorizontalLayout();
 		
 	    labPat = new Label("Patient");
 //	    labPat.setHeight(COMPHEIGHT);
@@ -158,6 +153,13 @@ public class AppointmentPopUpView {
 	    layAll.addComponent(layBut);
 	    
 		return layAll;
+	}
+	
+	public static AppointmentPopUpView getInstance() {
+		if (appView == null) {
+			appView = new AppointmentPopUpView();
+		}
+		return appView;
 	}
 	
 	public VerticalLayout getPopUpLayout() {
