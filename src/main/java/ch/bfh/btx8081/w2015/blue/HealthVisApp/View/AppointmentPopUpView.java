@@ -7,6 +7,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
@@ -31,7 +32,8 @@ public class AppointmentPopUpView {
 	TextField tfDate;
 	TextField tfFrom;
 	TextField tfTo;
-	TextField tfCom;
+	
+	TextArea tfCom;
 	
 	Button butSave;
 	Button butCancel;
@@ -113,7 +115,7 @@ public class AppointmentPopUpView {
 //	    tfTo.setHeight(COMPHEIGHT);
 	    tfTo.setWidth(COMPWIDTH);
 	    
-	    tfCom = new TextField();
+	    tfCom = new TextArea();
 	    tfCom.setHeight(COMPHEIGHT);
 	    tfCom.setWidth(COMPWIDTH);
 	    
