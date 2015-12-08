@@ -218,9 +218,9 @@ public class CalendarView {
 	        calendar.setWidth(CALWIDTH + "px");
 	        calendar.setHeight(CALHEIGHT + "px");
 	        
-	        //show only 0600h to 2000h
-	        calendar.setFirstVisibleHourOfDay(6);
-			calendar.setLastVisibleHourOfDay(20);
+	        //show only 0600h to 2000h	//Not in use because when appointments between not visible range the view is buggy
+	        //calendar.setFirstVisibleHourOfDay(6);
+			//calendar.setLastVisibleHourOfDay(20);
 			
 			//German Language and time zone 
 			calendar.setLocale(new Locale("en", "US"));
