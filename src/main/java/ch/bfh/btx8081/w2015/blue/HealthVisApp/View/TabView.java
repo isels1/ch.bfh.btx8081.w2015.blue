@@ -40,7 +40,7 @@ public class TabView {
         //Second Tab Patient
         tabSheet.addTab(new VerticalLayout(), " Patient List ");
         tabSheet.getTab(0).setIcon(FontAwesome.CALENDAR);
-        tabSheet.getTab(1).setIcon(FontAwesome.USER);
+        tabSheet.getTab(1).setIcon(FontAwesome.USERS);
 	}
 	/**
 	 * this Methode creates a Instance of the Tabview class if it not already exist
