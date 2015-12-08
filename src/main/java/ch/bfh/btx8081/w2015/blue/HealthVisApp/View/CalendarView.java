@@ -177,8 +177,8 @@ public class CalendarView {
 			calendar.setStartDate(weekstart.getTime());
 			calendar.setEndDate(weekend.getTime());
 			  
-			calendar.setFirstVisibleDayOfWeek(1);
-			calendar.setLastVisibleDayOfWeek(5);
+			calendar.setFirstVisibleDayOfWeek(2);
+			calendar.setLastVisibleDayOfWeek(6);
 			
 		}
 		
