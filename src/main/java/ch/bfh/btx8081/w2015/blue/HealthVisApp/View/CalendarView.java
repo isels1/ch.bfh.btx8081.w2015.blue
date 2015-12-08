@@ -35,7 +35,7 @@ public class CalendarView {
 		//================================================================================
 	    // CalendarView Data
 	    //================================================================================
-			final static String CALWIDTH = "285";
+			final static String CALWIDTH = "282";
 			final static String CALHEIGHT= "410";
 			
 			final static String BUTTONWIDTH = "94";
