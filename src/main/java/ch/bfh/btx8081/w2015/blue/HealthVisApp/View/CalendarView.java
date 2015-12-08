@@ -214,6 +214,7 @@ public class CalendarView {
 			CalendarEventProvider dataSource = new BasicEventProvider();
 	        
 	        calendar = new Calendar(dataSource);
+	        calendar.setStyleName("HealthVisAppTheme");
 	        calendar.setWidth(CALWIDTH + "px");
 	        calendar.setHeight(CALHEIGHT + "px");
 	        
