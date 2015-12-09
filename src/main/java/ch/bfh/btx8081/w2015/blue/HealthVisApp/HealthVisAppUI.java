@@ -15,6 +15,7 @@ import com.vaadin.ui.VerticalLayout;
 /**
  *
  */
+@SuppressWarnings("serial")
 @Theme("HealthVisAppTheme")
 @Widgetset("ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppWidgetset")
 public class HealthVisAppUI extends UI {
@@ -34,7 +35,8 @@ public class HealthVisAppUI extends UI {
         final VerticalLayout layout = new VerticalLayout();
         layout.setHeight(HEIGHT);
         layout.setWidth(WIDTH);
-        layout.setMargin(true);
+        layout.setMargin(false);
+        layout.setSpacing(false);
         setContent(layout);
         
         TabView tabView = TabView.getInstance();
