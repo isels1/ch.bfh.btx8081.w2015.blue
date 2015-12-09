@@ -12,8 +12,8 @@ public class TabView {
     // TabView Data
     //================================================================================
 	
-	final static String WIDTH= "310";
-	final static String HEIGHT= "555";
+	final static String WIDTH= "320";
+	final static String HEIGHT= "568";
 	private static TabView tabView = null;
 	private TabSheet tabSheet;
 	
