@@ -35,10 +35,10 @@ public class CalendarView {
 		//================================================================================
 	    // CalendarView Data
 	    //================================================================================
-			final static String CALWIDTH = "282";
-			final static String CALHEIGHT= "410";
+			final static String CALWIDTH = "318";
+			final static String CALHEIGHT= "449";
 			
-			final static String BUTTONWIDTH = "94";
+			final static String BUTTONWIDTH = "106";
 			
 			private static CalendarView calView = null;
 			private VerticalLayout calendarTab;
@@ -189,8 +189,8 @@ public class CalendarView {
 		 */
 		public void changeToMonthly()
 		{
-			calendar.setFirstVisibleDayOfWeek(1);
-			calendar.setLastVisibleDayOfWeek(7);
+			calendar.setFirstVisibleDayOfWeek(2);
+			calendar.setLastVisibleDayOfWeek(6);
 
 			// Set start date to first date in this month
 			GregorianCalendar calStart = new GregorianCalendar();
