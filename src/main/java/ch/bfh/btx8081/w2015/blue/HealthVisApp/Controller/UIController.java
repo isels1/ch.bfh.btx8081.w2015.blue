@@ -1,6 +1,8 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
@@ -50,9 +52,10 @@ public class UIController {
 	
 	public void saveAppointment() {
 		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
-//		 = appView.getTextFieldPatient();
+		Patient pat = SearchHandler.searchPatient(appView.getTextFieldPatient());
+		
 //		DummyDataCreator.getInstance().getHealthVisitor().getCalendar().
-//			newAppointment(startTime, endTime, location, patient, );
+//			newAppointment(startTime, endTime, location, pat);
 //		Date date = (Date) appView.getTextFieldDate();
 		appView.getTextFieldFrom();
 		appView.getTextFieldTo();

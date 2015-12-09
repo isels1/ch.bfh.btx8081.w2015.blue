@@ -16,20 +16,22 @@ public class AppointmentPopUpView {
 	
 	final static String HEIGHT = TabView.HEIGHT;
 	final static String WIDTH = TabView.WIDTH;
-	final static String COMPHEIGHT = "92";
-	final static String COMPWIDTH = "155";
+	final static String COMPHEIGHT = "81";				//568 / 7
+	final static String COMPWIDTH = "160";				//320 / 2
 	
 	private static AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
 	
 	Label labPat;
 	Label labDate;
+	Label labLoc;
 	Label labFrom;
 	Label labTo;
 	Label labCom;
 	
 	TextField tfPat;
 	TextField tfDate;
+	TextField tfLoc;
 	TextField tfFrom;
 	TextField tfTo;
 	
@@ -68,6 +70,9 @@ public class AppointmentPopUpView {
 		HorizontalLayout layDate = new HorizontalLayout();
 		layDate.setHeight(COMPHEIGHT);
 		
+		HorizontalLayout layLoc = new HorizontalLayout();
+		layLoc.setHeight(COMPHEIGHT);
+		
 		HorizontalLayout layFrom = new HorizontalLayout();
 		layFrom.setHeight(COMPHEIGHT);
 		
@@ -86,6 +91,10 @@ public class AppointmentPopUpView {
 	    labDate = new Label("Date");
 //	    labDate.setHeight(COMPHEIGHT);
 	    labDate.setWidth(COMPWIDTH);
+	    
+	    labLoc = new Label("Location");
+//	    labLoc.setHeight(COMPHEIGHT);
+	    labLoc.setWidth(COMPWIDTH);
 	    
 	    labFrom = new Label("From");
 //	    labFrom.setHeight(COMPHEIGHT);
@@ -106,6 +115,10 @@ public class AppointmentPopUpView {
 	    tfDate = new TextField();
 //	    tfDate.setHeight(COMPHEIGHT);
 	    tfDate.setWidth(COMPWIDTH);
+	    
+	    tfLoc = new TextField();
+//	    tfLoc.setHeight(COMPHEIGHT);
+	    tfLoc.setWidth(COMPWIDTH);
 	    
 	    tfFrom = new TextField();
 //	    tfFrom.setHeight(COMPHEIGHT);
@@ -135,6 +148,9 @@ public class AppointmentPopUpView {
 	    layDate.addComponent(labDate);
 	    layDate.addComponent(tfDate);
 	    
+	    layLoc.addComponent(labLoc);
+	    layLoc.addComponent(tfLoc);
+	    
 	    layFrom.addComponent(labFrom);
 	    layFrom.addComponent(tfFrom);
 	    
@@ -149,6 +165,7 @@ public class AppointmentPopUpView {
 	    
 	    layAll.addComponent(layPat);
 	    layAll.addComponent(layDate);
+	    layAll.addComponent(layLoc);
 	    layAll.addComponent(layFrom);
 	    layAll.addComponent(layTo);
 	    layAll.addComponent(layCom);
@@ -174,6 +191,10 @@ public class AppointmentPopUpView {
 	
 	public String getTextFieldDate() {
 		return tfDate.getValue();
+	}
+	
+	public String getTextFieldLocation() {
+		return tfLoc.getValue();
 	}
 	
 	public String getTextFieldFrom() {
