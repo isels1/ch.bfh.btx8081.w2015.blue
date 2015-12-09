@@ -42,7 +42,7 @@ public class AppointmentEventProvider implements CalendarEventProvider {
 		
 		for(Appointment a : al){
 			BasicEvent e = new BasicEvent(a.getlocation(),
-					a.getHealthvisitor().getName() + " " + a.getHealthvisitor().getFirstName(),
+					a.getPatient().getName() + " " + a.getPatient().getFirstName(),
 					a.getStartTime().getTime(), a.getEndTime().getTime());
 			
 			events.add(e);

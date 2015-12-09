@@ -11,7 +11,7 @@ public class Appointment {
 	private GregorianCalendar endTime;
 	private String location;
 	private Patient patient;
-	private HealthVisitor healthvisitor;
+	private Calendar calendar;
 	
 	//================================================================================
     // Constructor Section
@@ -21,13 +21,12 @@ public class Appointment {
 		
 	}
 	
-	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, 
-			HealthVisitor healthvisitor){	
+	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, Calendar calendar){	
 		this.startTime = startTime;
 		this.endTime = endTime;
+		this.calendar = calendar;
 		//this.location = location;
 		//this.patient = patient;
-		this.healthvisitor = healthvisitor;
 	}
 
 	//================================================================================
@@ -56,6 +55,7 @@ public class Appointment {
 	public void setlocation(String location) {
 		this.location = location;
 	}
+	
 	/**
 	 * Setter for the patient
 	 * @param patient The Patient who belongs to the Appointment /Patient
@@ -65,11 +65,11 @@ public class Appointment {
 	}
 	
 	/**
-	 * Setter for the healthVisitor
-	 * @param healthVisitor The Healthvisitor who belongs to the Appointment /HealthVisitor
+	 * Setter for the calendar
+	 * @param calendar The Calendar who belongs to the Appointment /Calendar
 	 */
-	public void setHealthvisitor(HealthVisitor healthvisitor) {
-		this.healthvisitor = healthvisitor;
+	public void setCalendar(Calendar calendar) {
+		this.calendar = calendar;
 	}
 	
 	//================================================================================
@@ -106,13 +106,12 @@ public class Appointment {
 	public Patient getPatient() {
 		return patient;
 	}
-
+	
 	/**
-	 * Getter for the healthVisitor
-	 * @return  The Healthvisitor who belongs to the Appointment /HealthVisitor
+	 * Getter for the calendar
+	 * @return calendar The Calendar who belongs to the Appointment /Calendar
 	 */
-	public HealthVisitor getHealthvisitor() {
-		return healthvisitor;
+	public Calendar getCalendar() {
+		return calendar;
 	}
-
 }

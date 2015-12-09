@@ -31,9 +31,9 @@ public class Calendar {
     //================================================================================
 	
 	public void newAppointment(GregorianCalendar startTime, GregorianCalendar endTime, String location, 
-									  Patient patient, HealthVisitor healthvisitor)
+									  Patient patient, Calendar calendar)
 	{
-		Appointment newAppointment = new Appointment(startTime, endTime, healthvisitor);
+		Appointment newAppointment = new Appointment(startTime, endTime, calendar);
 		if(checkAvailability(newAppointment)) {
 		appointment.add(newAppointment);
 		}

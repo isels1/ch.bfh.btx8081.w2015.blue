@@ -48,6 +48,10 @@ public class DummyDataCreator {
 		this.c = c;
 	}
 	
+	public void setAppointment() {
+//		c.newAppointment(startTime, endTime, location, patient);
+	}
+	
 	//================================================================================
     // Getter Section
     //================================================================================
@@ -87,7 +91,7 @@ public class DummyDataCreator {
 		end1.add(java.util.Calendar.HOUR, 4);
 		a1.setEndTime(end1);
 		a1.setlocation("Hier");
-		a1.setHealthvisitor(hv);
+		a1.setPatient(hv.getPatient().get(0));
 		
 		al.add(a1);
 		
@@ -100,7 +104,7 @@ public class DummyDataCreator {
 		end2.add(java.util.Calendar.HOUR, 6);
 		a2.setEndTime(end2);
 		a2.setlocation("Hier2");
-		a2.setHealthvisitor(hv);
+		a2.setPatient(hv.getPatient().get(1));
 		
 		al.add(a2);
 		
@@ -113,7 +117,7 @@ public class DummyDataCreator {
 		end3.add(java.util.Calendar.HOUR, 15);
 		a3.setEndTime(end3);
 		a3.setlocation("Hie3");
-		a3.setHealthvisitor(hv);
+		a3.setPatient(hv.getPatient().get(2));
 		
 		al.add(a3);
 		
