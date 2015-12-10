@@ -19,7 +19,7 @@ public class AppointmentPopUpView {
 	final static String COMPHEIGHT = "81";				//568 / 7
 	final static String COMPWIDTH = "160";				//320 / 2
 	
-	private static AppointmentPopUpView appView = null; 
+	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
 	
 	Label labPat;
@@ -40,24 +40,66 @@ public class AppointmentPopUpView {
 	Button butSave;
 	Button butCancel;
 	
+	final Window window;
+	
 	//================================================================================
     // Constructor Section
     //================================================================================
 	
-	private AppointmentPopUpView() {
+	public AppointmentPopUpView() {
 		
 		//create window
-		final Window window = new Window("Add new appointment");
+		window = new Window("Add new appointment");
 //		window.setModal(true);
 		window.setWidth(WIDTH);
 		window.setHeight(HEIGHT);
 //		window.center();
 		
-		HealthVisAppUI.getCurrent().addWindow(window);
-		
 		layout = createPopUpLayout();
 		
 	    window.setContent(layout);
+	    
+	    HealthVisAppUI.getCurrent().addWindow(window);
+	}
+	
+	public void close() {
+		HealthVisAppUI.getCurrent().removeWindow(window);
+	}
+	
+	public VerticalLayout getPopUpLayout() {
+		return layout;
+	}
+	
+	public String getTextFieldPatient() {
+		return tfPat.getValue();
+	}
+	
+	public String getTextFieldDate() {
+		return tfDate.getValue();
+	}
+	
+	public String getTextFieldLocation() {
+		return tfLoc.getValue();
+	}
+	
+	public String getTextFieldFrom() {
+		return tfFrom.getValue();
+	}
+	
+	public String getTextFieldTo() {
+		return tfTo.getValue();
+	}
+	
+	public String getTextFieldComent() {
+		return tfCom.getValue();
+	}
+	
+	public Button getButtonSave() {
+		return butSave;
+	}
+	
+	public Button getButtonCancel() {
+		return butCancel;
 	}
 	
 	private VerticalLayout createPopUpLayout() {
@@ -172,48 +214,5 @@ public class AppointmentPopUpView {
 	    layAll.addComponent(layBut);
 	    
 		return layAll;
-	}
-	
-	public static AppointmentPopUpView getInstance() {
-		if (appView == null) {
-			appView = new AppointmentPopUpView();
-		}
-		return appView;
-	}
-	
-	public VerticalLayout getPopUpLayout() {
-		return layout;
-	}
-	
-	public String getTextFieldPatient() {
-		return tfPat.getValue();
-	}
-	
-	public String getTextFieldDate() {
-		return tfDate.getValue();
-	}
-	
-	public String getTextFieldLocation() {
-		return tfLoc.getValue();
-	}
-	
-	public String getTextFieldFrom() {
-		return tfFrom.getValue();
-	}
-	
-	public String getTextFieldTo() {
-		return tfTo.getValue();
-	}
-	
-	public String getTextFieldComent() {
-		return tfCom.getValue();
-	}
-	
-	public Button getButtonSave() {
-		return butSave;
-	}
-	
-	public Button getButtonCancel() {
-		return butCancel;
 	}
 }

@@ -45,7 +45,7 @@ public class PatientListView {
 		patientList.setHeight(HEIGHT);
 	
 		PatientController patCon = new PatientController();
-		for(Patient p: patCon.retrievePatients() )
+		for(Patient p: patCon.getPatients() )
 		{
 			patientList.addItem(p.getName()+"  "+p.getFirstName()+"  "+p.getId());
 			

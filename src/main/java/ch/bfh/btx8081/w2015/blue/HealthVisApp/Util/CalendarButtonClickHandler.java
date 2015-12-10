@@ -31,7 +31,7 @@ public class CalendarButtonClickHandler implements Button.ClickListener {
 		}
 		
 		if(calView.getB_addApp() == event.getSource()){
-			uiController.getAppointmentPopUp();
+			uiController.createAppointmentPopUp();
 		}
 	}
 }

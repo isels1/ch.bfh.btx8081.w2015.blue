@@ -16,6 +16,8 @@ public class UIController {
     //================================================================================
 	
 	private static UIController c = null;
+	AppointmentPopUpController appPopUpCon;
+//	PatientPopUpController patPopUpCon;
 	
 	//================================================================================
     // Constructor Section
@@ -30,6 +32,10 @@ public class UIController {
 		}
 		return c;
 	}
+	
+	//================================================================================
+    // Calendar Section
+    //================================================================================
 	
 	public void changeCalendarViewController(ClickEvent event) {
 		CalendarView calView = CalendarView.getInstance();
@@ -46,28 +52,42 @@ public class UIController {
 			calView.changeToWeekly();
 		}
 	}
-	
-	public void getAppointmentPopUp() {
-		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
-	}
+
+	//================================================================================
+    // Patient PopUp Section
+    //================================================================================
 	
 	public void getPatientPopUp() {
 		PatientListPopUpView patView = PatientListPopUpView.getInstance();
 	}
 	
+	//================================================================================
+    // Appointment PopUp Section
+    //================================================================================
+	
+	public AppointmentPopUpController getAppPopUpController() {
+		return appPopUpCon;
+	}
+	
+	public void createAppointmentPopUp() {
+		appPopUpCon = new AppointmentPopUpController();
+		appPopUpCon.createAppointmentPopUp();
+	}
+	
+	public void closeAppointmentPopUp() {
+		appPopUpCon.getAppView().close();
+	}
+	
 	public void saveAppointment() {
-		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
-		Patient pat = SearchHandler.searchPatient(appView.getTextFieldPatient());
+		Patient pat = SearchHandler.searchPatient(appPopUpCon.getAppView().getTextFieldPatient());
 		
 //		DummyDataCreator.getInstance().getHealthVisitor().getCalendar().
 //			newAppointment(startTime, endTime, location, pat);
 //		Date date = (Date) appView.getTextFieldDate();
-		appView.getTextFieldFrom();
-		appView.getTextFieldTo();
-		appView.getTextFieldComent();
-	}
-	
-	public void closeAppointmentPopUp() {
-		AppointmentPopUpView appView = AppointmentPopUpView.getInstance();
+		appPopUpCon.getAppView().getTextFieldFrom();
+		appPopUpCon.getAppView().getTextFieldTo();
+		appPopUpCon.getAppView().getTextFieldComent();
+		
+		appPopUpCon.getAppView().close();
 	}
 }

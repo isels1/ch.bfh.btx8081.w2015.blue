@@ -16,7 +16,7 @@ public class PatientController {
 		hv = ddc.getHealthVisitor();
 	}
 	
-	public ArrayList<Patient> retrievePatients(){
+	public ArrayList<Patient> getPatients(){
 		return hv.getPatient();
 	}
 }
