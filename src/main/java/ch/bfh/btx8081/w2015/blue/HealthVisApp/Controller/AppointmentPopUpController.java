@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
@@ -28,33 +29,33 @@ public class AppointmentPopUpController {
 	}
 	
 	public void saveAppointment(HealthVisitorController hvc) {
-		String[] date = appView.getTextFieldDate().split(DATE_DELIMITER);
+		Date date = appView.getPopupDateFieldDate().getValue();
 		String[] time1 = appView.getTextFieldFrom().split(TIME_DELIMITER);
 		String[] time2 = appView.getTextFieldTo().split(TIME_DELIMITER);
 		
-//		System.out.println("ds "+appView.getTextFieldDate());
-//		System.out.println("0 "+date[0].trim());
-//		System.out.println("1 "+date[1].trim());
-//		System.out.println("2 "+date[2].trim());
-//		
-//		GregorianCalendar start = new GregorianCalendar();
-//		start.set(Integer.parseInt(date[2]), 
-//					Integer.parseInt(date[1]), 
-//					Integer.parseInt(date[0]), 
-//					Integer.parseInt(time1[0]), 
-//					Integer.parseInt(time1[1]));
-//		
-//		GregorianCalendar end = new GregorianCalendar();
-//		end.set(Integer.parseInt(date[2]), 
-//				Integer.parseInt(date[1]), 
-//				Integer.parseInt(date[0]), 
-//				Integer.parseInt(time2[0]), 
-//				Integer.parseInt(time2[1]));
+		GregorianCalendar start = new GregorianCalendar();
+		start.set(date.getYear(),
+					date.getMonth(),
+					date.getDay(),
+					Integer.parseInt(time1[0]), 
+					Integer.parseInt(time1[1]));
 		
+		GregorianCalendar end = new GregorianCalendar();
+		start.set(date.getYear(),
+				date.getMonth(),
+				date.getDay(),
+				Integer.parseInt(time2[0]), 
+				Integer.parseInt(time2[1]));
 		
-//		hvc.getCalendar().newAppointment(start, 
-//										end, 
-//										appView.getTextFieldLocation(), 
-//										SearchHandler.searchPatient(appView.getTextFieldPatient()));
+		ddc.getCalendar().newAppointment(start, 
+				end, 
+				appView.getTextFieldLocation(), 
+				SearchHandler.searchPatient(appView.getTextFieldPatient()));
+		
+//		hvc.getCalendar().newAppointment(
+//			start, 
+//			end, 
+//			appView.getTextFieldLocation(), 
+//			SearchHandler.searchPatient(appView.getTextFieldPatient()));
 	}
 }

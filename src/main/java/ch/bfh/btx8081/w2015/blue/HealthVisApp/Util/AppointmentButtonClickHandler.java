@@ -25,12 +25,10 @@ public class AppointmentButtonClickHandler implements Button.ClickListener{
 		if(appView.getButtonSave() == event.getSource()) {
 			uiController.saveAppointment();
 			uiController.closeAppointmentPopUp();
-			appView.getButtonSave().setCaption("ujztgrfghnjmkjnhg");
 		}
 		
 		if(appView.getButtonCancel() == event.getSource()) {
 			uiController.closeAppointmentPopUp();
-			System.out.println("close");
 		}
 	}
 }

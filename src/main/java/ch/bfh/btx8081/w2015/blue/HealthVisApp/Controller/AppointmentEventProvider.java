@@ -2,7 +2,6 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;

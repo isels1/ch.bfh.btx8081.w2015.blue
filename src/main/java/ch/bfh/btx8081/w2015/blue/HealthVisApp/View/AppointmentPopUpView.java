@@ -6,6 +6,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextArea;
@@ -35,6 +36,8 @@ public class AppointmentPopUpView {
 	TextField tfLoc;
 	TextField tfFrom;
 	TextField tfTo;
+	
+	PopupDateField dfDate;
 	
 	TextArea tfCom;
 	
@@ -75,10 +78,6 @@ public class AppointmentPopUpView {
 		return tfPat.getValue();
 	}
 	
-	public String getTextFieldDate() {
-		return tfDate.getValue();
-	}
-	
 	public String getTextFieldLocation() {
 		return tfLoc.getValue();
 	}
@@ -93,6 +92,10 @@ public class AppointmentPopUpView {
 	
 	public String getTextFieldComent() {
 		return tfCom.getValue();
+	}
+	
+	public PopupDateField getPopupDateFieldDate() {
+		return dfDate;
 	}
 	
 	public Button getButtonSave() {
@@ -136,27 +139,21 @@ public class AppointmentPopUpView {
 	    //================================================================================
 		
 	    labPat = new Label("Patient");
-//	    labPat.setHeight(COMPHEIGHT);
 	    labPat.setWidth(COMPWIDTH);
 	    
 	    labDate = new Label("Date");
-//	    labDate.setHeight(COMPHEIGHT);
 	    labDate.setWidth(COMPWIDTH);
 	    
 	    labLoc = new Label("Location");
-//	    labLoc.setHeight(COMPHEIGHT);
 	    labLoc.setWidth(COMPWIDTH);
 	    
 	    labFrom = new Label("From");
-//	    labFrom.setHeight(COMPHEIGHT);
 	    labFrom.setWidth(COMPWIDTH);
 	    
 	    labTo = new Label("To");
-//	    labTo.setHeight(COMPHEIGHT);
 	    labTo.setWidth(COMPWIDTH);
 	    
 	    labCom = new Label("Coment");
-//	    labCom.setHeight(COMPHEIGHT);
 	    labCom.setWidth(COMPWIDTH);
 	    
 	    //================================================================================
@@ -164,23 +161,21 @@ public class AppointmentPopUpView {
 	    //================================================================================
 	    
 	    tfPat = new TextField();
-//	    tfPat.setHeight(COMPHEIGHT);
 	    tfPat.setWidth(COMPWIDTH);
 	    
-	    tfDate = new TextField();
-//	    tfDate.setHeight(COMPHEIGHT);
-	    tfDate.setWidth(COMPWIDTH);
+//	    tfDate = new TextField();
+//	    tfDate.setWidth(COMPWIDTH);
+	    
+	    dfDate = new PopupDateField();
+	    dfDate.setWidth(COMPWIDTH);
 	    
 	    tfLoc = new TextField();
-//	    tfLoc.setHeight(COMPHEIGHT);
 	    tfLoc.setWidth(COMPWIDTH);
 	    
 	    tfFrom = new TextField();
-//	    tfFrom.setHeight(COMPHEIGHT);
 	    tfFrom.setWidth(COMPWIDTH);
 	    
 	    tfTo = new TextField();
-//	    tfTo.setHeight(COMPHEIGHT);
 	    tfTo.setWidth(COMPWIDTH);
 	    
 	    tfCom = new TextArea();
@@ -192,12 +187,10 @@ public class AppointmentPopUpView {
 	    //================================================================================
 	    
 	    butSave = new Button("Save");
-//	    butSave.setHeight(COMPHEIGHT);
 	    butSave.setWidth(COMPWIDTH);
 	    butSave.addClickListener(new AppointmentButtonClickHandler());
 
 	    butCancel = new Button("Cancel");
-//	    butCancel.setHeight(COMPHEIGHT);
 	    butCancel.setWidth(COMPWIDTH);
 	    butCancel.addClickListener(new AppointmentButtonClickHandler());
 	    
@@ -209,7 +202,7 @@ public class AppointmentPopUpView {
 	    layPat.addComponent(tfPat);
 	    
 	    layDate.addComponent(labDate);
-	    layDate.addComponent(tfDate);
+	    layDate.addComponent(dfDate);
 	    
 	    layLoc.addComponent(labLoc);
 	    layLoc.addComponent(tfLoc);
