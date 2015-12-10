@@ -310,6 +310,9 @@ daily scrum
 zwahf1
 	adapt class address to new constructor
 	adapt dummydata for patient on new address
+dornt1	
+	implementing the Monthyl and Weekly View (done)
+	Problem The Monthly View dont show the first week of Month!
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
