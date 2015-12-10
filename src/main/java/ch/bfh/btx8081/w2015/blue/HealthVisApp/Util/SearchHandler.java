@@ -2,10 +2,8 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import java.util.ArrayList;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentPopUpController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 
 public class SearchHandler {
 	

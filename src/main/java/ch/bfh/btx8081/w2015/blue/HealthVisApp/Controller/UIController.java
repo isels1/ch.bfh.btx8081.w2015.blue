@@ -16,6 +16,7 @@ public class UIController {
     //================================================================================
 	
 	private static UIController c = null;
+//	HealthVisitorController hvCon;
 	AppointmentPopUpController appPopUpCon;
 //	PatientPopUpController patPopUpCon;
 	
@@ -79,15 +80,7 @@ public class UIController {
 	}
 	
 	public void saveAppointment() {
-		Patient pat = SearchHandler.searchPatient(appPopUpCon.getAppView().getTextFieldPatient());
-		
-//		DummyDataCreator.getInstance().getHealthVisitor().getCalendar().
-//			newAppointment(startTime, endTime, location, pat);
-//		Date date = (Date) appView.getTextFieldDate();
-		appPopUpCon.getAppView().getTextFieldFrom();
-		appPopUpCon.getAppView().getTextFieldTo();
-		appPopUpCon.getAppView().getTextFieldComent();
-		
+		appPopUpCon.saveAppointment(new HealthVisitorController());
 		appPopUpCon.getAppView().close();
 	}
 }

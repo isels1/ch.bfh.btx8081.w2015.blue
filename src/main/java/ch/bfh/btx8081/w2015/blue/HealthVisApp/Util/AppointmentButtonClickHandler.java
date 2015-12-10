@@ -1,6 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentPopUpController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.UIController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
@@ -26,10 +25,12 @@ public class AppointmentButtonClickHandler implements Button.ClickListener{
 		if(appView.getButtonSave() == event.getSource()) {
 			uiController.saveAppointment();
 			uiController.closeAppointmentPopUp();
+			appView.getButtonSave().setCaption("ujztgrfghnjmkjnhg");
 		}
 		
 		if(appView.getButtonCancel() == event.getSource()) {
 			uiController.closeAppointmentPopUp();
+			System.out.println("close");
 		}
 	}
 }

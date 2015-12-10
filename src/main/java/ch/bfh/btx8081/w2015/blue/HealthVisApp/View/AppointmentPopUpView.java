@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Alignment;
@@ -104,6 +105,10 @@ public class AppointmentPopUpView {
 	
 	private VerticalLayout createPopUpLayout() {
 		
+		//================================================================================
+	    // Layout Section
+	    //================================================================================
+		
 		VerticalLayout layAll = new VerticalLayout();
 		
 		HorizontalLayout layPat = new HorizontalLayout();
@@ -125,6 +130,10 @@ public class AppointmentPopUpView {
 		layCom.setHeight(COMPHEIGHT);
 		
 		HorizontalLayout layBut = new HorizontalLayout();
+		
+		//================================================================================
+	    // Label Section
+	    //================================================================================
 		
 	    labPat = new Label("Patient");
 //	    labPat.setHeight(COMPHEIGHT);
@@ -150,6 +159,10 @@ public class AppointmentPopUpView {
 //	    labCom.setHeight(COMPHEIGHT);
 	    labCom.setWidth(COMPWIDTH);
 	    
+	    //================================================================================
+	    // Textfield Section
+	    //================================================================================
+	    
 	    tfPat = new TextField();
 //	    tfPat.setHeight(COMPHEIGHT);
 	    tfPat.setWidth(COMPWIDTH);
@@ -174,15 +187,23 @@ public class AppointmentPopUpView {
 	    tfCom.setHeight(COMPHEIGHT);
 	    tfCom.setWidth(COMPWIDTH);
 	    
+	    //================================================================================
+	    // Button Section
+	    //================================================================================
+	    
 	    butSave = new Button("Save");
 //	    butSave.setHeight(COMPHEIGHT);
 	    butSave.setWidth(COMPWIDTH);
-	    butSave.addClickListener(new CalendarButtonClickHandler());
+	    butSave.addClickListener(new AppointmentButtonClickHandler());
 
 	    butCancel = new Button("Cancel");
 //	    butCancel.setHeight(COMPHEIGHT);
 	    butCancel.setWidth(COMPWIDTH);
-	    butCancel.addClickListener(new CalendarButtonClickHandler());
+	    butCancel.addClickListener(new AppointmentButtonClickHandler());
+	    
+	    //================================================================================
+	    // Add Section
+	    //================================================================================
 	    
 	    layPat.addComponent(labPat);
 	    layPat.addComponent(tfPat);
