@@ -5,6 +5,8 @@ import java.util.Date;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
@@ -55,10 +57,19 @@ public class PatientListView {
 		b_addPatient.setIcon(FontAwesome.USER);
 		patientViewTab.addComponent(b_addPatient);
 		
+		b_addPatient.addClickListener(new PatientListButtonClickHandler());
+		
 	}
 	
 	public VerticalLayout getPatientList(){	
 		return patientViewTab;
+	}
+	
+	/**
+	 * @return the b_addPatient
+	 */
+	public Button getB_addPatient() {
+		return b_addPatient;
 	}
 	
 	public static PatientListView getInstance() {
