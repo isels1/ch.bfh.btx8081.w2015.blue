@@ -4,15 +4,18 @@ import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 
+import com.vaadin.data.Item;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Calendar;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.ListSelect;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 
@@ -40,17 +43,23 @@ public class PatientListView {
 		
 		patientViewTab = new VerticalLayout();
 		
-		ListSelect patientList = new ListSelect("");
-		patientList.setWidth(WIDTH);
-		patientList.setHeight(HEIGHT);
+		Table patientTable = new Table("Patientlist HVIS NAME");
+		patientTable.setWidth(WIDTH);
+		patientTable.setHeight(HEIGHT);
+		
+		patientTable.addContainerProperty("Name", String.class, null);
+		patientTable.addContainerProperty("Forename",  String.class, null);
+//		patientTable.addContainerProperty("Patient ID",String.class,null);
 	
 		PatientController patCon = new PatientController();
+		int i = 0;
 		for(Patient p: patCon.getPatients() )
 		{
-			patientList.addItem(p.getName()+"  "+p.getFirstName()+"  "+p.getId());
-			
+			patientTable.addItem(new Object[]{p.getName(), p.getFirstName()},i);
+
+			i++;
 		}
-		patientViewTab.addComponent(patientList);
+		patientViewTab.addComponent(patientTable);
 		
 		b_addPatient = new Button("Add Patient");
 		b_addPatient.setWidth(WIDTH);
