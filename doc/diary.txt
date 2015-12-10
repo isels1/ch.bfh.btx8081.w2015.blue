@@ -302,7 +302,7 @@ dornt1
 #  07.12.2015  #
 ################
 daily scrum
-	calendar view überarbeitet
+	edit calendar view 
 	add states
 	add popup classes
 	show new 24 hour
@@ -313,6 +313,30 @@ zwahf1
 dornt1	
 	implementing the Monthyl and Weekly View (done)
 	Problem The Monthly View dont show the first week of Month!
+nosec1
+	create Login
+isels1
+	Review Code
+	create States
+################	
+#  09.12.2015  #
+################
+daily scrum
+	Patient View create asap
+	Popup View create for apointment
+	create Login
+	
+dornt1 &isels1
+	impementing the PatientListView
+nosec1
+	create Login
+zwahf1
+	create Popup ViewCalendar
+################	
+#  10.12.2015  #
+################
+
+
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
