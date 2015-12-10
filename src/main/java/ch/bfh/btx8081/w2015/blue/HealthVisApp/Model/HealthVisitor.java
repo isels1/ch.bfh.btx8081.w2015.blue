@@ -19,21 +19,16 @@ public class HealthVisitor extends Person {
     // Constructor Section
     //================================================================================
 
+	public HealthVisitor(String userName, String password) {
+		super();
+	}
+	
 	
 	public HealthVisitor(String name, String firstName, Date birthdate,
 			Address address, String phone){
 		super(name, firstName, birthdate, address, phone);
 	}
 	
-	public HealthVisitor(String name, String firstName, Date birthdate,
-			Address address, String phone, String userName, String password, Calendar calendar, ArrayList<Patient> patient) {
-		super(name, firstName, birthdate, address, phone);
-		
-		this.userName = userName;
-		this.password = password;
-		this.calendar = calendar;
-		this.patient = patient;
-	}
 
 	//================================================================================
     // Setter Section
