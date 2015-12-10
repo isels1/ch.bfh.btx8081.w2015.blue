@@ -122,10 +122,7 @@ public class DummyDataCreator {
 		al.add(a3);
 		
 		return al;
-	}
-	
-	
-	
+	}	
 	
 	private ArrayList<Patient> createPatients(){
 		ArrayList<Patient> pl = new ArrayList<Patient>();
@@ -134,7 +131,7 @@ public class DummyDataCreator {
 								"Anna", 
 								new Date(), 
 								new Address("Str1", 1, 3001, "City1"), 
-								"05678294", 
+								"056782924", 
 								1);
 		pl.add(p1);
 		
@@ -142,7 +139,7 @@ public class DummyDataCreator {
 								"Peter", 
 								new Date(), 
 								new Address("Str2", 2, 3002, "City2"), 
-								"056767855", 
+								"0567678552", 
 								2);
 		pl.add(p2);
 		
@@ -150,9 +147,34 @@ public class DummyDataCreator {
 								"Maria", 
 								new Date(), 
 								new Address("Str3", 3, 3003, "City3"), 
-								"056787789", 
+								"0567877892", 
 								3);
 		pl.add(p3);
+		
+		Patient p4 = new Patient("Suter", 
+								"Stefanie", 
+								new Date(), 
+								new Address("Str4", 7, 2500, "City3"), 
+								"0567777898", 
+								4);
+						
+		pl.add(p4);
+		
+		Patient p5 = new Patient("Scheurer", 
+								"Markus", 
+								new Date(), 
+								new Address("Str4", 6, 3050, "City3"), 
+								"0562477898", 
+								5);
+		pl.add(p5);
+		
+		Patient p6 = new Patient("Meier", 
+								"Hans-Peter", 
+								new Date(), 
+								new Address("Str4", 4, 3353, "City3"), 
+								"0562477848", 
+								6);
+		pl.add(p6);
 		
 		
 		
