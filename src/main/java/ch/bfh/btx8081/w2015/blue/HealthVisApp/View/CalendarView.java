@@ -137,10 +137,6 @@ public class CalendarView {
 		//================================================================================
 	    // Methods to change the view (Monthly, Weekly and Daily)
 	    //================================================================================
-		//4-TIM:
-		//
-//		.HealthVisAppTheme.v-app, .HealthVisAppTheme.v-app-loading { font-size: 12px; }
-//		.HealthVisAppTheme .v-calendar-header-day { font-size: 8px; }
 		
 		/**
 		 * Set the view of the calendar to the actual Day
