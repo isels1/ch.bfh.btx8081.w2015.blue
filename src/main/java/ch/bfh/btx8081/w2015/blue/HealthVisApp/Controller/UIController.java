@@ -73,9 +73,6 @@ public class UIController {
 	public void savePatient() {
 		patPopUpCon.savePatient(new PatientController());
 		patPopUpCon.getPatView().close();
-		
-		PatientController pc = new PatientController();
-//		System.out.println(""+pc.getPatients().toString());
 	}
 	
 	//================================================================================

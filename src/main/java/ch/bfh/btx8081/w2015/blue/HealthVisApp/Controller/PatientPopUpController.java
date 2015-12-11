@@ -32,7 +32,7 @@ public class PatientPopUpController {
 	public void savePatient(PatientController patc) {
 		String[] addr = patView.getTextFieldAddress().split(ADDR_DELIMITER);
 		
-		patc.setPatient(new Patient(
+		patc.addNewPatient(new Patient(
 				patView.getTextFieldName(), 
 				patView.getTextFieldFirstname(), 
 				patView.getPopupDateFieldDate(), 

@@ -2,8 +2,8 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.*;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
-
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 
 import com.vaadin.server.FontAwesome;
@@ -19,6 +19,7 @@ public class PatientListView {
     // PatietnList  Data
     //================================================================================
 
+	Table patientTable;
 		
 		final static String WIDTH = "318";
 		final static String HEIGHT = "460";
@@ -35,7 +36,7 @@ public class PatientListView {
 		
 		patientViewTab = new VerticalLayout();
 		
-		Table patientTable = new Table("Patientlist HVIS NAME");
+		/*Table*/ patientTable = new Table("Patientlist HVIS NAME");
 		patientTable.setWidth(WIDTH);
 		patientTable.setHeight(HEIGHT);
 		
@@ -86,6 +87,20 @@ public class PatientListView {
 	 */
 	public Button getB_addPatient() {
 		return b_addPatient;
+	}
+	
+	public void addNewPatient(Patient p) {
+		p.setPatientState(new PatientStateNew());
+		
+		Object[] l = new Object[]{p.getName(),
+				p.getFirstName(),
+				p.getPatientState().doEnter()};
+		
+		patientTable.addItem(l,p.getId());
+		
+		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
+		
+		patientViewTab.replaceComponent(patientTable, patientTable);
 	}
 	
 	public static PatientListView getInstance() {

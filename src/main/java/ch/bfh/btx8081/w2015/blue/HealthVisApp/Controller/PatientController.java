@@ -8,6 +8,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
 
 public class PatientController {
 	
@@ -23,8 +24,9 @@ public class PatientController {
 		return hv.getPatient();
 	}
 	
-	public void setPatient(Patient pat) {
+	public void addNewPatient(Patient pat) {
 		hv.setPatient(pat);
+		PatientListView.getInstance().addNewPatient(pat);
 	}
 	
 	public ArrayList<Patient> getPatientsDefaultOrder(){
