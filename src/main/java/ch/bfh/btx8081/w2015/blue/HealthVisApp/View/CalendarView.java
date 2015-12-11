@@ -49,7 +49,6 @@ public class CalendarView {
 			private Button b_WeeklyView;
 			private Button b_DailyView;
 			private Button b_addApp;
-
 		
 		//================================================================================
 	    // Constructor Section
