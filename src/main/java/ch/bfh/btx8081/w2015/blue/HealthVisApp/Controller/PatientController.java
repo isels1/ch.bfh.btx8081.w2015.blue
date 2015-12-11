@@ -23,6 +23,10 @@ public class PatientController {
 		return hv.getPatient();
 	}
 	
+	public void setPatient(Patient pat) {
+		hv.setPatient(pat);
+	}
+	
 	public ArrayList<Patient> getPatientsDefaultOrder(){
 		ArrayList<Patient> defaultOrder = new ArrayList<Patient>();
 		defaultOrder.addAll(hv.getPatient());

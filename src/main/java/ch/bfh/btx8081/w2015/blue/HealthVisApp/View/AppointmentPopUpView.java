@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
+import java.util.Date;
+
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
@@ -94,8 +96,8 @@ public class AppointmentPopUpView {
 		return tfCom.getValue();
 	}
 	
-	public PopupDateField getPopupDateFieldDate() {
-		return dfDate;
+	public Date getPopupDateFieldDate() {
+		return dfDate.getValue();
 	}
 	
 	public Button getButtonSave() {
@@ -163,12 +165,6 @@ public class AppointmentPopUpView {
 	    tfPat = new TextField();
 	    tfPat.setWidth(COMPWIDTH);
 	    
-//	    tfDate = new TextField();
-//	    tfDate.setWidth(COMPWIDTH);
-	    
-	    dfDate = new PopupDateField();
-	    dfDate.setWidth(COMPWIDTH);
-	    
 	    tfLoc = new TextField();
 	    tfLoc.setWidth(COMPWIDTH);
 	    
@@ -181,6 +177,14 @@ public class AppointmentPopUpView {
 	    tfCom = new TextArea();
 	    tfCom.setHeight(COMPHEIGHT);
 	    tfCom.setWidth(COMPWIDTH);
+	    
+	    //================================================================================
+	    // Datefield Section
+	    //================================================================================
+
+	    dfDate = new PopupDateField();
+	    dfDate.setWidth(COMPWIDTH);
+	    dfDate.setDateFormat("dd/MM/yyyy");
 	    
 	    //================================================================================
 	    // Button Section

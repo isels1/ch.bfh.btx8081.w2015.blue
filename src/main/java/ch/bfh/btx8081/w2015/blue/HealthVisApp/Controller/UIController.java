@@ -16,9 +16,8 @@ public class UIController {
     //================================================================================
 	
 	private static UIController c = null;
-//	HealthVisitorController hvCon;
 	AppointmentPopUpController appPopUpCon;
-//	PatientPopUpController patPopUpCon;
+	PatientPopUpController patPopUpCon;
 	
 	//================================================================================
     // Constructor Section
@@ -58,8 +57,25 @@ public class UIController {
     // Patient PopUp Section
     //================================================================================
 	
-	public void getPatientPopUp() {
-		PatientListPopUpView patView = PatientListPopUpView.getInstance();
+	public PatientPopUpController getPatPopUpController() {
+		return patPopUpCon;
+	}
+	
+	public void createPatientPopUp() {
+		patPopUpCon = new PatientPopUpController();
+		patPopUpCon.createPatientPopUp();
+	}
+	
+	public void closePatientPopUp() {
+		patPopUpCon.getPatView().close();
+	}
+	
+	public void savePatient() {
+		patPopUpCon.savePatient(new PatientController());
+		patPopUpCon.getPatView().close();
+		
+		PatientController pc = new PatientController();
+//		System.out.println(""+pc.getPatients().toString());
 	}
 	
 	//================================================================================

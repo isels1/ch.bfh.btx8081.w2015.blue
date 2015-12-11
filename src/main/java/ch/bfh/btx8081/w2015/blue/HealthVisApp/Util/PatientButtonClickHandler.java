@@ -1,13 +1,13 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.UIController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 
-public class PatientListButtonClickHandler implements Button.ClickListener {
+public class PatientButtonClickHandler implements Button.ClickListener {
 
 	//================================================================================
     // Handler Data
@@ -21,10 +21,15 @@ public class PatientListButtonClickHandler implements Button.ClickListener {
 	
 	@Override
 	public void buttonClick(ClickEvent event) {
-		PatientListView patListView = PatientListView.getInstance();
-				
-		if(patListView.getB_addPatient() == event.getSource()){
-			uiController.createPatientPopUp();
+		PatientListPopUpView patView = uiController.getPatPopUpController().getPatView();
+		
+		if(patView.getButtonSave() == event.getSource()) {
+			uiController.savePatient();
+			uiController.closePatientPopUp();
+		}
+		
+		if(patView.getButtonCancel() == event.getSource()) {
+			uiController.closePatientPopUp();
 		}
 	}
 }

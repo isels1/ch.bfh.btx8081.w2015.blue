@@ -9,7 +9,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
 public class AppointmentPopUpController {
 	
-	public static String DATE_DELIMITER = ".";
+	public static String DATE_DELIMITER = "/";
 	public static String TIME_DELIMITER = ":";
 	
 	private AppointmentPopUpView appView;
@@ -29,23 +29,30 @@ public class AppointmentPopUpController {
 	}
 	
 	public void saveAppointment(HealthVisitorController hvc) {
-		Date date = appView.getPopupDateFieldDate().getValue();
+		Date date = appView.getPopupDateFieldDate();
 		String[] time1 = appView.getTextFieldFrom().split(TIME_DELIMITER);
 		String[] time2 = appView.getTextFieldTo().split(TIME_DELIMITER);
 		
 		GregorianCalendar start = new GregorianCalendar();
-		start.set(date.getYear(),
-					date.getMonth(),
-					date.getDay(),
-					Integer.parseInt(time1[0]), 
-					Integer.parseInt(time1[1]));
+		date.setHours(Integer.parseInt(time1[0]));
+		date.setMinutes(Integer.parseInt(time1[1]));
+		start.setTime(date);
+		
+		System.out.println(start.toString());
 		
 		GregorianCalendar end = new GregorianCalendar();
-		start.set(date.getYear(),
-				date.getMonth(),
-				date.getDay(),
-				Integer.parseInt(time2[0]), 
-				Integer.parseInt(time2[1]));
+		date.setHours(Integer.parseInt(time2[0]));
+		date.setMinutes(Integer.parseInt(time2[1]));
+		end.setTime(date);
+		
+		System.out.println(end.toString());
+		
+//		GregorianCalendar end = new GregorianCalendar();
+//		start.set(date.getYear(),
+//				date.getMonth(),
+//				date.getDay(),
+//				Integer.parseInt(time2[0]), 
+//				Integer.parseInt(time2[1]));
 		
 		ddc.getCalendar().newAppointment(start, 
 				end, 
