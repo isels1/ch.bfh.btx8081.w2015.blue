@@ -1,10 +1,11 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State;
 
 public abstract class PatientState {
-	private String color = "";
+	private String css = "";
+	private int id;
 	
 	public String doEnter(){
-		return color;
+		return css;
 	}
 	
 	public void doWhile(){}
@@ -12,7 +13,14 @@ public abstract class PatientState {
 	public void doExit(){}
 	
 	public void setColor(String c){
-		color = c;
+		css = c;
 	}
 	
+	public void setPatientStateId(int id){
+		this.id = id;
+	}
+	
+	public int getPatientStateId(){
+		return id;
+	}
 }

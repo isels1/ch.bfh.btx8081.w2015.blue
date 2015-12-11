@@ -1,26 +1,15 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
-import java.util.Date;
-
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 
-
-import com.vaadin.data.Item;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Calendar;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.ListSelect;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.components.calendar.event.CalendarEvent;
 
 public class PatientListView {
 
@@ -50,16 +39,33 @@ public class PatientListView {
 		patientTable.setWidth(WIDTH);
 		patientTable.setHeight(HEIGHT);
 		
-		patientTable.addContainerProperty("Name", Label.class, null);
-		patientTable.addContainerProperty("Forename",  Label.class, null);
+		patientTable.addContainerProperty("Name", String.class, null);
+		patientTable.addContainerProperty("Forename",  String.class, null);
+		patientTable.addContainerProperty("State",  String.class, null);
+		
+		//Hide Patient State column
+		patientTable.setColumnCollapsingAllowed(true);
+		patientTable.setColumnCollapsed("State", true);	
 	
 		PatientController patCon = new PatientController();
-		for(Patient p: patCon.getPatients() )
+		for(Patient p: patCon.getPatientsDefaultOrder())
 		{
-			Label l_Name = new Label(p.getName());
-			Label l_ForeName = new Label( p.getFirstName());
-			patientTable.addItem(new Object[]{l_Name,l_ForeName},p.getId());
+//			Label l_Name = new Label(p.getName());
+//			Label l_ForeName = new Label(p.getFirstName());
+//			Label l_State = new Label(p.getPatientState().doEnter());
+			
+//			l_Name.setStyleName(p.getPatientState().doEnter());
+//			l_ForeName.setStyleName(p.getPatientState().doEnter());
+			
+			Object[] l = new Object[]{p.getName(),
+									p.getFirstName(),
+									p.getPatientState().doEnter()};
+			
+			patientTable.addItem(l,p.getId());
 		}
+		
+		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
+		
 		patientViewTab.addComponent(patientTable);
 		
 		b_addPatient = new Button("Add Patient");

@@ -9,6 +9,10 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 
 public class DummyDataCreator {
 	
@@ -133,6 +137,7 @@ public class DummyDataCreator {
 								new Address("Str1", 1, 3001, "City1"), 
 								"056782924", 
 								1);
+		p1.setPatientState(new PatientStateNew());
 		pl.add(p1);
 		
 		Patient p2 = new Patient("Müller", 
@@ -141,6 +146,7 @@ public class DummyDataCreator {
 								new Address("Str2", 2, 3002, "City2"), 
 								"0567678552", 
 								2);
+		p2.setPatientState(new PatientStateAmbulant());
 		pl.add(p2);
 		
 		Patient p3 = new Patient("Keller", 
@@ -149,6 +155,7 @@ public class DummyDataCreator {
 								new Address("Str3", 3, 3003, "City3"), 
 								"0567877892", 
 								3);
+		p3.setPatientState(new PatientStateStationary());
 		pl.add(p3);
 		
 		Patient p4 = new Patient("Suter", 
@@ -158,6 +165,7 @@ public class DummyDataCreator {
 								"0567777898", 
 								4);
 						
+		p4.setPatientState(new PatientStateArchived());
 		pl.add(p4);
 		
 		Patient p5 = new Patient("Scheurer", 
@@ -166,6 +174,7 @@ public class DummyDataCreator {
 								new Address("Str4", 6, 3050, "City3"), 
 								"0562477898", 
 								5);
+		p5.setPatientState(new PatientStateNew());
 		pl.add(p5);
 		
 		Patient p6 = new Patient("Meier", 
@@ -174,6 +183,7 @@ public class DummyDataCreator {
 								new Address("Str4", 4, 3353, "City3"), 
 								"0562477848", 
 								6);
+		p6.setPatientState(new PatientStateNew());
 		pl.add(p6);
 		
 		
