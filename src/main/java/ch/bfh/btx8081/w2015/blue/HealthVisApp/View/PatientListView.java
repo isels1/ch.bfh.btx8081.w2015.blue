@@ -54,13 +54,11 @@ public class PatientListView {
 		patientTable.addContainerProperty("Forename",  Label.class, null);
 	
 		PatientController patCon = new PatientController();
-		int i = 0; //Variable for Table ID
 		for(Patient p: patCon.getPatients() )
 		{
 			Label l_Name = new Label(p.getName());
 			Label l_ForeName = new Label( p.getFirstName());
-			patientTable.addItem(new Object[]{l_Name,l_ForeName},i);
-			i++;
+			patientTable.addItem(new Object[]{l_Name,l_ForeName},p.getId());
 		}
 		patientViewTab.addComponent(patientTable);
 		
