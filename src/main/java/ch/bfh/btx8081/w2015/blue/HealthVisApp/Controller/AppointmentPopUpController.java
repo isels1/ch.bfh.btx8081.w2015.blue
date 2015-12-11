@@ -3,6 +3,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
@@ -38,14 +39,10 @@ public class AppointmentPopUpController {
 		date.setMinutes(Integer.parseInt(time1[1]));
 		start.setTime(date);
 		
-		System.out.println(start.toString());
-		
 		GregorianCalendar end = new GregorianCalendar();
 		date.setHours(Integer.parseInt(time2[0]));
 		date.setMinutes(Integer.parseInt(time2[1]));
 		end.setTime(date);
-		
-		System.out.println(end.toString());
 		
 //		GregorianCalendar end = new GregorianCalendar();
 //		start.set(date.getYear(),
@@ -54,15 +51,10 @@ public class AppointmentPopUpController {
 //				Integer.parseInt(time2[0]), 
 //				Integer.parseInt(time2[1]));
 		
-		ddc.getCalendar().newAppointment(start, 
-				end, 
-				appView.getTextFieldLocation(), 
-				SearchHandler.searchPatient(appView.getTextFieldPatient()));
-		
-//		hvc.getCalendar().newAppointment(
-//			start, 
-//			end, 
-//			appView.getTextFieldLocation(), 
-//			SearchHandler.searchPatient(appView.getTextFieldPatient()));
+		hvc.addNewApp(new Appointment(
+			start, 
+			end, 
+			appView.getTextFieldLocation(), 
+			SearchHandler.searchPatient(appView.getTextFieldPatient())));
 	}
 }

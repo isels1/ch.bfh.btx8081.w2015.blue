@@ -11,6 +11,7 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Button;
@@ -131,6 +132,20 @@ public class CalendarView {
 		 */
 		public Button getB_addApp() {
 			return b_addApp;
+		}
+		
+		/**
+		 * shows new added Appointment from popup
+		 */
+		public void addNewApp(Appointment app) {
+			AppointmentEventProvider appointmentProvider = new AppointmentEventProvider();
+			
+			for(CalendarEvent i : appointmentProvider.getEvents(new Date(), new Date())) {
+				calendar.addEvent(i);
+			}
+			
+			calendarTab.replaceComponent(calendar, calendar);
+			
 		}
 		
 		//================================================================================

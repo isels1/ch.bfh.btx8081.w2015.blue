@@ -21,6 +21,13 @@ public class Appointment {
 		
 	}
 	
+	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, String location, Patient patient){	
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.location = location;
+		this.patient = patient;
+	}
+	
 	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, Calendar calendar){	
 		this.startTime = startTime;
 		this.endTime = endTime;

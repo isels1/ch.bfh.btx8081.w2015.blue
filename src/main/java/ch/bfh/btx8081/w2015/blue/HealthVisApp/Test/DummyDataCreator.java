@@ -73,11 +73,13 @@ public class DummyDataCreator {
     //================================================================================
 	
 	private void initializeData(){
+		c = new Calendar();
+		
 		hv = new HealthVisitor("Meier", "Hans", new Date(), new Address(), "0910291212");
 		hv.setAllPatients(createPatients());
 		hv.setCalendar(c);
 		
-		c = new Calendar();
+		
 		c.setHealthVisitor(hv);
 		
 		c.setAppointments(createAppointments());
