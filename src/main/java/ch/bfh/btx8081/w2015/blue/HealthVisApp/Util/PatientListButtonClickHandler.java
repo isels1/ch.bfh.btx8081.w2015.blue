@@ -5,6 +5,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Button.ClickEvent;
 
 public class PatientListButtonClickHandler implements Button.ClickListener {
@@ -27,4 +28,6 @@ public class PatientListButtonClickHandler implements Button.ClickListener {
 			uiController.createPatientPopUp();
 		}
 	}
+
+	
 }

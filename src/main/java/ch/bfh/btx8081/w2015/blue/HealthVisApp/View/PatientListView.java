@@ -6,6 +6,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
 
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
@@ -27,7 +28,9 @@ public class PatientListView {
 		
 		private VerticalLayout patientViewTab;
 		private Table patientTable;
-		private Button b_addPatient = new Button("Add new Patient");;
+		private ComboBox combobox;
+		private Button b_addPatient = new Button("Add new Patient");
+
 	
 	//================================================================================
     // Constructor Section
@@ -37,15 +40,16 @@ public class PatientListView {
 		
 		patientViewTab = new VerticalLayout();
 		
-		ComboBox combobox = new ComboBox("Select Filter");
+		combobox = new ComboBox("Select Filter");
 		combobox.setInvalidAllowed(false);
 		combobox.setWidth(WIDTH);
 		combobox.setNullSelectionAllowed(false);
-		        
+		combobox.setNewItemsAllowed(false);   
 		// Add some items and specify their item ID.
 		// The item ID is by default used as item caption.
 		combobox.addItems("State1", "State2", "State3", "State4");
 		patientViewTab.addComponent(combobox);
+		combobox.addValueChangeListener(new PatinetListComboBoxChangeListener());
 		
 		HealthVisitorController hvController = new HealthVisitorController();
 		HealthVisitor hv = hvController.getHealthVisitor();
@@ -86,12 +90,15 @@ public class PatientListView {
 		b_addPatient = new Button("Add Patient");
 		b_addPatient.setWidth(WIDTH);
 		b_addPatient.setIcon(FontAwesome.USER);
-		
-		patientViewTab.addComponent(b_addPatient);
 		b_addPatient.addClickListener(new PatientListButtonClickHandler());
 		
+		patientViewTab.addComponent(b_addPatient);
+		
+		
 	}
-	
+	public ComboBox getCombobox(){
+		return combobox;
+	}
 	public VerticalLayout getPatientList(){	
 		return patientViewTab;
 	}
