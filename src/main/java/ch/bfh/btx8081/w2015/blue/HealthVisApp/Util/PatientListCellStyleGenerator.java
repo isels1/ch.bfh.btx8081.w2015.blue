@@ -19,3 +19,4 @@ public class PatientListCellStyleGenerator implements Table.CellStyleGenerator {
 
 	
 }
+ 
