@@ -21,7 +21,7 @@ public class HealthVisitorController {
 		
 	public void addNewApp(Appointment app) {
 		hv.getCalendar().setAppointment(app);
-//		CalendarView.getInstance().addNewApp(app);
+		CalendarView.getInstance().addNewApp(app, hv.getCalendar());
 	}
 	
 	public HealthVisitor getHealthVisitor ()

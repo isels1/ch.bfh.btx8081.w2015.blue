@@ -14,11 +14,8 @@ public class PatientPopUpController {
 	public static String ADDR_DELIMITER = " ";
 	
 	private PatientListPopUpView patView;
-
-	private DummyDataCreator ddc;
 	
 	public PatientPopUpController(){
-		ddc = DummyDataCreator.getInstance();
 	}
 	
 	public void createPatientPopUp() {

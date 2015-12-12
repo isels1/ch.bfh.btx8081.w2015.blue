@@ -14,11 +14,8 @@ public class AppointmentPopUpController {
 	public static String TIME_DELIMITER = ":";
 	
 	private AppointmentPopUpView appView;
-
-	private DummyDataCreator ddc;
 	
 	public AppointmentPopUpController(){
-		ddc = DummyDataCreator.getInstance();
 	}
 	
 	public void createAppointmentPopUp() {
@@ -55,6 +52,6 @@ public class AppointmentPopUpController {
 			start, 
 			end, 
 			appView.getTextFieldLocation(), 
-			SearchHandler.searchPatient(appView.getTextFieldPatient())));
+			SearchHandler.searchPatient(Integer.parseInt(appView.getTextFieldPatientId()))));
 	}
 }
