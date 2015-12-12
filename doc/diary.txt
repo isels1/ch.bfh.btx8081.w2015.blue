@@ -337,6 +337,20 @@ zwahf1
 ################
 zwahf1
 	adapt popup appointment and create controller
+	
+################	
+#  11.12.2015  #
+################
+zwahf1
+	add new patient and appointment to healthvisitor by creating from popup
+	show new patient in patientlist
+
+################	
+#  12.12.2015  #
+################
+zwahf1
+	show new appointment in calendar
+	add note to new appointment and patient
 
 ******************************
 *** To Do list Gruppe Blau ***
