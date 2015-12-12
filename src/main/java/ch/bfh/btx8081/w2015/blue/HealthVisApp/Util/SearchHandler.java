@@ -9,14 +9,13 @@ public class SearchHandler {
 	
 	
 	static ArrayList<Patient> patList;
-	static Patient pat = null;
 
 	public static Patient searchPatient(int id) {
 		PatientController c = new PatientController();
-		patList = c.getPatients();
+		patList = c.getPatientsDefaultOrder();
 		for(Patient p : patList) {
 			if(p.getId() == id) {
-				return pat;
+				return p;
 			}
 		}
 		return null;
@@ -27,7 +26,7 @@ public class SearchHandler {
 		patList = c.getPatients();
 		for(Patient p : patList) {
 			if(p.getName().equals(name)) {
-				return pat;
+				return p;
 			}
 		}
 		return null;
@@ -38,7 +37,7 @@ public class SearchHandler {
 		patList = c.getPatients();
 		for(Patient p : patList) {
 			if(p.getName().equals(name) && p.getFirstName().equals(firstname)) {
-				return pat;
+				return p;
 			}
 		}
 		return null;

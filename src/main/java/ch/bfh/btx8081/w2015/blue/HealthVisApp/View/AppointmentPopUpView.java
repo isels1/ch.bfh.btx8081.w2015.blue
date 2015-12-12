@@ -26,14 +26,14 @@ public class AppointmentPopUpView {
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
 	
-	Label labPat;
+	Label labPatId;
 	Label labDate;
 	Label labLoc;
 	Label labFrom;
 	Label labTo;
 	Label labCom;
 	
-	TextField tfPat;
+	TextField tfPatId;
 	TextField tfDate;
 	TextField tfLoc;
 	TextField tfFrom;
@@ -76,8 +76,8 @@ public class AppointmentPopUpView {
 		return layout;
 	}
 	
-	public String getTextFieldPatient() {
-		return tfPat.getValue();
+	public String getTextFieldPatientId() {
+		return tfPatId.getValue();
 	}
 	
 	public String getTextFieldLocation() {
@@ -140,8 +140,8 @@ public class AppointmentPopUpView {
 	    // Label Section
 	    //================================================================================
 		
-	    labPat = new Label("Patient");
-	    labPat.setWidth(COMPWIDTH);
+	    labPatId = new Label("Patient Id");
+	    labPatId.setWidth(COMPWIDTH);
 	    
 	    labDate = new Label("Date");
 	    labDate.setWidth(COMPWIDTH);
@@ -162,8 +162,8 @@ public class AppointmentPopUpView {
 	    // Textfield Section
 	    //================================================================================
 	    
-	    tfPat = new TextField();
-	    tfPat.setWidth(COMPWIDTH);
+	    tfPatId = new TextField();
+	    tfPatId.setWidth(COMPWIDTH);
 	    
 	    tfLoc = new TextField();
 	    tfLoc.setWidth(COMPWIDTH);
@@ -202,8 +202,8 @@ public class AppointmentPopUpView {
 	    // Add Section
 	    //================================================================================
 	    
-	    layPat.addComponent(labPat);
-	    layPat.addComponent(tfPat);
+	    layPat.addComponent(labPatId);
+	    layPat.addComponent(tfPatId);
 	    
 	    layDate.addComponent(labDate);
 	    layDate.addComponent(dfDate);

@@ -6,17 +6,21 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
+import java.util.ArrayList;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Calendar;
 import com.vaadin.ui.Calendar.TimeFormat;
+import com.vaadin.ui.components.calendar.event.BasicEvent;
 import com.vaadin.ui.components.calendar.event.BasicEventProvider;
 import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
@@ -137,15 +141,15 @@ public class CalendarView {
 		/**
 		 * shows new added Appointment from popup
 		 */
-		public void addNewApp(Appointment app) {
-			AppointmentEventProvider appointmentProvider = new AppointmentEventProvider();
+		public void addNewApp(Appointment app, ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar cal) {
 			
-			for(CalendarEvent i : appointmentProvider.getEvents(new Date(), new Date())) {
-				calendar.addEvent(i);
-			}
+			List<CalendarEvent> events = new ArrayList<CalendarEvent>();
 			
+			BasicEvent e = new BasicEvent(app.getlocation(),
+					app.getPatient().getName() + " " + app.getPatient().getFirstName(),
+					app.getStartTime().getTime(), app.getEndTime().getTime());
+			calendar.addEvent(e);
 			calendarTab.replaceComponent(calendar, calendar);
-			
 		}
 		
 		//================================================================================
