@@ -1,13 +1,16 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.*;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
@@ -18,14 +21,12 @@ public class PatientListView {
 	//================================================================================
     // PatietnList  Data
     //================================================================================
-
-	Table patientTable;
 		
 		final static String WIDTH = "318";
-		final static String HEIGHT = "460";
+		final static String HEIGHT = "394";
 		
 		private VerticalLayout patientViewTab;
-		
+		private Table patientTable;
 		private Button b_addPatient = new Button("Add new Patient");;
 	
 	//================================================================================
@@ -36,7 +37,19 @@ public class PatientListView {
 		
 		patientViewTab = new VerticalLayout();
 		
-		/*Table*/ patientTable = new Table("Patientlist HVIS NAME");
+		ComboBox combobox = new ComboBox("Select Filter");
+		combobox.setInvalidAllowed(false);
+		combobox.setWidth(WIDTH);
+		combobox.setNullSelectionAllowed(false);
+		        
+		// Add some items and specify their item ID.
+		// The item ID is by default used as item caption.
+		combobox.addItems("State1", "State2", "State3", "State4");
+		patientViewTab.addComponent(combobox);
+		
+		HealthVisitorController hvController = new HealthVisitorController();
+		HealthVisitor hv = hvController.getHealthVisitor();
+		patientTable = new Table("Patientlist " + hv.getFirstName()+ " "+ hv.getName());
 		patientTable.setWidth(WIDTH);
 		patientTable.setHeight(HEIGHT);
 		
@@ -47,6 +60,7 @@ public class PatientListView {
 		//Hide Patient State column
 		patientTable.setColumnCollapsingAllowed(true);
 		patientTable.setColumnCollapsed("State", true);	
+		//patientTable.setColumnCollapsingAllowed(false);
 	
 		PatientController patCon = new PatientController();
 		for(Patient p: patCon.getPatientsDefaultOrder())
@@ -58,22 +72,22 @@ public class PatientListView {
 //			l_Name.setStyleName(p.getPatientState().doEnter());
 //			l_ForeName.setStyleName(p.getPatientState().doEnter());
 			
-			Object[] l = new Object[]{p.getName(),
+			Object[] collumn = new Object[]{p.getName(),
 									p.getFirstName(),
 									p.getPatientState().doEnter()};
 			
-			patientTable.addItem(l,p.getId());
+			patientTable.addItem(collumn,p.getId());
 		}
 		
 		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
-		
 		patientViewTab.addComponent(patientTable);
+		
 		
 		b_addPatient = new Button("Add Patient");
 		b_addPatient.setWidth(WIDTH);
 		b_addPatient.setIcon(FontAwesome.USER);
-		patientViewTab.addComponent(b_addPatient);
 		
+		patientViewTab.addComponent(b_addPatient);
 		b_addPatient.addClickListener(new PatientListButtonClickHandler());
 		
 	}
@@ -89,24 +103,24 @@ public class PatientListView {
 		return b_addPatient;
 	}
 	
-	public void addNewPatient(Patient p) {
-		p.setPatientState(new PatientStateNew());
-		
-		Object[] l = new Object[]{p.getName(),
-				p.getFirstName(),
-				p.getPatientState().doEnter()};
-		
-		patientTable.addItem(l,p.getId());
-		
-		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
-		
-		patientViewTab.replaceComponent(patientTable, patientTable);
-	}
-	
 	public static PatientListView getInstance() {
 		if (patListView == null) {
 			patListView = new PatientListView();
 		}		
 		return patListView;
+	}
+	public void FilterStatus(int status){
+		
+		PatientController patCon = new PatientController();
+		patientTable.removeAllItems();
+		for(Patient p: patCon.getPatientsDefaultOrder())
+		{
+			Object[] collumn = new Object[]{p.getName(),
+									p.getFirstName(),
+									p.getPatientState().doEnter()};
+			if(status == p.getPatientState().getPatientStateId()){
+			patientTable.addItem(collumn,p.getId());
+			}
+		}
 	}
 }
