@@ -30,7 +30,13 @@ public class PatientListView {
 		private Table patientTable;
 		private ComboBox combobox;
 		private Button b_addPatient = new Button("Add new Patient");
-
+		
+		//Name for the patient filter
+		private final String str_Ambulant = "Ambulant";
+		private final String str_Archived = "Archived";
+		private final String str_New = "New";
+		private final String str_Stationary = "Stationary";
+		private final String str_AllPatinets = "All patients";
 	
 	//================================================================================
     // Constructor Section
@@ -39,17 +45,6 @@ public class PatientListView {
 	private PatientListView() {
 		
 		patientViewTab = new VerticalLayout();
-		
-		combobox = new ComboBox("Select Filter");
-		combobox.setInvalidAllowed(false);
-		combobox.setWidth(WIDTH);
-		combobox.setNullSelectionAllowed(false);
-		combobox.setNewItemsAllowed(false);   
-		// Add some items and specify their item ID.
-		// The item ID is by default used as item caption.
-		combobox.addItems("State1", "State2", "State3", "State4");
-		patientViewTab.addComponent(combobox);
-		combobox.addValueChangeListener(new PatinetListComboBoxChangeListener());
 		
 		HealthVisitorController hvController = new HealthVisitorController();
 		HealthVisitor hv = hvController.getHealthVisitor();
@@ -64,7 +59,6 @@ public class PatientListView {
 		//Hide Patient State column
 		patientTable.setColumnCollapsingAllowed(true);
 		patientTable.setColumnCollapsed("State", true);	
-		//patientTable.setColumnCollapsingAllowed(false);
 	
 		PatientController patCon = new PatientController();
 		for(Patient p: patCon.getPatientsDefaultOrder())
@@ -84,8 +78,7 @@ public class PatientListView {
 		}
 		
 		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
-		patientViewTab.addComponent(patientTable);
-		
+		patientViewTab.addComponent(patientTable);	
 		
 		b_addPatient = new Button("Add Patient");
 		b_addPatient.setWidth(WIDTH);
@@ -93,8 +86,7 @@ public class PatientListView {
 		b_addPatient.addClickListener(new PatientListButtonClickHandler());
 		
 		patientViewTab.addComponent(b_addPatient);
-		
-		
+	
 	}
 	public ComboBox getCombobox(){
 		return combobox;
@@ -109,25 +101,67 @@ public class PatientListView {
 	public Button getB_addPatient() {
 		return b_addPatient;
 	}
-	
+	/**
+	 * @return the insance of the Class
+	 */
 	public static PatientListView getInstance() {
 		if (patListView == null) {
 			patListView = new PatientListView();
 		}		
 		return patListView;
 	}
-	public void FilterStatus(int status){
+
+	/**
+	 * Filters the PatientList to the Status
+	 * 
+	 * 	 - Ambulant
+	 *  - Stationary
+	 *  - New
+	 *  - Archived
+	 *  - All Patinet
+	 *  
+	 * @param status is the selected item in the Combobox 
+	 */
+	public void FilterStatus(String status){
 		
 		PatientController patCon = new PatientController();
 		patientTable.removeAllItems();
+		
 		for(Patient p: patCon.getPatientsDefaultOrder())
 		{
 			Object[] collumn = new Object[]{p.getName(),
 									p.getFirstName(),
 									p.getPatientState().doEnter()};
-			if(status == p.getPatientState().getPatientStateId()){
+			
+			if((status) == p.getPatientState().getPatientStateName()
+					||(status == str_AllPatinets)){
 			patientTable.addItem(collumn,p.getId());
 			}
 		}
 	}
+	/**
+	 * init the combobox for the patient filter
+	 * The table can Filter every Patient State
+	 * 	- Ambulant
+	 *  - Stationary
+	 *  - New
+	 *  - Archived
+	 *  - All Patinet
+	 *  
+	 *  the standard Value is All patients
+	 */
+	private void initcombobox (){
+		combobox = new ComboBox("Select your Filter");
+		combobox.setInvalidAllowed(false);
+		combobox.setWidth(WIDTH);
+		combobox.setNullSelectionAllowed(false);
+		combobox.setNewItemsAllowed(false);   
+		// Add some items and specify their item ID.
+		// The item ID is by default used as item caption.
+		combobox.addItems(str_AllPatinets, str_Stationary, str_Ambulant, str_New,str_Archived);
+		combobox.setValue("str_AllPatinets");
+		patientViewTab.addComponent(combobox);
+		combobox.addValueChangeListener(new PatinetListComboBoxChangeListener());
+	}	
 }
+

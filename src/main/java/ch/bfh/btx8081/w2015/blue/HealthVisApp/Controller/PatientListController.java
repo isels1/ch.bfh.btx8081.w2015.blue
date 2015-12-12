@@ -31,12 +31,9 @@ public class PatientListController {
 	public void FilterPatientListController(ValueChangeEvent event) {
 
 		PatientListView PatListView = PatientListView.getInstance();
-		
-		System.out.println();
-		String status =  ((String) PatListView.getCombobox().getValue()).substring(5);
-		System.out.println(status);
-		int value = Integer.valueOf(status);
-		PatListView.FilterStatus(value);
+
+		String status =  (String) PatListView.getCombobox().getValue();
+		PatListView.FilterStatus(status);
 
 	}
 
