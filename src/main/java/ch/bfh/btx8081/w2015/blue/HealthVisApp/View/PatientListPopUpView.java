@@ -102,7 +102,7 @@ public class PatientListPopUpView {
 		return tfTel.getValue();
 	}
 	
-	public String getTextFieldComent() {
+	public String getTextFieldComment() {
 		return tfCom.getValue();
 	}
 	
@@ -176,7 +176,7 @@ public class PatientListPopUpView {
 	    labTel = new Label("Phone");
 	    labTel.setWidth(COMPWIDTH);
 	    
-	    labCom = new Label("Coment");
+	    labCom = new Label("Comment");
 	    labCom.setWidth(COMPWIDTH);
 	    
 	    //================================================================================

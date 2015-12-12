@@ -140,7 +140,7 @@ public class AppointmentPopUpView {
 	    // Label Section
 	    //================================================================================
 		
-	    labPatId = new Label("Patient Id");
+	    labPatId = new Label("Patient-Id");
 	    labPatId.setWidth(COMPWIDTH);
 	    
 	    labDate = new Label("Date");
@@ -155,7 +155,7 @@ public class AppointmentPopUpView {
 	    labTo = new Label("To");
 	    labTo.setWidth(COMPWIDTH);
 	    
-	    labCom = new Label("Coment");
+	    labCom = new Label("Comment");
 	    labCom.setWidth(COMPWIDTH);
 	    
 	    //================================================================================

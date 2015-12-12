@@ -12,6 +12,7 @@ public class Appointment {
 	private String location;
 	private Patient patient;
 	private Calendar calendar;
+	private Note comment;
 	
 	//================================================================================
     // Constructor Section
@@ -79,6 +80,14 @@ public class Appointment {
 		this.calendar = calendar;
 	}
 	
+	/**
+	 * Setter for the comment
+	 * @param comment The note who belongs to the Appointment /Note
+	 */
+	public void setComment(Note comment) {
+		this.comment = comment;
+	}
+	
 	//================================================================================
     // Getter Section
     //================================================================================
@@ -120,5 +129,13 @@ public class Appointment {
 	 */
 	public Calendar getCalendar() {
 		return calendar;
+	}
+	
+	/**
+	 * Getter for the comment
+	 * @return comment The Note who belongs to the Appointment /Note
+	 */
+	public Note getComment() {
+		return comment;
 	}
 }

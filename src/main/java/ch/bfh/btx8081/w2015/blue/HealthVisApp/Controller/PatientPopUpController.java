@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
@@ -28,14 +29,18 @@ public class PatientPopUpController {
 	
 	public void savePatient(PatientController patc) {
 		String[] addr = patView.getTextFieldAddress().split(ADDR_DELIMITER);
+		Note com = new Note();
+		com.setComment(patView.getTextFieldComment());
 		
-		patc.addNewPatient(new Patient(
-				patView.getTextFieldName(), 
-				patView.getTextFieldFirstname(), 
-				patView.getPopupDateFieldDate(), 
-				new Address(addr[0], Integer.parseInt(addr[1]), 
-							Integer.parseInt(addr[2]), addr[3]), 
-				patView.getTextFieldTel(), 
-				Integer.parseInt(patView.getTextFieldId())));
+		Patient pat = new Patient(patView.getTextFieldName(), 
+									patView.getTextFieldFirstname(), 
+									patView.getPopupDateFieldDate(), 
+									new Address(addr[0], Integer.parseInt(addr[1]), 
+											Integer.parseInt(addr[2]), addr[3]), 
+									patView.getTextFieldTel(), 
+									Integer.parseInt(patView.getTextFieldId()));
+		
+		pat.setComment(com);
+		patc.addNewPatient(pat);
 	}
 }
