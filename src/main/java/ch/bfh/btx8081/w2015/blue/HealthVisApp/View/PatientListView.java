@@ -4,6 +4,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
@@ -87,6 +88,17 @@ public class PatientListView {
 		
 		patientViewTab.addComponent(b_addPatient);
 	
+	}
+	
+	public void addNewPatient(Patient p) {
+		p.setPatientState(new PatientStateNew());
+		Object[] collumn = new Object[]{p.getName(),
+				p.getFirstName(),
+				p.getPatientState().doEnter()};
+
+		patientTable.addItem(collumn,p.getId());
+		
+		patientViewTab.replaceComponent(patientTable, patientTable);
 	}
 	public ComboBox getCombobox(){
 		return combobox;
