@@ -31,10 +31,13 @@ public class PatientListController {
 	public void FilterPatientListController(ValueChangeEvent event) {
 
 		PatientListView PatListView = PatientListView.getInstance();
-		if(event.getProperty().getValue() ==  PatListView.getCombobox().getValue());
-		{
-			PatListView.FilterStatus(1);
-		}
+		
+		System.out.println();
+		String status =  ((String) PatListView.getCombobox().getValue()).substring(5);
+		System.out.println(status);
+		int value = Integer.valueOf(status);
+		PatListView.FilterStatus(value);
+
 	}
 
 }
