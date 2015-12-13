@@ -351,7 +351,13 @@ zwahf1
 zwahf1
 	show new appointment in calendar
 	add note to new appointment and patient
-
+	
+################	
+#  13.12.2015  #
+################
+zwahf1
+	add comment to created classes
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
