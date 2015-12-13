@@ -181,13 +181,13 @@ public class CalendarView {
 			GregorianCalendar weekstart = new GregorianCalendar();
 			GregorianCalendar weekend   = new GregorianCalendar();
 			
-			weekstart.setFirstDayOfWeek(java.util.Calendar.SUNDAY);
+			weekstart.setFirstDayOfWeek(java.util.Calendar.MONDAY);
 			weekstart.set(java.util.Calendar.HOUR_OF_DAY, 0);
 			weekstart.set(java.util.Calendar.DAY_OF_WEEK,
-			               java.util.Calendar.SUNDAY);
+			               java.util.Calendar.MONDAY);
 			weekend.set(java.util.Calendar.HOUR_OF_DAY, 23);
 			weekend.set(java.util.Calendar.DAY_OF_WEEK,
-			               java.util.Calendar.SATURDAY);
+			               java.util.Calendar.FRIDAY);
 			calendar.setStartDate(weekstart.getTime());
 			calendar.setEndDate(weekend.getTime());
 			  
