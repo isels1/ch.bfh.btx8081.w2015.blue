@@ -9,24 +9,56 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
+/**
+ * control the events from the appointment- view
+ * 
+ * <ul>
+ * 	handle the events given from the appoointment-view (save new appointment)
+ * </ul>
+ * @author zwahf1
+ *
+ */
 public class AppointmentPopUpController {
 	
+	//================================================================================
+    // AppointmentPopUpController  Data
+    //================================================================================
 	public static String DATE_DELIMITER = "/";
 	public static String TIME_DELIMITER = ":";
 	
 	private AppointmentPopUpView appView;
-	
+
+	//================================================================================
+    // Constructor Section
+    //================================================================================
+	/**
+	 * This constructor initialize the appointment controller for add a new appointment
+	 */
 	public AppointmentPopUpController(){
 	}
 	
+	//================================================================================
+    // Other  Section
+    //================================================================================
+	
+	/**
+	 * create new appointment pop-up
+	 */
 	public void createAppointmentPopUp() {
 		appView = new AppointmentPopUpView();
 	}
 	
+	/**
+	 * get the new created appointment
+	 * @return appView: AppointmentPopUpView
+	 */
 	public AppointmentPopUpView getAppView() {
 		return appView;
 	}
 	
+	/**
+	 * save a new appointment in the actual calendar
+	 */
 	public void saveAppointment(HealthVisitorController hvc) {
 		Date date = appView.getPopupDateFieldDate();
 		String[] time1 = appView.getTextFieldFrom().split(TIME_DELIMITER);
