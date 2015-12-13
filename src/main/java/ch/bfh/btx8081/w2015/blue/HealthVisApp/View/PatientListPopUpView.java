@@ -61,7 +61,7 @@ public class PatientListPopUpView {
 	public PatientListPopUpView() {
 		
 		//create window
-		window = new Window("Add new appointment");
+		window = new Window("Add new patient");
 //		window.setModal(true);
 		window.setWidth(WIDTH);
 		window.setHeight(HEIGHT);
