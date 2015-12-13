@@ -4,7 +4,6 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
@@ -16,6 +15,17 @@ import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
+/**
+ * shows all Patient in a Table
+ * 
+ * define a Filter for the Patient whit the Combobox (Patient States)
+ * 
+ * Add a Patient whit the new Patient Button
+ * 
+ * The Color of each patient is different for each state
+ * @author Tim
+ *
+ */
 public class PatientListView {
 
 	private static PatientListView patListView = null;
@@ -27,9 +37,10 @@ public class PatientListView {
 		final static String WIDTH = "318";
 		final static String HEIGHT = "394";
 		
-		private VerticalLayout patientViewTab;
+		private VerticalLayout patientViewTab;//the whole patient View is on this Layout
+		
 		private Table patientTable;
-		private ComboBox combobox;
+		private ComboBox comboboxFilter;
 		private Button b_addPatient = new Button("Add new Patient");
 		
 		//Name for the patient filter
@@ -42,67 +53,27 @@ public class PatientListView {
 	//================================================================================
     // Constructor Section
     //================================================================================
-	
 	private PatientListView() {
-		
+		//add all components to the patientViewTab
 		patientViewTab = new VerticalLayout();
 		
-		HealthVisitorController hvController = new HealthVisitorController();
-		HealthVisitor hv = hvController.getHealthVisitor();
-		patientTable = new Table("Patientlist " + hv.getFirstName()+ " "+ hv.getName());
-		patientTable.setWidth(WIDTH);
-		patientTable.setHeight(HEIGHT);
-		
-		patientTable.addContainerProperty("Name", String.class, null);
-		patientTable.addContainerProperty("Forename",  String.class, null);
-		patientTable.addContainerProperty("State",  String.class, null);
-		
-		//Hide Patient State column
-		patientTable.setColumnCollapsingAllowed(true);
-		patientTable.setColumnCollapsed("State", true);	
-	
-		PatientController patCon = new PatientController();
-		for(Patient p: patCon.getPatientsDefaultOrder())
-		{
-//			Label l_Name = new Label(p.getName());
-//			Label l_ForeName = new Label(p.getFirstName());
-//			Label l_State = new Label(p.getPatientState().doEnter());
-			
-//			l_Name.setStyleName(p.getPatientState().doEnter());
-//			l_ForeName.setStyleName(p.getPatientState().doEnter());
-			
-			Object[] collumn = new Object[]{p.getName(),
-									p.getFirstName(),
-									p.getPatientState().doEnter()};
-			
-			patientTable.addItem(collumn,p.getId());
-		}
-		
-		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
-		patientViewTab.addComponent(patientTable);	
-		
-		b_addPatient = new Button("Add Patient");
-		b_addPatient.setWidth(WIDTH);
-		b_addPatient.setIcon(FontAwesome.USER);
-		b_addPatient.addClickListener(new PatientListButtonClickHandler());
-		
-		patientViewTab.addComponent(b_addPatient);
-	
-	}
-	
-	public void addNewPatient(Patient p) {
-		p.setPatientState(new PatientStateNew());
-		Object[] collumn = new Object[]{p.getName(),
-				p.getFirstName(),
-				p.getPatientState().doEnter()};
+		initcombobox(); //First add Combobox for the Filter
+		initTable();	//add Table whit all patients
+		initAddPatientButton();	//finaly add button whit add Patient
 
-		patientTable.addItem(collumn,p.getId());
-		
-		patientViewTab.replaceComponent(patientTable, patientTable);
 	}
+	
+	/**
+	 * @return the combobox for the Patietn filter
+	 */
 	public ComboBox getCombobox(){
-		return combobox;
+		return comboboxFilter;
 	}
+	
+	/**
+	 * @return patientViewTab 
+	 * return this for the PatientView
+	 */
 	public VerticalLayout getPatientList(){	
 		return patientViewTab;
 	}
@@ -152,7 +123,7 @@ public class PatientListView {
 		}
 	}
 	/**
-	 * init the combobox for the patient filter
+	 * init the combobox for the patient filter and add it to the Vertical Layout
 	 * The table can Filter every Patient State
 	 * 	- Ambulant
 	 *  - Stationary
@@ -163,17 +134,65 @@ public class PatientListView {
 	 *  the standard Value is All patients
 	 */
 	private void initcombobox (){
-		combobox = new ComboBox("Select your Filter");
-		combobox.setInvalidAllowed(false);
-		combobox.setWidth(WIDTH);
-		combobox.setNullSelectionAllowed(false);
-		combobox.setNewItemsAllowed(false);   
+		comboboxFilter = new ComboBox("");
+		comboboxFilter.setInvalidAllowed(false);
+		comboboxFilter.setWidth(WIDTH);
+		comboboxFilter.setNullSelectionAllowed(false);
+		comboboxFilter.setNewItemsAllowed(false);   
 		// Add some items and specify their item ID.
 		// The item ID is by default used as item caption.
-		combobox.addItems(str_AllPatinets, str_Stationary, str_Ambulant, str_New,str_Archived);
-		combobox.setValue("str_AllPatinets");
-		patientViewTab.addComponent(combobox);
-		combobox.addValueChangeListener(new PatinetListComboBoxChangeListener());
+		comboboxFilter.addItems(str_AllPatinets, str_Stationary, str_Ambulant, str_New,str_Archived);
+		comboboxFilter.setValue("str_AllPatinets");
+		patientViewTab.addComponent(comboboxFilter);
+	
+		comboboxFilter.addValueChangeListener(new PatinetListComboBoxChangeListener());
 	}	
+	/**
+	 * init the Table for the Patient list and add it to the Vertical Layout
+	 * 
+	 */
+	private void initTable(){
+		HealthVisitorController hvController = new HealthVisitorController();
+		HealthVisitor hv = hvController.getHealthVisitor();
+		patientTable = new Table("Patientlist " + hv.getFirstName()+ " "+ hv.getName());
+		patientTable.setWidth(WIDTH);
+		patientTable.setHeight(HEIGHT);
+		
+		patientTable.addContainerProperty("Name", String.class, null);
+		patientTable.addContainerProperty("Forename",  String.class, null);
+		patientTable.addContainerProperty("State",  String.class, null);
+		
+		//Hide Patient State column
+		patientTable.setColumnCollapsingAllowed(true);
+		patientTable.setColumnCollapsed("State", true);	
+	
+		PatientController patCon = new PatientController();
+		for(Patient p: patCon.getPatientsDefaultOrder())
+		{
+//			Label l_Name = new Label(p.getName());
+//			Label l_ForeName = new Label(p.getFirstName());
+//			Label l_State = new Label(p.getPatientState().doEnter());
+			
+//			l_Name.setStyleName(p.getPatientState().doEnter());
+//			l_ForeName.setStyleName(p.getPatientState().doEnter());
+			
+			Object[] collumn = new Object[]{p.getName(),
+									p.getFirstName(),
+									p.getPatientState().doEnter()};
+			
+			patientTable.addItem(collumn,p.getId());
+		}
+		
+		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
+		patientViewTab.addComponent(patientTable);	
+	}
+	private void initAddPatientButton (){
+		b_addPatient = new Button("Add Patient");
+		b_addPatient.setWidth(WIDTH);
+		b_addPatient.setIcon(FontAwesome.USER);
+		b_addPatient.addClickListener(new PatientListButtonClickHandler());
+		
+		patientViewTab.addComponent(b_addPatient);
+	}
 }
 

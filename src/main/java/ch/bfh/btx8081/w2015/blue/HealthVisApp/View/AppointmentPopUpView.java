@@ -3,11 +3,14 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
@@ -26,14 +29,14 @@ public class AppointmentPopUpView {
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
 	
-	Label labPatId;
+	Label labPat;
 	Label labDate;
 	Label labLoc;
 	Label labFrom;
 	Label labTo;
 	Label labCom;
 	
-	TextField tfPatId;
+	ComboBox comboboxPatient;
 	TextField tfDate;
 	TextField tfLoc;
 	TextField tfFrom;
@@ -76,8 +79,8 @@ public class AppointmentPopUpView {
 		return layout;
 	}
 	
-	public String getTextFieldPatientId() {
-		return tfPatId.getValue();
+	public String getTextFieldPatient() {
+		return (String) comboboxPatient.getValue();
 	}
 	
 	public String getTextFieldLocation() {
@@ -140,8 +143,8 @@ public class AppointmentPopUpView {
 	    // Label Section
 	    //================================================================================
 		
-	    labPatId = new Label("Patient-Id");
-	    labPatId.setWidth(COMPWIDTH);
+	    labPat = new Label("Patient");
+	    labPat.setWidth(COMPWIDTH);
 	    
 	    labDate = new Label("Date");
 	    labDate.setWidth(COMPWIDTH);
@@ -155,15 +158,23 @@ public class AppointmentPopUpView {
 	    labTo = new Label("To");
 	    labTo.setWidth(COMPWIDTH);
 	    
-	    labCom = new Label("Comment");
+	    labCom = new Label("Coment");
 	    labCom.setWidth(COMPWIDTH);
 	    
 	    //================================================================================
 	    // Textfield Section
 	    //================================================================================
 	    
-	    tfPatId = new TextField();
-	    tfPatId.setWidth(COMPWIDTH);
+		comboboxPatient = new ComboBox("");
+		comboboxPatient.setInvalidAllowed(false);
+		comboboxPatient.setWidth(COMPWIDTH);
+		comboboxPatient.setNullSelectionAllowed(false);
+		comboboxPatient.setNewItemsAllowed(false);   
+		PatientController patCon = new PatientController();
+		for(Patient p: patCon.getPatientsDefaultOrder())
+		{
+			comboboxPatient.addItems(p);
+		}
 	    
 	    tfLoc = new TextField();
 	    tfLoc.setWidth(COMPWIDTH);
@@ -202,8 +213,8 @@ public class AppointmentPopUpView {
 	    // Add Section
 	    //================================================================================
 	    
-	    layPat.addComponent(labPatId);
-	    layPat.addComponent(tfPatId);
+	    layPat.addComponent(labPat);
+	    layPat.addComponent(comboboxPatient);
 	    
 	    layDate.addComponent(labDate);
 	    layDate.addComponent(dfDate);
