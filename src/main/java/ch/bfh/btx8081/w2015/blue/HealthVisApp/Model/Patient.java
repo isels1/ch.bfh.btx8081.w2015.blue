@@ -18,6 +18,15 @@ public class Patient extends Person {
 	private HealthVisitor healthvisitor;
 	private PatientState state;
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return  super.getFirstName() + " "+super.getName();
+	}
+
+
 	//================================================================================
     // Constructor Section
     //================================================================================

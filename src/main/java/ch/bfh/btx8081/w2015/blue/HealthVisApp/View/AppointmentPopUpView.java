@@ -79,8 +79,8 @@ public class AppointmentPopUpView {
 		return layout;
 	}
 	
-	public String getTextFieldPatient() {
-		return (String) comboboxPatient.getValue();
+	public Patient getcomboboxPatient() {
+		return (Patient) comboboxPatient.getValue();
 	}
 	
 	public String getTextFieldLocation() {
