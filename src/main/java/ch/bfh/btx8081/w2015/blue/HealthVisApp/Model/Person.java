@@ -17,19 +17,34 @@ public class Person {
     //================================================================================
     // Constructor Section
     //================================================================================
+	/**
+	 * This constructor is used for testing.
+	 */
+	
+    public Person()
+    {
+    	
+    }
     
+	/**
+	 * This constructor initialize the Person with the necessary information
+	 * <br>
+	 * <br>
+	 * @param name the Name of the Person /String
+	 * @param firstName the first Name of the Person /String
+	 * @param address the Address of the Person /Address
+	 * @param birthdate the Birthdate of the Person /Date
+	 * @param phone the Phone Number of the Person /String
+	 */
     public Person(String name, String firstName, Date birthdate, Address address, String phone){
         this.name = name;
         this.firstName = firstName;
+        this.address = address;
         this.birthdate = birthdate;
         this.phone = phone;
    
     }
     
-    public Person()
-    {
-    	
-    }
 
     //================================================================================
     // Setter Section

@@ -17,11 +17,22 @@ public class Appointment {
 	//================================================================================
     // Constructor Section
     //================================================================================
+	/**
+	 * This constructor is used for testing.
+	 */
 	
 	public Appointment(){
 		
 	}
-	
+	/**
+	 * This constructor initialize the appointment with the necessary information
+	 * <br>
+	 * <br>
+	 * @param startTime The Time when the Appointment starts /GregorianCalendar
+	 * @param endTime The Time when the Appointment ends /GregorianCalendar
+	 * @param location The location where the appointment is /String
+	 * @param patient The Patient who has the Appointment /Patient
+	 */
 	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, String location, Patient patient){	
 		this.startTime = startTime;
 		this.endTime = endTime;

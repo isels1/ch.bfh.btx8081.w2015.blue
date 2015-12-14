@@ -15,11 +15,20 @@ public class Calendar {
 	//================================================================================
     // Constructor Section
     //================================================================================
+	/**
+	 * This constructor is used for testing.
+	 */
 	
 	public Calendar(){
 		
 	}
-	
+	/**
+	 * This constructor initialize the calendar with the necessary information
+	 * <br>
+	 * <br>
+	 * @param Appointment List with Appointments /ArrayList<Appointment>
+	 * @param Healthvisitor The responsible Healthvisitor /HealthVisitor
+	 */
 	public Calendar(ArrayList<Appointment> appointment, HealthVisitor healthvisitor)
 	{
 		this.appointment = appointment;

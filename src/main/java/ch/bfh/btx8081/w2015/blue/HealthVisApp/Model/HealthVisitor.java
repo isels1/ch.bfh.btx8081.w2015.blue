@@ -18,11 +18,27 @@ public class HealthVisitor extends Person {
 	//================================================================================
     // Constructor Section
     //================================================================================
-
+	/**
+	 * This constructor initialize the HealthVisitor with the necessary information
+	 * <br>
+	 * <br>
+	 * @param userName Username of the Healthvisitor /String
+	 * @param password The password of the Healthvisitor /String
+	 */
 	public HealthVisitor(String userName, String password) {
 		super();
 	}
 	
+	/**
+	 * This constructor initialize the HealthVisitor with the necessary information
+	 * <br>
+	 * <br>
+	 * @param name The Name of the Healthvisitor /String
+	 * @param firstName The first Name of the Healthvisitor /String
+	 * @param birthdate the birthdate of the Healthvisitor /Date
+	 * @param address the address of the Healthvisitor /Address
+	 * @param phone the phone number of the Healthvisitor /String
+	 */
 	
 	public HealthVisitor(String name, String firstName, Date birthdate,
 			Address address, String phone){

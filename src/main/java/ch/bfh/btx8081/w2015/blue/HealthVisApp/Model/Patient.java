@@ -86,7 +86,10 @@ public class Patient extends Person {
 	public void setHealthvisitor(HealthVisitor healthvisitor) {
 		this.healthvisitor = healthvisitor;
 	}
-	
+	/**
+	 * The setter for the Patient State
+	 * @param state The State of the Patient /PatientState
+	 */
 	public void setPatientState(PatientState state){
 		this.state = state;
 	}
@@ -129,7 +132,10 @@ public class Patient extends Person {
 	public HealthVisitor getHealthvisitor() {
 		return healthvisitor;
 	}
-	
+	/**
+	 * The setter for the Patient State
+	 * @return state The State of the Patient /PatientState
+	 */
 	public PatientState getPatientState(){
 		return state;
 	}
