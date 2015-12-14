@@ -371,12 +371,12 @@ dornt1
 #  14.12.2015  #
 ################
 daily scrum
-	add metodes to the classes from model(tostring, equals)
+	add methods to the classes from model(tostring, equals)
 	edit the popup View
 	review Code
 	edit javadoc
 dornt1
-	reveiw code
+	review code
 	edit javadoc
 
 	
