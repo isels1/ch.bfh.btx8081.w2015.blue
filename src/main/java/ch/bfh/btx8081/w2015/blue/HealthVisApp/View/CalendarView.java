@@ -26,14 +26,52 @@ import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 /**
- * This class Crates a Vertical Layout for the Calendar View
- * 
- *  The Layout Contains:
- *   three Buttons for changing the View(Monthly,Weekly and daily)
- *   One Calendar Object
- *   One Button for adding a new Appointment
- * @author Tim
- *
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		CalendarView
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		creates an instance of a Calendar View.
+ * </span>
+ * <br>
+ * <br>
+ * the CalendarView contains following Vaadin Elements:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				<b>a HorizontalLyout whit 3 Buttons:</b>
+ * 			</font> 
+ * 			<i>HorizontalLayout</i>
+ * 			- 3 Buttons for change the View (daily, weekly and monthly)
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				<b>a VaadinCalendar:</b>
+ * 			</font> 
+ * 			<i>Calendar</i>
+ * 			- a Calendar whit all appointments
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				<b>a Button:</b>
+ * 			</font> 
+ * 			<i>Button</i>
+ * 			- add a new appointment
+ * 		</li>
+ *	 </ul>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		01.12.2015
+ * </span>
+ * <br><br>
+ * @author dornt1
+ * @version 1.7
  */
 public class CalendarView {
 	
@@ -58,13 +96,12 @@ public class CalendarView {
 		//================================================================================
 	    // Constructor Section
 	    //================================================================================
-		
 		private CalendarView(){
 	        
-			initCalendar();	
+			
 			//Great a Horizontal Layout whit 3 Buttons
 			initHeaderLayout();
-
+			initCalendar();	
 			// Add events
 			AppointmentEventProvider appointmentProvider = new AppointmentEventProvider();
 			
@@ -87,9 +124,12 @@ public class CalendarView {
 	        calendarTab.addComponent(b_addApp);
 		}
 		//================================================================================
-	    // Public Methods
+	    // Public methods
 	    //================================================================================
 	
+		//================================================================================
+	    // getter and setter section
+	    //================================================================================
 		/**
 		 * This Methode Creates and Instance of the CalendarView Class if it not already exists
 		 * @return A instance of the CalendarView class
@@ -101,7 +141,6 @@ public class CalendarView {
 			}
 			return calView;
 		}
-		
 		/**
 		 * 
 		 * @return the Calendar Object of the CalendarView class in a Vertical Layout
@@ -109,35 +148,33 @@ public class CalendarView {
 		public VerticalLayout getCalendarView(){	
 			return calendarTab;
 		}
-		
 		/**
 		 * @return the b_MonthlyView
 		 */
 		public Button getB_MonthlyView() {
 			return b_MonthlyView;
 		}
-		
 		/**
 		 * @return the b_WeeklyView
 		 */
 		public Button getB_WeeklyView() {
 			return b_WeeklyView;
 		}
-		
 		/**
 		 * @return the b_DailyView
 		 */
 		public Button getB_DailyView() {
 			return b_DailyView;
 		}
-		
 		/**
 		 * @return the b_addApp
 		 */
 		public Button getB_addApp() {
 			return b_addApp;
 		}
-		
+		//================================================================================
+	    // add new Appointment Section
+	    //================================================================================
 		/**
 		 * shows new added Appointment from popup
 		 */
@@ -150,12 +187,10 @@ public class CalendarView {
 					app.getStartTime().getTime(), app.getEndTime().getTime());
 			calendar.addEvent(e);
 			calendarTab.replaceComponent(calendar, calendar);
-		}
-		
+		}		
 		//================================================================================
-	    // Methods to change the view (Monthly, Weekly and Daily)
-	    //================================================================================
-		
+	    // Methods to change the view (Daily, Weekly and Monthly)
+	    //================================================================================	
 		/**
 		 * Set the view of the calendar to the actual Day
 		 */
@@ -166,8 +201,7 @@ public class CalendarView {
 			
 			calendar.setFirstVisibleDayOfWeek(1);
 			calendar.setLastVisibleDayOfWeek(7);
-		}
-		
+		}	
 		/**
 		 * Set the view of the calendar to the actual Week
 		 * only show Monday to Friday
@@ -175,8 +209,7 @@ public class CalendarView {
 		 * Problem the CSS file must be modified 
 		 */
 		public void changeToWeekly()
-		{
-			
+		{	
 			// Change the date range to the current week
 			GregorianCalendar weekstart = new GregorianCalendar();
 			GregorianCalendar weekend   = new GregorianCalendar();
@@ -192,10 +225,8 @@ public class CalendarView {
 			calendar.setEndDate(weekend.getTime());
 			  
 			calendar.setFirstVisibleDayOfWeek(2);
-			calendar.setLastVisibleDayOfWeek(6);
-			
+			calendar.setLastVisibleDayOfWeek(6);		
 		}
-		
 		/**
 		 * Set the view of the calendar to the actual Month
 		 *
@@ -245,7 +276,6 @@ public class CalendarView {
 			
 			changeToDaily();
 		}
-		
 		/**
 		 * Create all Buttons and add it to a Horizontal Layout
 		 */
@@ -268,8 +298,5 @@ public class CalendarView {
 			headerLayout.addComponent(b_MonthlyView);
 			headerLayout.addComponent(b_WeeklyView);
 			headerLayout.addComponent(b_DailyView);
-		}
-		
-		
+		}		
 	}
-
