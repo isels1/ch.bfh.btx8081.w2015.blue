@@ -88,7 +88,7 @@ task03
 		-all possible views
 		-login
 		-calendar view (day, week, month)
-		-patient view (Infos, Behandlungsübersicht, Termine)
+		-patient view (Infos, Behandlungsï¿½bersicht, Termine)
 	
 ################	
 #  13.10.2015  #
@@ -188,7 +188,7 @@ Task 03
 	define roles for group
 		-product owner: J. Vogel
 		-scrum master: S. Iseli
-		-developers: C. Noser, L. Hügi, T. Dorner, F. Zwahlen
+		-developers: C. Noser, L. Hï¿½gi, T. Dorner, F. Zwahlen
 	create product backlog
 	finished product backlog
 	create sprint backlog 1
@@ -229,7 +229,7 @@ Bewertung Tasks
 Task03 17 / 25
 	-detailiertere Dokumentation
 	-Quelle Literatur fehlte
-	-Storyboards ausführlicher
+	-Storyboards ausfï¿½hrlicher
 	-Besserer Prototyp
 	-Be freaky
 
@@ -268,10 +268,10 @@ Got new Task
 Review sprint 1 with product owner
 	ein bisschen spaghetti
 	2 intefaces Calendar & Patient
-		falls brauchen -> packagehierarchy ändern
-	buttonClickHandler gehört zu Controller-package
+		falls brauchen -> packagehierarchy ï¿½ndern
+	buttonClickHandler gehï¿½rt zu Controller-package
 	nicht static verwenden -> lieber Objekt generieren
-		lösung durch private Konstruktor
+		lï¿½sung durch private Konstruktor
 	
 ################	
 #  03.12.2015  #
@@ -281,7 +281,7 @@ start sprint2
 dornt1 zwahf1
 	add apointment popup for calendarView
 	
-isels1 nosec1 hügil1
+isels1 nosec1 hï¿½gil1
 	design statepattern
 	create patview
 
@@ -340,7 +340,8 @@ zwahf1
 dornt1
 	create Table for PatientlistView
 	add Labels to Tabel for Colors
-	
+hugil1
+	refactoring		
 ################	
 #  11.12.2015  #
 ################
