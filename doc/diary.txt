@@ -337,6 +337,9 @@ zwahf1
 ################
 zwahf1
 	adapt popup appointment and create controller
+dornt1
+	create Table for PatientlistView
+	add Labels to Tabel for Colors
 	
 ################	
 #  11.12.2015  #
@@ -351,13 +354,18 @@ zwahf1
 zwahf1
 	show new appointment in calendar
 	add note to new appointment and patient
+dornt1
+	add Combobox to Add Appointment View
 	
 ################	
 #  13.12.2015  #
 ################
 zwahf1
 	add comment to created classes
-	
+dornt1
+	add object referenc to Table and Combobox
+	edit PatientListTable 
+	edit tostring from patient class
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
