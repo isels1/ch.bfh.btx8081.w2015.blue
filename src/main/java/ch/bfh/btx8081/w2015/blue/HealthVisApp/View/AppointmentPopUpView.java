@@ -6,9 +6,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.PopupDateField;
@@ -77,10 +75,11 @@ public class AppointmentPopUpView {
 	final static String WIDTH = TabView.WIDTH;
 	final static String COMPHEIGHT = "81";				//568 / 7
 	final static String COMPWIDTH = "160";				//320 / 2
+	final static String DATEFORMAT = "dd/MM/yyyy";
 	
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
-	
+
 	Label labPat;
 	Label labDate;
 	Label labLoc;
@@ -96,7 +95,7 @@ public class AppointmentPopUpView {
 	
 	PopupDateField dfDate;
 	
-	TextArea tfCom;
+	TextArea taCom;
 	
 	Button butSave;
 	Button butCancel;
@@ -169,7 +168,7 @@ public class AppointmentPopUpView {
 	 * @return comment: String
 	 */
 	public String getTextFieldComment() {
-		return tfCom.getValue();
+		return taCom.getValue();
 	}
 	
 	/**
@@ -243,24 +242,38 @@ public class AppointmentPopUpView {
 		//===============================
 	    // create Section
 	    //===============================
-	    this.createLabPat();
-	    this.createLabDate();
-	    this.createLabLoc();
-	    this.createLabFrom();
-	    this.createLabTo();
-	    this.createLabCom();
+		labPat = new Label();
+		this.createLabel(labPat, "Patient", COMPWIDTH);
+		labDate = new Label();
+		this.createLabel(labDate, "Date", COMPWIDTH);
+		labLoc = new Label();
+		this.createLabel(labLoc, "Location", COMPWIDTH);
+		labFrom = new Label();
+		this.createLabel(labFrom, "From", COMPWIDTH);
+		labTo = new Label();
+		this.createLabel(labTo, "To", COMPWIDTH);
+		labCom = new Label();
+		this.createLabel(labCom, "Comment", COMPWIDTH);
 	    
 	    this.createCombobox();
 	    
-	    this.createTfLoc();
-	    this.createTfFrom();
-	    this.createTfTo();
-	    this.createTfCom();
+	    tfLoc = new TextField();
+	    this.createTextField(tfLoc, COMPWIDTH, "");
+	    tfFrom = new TextField();
+	    this.createTextField(tfFrom, COMPWIDTH, "hh:mm");
+	    tfTo = new TextField();
+	    this.createTextField(tfTo, COMPWIDTH, "hh:mm");
 	    
-		this.createDfDate();
+	    taCom = new TextArea();
+	    this.createTextArea(taCom, COMPWIDTH, COMPHEIGHT, "");
+	    
+	    dfDate = new PopupDateField();
+		this.createPopupDateField(dfDate, COMPWIDTH, DATEFORMAT);
 		
-		this.createButSave();
-		this.createButCancel();
+		butSave = new Button();
+		this.createButton(butSave, "Save", COMPWIDTH, new AppointmentButtonClickHandler());
+		butCancel = new Button();
+		this.createButton(butCancel, "Cancel", COMPWIDTH, new AppointmentButtonClickHandler());
 	    
 	    //===============================
 	    // Add Section
@@ -281,7 +294,7 @@ public class AppointmentPopUpView {
 	    layTo.addComponent(tfTo);
 	    
 	    layCom.addComponent(labCom);
-	    layCom.addComponent(tfCom);
+	    layCom.addComponent(taCom);
 	    
 	    layBut.addComponent(butSave);
 	    layBut.addComponent(butCancel);
@@ -298,51 +311,14 @@ public class AppointmentPopUpView {
 	}
 	
 	/**
-	 * create label for patient
+	 * create label for pop-up view
+	 * @param label: Label
+	 * @param labelContent: String
+	 * @param width: String
 	 */
-	private void createLabPat() {
-		labPat = new Label("Patient");
-	    labPat.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create label for date
-	 */
-	private void createLabDate() {
-		labDate = new Label("Date");
-	    labDate.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create label for location
-	 */
-	private void createLabLoc() {
-		labLoc = new Label("Location");
-	    labLoc.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create label for from (time)
-	 */
-	private void createLabFrom() {
-		labFrom = new Label("From");
-	    labFrom.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create label for to (time)
-	 */
-	private void createLabTo() {
-		labTo = new Label("To");
-	    labTo.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create label for comment
-	 */
-	private void createLabCom() {
-		labCom = new Label("Coment");
-	    labCom.setWidth(COMPWIDTH);
+	private void createLabel(Label label, String labelContent, String width) {
+		label.setCaption(labelContent);
+		label.setWidth(width);
 	}
 	
 	/**
@@ -362,63 +338,52 @@ public class AppointmentPopUpView {
 	}
 	
 	/**
-	 * create textfield for location
+	 * create textfield for pop-up view
+	 * @param tf: TextField
+	 * @param width: String
+	 * @param inputPrompt: String
 	 */
-	private void createTfLoc() {
-		tfLoc = new TextField();
-	    tfLoc.setWidth(COMPWIDTH);
-	}
-
-	/**
-	 * create textfield for from (time)
-	 */
-	private void createTfFrom() {
-		tfFrom = new TextField();
-	    tfFrom.setWidth(COMPWIDTH);
-	}
-	
-	/**
-	 * create textfield for to (time)
-	 */
-	private void createTfTo() {
-		tfTo = new TextField();
-	    tfTo.setWidth(COMPWIDTH);
+	private void createTextField(TextField tf, String width, String inputPrompt) {
+	    tf.setWidth(width);
+	    tf.setInputPrompt(inputPrompt);
 	}
 	
 	/**
 	 * create textarea for comment
+	 * @param ta: TextArea
+	 * @param width: String
+	 * @param height: String
+	 * @param inputPrompt: String
 	 */
-	private void createTfCom() {
-		tfCom = new TextArea();
-	    tfCom.setHeight(COMPHEIGHT);
-	    tfCom.setWidth(COMPWIDTH);
+	private void createTextArea(TextArea ta, String width, String height, String inputPrompt) {
+	    ta.setHeight(height);
+	    ta.setWidth(width);
+	    ta.setInputPrompt(inputPrompt);
 	}
 	
 	/**
-	 * create datefield for date
+	 * create popup-datefield for pop-up view
+	 * @param df: PopupDateField
+	 * @param width: String
+	 * @param dateFormat: String
 	 */
-	private void createDfDate() {
-		dfDate = new PopupDateField();
-	    dfDate.setWidth(COMPWIDTH);
-	    dfDate.setDateFormat("dd/MM/yyyy");
+	private void createPopupDateField(PopupDateField df, String width, String dateFormat) {
+	    df.setWidth(width);
+	    df.setDateFormat(dateFormat);
+	    df.setInputPrompt(dateFormat);
 	}
 	
 	/**
-	 * create button for save
+	 * create button for pop-up view
+	 * @param button: Button
+	 * @param buttonName: String
+	 * @param width: String
+	 * @param appHandler: AppointmentButtonClickHandler
 	 */
-	private void createButSave() {
-		butSave = new Button("Save");
-	    butSave.setWidth(COMPWIDTH);
-	    butSave.addClickListener(new AppointmentButtonClickHandler());
-	}
-	
-	/**
-	 * create button for cancel
-	 */
-	private void createButCancel() {
-		butCancel = new Button("Cancel");
-	    butCancel.setWidth(COMPWIDTH);
-	    butCancel.addClickListener(new AppointmentButtonClickHandler());
+	private void createButton(Button button, String buttonName, String width, AppointmentButtonClickHandler appHandler) {
+		button.setCaption(buttonName);
+		button.setWidth(width);
+		button.addClickListener(appHandler);
 	}
 	
 	/**
