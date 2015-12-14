@@ -71,7 +71,7 @@ public class PatientListView {
     //================================================================================
 		
 		final static String WIDTH = "318";
-		final static String HEIGHT = "394";
+		final static String HEIGHT = "396";
 		
 		private VerticalLayout patientViewTab;//the whole patient View is on this Layout
 		
@@ -97,7 +97,7 @@ public class PatientListView {
 		initTable();	//add Table whit all patients
 		initAddPatientButton();	//finaly add button whit add Patient
 
-		patientViewTab.addComponent(b_addPatient);
+		patientViewTab.addComponent(comboboxFilter);
 		patientViewTab.addComponent(patientTable);	
 		patientViewTab.addComponent(b_addPatient);
 	}
