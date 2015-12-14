@@ -53,6 +53,7 @@ public class PatientListView {
 	//================================================================================
     // Constructor Section
     //================================================================================
+	
 	private PatientListView() {
 		//add all components to the patientViewTab
 		patientViewTab = new VerticalLayout();
@@ -108,6 +109,11 @@ public class PatientListView {
 	public void refreshView(){
 		insertPatientinList();
 	}
+	
+	//================================================================================
+    // Private Helper Section
+    //================================================================================
+	
 	/**
 	 * init the combobox for the patient filter and add it to the Vertical Layout
 	 * The table can Filter every Patient State
@@ -119,9 +125,6 @@ public class PatientListView {
 	 *  
 	 *  the standard Value is All patients
 	 */
-	//
-	//Private Methods
-	//
 	private void initcombobox (){
 		comboboxFilter = new ComboBox("");
 		comboboxFilter.setInvalidAllowed(false);
@@ -136,6 +139,7 @@ public class PatientListView {
 	
 		comboboxFilter.addValueChangeListener(new PatinetListComboBoxChangeListener());
 	}	
+	
 	/**
 	 * init the Table for the Patient list and add it to the Vertical Layout
 	 * 
@@ -152,6 +156,7 @@ public class PatientListView {
 		insertPatientinList();
 		patientViewTab.addComponent(patientTable);	
 	}
+	
 	private void initAddPatientButton (){
 		b_addPatient = new Button("Add Patient");
 		b_addPatient.setWidth(WIDTH);
@@ -160,6 +165,7 @@ public class PatientListView {
 		
 		patientViewTab.addComponent(b_addPatient);
 	}
+	
 	private void insertPatientinList()
 	{
 		String status = (String) comboboxFilter.getValue();

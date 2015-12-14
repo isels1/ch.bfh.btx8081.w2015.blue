@@ -3,12 +3,18 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.PopupDateField;
@@ -37,6 +43,7 @@ public class PatientListPopUpView {
 	Label labAddr;
 	Label labTel;
 	Label labCom;
+	Label labState;
 	
 	TextField tfName;
 	TextField tfFName;
@@ -44,6 +51,8 @@ public class PatientListPopUpView {
 	TextField tfAddr1;
 	TextField tfAddr2;
 	TextField tfTel;
+	
+	ComboBox cmbState;
 	
 	PopupDateField dfBDate;
 	
@@ -110,6 +119,10 @@ public class PatientListPopUpView {
 		return dfBDate.getValue();
 	}
 	
+	public PatientState getCmBoxPatientState(){
+		return (PatientState) cmbState.getValue();
+	}
+	
 	public Button getButtonSave() {
 		return butSave;
 	}
@@ -149,6 +162,9 @@ public class PatientListPopUpView {
 		HorizontalLayout layTel = new HorizontalLayout();
 		layTel.setHeight(HOR_LAY_HEIGHT);
 		
+		HorizontalLayout layState = new HorizontalLayout();
+		layState.setHeight(HOR_LAY_HEIGHT);
+		
 		HorizontalLayout layCom = new HorizontalLayout();
 		layCom.setHeight(HOR_LAY_HEIGHT);
 		
@@ -178,6 +194,9 @@ public class PatientListPopUpView {
 	    
 	    labCom = new Label("Comment");
 	    labCom.setWidth(COMPWIDTH);
+	    
+	    labState = new Label("Patient State");
+	    labState.setWidth(COMPWIDTH);
 	    
 	    //================================================================================
 	    // Textfield Section
@@ -212,6 +231,22 @@ public class PatientListPopUpView {
 	    dfBDate = new PopupDateField();
 	    dfBDate.setWidth(COMPWIDTH);
 	    dfBDate.setDateFormat("dd/MM/yyyy");
+	    
+	    //================================================================================
+	    // ComboBox Section
+	    //================================================================================
+	    
+	    cmbState = new ComboBox();
+	    cmbState.setInvalidAllowed(false);
+	    cmbState.setWidth(COMPWIDTH);
+	    cmbState.setNullSelectionAllowed(false);
+	    cmbState.setNewItemsAllowed(false); 
+	    
+	    cmbState.addItems(new PatientStateNew(),
+	    				  new PatientStateAmbulant(), 
+	    				  new PatientStateStationary(), 
+	    				  new PatientStateArchived());
+	    cmbState.setValue(new PatientStateNew());
 	    
 	    //================================================================================
 	    // Button Section
@@ -252,6 +287,9 @@ public class PatientListPopUpView {
 	    layTel.addComponent(labTel);
 	    layTel.addComponent(tfTel);
 	    
+	    layState.addComponent(labState);
+	    layState.addComponent(cmbState);
+	    
 	    layCom.addComponent(labCom);
 	    layCom.addComponent(tfCom);
 	    
@@ -264,6 +302,7 @@ public class PatientListPopUpView {
 	    layAll.addComponent(layBDate);
 	    layAll.addComponent(layAddr);
 	    layAll.addComponent(layTel);
+	    layAll.addComponent(layState);
 	    layAll.addComponent(layCom);
 	    layAll.addComponent(layBut);
 	    

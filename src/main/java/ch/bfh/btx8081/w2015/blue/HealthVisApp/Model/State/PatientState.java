@@ -67,4 +67,10 @@ public abstract class PatientState {
 	public String getPatientStateName(){
 		return name;
 	}
+	
+	@Override
+	public String toString(){
+		return name;
+		
+	}
 }

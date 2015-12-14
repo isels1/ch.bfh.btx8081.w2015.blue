@@ -34,6 +34,9 @@ public class AppointmentPopUpController {
 	/**
 	 * This constructor initialize the appointment controller for add a new appointment
 	 */
+	/**
+	 * 
+	 */
 	public AppointmentPopUpController(){
 	}
 	
@@ -58,6 +61,7 @@ public class AppointmentPopUpController {
 	
 	/**
 	 * save a new appointment in the actual calendar
+	 * @param hvc
 	 */
 	public void saveAppointment(HealthVisitorController hvc) {
 		Date date = appView.getPopupDateFieldDate();

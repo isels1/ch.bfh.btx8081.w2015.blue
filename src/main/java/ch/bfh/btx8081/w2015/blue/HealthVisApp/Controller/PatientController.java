@@ -49,6 +49,10 @@ public class PatientController {
  * get all patients in the default order from actual healthvisitor
  * @return patients: ArrayList<Patient>
  **/
+	/**
+	 * 
+	 * @return
+	 */
 	public ArrayList<Patient> getPatientsDefaultOrder(){
 		ArrayList<Patient> defaultOrder = new ArrayList<Patient>();
 		defaultOrder.addAll(hv.getPatient());

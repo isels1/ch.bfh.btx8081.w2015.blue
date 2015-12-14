@@ -22,7 +22,6 @@ public class PatinetListComboBoxChangeListener implements ComboBox.ValueChangeLi
 	
 	@Override
 	public void valueChange(com.vaadin.data.Property.ValueChangeEvent event) {
-
 		patListController.FilterPatientListController(event);
 	}
 }

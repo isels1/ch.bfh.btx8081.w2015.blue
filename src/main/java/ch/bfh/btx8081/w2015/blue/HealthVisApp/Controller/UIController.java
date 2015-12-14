@@ -23,9 +23,16 @@ public class UIController {
     // Constructor Section
     //================================================================================
 	
+	/**
+	 * 
+	 */
 	private UIController(){
 	}
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public static UIController getInstance() {
 		if (c == null) {
 			c = new UIController();
@@ -37,6 +44,10 @@ public class UIController {
     // Calendar Section
     //================================================================================
 	
+	/**
+	 * 
+	 * @param event
+	 */
 	public void changeCalendarViewController(ClickEvent event) {
 		CalendarView calView = CalendarView.getInstance();
 		
@@ -79,19 +90,32 @@ public class UIController {
     // Appointment PopUp Section
     //================================================================================
 	
+	/**
+	 * 
+	 * @return
+	 */
 	public AppointmentPopUpController getAppPopUpController() {
 		return appPopUpCon;
 	}
 	
+	/**
+	 * 
+	 */
 	public void createAppointmentPopUp() {
 		appPopUpCon = new AppointmentPopUpController();
 		appPopUpCon.createAppointmentPopUp();
 	}
 	
+	/**
+	 * 
+	 */
 	public void closeAppointmentPopUp() {
 		appPopUpCon.getAppView().close();
 	}
 	
+	/**
+	 * 
+	 */
 	public void saveAppointment() {
 		appPopUpCon.saveAppointment(new HealthVisitorController());
 		appPopUpCon.getAppView().close();

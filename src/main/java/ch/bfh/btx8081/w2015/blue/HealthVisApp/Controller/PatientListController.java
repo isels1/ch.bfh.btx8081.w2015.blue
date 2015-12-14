@@ -29,9 +29,7 @@ public class PatientListController {
 	}
 	
 	public void FilterPatientListController(ValueChangeEvent event) {
-
 		PatientListView PatListView = PatientListView.getInstance();
-
 		PatListView.refreshView();
 
 	}
