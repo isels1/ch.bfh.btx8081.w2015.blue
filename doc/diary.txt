@@ -366,6 +366,22 @@ dornt1
 	add object referenc to Table and Combobox
 	edit PatientListTable 
 	edit tostring from patient class
+	
+################	
+#  14.12.2015  #
+################
+daily scrum
+	add metodes to the classes from model(tostring, equals)
+	edit the popup View
+	review Code
+	edit javadoc
+dornt1
+	reveiw code
+	edit javadoc
+
+	
+	
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
