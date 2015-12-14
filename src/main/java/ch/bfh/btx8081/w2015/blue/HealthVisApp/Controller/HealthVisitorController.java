@@ -7,16 +7,20 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
 /**
- * 
- * @author Stefan Iseli
+ * Controller for data from healthvisitor 
+ * @author isels1, zwahf1
  *
  */
 public class HealthVisitorController {
+	
+	//================================================================================
+    // HealthVisitorController Data
+    //================================================================================
 	private DummyDataCreator ddc;
 	private HealthVisitor hv;
 	
 	/**
-	 * 
+	 * This constructor initialize the healthvisitor controller by loading the data
 	 */
 	public HealthVisitorController(){
 		ddc = DummyDataCreator.getInstance();
@@ -24,18 +28,26 @@ public class HealthVisitorController {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Get calendar from the healthvisitor
+	 * @return hv-calendar: Calendar
 	 */
 	public Calendar getCalendar(){
 		return hv.getCalendar();
 	}
-		
+	
+	/**
+	 * Add a given appointment to the calendar
+	 * @param app: Appointment
+	 */
 	public void addNewApp(Appointment app) {
 		hv.getCalendar().setAppointment(app);
 		CalendarView.getInstance().addNewApp(app, hv.getCalendar());
 	}
 	
+	/**
+	 * Get the healthvisitor
+	 * @return hv: HealthVisitor
+	 */
 	public HealthVisitor getHealthVisitor ()
 	{
 		return hv;

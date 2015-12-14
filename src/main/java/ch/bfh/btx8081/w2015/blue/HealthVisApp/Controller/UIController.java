@@ -9,6 +9,15 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 import com.vaadin.ui.Button.ClickEvent;
 
+/**
+ * control all events from the health visitor app
+ * 
+ * <ul>
+ * 	control all made events from the diffrent views in the health visitor app
+ * </ul>
+ * @author zwahf1
+ *
+ */
 public class UIController {
 
 	//================================================================================
@@ -24,14 +33,14 @@ public class UIController {
     //================================================================================
 	
 	/**
-	 * 
+	 * This constructor initialize the user interface controller for the app
 	 */
 	private UIController(){
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * get the ui controller
+	 * @return c: UIController
 	 */
 	public static UIController getInstance() {
 		if (c == null) {
@@ -45,8 +54,8 @@ public class UIController {
     //================================================================================
 	
 	/**
-	 * 
-	 * @param event
+	 * change and show the selected view of the calendar
+	 * @param event: ClickEvent
 	 */
 	public void changeCalendarViewController(ClickEvent event) {
 		CalendarView calView = CalendarView.getInstance();
@@ -68,19 +77,32 @@ public class UIController {
     // Patient PopUp Section
     //================================================================================
 	
+	/**
+	 * get the patient pop-up controller
+	 * @return patPopUpCon: PatientPopUpController
+	 */
 	public PatientPopUpController getPatPopUpController() {
 		return patPopUpCon;
 	}
 	
+	/**
+	 * create and show a new patient pop-up
+	 */
 	public void createPatientPopUp() {
 		patPopUpCon = new PatientPopUpController();
 		patPopUpCon.createPatientPopUp();
 	}
 	
+	/**
+	 * close the actual patient pop-up
+	 */
 	public void closePatientPopUp() {
 		patPopUpCon.getPatView().close();
 	}
 	
+	/**
+	 * save a new patient and add to the health visitor
+	 */
 	public void savePatient() {
 		patPopUpCon.savePatient(new PatientController());
 		patPopUpCon.getPatView().close();
@@ -91,15 +113,15 @@ public class UIController {
     //================================================================================
 	
 	/**
-	 * 
-	 * @return
+	 * get the appointment pop-up controller
+	 * @return appPopUpCon: AppointmentPopUpController
 	 */
 	public AppointmentPopUpController getAppPopUpController() {
 		return appPopUpCon;
 	}
 	
 	/**
-	 * 
+	 * create and show a new appointment pop-up
 	 */
 	public void createAppointmentPopUp() {
 		appPopUpCon = new AppointmentPopUpController();
@@ -107,14 +129,14 @@ public class UIController {
 	}
 	
 	/**
-	 * 
+	 * close the actual appointment pop-up
 	 */
 	public void closeAppointmentPopUp() {
 		appPopUpCon.getAppView().close();
 	}
 	
 	/**
-	 * 
+	 * save a new appointment and add to the calendar
 	 */
 	public void saveAppointment() {
 		appPopUpCon.saveAppointment(new HealthVisitorController());

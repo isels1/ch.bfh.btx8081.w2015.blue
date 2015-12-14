@@ -13,8 +13,9 @@ import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 /**
+ * Provider for the events from the calendar
  * 
- * @author Stefan Iseli
+ * @author isels1, zwahf1
  *
  */
 public class AppointmentEventProvider implements CalendarEventProvider {
@@ -34,7 +35,11 @@ public class AppointmentEventProvider implements CalendarEventProvider {
     //================================================================================
 	
 	/**
+	 * Get all events in a given range from the calendar
+	 * @param startDate: Date
+	 * @param endDate: Date
 	 * 
+	 * @return events: List<CalendarEvent>
 	 */
 	@Override
 	public List<CalendarEvent> getEvents(Date startDate, Date endDate) {

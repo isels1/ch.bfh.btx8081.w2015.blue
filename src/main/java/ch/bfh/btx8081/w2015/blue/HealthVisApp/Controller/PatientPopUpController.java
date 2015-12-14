@@ -42,7 +42,7 @@ public class PatientPopUpController {
 									new Address(addr[0], Integer.parseInt(addr[1]), 
 											Integer.parseInt(addr[2]), addr[3]), 
 									patView.getTextFieldTel(), 
-									Integer.parseInt(patView.getTextFieldId()));
+									patView.getTextFieldId());
 
 		pat.setPatientState(patView.getCmBoxPatientState());
 		

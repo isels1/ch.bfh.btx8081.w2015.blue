@@ -34,9 +34,6 @@ public class AppointmentPopUpController {
 	/**
 	 * This constructor initialize the appointment controller for add a new appointment
 	 */
-	/**
-	 * 
-	 */
 	public AppointmentPopUpController(){
 	}
 	
