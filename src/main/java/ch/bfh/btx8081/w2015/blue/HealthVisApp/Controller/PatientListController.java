@@ -32,8 +32,7 @@ public class PatientListController {
 
 		PatientListView PatListView = PatientListView.getInstance();
 
-		String status =  (String) PatListView.getCombobox().getValue();
-		PatListView.FilterStatus(status);
+		PatListView.refreshView();
 
 	}
 

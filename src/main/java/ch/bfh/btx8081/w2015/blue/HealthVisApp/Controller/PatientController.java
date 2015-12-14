@@ -72,6 +72,6 @@ public class PatientController {
 	 */
 	public void addNewPatient(Patient pat) {
 		hv.setPatient(pat);
-		PatientListView.getInstance().addNewPatient(pat);
+		PatientListView.getInstance().refreshView();
 	}
 }

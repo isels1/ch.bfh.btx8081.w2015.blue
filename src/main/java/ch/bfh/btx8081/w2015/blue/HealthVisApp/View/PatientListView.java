@@ -93,34 +93,20 @@ public class PatientListView {
 		}		
 		return patListView;
 	}
-
 	/**
-	 * Filters the PatientList to the Status
+	 * refresch the Table whit the patient list
 	 * 
-	 * 	 - Ambulant
+	 * 	 * Filters the PatientList to the Status
+	 * 
+	 * 	- Ambulant
 	 *  - Stationary
 	 *  - New
 	 *  - Archived
 	 *  - All Patinet
 	 *  
-	 * @param status is the selected item in the Combobox 
 	 */
-	public void FilterStatus(String status){
-		
-		PatientController patCon = new PatientController();
-		patientTable.removeAllItems();
-		
-		for(Patient p: patCon.getPatientsDefaultOrder())
-		{
-			Object[] collumn = new Object[]{p.getName(),
-									p.getFirstName(),
-									p.getPatientState().doEnter()};
-			
-			if((status) == p.getPatientState().getPatientStateName()
-					||(status == str_AllPatinets)){
-			patientTable.addItem(collumn,p.getId());
-			}
-		}
+	public void refreshView(){
+		insertPatientinList();
 	}
 	/**
 	 * init the combobox for the patient filter and add it to the Vertical Layout
@@ -133,6 +119,9 @@ public class PatientListView {
 	 *  
 	 *  the standard Value is All patients
 	 */
+	//
+	//Private Methods
+	//
 	private void initcombobox (){
 		comboboxFilter = new ComboBox("");
 		comboboxFilter.setInvalidAllowed(false);
@@ -142,7 +131,7 @@ public class PatientListView {
 		// Add some items and specify their item ID.
 		// The item ID is by default used as item caption.
 		comboboxFilter.addItems(str_AllPatinets, str_Stationary, str_Ambulant, str_New,str_Archived);
-		comboboxFilter.setValue("str_AllPatinets");
+		comboboxFilter.setValue(comboboxFilter.getItemIds().iterator().next());
 		patientViewTab.addComponent(comboboxFilter);
 	
 		comboboxFilter.addValueChangeListener(new PatinetListComboBoxChangeListener());
@@ -158,32 +147,9 @@ public class PatientListView {
 		patientTable.setWidth(WIDTH);
 		patientTable.setHeight(HEIGHT);
 		
-		patientTable.addContainerProperty("Name", String.class, null);
-		patientTable.addContainerProperty("Forename",  String.class, null);
-		patientTable.addContainerProperty("State",  String.class, null);
+		patientTable.addContainerProperty("Patient Name", Patient.class, null);
 		
-		//Hide Patient State column
-		patientTable.setColumnCollapsingAllowed(true);
-		patientTable.setColumnCollapsed("State", true);	
-	
-		PatientController patCon = new PatientController();
-		for(Patient p: patCon.getPatientsDefaultOrder())
-		{
-//			Label l_Name = new Label(p.getName());
-//			Label l_ForeName = new Label(p.getFirstName());
-//			Label l_State = new Label(p.getPatientState().doEnter());
-			
-//			l_Name.setStyleName(p.getPatientState().doEnter());
-//			l_ForeName.setStyleName(p.getPatientState().doEnter());
-			
-			Object[] collumn = new Object[]{p.getName(),
-									p.getFirstName(),
-									p.getPatientState().doEnter()};
-			
-			patientTable.addItem(collumn,p.getId());
-		}
-		
-		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
+		insertPatientinList();
 		patientViewTab.addComponent(patientTable);	
 	}
 	private void initAddPatientButton (){
@@ -193,6 +159,21 @@ public class PatientListView {
 		b_addPatient.addClickListener(new PatientListButtonClickHandler());
 		
 		patientViewTab.addComponent(b_addPatient);
+	}
+	private void insertPatientinList()
+	{
+		String status = (String) comboboxFilter.getValue();
+		PatientController patCon = new PatientController();
+		patientTable.removeAllItems();
+		for(Patient p: patCon.getPatientsDefaultOrder())
+		{	
+			if((status) == p.getPatientState().getPatientStateName()
+					|| (status == str_AllPatinets)){
+				Object[] collumn = new Object[]{p};	
+				patientTable.addItem(collumn,p.getId());
+			}
+		}
+		patientTable.setCellStyleGenerator(new PatientListCellStyleGenerator());
 	}
 }
 
