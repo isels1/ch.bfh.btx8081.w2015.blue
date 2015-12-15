@@ -23,7 +23,7 @@ public class Patient extends Person {
 	 */
 	@Override
 	public String toString() {
-		return  super.getFirstName() + " "+super.getName();
+		return  id+" "+super.getFirstName() + " "+super.getName();
 	}
 
 
