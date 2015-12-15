@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -19,15 +20,18 @@ public class PatientPopUpController {
 	public static String ADDR_DELIMITER = "/";
 	
 	private PatientListPopUpView patView;
+	private boolean editPatient;
 	
 	public PatientPopUpController(){
 	}
 	
 	public void createPatientPopUp() {
+		editPatient = false;
 		patView = new PatientListPopUpView();
 	}
 	
 	public void createPatientEditPopUp(Patient p) {
+		editPatient = true;
 		patView = new PatientListPopUpView();
 		patView.setTextFieldName(p.getName());
 		patView.setTextFieldFirstname(p.getFirstName());
@@ -53,7 +57,7 @@ public class PatientPopUpController {
 		String[] addr = patView.getTextFieldAddress().split(ADDR_DELIMITER);
 		Note com = new Note();
 		com.setComment(patView.getTextFieldComment());
-		
+				
 		Patient pat = new Patient(patView.getTextFieldName(), 
 									patView.getTextFieldFirstname(), 
 									patView.getPopupDateFieldDate(), 
@@ -65,6 +69,11 @@ public class PatientPopUpController {
 		pat.setPatientState(patView.getCmBoxPatientState());
 		
 		pat.setComment(com);
-		patc.addNewPatient(pat);
+		
+		if (editPatient) {			
+			patc.editPatient(pat);
+		} else {
+			patc.addNewPatient(pat);
+		}
 	}
 }

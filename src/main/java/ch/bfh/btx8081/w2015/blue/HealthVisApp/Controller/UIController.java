@@ -1,5 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
@@ -99,9 +100,8 @@ public class UIController {
 	 */
 	public void createPatientEditPopUp(int patientId) {
 		Patient pat = null;
-		DummyDataCreator ddc = DummyDataCreator.getInstance();
 		
-		for (Patient p : ddc.getHealthVisitor().getPatient()) {
+		for (Patient p : PatientListController.getInstance().getPatients()) {
 			if (p.getId() == patientId) {
 				pat = p;
 			}

@@ -87,5 +87,20 @@ public class PatientListController {
 		hv.setPatient(pat);
 		PatientListView.getInstance().refreshView();
 	}
+	
+	/**
+	 * edit
+	 */
+	public void editPatient(Patient pat) {
+	
+		for (int i = 0; i < hv.getPatient().size(); i++) {
+			Patient p = hv.getPatient().get(i);
+			if (p.getId() == pat.getId()) {
+				p = pat;				
+			}
+			hv.getPatient().set(i, p);
+		}
+		PatientListView.getInstance().refreshView();
+	}
 
 }
