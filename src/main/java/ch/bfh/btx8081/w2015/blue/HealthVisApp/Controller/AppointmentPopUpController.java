@@ -89,6 +89,8 @@ public class AppointmentPopUpController {
 			hvc.addNewApp(app);
 			return true;
 		}
-		return false;
+		else {
+			return false;
+		}
 	}
 }

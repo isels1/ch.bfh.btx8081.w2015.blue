@@ -217,7 +217,7 @@ public class AppointmentPopUpView {
 		//===============================
 	    // layout Section
 	    //===============================
-		VerticalLayout layAll = new VerticalLayout();
+		layout = new VerticalLayout();
 		
 		HorizontalLayout layPat = new HorizontalLayout();
 		layPat.setHeight(COMPHEIGHT);
@@ -299,15 +299,15 @@ public class AppointmentPopUpView {
 	    layBut.addComponent(butSave);
 	    layBut.addComponent(butCancel);
 	    
-	    layAll.addComponent(layPat);
-	    layAll.addComponent(layDate);
-	    layAll.addComponent(layLoc);
-	    layAll.addComponent(layFrom);
-	    layAll.addComponent(layTo);
-	    layAll.addComponent(layCom);
-	    layAll.addComponent(layBut);
+	    layout.addComponent(layPat);
+	    layout.addComponent(layDate);
+	    layout.addComponent(layLoc);
+	    layout.addComponent(layFrom);
+	    layout.addComponent(layTo);
+	    layout.addComponent(layCom);
+	    layout.addComponent(layBut);
 	    
-		return layAll;
+		return layout;
 	}
 	
 	/**

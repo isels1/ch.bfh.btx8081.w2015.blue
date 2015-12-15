@@ -6,6 +6,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.ErrorMessagePopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 import com.vaadin.ui.Button.ClickEvent;
@@ -96,7 +97,7 @@ public class UIController {
 	
 	/**
 	 * creates and shows the patient edit-pop-up
-	 * @param PatientId
+	 * @param patientId: int
 	 */
 	public void createPatientEditPopUp(int patientId) {
 		Patient pat = null;
@@ -160,7 +161,10 @@ public class UIController {
 		if(appPopUpCon.saveAppointment(new HealthVisitorController())) {
 			appPopUpCon.getAppView().close();
 		}
-		//TODO new popup with errormessag
+		else {
+			new ErrorMessagePopUpView("Time range is not allowed for appointment"
+									+ "(time already in use)");
+		}
 		
 	}
 }

@@ -418,6 +418,13 @@ isels1
 	edit patient popup view (for states)
 	click handling pation table
 	
+################	
+#  15.12.2015  #
+################
+zwahf1
+	create check availability by new appointment
+	create pop up for error message
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************

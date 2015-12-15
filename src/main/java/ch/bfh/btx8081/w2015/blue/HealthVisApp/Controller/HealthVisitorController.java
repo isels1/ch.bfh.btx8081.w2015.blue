@@ -40,7 +40,6 @@ public class HealthVisitorController {
 	 * @param app: Appointment
 	 */
 	public void addNewApp(Appointment app) {
-		hv.getCalendar().setAppointment(app);
 		CalendarView.getInstance().addNewApp(app, hv.getCalendar());
 	}
 	
