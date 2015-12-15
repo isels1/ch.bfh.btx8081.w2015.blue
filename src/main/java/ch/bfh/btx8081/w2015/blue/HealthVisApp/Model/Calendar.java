@@ -39,13 +39,18 @@ public class Calendar {
     // Add/Setter Section
     //================================================================================
 	
-	public void newAppointment(GregorianCalendar startTime, GregorianCalendar endTime, String location, 
-									  Patient patient)
+	/**
+	 * add a new appointment to the calendar if not conflicted with others
+	 * @param newAppointment: Appointment
+	 * @return true if appointment has no conflict otherwise false
+	 */
+	public boolean newAppointment(Appointment newAppointment)
 	{
-		Appointment newAppointment = new Appointment(startTime, endTime, healthvisitor.getCalendar());
 		if(checkAvailability(newAppointment)) {
-		appointment.add(newAppointment);
+			appointment.add(newAppointment);
+			return true;
 		}
+		return false;
 	}
 	/**
 	 * Setter for the appointment

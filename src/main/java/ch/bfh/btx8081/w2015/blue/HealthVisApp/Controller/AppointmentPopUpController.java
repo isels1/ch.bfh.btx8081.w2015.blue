@@ -59,8 +59,9 @@ public class AppointmentPopUpController {
 	/**
 	 * save a new appointment in the actual calendar
 	 * @param hvc
+	 * @return true if appointment has no conflict otherwise false
 	 */
-	public void saveAppointment(HealthVisitorController hvc) {
+	public boolean saveAppointment(HealthVisitorController hvc) {
 		Date date = appView.getPopupDateFieldDate();
 		String[] time1 = appView.getTextFieldFrom().split(TIME_DELIMITER);
 		String[] time2 = appView.getTextFieldTo().split(TIME_DELIMITER);
@@ -84,6 +85,10 @@ public class AppointmentPopUpController {
 		
 		app.setComment(com);
 		
-		hvc.addNewApp(app);
+		if(hvc.getCalendar().newAppointment(app)) {
+			hvc.addNewApp(app);
+			return true;
+		}
+		return false;
 	}
 }

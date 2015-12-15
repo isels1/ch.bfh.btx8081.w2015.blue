@@ -157,7 +157,10 @@ public class UIController {
 	 * save a new appointment and add to the calendar
 	 */
 	public void saveAppointment() {
-		appPopUpCon.saveAppointment(new HealthVisitorController());
-		appPopUpCon.getAppView().close();
+		if(appPopUpCon.saveAppointment(new HealthVisitorController())) {
+			appPopUpCon.getAppView().close();
+		}
+		//TODO new popup with errormessag
+		
 	}
 }
