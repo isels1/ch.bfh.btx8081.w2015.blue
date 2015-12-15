@@ -379,7 +379,9 @@ daily scrum
 dornt1
 	review code
 	edit javadoc
-
+zwahf1
+	review and comment code
+	edit methods and javadoc
 	
 	
 	
