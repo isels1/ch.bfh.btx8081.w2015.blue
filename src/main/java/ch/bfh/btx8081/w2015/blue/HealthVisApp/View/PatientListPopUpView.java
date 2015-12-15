@@ -84,11 +84,15 @@ public class PatientListPopUpView {
 	
 	final static String HEIGHT = TabView.HEIGHT;
 	final static String WIDTH = TabView.WIDTH;
-	final static String COMPHEIGHT = "61";				//568 / 9
-	final static String HOR_LAY_HEIGHT = "61";			//568 / 9
-	final static String VER_LAY_HEIGHT = "122";			//568 / 9 * 2
+	final static String COMPHEIGHT = "54";				//568 / 10
+	final static String HOR_LAY_HEIGHT = "54";			//568 / 10
+	final static String VER_LAY_HEIGHT = "112";			//568 / 10 * 2
 	final static String COMPWIDTH = "160";				//320 / 2
-	final static String DATEFORMAT = "dd/MM/yyyy";
+	final static String COMPWIDTH_ADDR1 = "120";		//320 / 2 - 40
+	final static String COMPWIDTH_ADDR2 = "40";			//320 / 2 - 120
+	final static String COMPWIDTH_ADDR3 = "60";			//320 / 2 - 100
+	final static String COMPWIDTH_ADDR4 = "100";		//320 / 2 - 60
+	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
@@ -107,6 +111,8 @@ public class PatientListPopUpView {
 	TextField tfId;
 	TextField tfAddr1;
 	TextField tfAddr2;
+	TextField tfAddr3;
+	TextField tfAddr4;
 	TextField tfTel;
 	
 	ComboBox cmbState;
@@ -179,7 +185,10 @@ public class PatientListPopUpView {
 	 * @return add1+addr2: String
 	 */
 	public String getTextFieldAddress() {
-		return tfAddr1.getValue() + " " + tfAddr2.getValue();
+		return tfAddr1.getValue() + "/" 
+				+ tfAddr2.getValue() + "/" 
+				+ tfAddr3.getValue() + "/" 
+				+ tfAddr4.getValue();
 	}
 	
 	/**
@@ -275,6 +284,12 @@ public class PatientListPopUpView {
 		VerticalLayout layAddr2 = new VerticalLayout();
 		layAddr2.setHeight(VER_LAY_HEIGHT);
 		
+		HorizontalLayout layAddr2_1 = new HorizontalLayout();
+		layAddr2_1.setHeight(HOR_LAY_HEIGHT);
+		
+		HorizontalLayout layAddr2_2 = new HorizontalLayout();
+		layAddr2_1.setHeight(HOR_LAY_HEIGHT);
+		
 		HorizontalLayout layTel = new HorizontalLayout();
 		layTel.setHeight(HOR_LAY_HEIGHT);
 		
@@ -314,9 +329,13 @@ public class PatientListPopUpView {
 	    tfId = new TextField();
 	    this.createTextField(tfId, COMPWIDTH, "");
 	    tfAddr1 = new TextField();
-	    this.createTextField(tfAddr1, COMPWIDTH, "Street Number");
+	    this.createTextField(tfAddr1, COMPWIDTH_ADDR1, "Street");
 	    tfAddr2 = new TextField();
-	    this.createTextField(tfAddr2, COMPWIDTH, "ZIP City");
+	    this.createTextField(tfAddr2, COMPWIDTH_ADDR2, "Nb");
+	    tfAddr3 = new TextField();
+	    this.createTextField(tfAddr3, COMPWIDTH_ADDR3, "ZIP");
+	    tfAddr4 = new TextField();
+	    this.createTextField(tfAddr4, COMPWIDTH_ADDR4, "City");
 	    tfTel = new TextField();
 	    this.createTextField(tfTel, COMPWIDTH, "");
 	    
@@ -355,8 +374,13 @@ public class PatientListPopUpView {
 	    
 	    layAddr1.addComponent(labAddr);
 	    
-	    layAddr2.addComponent(tfAddr1);
-	    layAddr2.addComponent(tfAddr2);
+	    layAddr2.addComponent(layAddr2_1);
+	    layAddr2.addComponent(layAddr2_2);
+	    
+	    layAddr2_1.addComponent(tfAddr1);
+	    layAddr2_1.addComponent(tfAddr2);
+	    layAddr2_2.addComponent(tfAddr3);
+	    layAddr2_2.addComponent(tfAddr4);
 	    
 	    layTel.addComponent(labTel);
 	    layTel.addComponent(tfTel);

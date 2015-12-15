@@ -16,7 +16,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 public class PatientPopUpController {
-	public static String ADDR_DELIMITER = " ";
+	public static String ADDR_DELIMITER = "/";
 	
 	private PatientListPopUpView patView;
 	

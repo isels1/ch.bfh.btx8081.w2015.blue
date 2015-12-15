@@ -75,7 +75,7 @@ public class AppointmentPopUpView {
 	final static String WIDTH = TabView.WIDTH;
 	final static String COMPHEIGHT = "81";				//568 / 7
 	final static String COMPWIDTH = "160";				//320 / 2
-	final static String DATEFORMAT = "dd/MM/yyyy";
+	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
