@@ -3,17 +3,13 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientButtonClickHandler;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
@@ -77,7 +73,7 @@ import com.vaadin.ui.Window;
  * 		: enter a comment to the appointment as note
  * 	</li>
  * </ul>
- * @author zwahf1
+ * @author zwahf1, isels1
  *
  */
 public class PatientListPopUpView {
@@ -116,6 +112,10 @@ public class PatientListPopUpView {
 	TextField tfTel;
 	
 	ComboBox cmbState;
+    PatientState cmbStateNew = new PatientStateNew();
+    PatientState cmbStateAmbulant = new PatientStateAmbulant();
+    PatientState cmbStateStationary = new PatientStateStationary();
+    PatientState cmbStateArchived = new PatientStateArchived();
 	
 	PopupDateField dfBDate;
 	
@@ -237,6 +237,57 @@ public class PatientListPopUpView {
 	 */
 	public Button getButtonCancel() {
 		return butCancel;
+	}
+	
+	//================================================================================
+    // Setter  Section
+    //================================================================================
+	
+	public void setTextFieldName(String name) {
+		tfName.setValue(name);
+	}
+	
+	public void setTextFieldFirstname(String fName) {
+		tfFName.setValue(fName);
+	}
+	
+	public void setTextFieldId(int id) {
+		tfId.setValue(""+id);
+		tfId.setEnabled(false);
+	}
+	
+	public void setTextFieldAddress(Address address) {
+		tfAddr1.setValue(address.getStreet());
+		tfAddr2.setValue(""+address.getStreetNr());
+		tfAddr3.setValue(""+address.getZIP());
+		tfAddr4.setValue(address.getCity());
+	}
+	
+	public void setTextFieldTel(String phone) {
+		tfTel.setValue(phone);
+	}
+	
+	public void setTextFieldComment(String comment) {
+		tfCom.setValue(comment);
+	}
+
+	public void setPopupDateFieldDate(Date date) {
+		dfBDate.setValue(date);
+	}
+	
+	public void setCmBoxPatientState(PatientState state){
+		if (state instanceof PatientStateNew) {
+			cmbState.setValue(cmbStateNew);
+		}
+		if (state instanceof PatientStateAmbulant) {
+			cmbState.setValue(cmbStateAmbulant);
+		}
+		if (state instanceof PatientStateStationary) {
+			cmbState.setValue(cmbStateStationary);
+		}
+		if (state instanceof PatientStateArchived) {
+			cmbState.setValue(cmbStateArchived);
+		}
 	}
 	
 	//================================================================================
@@ -427,11 +478,11 @@ public class PatientListPopUpView {
 	    cmbState.setNullSelectionAllowed(false);
 	    cmbState.setNewItemsAllowed(false); 
 	    
-	    cmbState.addItems(new PatientStateNew(),
-	    				  new PatientStateAmbulant(), 
-	    				  new PatientStateStationary(), 
-	    				  new PatientStateArchived());
-	    cmbState.setValue(new PatientStateNew());
+	    cmbState.addItems(cmbStateNew,
+	    				  cmbStateAmbulant, 
+	    				  cmbStateStationary, 
+	    				  cmbStateArchived);
+	    cmbState.setValue(cmbStateNew);
 	}
 	
 	/**

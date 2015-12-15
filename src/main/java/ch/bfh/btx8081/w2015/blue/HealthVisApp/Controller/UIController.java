@@ -94,6 +94,24 @@ public class UIController {
 	}
 	
 	/**
+	 * creates and shows the patient edit-pop-up
+	 * @param PatientId
+	 */
+	public void createPatientEditPopUp(int patientId) {
+		Patient pat = null;
+		DummyDataCreator ddc = DummyDataCreator.getInstance();
+		
+		for (Patient p : ddc.getHealthVisitor().getPatient()) {
+			if (p.getId() == patientId) {
+				pat = p;
+			}
+		}
+		
+		patPopUpCon = new PatientPopUpController();
+			patPopUpCon.createPatientEditPopUp(pat);
+	}
+	
+	/**
 	 * close the actual patient pop-up
 	 */
 	public void closePatientPopUp() {
@@ -104,7 +122,7 @@ public class UIController {
 	 * save a new patient and add to the health visitor
 	 */
 	public void savePatient() {
-		patPopUpCon.savePatient(new PatientController());
+		patPopUpCon.savePatient(PatientListController.getInstance());
 		patPopUpCon.getPatView().close();
 	}
 	

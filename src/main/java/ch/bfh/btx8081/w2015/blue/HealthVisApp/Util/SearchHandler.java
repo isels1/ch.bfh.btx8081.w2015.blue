@@ -2,7 +2,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import java.util.ArrayList;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 
 public class SearchHandler {
@@ -11,7 +11,7 @@ public class SearchHandler {
 	static ArrayList<Patient> patList;
 
 	public static Patient searchPatient(int id) {
-		PatientController c = new PatientController();
+		PatientListController c = PatientListController.getInstance();
 		patList = c.getPatientsDefaultOrder();
 		for(Patient p : patList) {
 			if(p.getId() == id) {
@@ -22,7 +22,7 @@ public class SearchHandler {
 	}
 	
 	public static Patient searchPatient(String name) {
-		PatientController c = new PatientController();
+		PatientListController c = PatientListController.getInstance();
 		patList = c.getPatients();
 		for(Patient p : patList) {
 			if(p.getName().equals(name)) {
@@ -33,7 +33,7 @@ public class SearchHandler {
 	}
 	
 	public static Patient searchPatient(String name, String firstname) {
-		PatientController c = new PatientController();
+		PatientListController c = PatientListController.getInstance();
 		patList = c.getPatients();
 		for(Patient p : patList) {
 			if(p.getName().equals(name) && p.getFirstName().equals(firstname)) {

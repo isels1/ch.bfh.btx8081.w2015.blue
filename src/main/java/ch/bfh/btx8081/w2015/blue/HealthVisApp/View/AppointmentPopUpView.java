@@ -3,7 +3,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 
@@ -330,7 +330,7 @@ public class AppointmentPopUpView {
 		comboboxPatient.setWidth(COMPWIDTH);
 		comboboxPatient.setNullSelectionAllowed(false);
 		comboboxPatient.setNewItemsAllowed(false);   
-		PatientController patCon = new PatientController();
+		PatientListController patCon = PatientListController.getInstance();
 		for(Patient p: patCon.getPatientsDefaultOrder())
 		{
 			comboboxPatient.addItems(p);

@@ -1,19 +1,22 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
 
+import com.vaadin.event.ItemClickEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
+
 /**
  * Class
  * <span class="courier">
@@ -70,25 +73,32 @@ public class PatientListView {
     // PatietnList  Data
     //================================================================================
 		
-		final static String WIDTH = "318";
-		final static String HEIGHT = "396";
-		
-		private VerticalLayout patientViewTab;//the whole patient View is on this Layout
-		
-		private Table patientTable;
-		private ComboBox comboboxFilter;
-		private Button b_addPatient = new Button("Add new Patient");
-		
-		//Name for the patient filter
-		private final String str_Ambulant = "Ambulant";
-		private final String str_Archived = "Archived";
-		private final String str_New = "New";
-		private final String str_Stationary = "Stationary";
-		private final String str_AllPatinets = "All patients";
+	final static String WIDTH = "318";
+	final static String HEIGHT = "396";
+	
+	private VerticalLayout patientViewTab;//the whole patient View is on this Layout
+	
+	private Table patientTable;
+	private ComboBox comboboxFilter;
+	private Button b_addPatient = new Button("Add new Patient");
+	
+	//Name for the patient filter
+	private final String str_Ambulant = "Ambulant";
+	private final String str_Archived = "Archived";
+	private final String str_New = "New";
+	private final String str_Stationary = "Stationary";
+	private final String str_AllPatinets = "All patients";
 	
 	//================================================================================
     // Constructor Section
     //================================================================================
+	/**
+	 * Constructor for the Patient List View
+	 * Initializes...
+	 * ... the Combobox (Filter)
+	 * ... the Table View
+	 * ... the add Patient Button
+	 */
 	private PatientListView() {
 		//add all components to the patientViewTab
 		patientViewTab = new VerticalLayout();
@@ -188,6 +198,7 @@ public class PatientListView {
 		patientTable.setHeight(HEIGHT);
 		
 		patientTable.addContainerProperty("Patient Name", Patient.class, null);
+		patientTable.addItemClickListener(new PatientListItemClickListener());
 		
 		insertPatientsInList();
 	}
@@ -208,13 +219,13 @@ public class PatientListView {
 	private void insertPatientsInList()
 	{
 		String status = (String) comboboxFilter.getValue();
-		PatientController patCon = new PatientController();
+		PatientListController patCon = PatientListController.getInstance();
 		patientTable.removeAllItems();
 		for(Patient p: patCon.getPatientsDefaultOrder())
 		{	
 			if((status) == p.getPatientState().getPatientStateName()
 					|| (status == str_AllPatinets)){
-				Object[] collumn = new Object[]{p};	
+				Object[] collumn = new Object[]{p};
 				patientTable.addItem(collumn,p.getId());
 			}
 		}

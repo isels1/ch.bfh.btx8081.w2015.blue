@@ -27,11 +27,29 @@ public class PatientPopUpController {
 		patView = new PatientListPopUpView();
 	}
 	
+	public void createPatientEditPopUp(Patient p) {
+		patView = new PatientListPopUpView();
+		patView.setTextFieldName(p.getName());
+		patView.setTextFieldFirstname(p.getFirstName());
+		patView.setTextFieldId(p.getId());
+		patView.setPopupDateFieldDate(p.getBirthdate());
+		patView.setTextFieldAddress(p.getAddress());
+		if (p.getPhone() != null) {
+			patView.setTextFieldTel(p.getPhone());
+		}
+		
+		patView.setCmBoxPatientState(p.getPatientState());
+		
+		if (p.getComment() != null) {
+			patView.setTextFieldComment(p.getComment().getComment());
+		}
+	}
+	
 	public PatientListPopUpView getPatView() {
 		return patView;
 	}
 	
-	public void savePatient(PatientController patc) {
+	public void savePatient(PatientListController patc) {
 		String[] addr = patView.getTextFieldAddress().split(ADDR_DELIMITER);
 		Note com = new Note();
 		com.setComment(patView.getTextFieldComment());
