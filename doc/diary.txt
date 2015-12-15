@@ -252,8 +252,7 @@ zwahf1
 ################	
 daily scrum
 	classes finished
-	review by isels1	
-	
+	review by isels1		
 	
 ################	
 #  02.12.2015  #
@@ -285,6 +284,12 @@ isels1 nosec1 h�gil1
 	design statepattern
 	create patview
 
+isels1
+	sprint planing
+	refactoring
+	testing
+	and some minor code changes
+
 ################	
 #  05.12.2015  #
 ################
@@ -297,6 +302,9 @@ nosec1
 dornt1
 	add Buttons to change the CalenarView
 	add Methods to change the CalendarView
+
+isels1
+	review and testing calendar view change buttons
 	
 ################	
 #  07.12.2015  #
@@ -310,14 +318,19 @@ daily scrum
 zwahf1
 	adapt class address to new constructor
 	adapt dummydata for patient on new address
+	
 dornt1	
 	implementing the Monthyl and Weekly View (done)
 	Problem The Monthly View dont show the first week of Month!
+	
 nosec1
 	create Login
+	
 isels1
 	Review Code
+	creating state event pattern
 	create States
+	
 ################	
 #  09.12.2015  #
 ################
@@ -328,8 +341,10 @@ daily scrum
 	
 dornt1 &isels1
 	impementing the PatientListView
+	
 nosec1
 	create Login
+	
 zwahf1
 	create Popup ViewCalendar
 ################	
@@ -337,9 +352,11 @@ zwahf1
 ################
 zwahf1
 	adapt popup appointment and create controller
+	
 dornt1
 	create Table for PatientlistView
 	add Labels to Tabel for Colors
+	
 hugil1
 	refactoring		
 ################	
@@ -349,24 +366,38 @@ zwahf1
 	add new patient and appointment to healthvisitor by creating from popup
 	show new patient in patientlist
 
+isels1
+	refactoring and testing patient list & popups
+	adding colored states (css, and table functionality)
+	updated sprint plan
+
 ################	
 #  12.12.2015  #
 ################
 zwahf1
 	show new appointment in calendar
 	add note to new appointment and patient
+	
 dornt1
 	add Combobox to Add Appointment View
+	
+isels1
+	sate implementation, order
+	java doc "preparations"
 	
 ################	
 #  13.12.2015  #
 ################
 zwahf1
 	add comment to created classes
+	
 dornt1
 	add object referenc to Table and Combobox
 	edit PatientListTable 
-	edit tostring from patient class
+	edit toString from patient class
+	
+isels1
+	edit new patient popup view (for states)
 	
 ################	
 #  14.12.2015  #
@@ -376,18 +407,22 @@ daily scrum
 	edit the popup View
 	review Code
 	edit javadoc
+	
 dornt1
 	review code
 	edit javadoc
 zwahf1
 	review and comment code
 	edit methods and javadoc
-	
-	
+isels1
+	edit patient popup view (for states)
+	click handling pation table
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
+"EDIT patient popup view"
+--> LOOK INTO THE SPRINT PLANING TO LOOK FOR MORE SPECIFIC TODOS!!!
 Umsetzung review
 
 Task 11 sprint 2
