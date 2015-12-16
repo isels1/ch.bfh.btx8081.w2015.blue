@@ -184,4 +184,22 @@ public class HealthVisitor extends Person {
 			{aString = aString + ", " + userName;}
 		return aString;
 	}
+	
+	/**
+	  * Compares two health visitor and tests if they are the same
+	  * @return if the username, password and calendar of the health visitor objects are the same /boolean
+	  */
+	@Override
+	public boolean equals(Object obj){
+		if(obj != null) {
+			HealthVisitor hv = (HealthVisitor) obj;
+			return super.equals(hv);
+//			boolean username = this.userName.equals(hv.userName);
+//			boolean password = this.password.equals(hv.password);
+//			boolean calendar = this.calendar.equals(hv.calendar);
+			
+//			return (username && password && calendar);
+		}
+		return false;
+	}
 }

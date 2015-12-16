@@ -19,7 +19,7 @@ public class HealthVisitorTest {
 		String name = "Hans";
 		String fName = "Peter";
 		Date date = new Date();
-		Address address = new Address();
+		Address address = new Address("Strasse",1,1111,"Stadt");
 		String phone = "123123123";
 		
 		HealthVisitor hv = new HealthVisitor(name, fName, date, address, phone);
