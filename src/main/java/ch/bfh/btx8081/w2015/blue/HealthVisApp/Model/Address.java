@@ -197,7 +197,7 @@ public class Address {
 		{aString = aString + ", " + aStreetNr;}
 		
 		if (!(aZIP==0))
-		{aString = aString + " ," + aZIP;}
+		{aString = aString + ", " + aZIP;}
 		
 		if (!aCity.equals(null))
 		{aString = aString + ", " + aCity;}
