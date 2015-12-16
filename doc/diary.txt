@@ -431,15 +431,15 @@ isels1
 	refactoring code
 
 ################	
-#  15.12.2015  #
+#  16.12.2015  #
 ################
 daily scrum
 	finish sprint
 	do javadoc and Junit tests
 	
 zwahf1
-	add setter for Junit tests
-	create Junit tests for pop up view
+	add setter to app popup view
+	correct Juint tests
 	
 ******************************
 *** To Do list Gruppe Blau ***
