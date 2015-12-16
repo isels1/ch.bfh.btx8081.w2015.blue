@@ -63,7 +63,7 @@ import com.vaadin.ui.VerticalLayout;
  * </span>
  * <br><br>
  * @author dornt1 isels1
- * @version 1.7
+ * @version 0.0
  */
 public class PatientListView {
 
@@ -133,6 +133,7 @@ public class PatientListView {
 	public Button getB_addPatient() {
 		return b_addPatient;
 	}
+	
 	/**
 	 * @return the insance of the Class
 	 */
@@ -142,6 +143,7 @@ public class PatientListView {
 		}		
 		return patListView;
 	}
+	
 	/**
 	 * refresch the Table whit the patient list
 	 * 
@@ -186,6 +188,7 @@ public class PatientListView {
 	
 		comboboxFilter.addValueChangeListener(new PatinetListComboBoxChangeListener());
 	}	
+	
 	/**
 	 * init the Table for the Patient list and add it to the Vertical Layout
 	 * 
@@ -202,6 +205,7 @@ public class PatientListView {
 		
 		insertPatientsInList();
 	}
+	
 	/**
 	 * init the addPatientButton for the Patient list and add it to the Vertical Layout
 	 * 
@@ -212,6 +216,7 @@ public class PatientListView {
 		b_addPatient.setIcon(FontAwesome.USER);
 		b_addPatient.addClickListener(new PatientListButtonClickHandler());
 	}
+	
 	/**
 	 * insert Patients in the PatientTable
 	 * 
