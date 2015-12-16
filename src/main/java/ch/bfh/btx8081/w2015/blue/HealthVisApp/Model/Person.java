@@ -123,4 +123,31 @@ public class Person {
 	public String getPhone() {
 		return phone;
 	}
+	
+
+	/**
+	 * The string representation is "name firstName birthdate aStreet aStreetNr aZIP aCity phone"
+	 * @return the string representation of the person /String
+	 */
+	@Override
+	public String toString() {
+		String addr = address.toString();
+		String aString = "";
+		
+		if (!name.equals(null))
+		{aString = aString + ", " + name;}
+		
+		if (!firstName.equals(null))
+		{aString = aString + ", " + firstName;}
+		
+		if (!birthdate.equals(null))
+		{aString = aString + ", " + birthdate;}
+		
+		aString = aString + ", " + addr;
+		
+		if (!phone.equals(null))
+		{aString = aString + ", " + phone;}
+		
+		return aString;
+	}
 }
