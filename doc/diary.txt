@@ -429,6 +429,17 @@ isels1
 	create edit patient view
 	create edit patient logic
 	refactoring code
+
+################	
+#  15.12.2015  #
+################
+daily scrum
+	finish sprint
+	do javadoc and Junit tests
+	
+zwahf1
+	add setter for Junit tests
+	create Junit tests for pop up view
 	
 ******************************
 *** To Do list Gruppe Blau ***
