@@ -18,6 +18,17 @@ public class Patient extends Person {
 	private HealthVisitor healthvisitor;
 	private PatientState state;
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		String returnString = "";
+		returnString = String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id);
+		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
+		return returnString;
+	}
+
 
 	//================================================================================
     // Constructor Section
@@ -130,14 +141,6 @@ public class Patient extends Person {
 	 */
 	public PatientState getPatientState(){
 		return state;
-	}
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return  id+" "+super.getFirstName() + " "+super.getName();
 	}
 
 }
