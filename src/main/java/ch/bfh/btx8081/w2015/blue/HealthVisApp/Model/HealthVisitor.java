@@ -3,7 +3,70 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
 import java.util.Date;
 
-
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		HealthVisitor
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...creates a healthvisitor. 
+ * </span>
+ * <br>
+ * <br>
+ * The HealthVisitor contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				userName:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The username of the healthvisitor
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				password:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The password of the healthvisitor
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				calendar:
+ * 			</font> 
+ * 			<i>Model.Calendar</i>
+ * 			- the calendar of the healthvisitor
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				patient:
+ * 			</font> 
+ * 			<i>ArrayList<Patient></i>
+ * 			- The patients who are assigned to the healthvisitor
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a new Healthvisitor you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>userName</li>
+ * 		<li>password</li>
+ * 		<li>calendar</li>
+ *		<li>patient</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		07.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */
 
 public class HealthVisitor extends Person {
 	

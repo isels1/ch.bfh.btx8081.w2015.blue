@@ -1,6 +1,86 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.GregorianCalendar;
 
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		Appointment
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...creates an appointment of a Healthvisitor.
+ * </span>
+ * <br>
+ * <br>
+ * The appointment contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				startTime:
+ * 			</font> 
+ * 			<i>GregorianCalendar</i>
+ * 			- The start time of the Appointment
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				endTime:
+ * 			</font> 
+ * 			<i>GregorianCalendar</i>
+ * 			- The end time of the Appointment
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				location:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The location where the appointment is
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				patient:
+ * 			</font> 
+ * 			<i>Patient</i>
+ * 			- The patient, with which the Healthvisitor has the appointment.
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				calendar:
+ * 			</font> 
+ * 			<i>Model.Calendar</i>
+ * 			- 
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				comment:
+ * 			</font> 
+ * 			<i>Note</i>
+ * 			- A potential note for the Appointment
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a new address you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>startTime</li>
+ * 		<li>endTime</li>
+ * 		<li>location</li>
+ *		<li>patient</li>
+ *		<li>calendar</li>
+ *		<li>comment</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		16.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */
 public class Appointment {
 	
 	//================================================================================

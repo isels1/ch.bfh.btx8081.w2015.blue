@@ -2,7 +2,54 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		Appointment
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		represent a calendarobject
+ * </span>
+ * <br>
+ * <br>
+ * The Calendar contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				appointment:
+ * 			</font> 
+ * 			<i>ArrayList<Appointment></i>
+ * 			- List with appointments
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				healthvisitor:
+ * 			</font> 
+ * 			<i>HealthVisitor</i>
+ * 			- The responsible HealthVisitor
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a Calendarobject you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>appointment</li>
+ * 		<li>healthvisitor</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		16.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */
 public class Calendar {
 	
 	//================================================================================
