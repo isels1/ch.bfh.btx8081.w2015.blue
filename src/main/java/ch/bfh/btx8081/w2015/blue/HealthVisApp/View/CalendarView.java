@@ -175,8 +175,11 @@ public class CalendarView {
 		//================================================================================
 	    // add new Appointment Section
 	    //================================================================================
+
 		/**
 		 * shows new added Appointment from popup
+		 * @param app: Appointment 
+		 * @param cal Model.Calendar
 		 */
 		public void addNewApp(Appointment app, ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar cal) {
 			
@@ -205,8 +208,6 @@ public class CalendarView {
 		/**
 		 * Set the view of the calendar to the actual Week
 		 * only show Monday to Friday
-		 * 
-		 * Problem the CSS file must be modified 
 		 */
 		public void changeToWeekly()
 		{	
@@ -229,8 +230,6 @@ public class CalendarView {
 		}
 		/**
 		 * Set the view of the calendar to the actual Month
-		 *
-		 * Problem the CSS file must be modified 
 		 */
 		public void changeToMonthly()
 		{
@@ -254,6 +253,7 @@ public class CalendarView {
 		
 		/**
 		 * Init the Calendar 
+		 * standart View is the dailyView of the actual Day
 		 */
 		private void initCalendar(){
 			CalendarEventProvider dataSource = new BasicEventProvider();

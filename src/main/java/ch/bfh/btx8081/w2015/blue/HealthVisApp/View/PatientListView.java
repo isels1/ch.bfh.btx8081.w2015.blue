@@ -219,7 +219,12 @@ public class PatientListView {
 	
 	/**
 	 * insert Patients in the PatientTable
-	 * 
+	 * 	 * The table can Filter every Patient State
+	 * 	- Ambulant
+	 *  - Stationary
+	 *  - New
+	 *  - Archived
+	 *  - All Patinet
 	 */
 	private void insertPatientsInList()
 	{
