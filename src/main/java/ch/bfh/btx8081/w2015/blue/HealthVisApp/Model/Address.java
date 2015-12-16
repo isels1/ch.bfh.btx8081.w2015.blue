@@ -180,4 +180,28 @@ public class Address {
 	public String getCity() {
 		return aCity;
 	}
+	
+
+	/**
+	 * The string representation is "aStreet aStreetNr aZIP aCity"
+	 * @return the string representation of the person /String
+	 */
+	@Override
+	public String toString() {
+		String aString = "";
+		
+		if (!aStreet.equals(null))
+			{aString = aString + ", " + aStreet;}
+		
+		if (!(aStreetNr==0))
+		{aString = aString + ", " + aStreetNr;}
+		
+		if (!(aZIP==0))
+		{aString = aString + " ," + aZIP;}
+		
+		if (!aCity.equals(null))
+		{aString = aString + ", " + aCity;}
+		
+		return aString;
+	}
 }
