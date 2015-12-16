@@ -118,7 +118,7 @@ public class HealthVisitor extends Person {
 	public String toString() {
 		String aString = super.toString();
 		if (!userName.equals(null)) 
-			{aString = aString + " " + userName;}
+			{aString = aString + ", " + userName;}
 		return aString;
 	}
 }
