@@ -4,7 +4,13 @@ import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 
 import com.vaadin.ui.Button;
@@ -193,6 +199,58 @@ public class AppointmentPopUpView {
 	 */
 	public Button getButtonCancel() {
 		return butCancel;
+	}
+	
+	//================================================================================
+    // Setter  Section
+    //================================================================================
+	
+	/**
+	 * set location from textfield location
+	 * @param location
+	 */
+	public void setTextFieldLocation(String location) {
+		tfLoc.setValue(location);
+	}
+	
+	/**
+	 * set from from textfield from
+	 * @param from
+	 */
+	public void setTextFieldFrom(String from) {
+		tfFrom.setValue(from);
+	}
+	
+	/**
+	 * set to from textfield to
+	 * @param to
+	 */
+	public void setTextFieldTo(String to) {
+		tfTo.setValue(to);
+	}
+	
+	/**
+	 * set text from textfield comment
+	 * @param comment
+	 */
+	public void setTextFieldComment(String comment) {
+		taCom.setValue(comment);
+	}
+
+	/**
+	 * set date from datefield
+	 * @param date
+	 */
+	public void setPopupDateFieldDate(Date date) {
+		dfDate.setValue(date);
+	}
+	
+	/**
+	 * set patient of combobox
+	 * @param patient
+	 */
+	public void setCmBoxPatientState(Patient patient){
+		comboboxPatient.setValue(patient);
 	}
 	
 	//================================================================================

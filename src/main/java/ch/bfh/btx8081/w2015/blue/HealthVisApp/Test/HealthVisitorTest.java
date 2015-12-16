@@ -53,6 +53,7 @@ public class HealthVisitorTest {
 		assertEquals(pList, hv.getPatient());
 		
 		hv.setPatient(patient);
+		pList.add(patient);
 		assertEquals(pList, hv.getPatient());
 		
 	}

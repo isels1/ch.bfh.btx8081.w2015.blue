@@ -19,7 +19,7 @@ public class CalendarTest {
 		
 		Calendar cal = new Calendar(app, hv);
 		assertEquals(app, cal.getAppointments());
-		assertEquals(app, cal.getHealthVisitor());
+		assertEquals(hv, cal.getHealthVisitor());
 	}
 
 	

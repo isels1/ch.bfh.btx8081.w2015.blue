@@ -243,19 +243,35 @@ public class PatientListPopUpView {
     // Setter  Section
     //================================================================================
 	
+	/**
+	 * set name from textfield name
+	 * @param name
+	 */
 	public void setTextFieldName(String name) {
 		tfName.setValue(name);
 	}
 	
+	/**
+	 * set firstname from textfield firstname
+	 * @param fName
+	 */
 	public void setTextFieldFirstname(String fName) {
 		tfFName.setValue(fName);
 	}
 	
+	/**
+	 * set id from textfield id
+	 * @param id
+	 */
 	public void setTextFieldId(int id) {
 		tfId.setValue(""+id);
 		tfId.setEnabled(false);
 	}
 	
+	/**
+	 * set address from textfields address
+	 * @param address
+	 */
 	public void setTextFieldAddress(Address address) {
 		tfAddr1.setValue(address.getStreet());
 		tfAddr2.setValue(""+address.getStreetNr());
@@ -263,18 +279,34 @@ public class PatientListPopUpView {
 		tfAddr4.setValue(address.getCity());
 	}
 	
+	/**
+	 * set text from textfield phone
+	 * @param phone
+	 */
 	public void setTextFieldTel(String phone) {
 		tfTel.setValue(phone);
 	}
 	
+	/**
+	 * set text from textfield comment
+	 * @param comment
+	 */
 	public void setTextFieldComment(String comment) {
 		tfCom.setValue(comment);
 	}
 
+	/**
+	 * set date from datefield
+	 * @param date
+	 */
 	public void setPopupDateFieldDate(Date date) {
 		dfBDate.setValue(date);
 	}
 	
+	/**
+	 * set state of combobox
+	 * @param state
+	 */
 	public void setCmBoxPatientState(PatientState state){
 		if (state instanceof PatientStateNew) {
 			cmbState.setValue(cmbStateNew);
