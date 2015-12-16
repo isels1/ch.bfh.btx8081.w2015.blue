@@ -31,11 +31,21 @@ public class Note {
     // Getter Section
     //================================================================================
 	/**
-	 * The getter the comment
-	 * @return comment The Comment /String
+	 * The getter for the comment
+	 * @return comment the Comment /String
 	 */
 	
 	public String getComment() {
+		return comment;
+	}
+	
+
+	 /**
+	  * The string representation is "comment"
+	  * @return the string representation of the comment /String
+	  */
+	@Override
+	public String toString() {
 		return comment;
 	}
 }
