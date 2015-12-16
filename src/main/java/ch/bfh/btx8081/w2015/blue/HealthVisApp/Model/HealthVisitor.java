@@ -180,7 +180,7 @@ public class HealthVisitor extends Person {
 	@Override
 	public String toString() {
 		String aString = super.toString();
-		if (!userName.equals(null)) 
+		if (!(userName==null)) 
 			{aString = aString + ", " + userName;}
 		return aString;
 	}

@@ -190,7 +190,7 @@ public class Address {
 	public String toString() {
 		String aString = "";
 		
-		if (!aStreet.equals(null))
+		if (!(aStreet==null))
 			{aString = aString + ", " + aStreet;}
 		
 		if (!(aStreetNr==0))
@@ -199,9 +199,24 @@ public class Address {
 		if (!(aZIP==0))
 		{aString = aString + ", " + aZIP;}
 		
-		if (!aCity.equals(null))
+		if (!(aCity==null))
 		{aString = aString + ", " + aCity;}
 		
 		return aString;
+	}
+	
+	 /**
+	  * Compares two Addresses and tests if they are the same
+	  * @return if aStreet, aStreetNr, aZIP and aCity of the Address objects are the same /boolean
+	  */
+	@Override
+	public boolean equals(Object obj){
+		Address addr = (Address) obj;
+		boolean str = this.aStreet.equals(addr.aStreet);
+		boolean nr = this.aStreetNr == addr.aStreetNr;
+		boolean zip = this.aZIP == addr.aZIP;
+		boolean city = this.aCity.equals(addr.aCity);
+		
+		return (str && nr && zip && city);
 	}
 }

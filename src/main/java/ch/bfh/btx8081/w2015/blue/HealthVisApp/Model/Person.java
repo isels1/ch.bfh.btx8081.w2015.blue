@@ -134,18 +134,18 @@ public class Person {
 		String addr = address.toString();
 		String aString = "";
 		
-		if (!name.equals(null))
+		if (!(name==null))
 		{aString = aString + ", " + name;}
 		
-		if (!firstName.equals(null))
+		if (!(firstName==null))
 		{aString = aString + ", " + firstName;}
 		
-		if (!birthdate.equals(null))
+		if (!(birthdate==null))
 		{aString = aString + ", " + birthdate;}
 		
 		aString = aString + ", " + addr;
 		
-		if (!phone.equals(null))
+		if (!(phone==null))
 		{aString = aString + ", " + phone;}
 		
 		return aString;
@@ -155,8 +155,9 @@ public class Person {
 	  * Compares two Persons and tests if they are the same
 	  * @return if the name, firstName, birthdate, address, phone of the Person objects are the same /boolean
 	  */
-	public boolean equals(Person pers){
-		
+	@Override
+	public boolean equals(Object obj){
+		Person pers = (Person) obj;
 		boolean names = this.name.equals(pers.name);
 		boolean firstNames = this.firstName.equals(pers.firstName);
 		boolean birthdates = this.birthdate.equals(pers.birthdate);

@@ -143,4 +143,14 @@ public class Patient extends Person {
 		return state;
 	}
 
+	 /**
+	  * Compares two patients and tests if they are the same
+	  * @return if the IDs of the Patient objects are the same /boolean
+	  */
+	@Override
+	public boolean equals(Object obj){
+		Patient pat = (Patient) obj;
+		return this.getId() == pat.getId();
+	}
+	
 }

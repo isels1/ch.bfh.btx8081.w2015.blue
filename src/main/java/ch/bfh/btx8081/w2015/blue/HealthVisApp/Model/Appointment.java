@@ -242,17 +242,32 @@ public class Appointment {
 	public String toString() {
 		String aString = super.toString();
 		
-		if (!startTime.equals(null))
+		if (!(startTime==null))
 		{aString = aString + ", " + startTime;}
 		
-		if (!endTime.equals(null))
+		if (!(endTime==null))
 		{aString = aString + ", " + endTime;}
 		
-		if (!location.equals(null))
+		if (!(location==null))
 		{aString = aString + ", " + location;}
 		
 		aString = aString + ", " + patient.toString();
 		
 		return aString;
+	}
+	
+	 /**
+	  * Compares two Appointments and tests if they are the same
+	  * @return if the startTime, endTime, location and patient of the Person objects are the same /boolean
+	  */
+	@Override
+	public boolean equals(Object obj){
+		Appointment app = (Appointment) obj;
+		boolean start = this.startTime.equals(app.startTime);
+		boolean end = this.endTime.equals(app.endTime);
+		boolean loc = this.location.equals(app.location);
+		boolean pat = this.patient.equals(app.patient);
+		
+		return (start && end && loc && pat);
 	}
 }
