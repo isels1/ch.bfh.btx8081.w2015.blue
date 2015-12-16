@@ -150,4 +150,19 @@ public class Person {
 		
 		return aString;
 	}
+	
+	 /**
+	  * Compares two Persons and tests if they are the same
+	  * @return if the name, firstName, birthdate, address, phone of the Person objects are the same /boolean
+	  */
+	public boolean equals(Person pers){
+		
+		boolean names = this.name.equals(pers.name);
+		boolean firstNames = this.firstName.equals(pers.firstName);
+		boolean birthdates = this.birthdate.equals(pers.birthdate);
+		boolean address = this.address.equals(pers.address);
+		boolean phones = this.phone.equals(pers.phone);
+		
+		return (names && firstNames && birthdates && address && phones);
+	}
 }
