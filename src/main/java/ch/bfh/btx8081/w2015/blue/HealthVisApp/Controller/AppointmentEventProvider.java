@@ -13,11 +13,46 @@ import com.vaadin.ui.components.calendar.event.CalendarEvent;
 import com.vaadin.ui.components.calendar.event.CalendarEventProvider;
 
 /**
- * Provider for the events from the calendar
- * 
- * @author isels1, zwahf1
- *
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		AppointmentEventProvider
+ * </font>
+ * </span>
+ * <span class="courier">
+ * <font face="courier new">
+ * 		<b>implements</b> CalendarEventProvider
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...provides the events (appointments) for the callendar
+ * </span>
+ * <br>
+ * <br>
+ * The AppointmentEventProvider contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				ddc:
+ * 			</font> 
+ * 			<i>DummyDataCreator</i>
+ * 			- The dummy data creator to get the events... later on it will be replaced with the persistence layer
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		xx.xx.2015
+ * </span>
+ * <br><br>
+ * @author zwahf1, dornt1, isels1
+ * @version 1.0
  */
+@SuppressWarnings("serial")
 public class AppointmentEventProvider implements CalendarEventProvider {
 
 	//================================================================================

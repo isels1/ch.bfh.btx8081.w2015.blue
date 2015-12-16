@@ -7,9 +7,46 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
 /**
- * Controller for data from healthvisitor 
- * @author isels1, zwahf1
- *
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		HealthVisitorController
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...controller for the health visitor data
+ * </span>
+ * <br>
+ * <br>
+ * The HealthVisitorController contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				ddc:
+ * 			</font> 
+ * 			<i>DummyDataCreator</i>
+ * 			- The dummy data creator to get the events... later on it will be replaced with the persistence layer
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				hv:
+ * 			</font> 
+ * 			<i>HealthVisitor</i>
+ * 			- The Health Visitor itself, to retrieve the data from the right health visitor
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		xx.xx.2015
+ * </span>
+ * <br><br>
+ * @author zwahf1, dornt1, isels1
+ * @version 1.0
  */
 public class HealthVisitorController {
 	

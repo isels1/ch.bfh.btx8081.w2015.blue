@@ -5,18 +5,56 @@ import java.util.GregorianCalendar;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.SearchHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
 /**
- * control the events from the appointment- view
- * 
- * <ul>
- * 	handle the events given from the appoointment-view (save new appointment)
- * </ul>
- * @author zwahf1
- *
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		AppointmentPopUpController
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...controls the events from the appointment view
+ * </span>
+ * <br>
+ * <br>
+ * The AppointmentPopUpController contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				final DATE_DELIMITER:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- Delimiter to split the date format
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				final TIME_DELIMITER:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- Delimiter to split the time format
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				appView:
+ * 			</font> 
+ * 			<i>AppointmentPopUpView</i>
+ * 			- The view to handle the events given from the appoointment-view (save new appointment)
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		xx.xx.2015
+ * </span>
+ * <br><br>
+ * @author zwahf1, dornt1, isels1
+ * @version 1.0
  */
 public class AppointmentPopUpController {
 	
