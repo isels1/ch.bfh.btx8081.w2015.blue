@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 
+
 public class HealthVisitor extends Person {
 	
 	//================================================================================
@@ -107,5 +108,17 @@ public class HealthVisitor extends Person {
 	public ArrayList<Patient> getPatient() {
 		return patient;
 	}
+	
 
+	/**
+	 * The string representation is "name firstName birthdate aStreet aStreetNr aZIP aCity phone"
+	 * @return the string representation of the person /String
+	 */
+	@Override
+	public String toString() {
+		String aString = super.toString();
+		if (!userName.equals(null)) 
+			{aString = aString + " " + userName;}
+		return aString;
+	}
 }
