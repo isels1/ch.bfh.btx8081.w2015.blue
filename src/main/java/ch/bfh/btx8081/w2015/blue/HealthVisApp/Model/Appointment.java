@@ -149,4 +149,30 @@ public class Appointment {
 	public Note getComment() {
 		return comment;
 	}
+	
+	//================================================================================
+	// Methods Section
+	//================================================================================
+
+	 /**
+	  * The string representation is "startTime endTime location comment"
+	  * @return the string representation of the person /String
+	  */
+	@Override
+	public String toString() {
+		String aString = super.toString();
+		
+		if (!startTime.equals(null))
+		{aString = aString + ", " + startTime;}
+		
+		if (!endTime.equals(null))
+		{aString = aString + ", " + endTime;}
+		
+		if (!location.equals(null))
+		{aString = aString + ", " + location;}
+		
+		aString = aString + ", " + patient.toString();
+		
+		return aString;
+	}
 }
