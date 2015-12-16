@@ -262,12 +262,15 @@ public class Appointment {
 	  */
 	@Override
 	public boolean equals(Object obj){
-		Appointment app = (Appointment) obj;
-		boolean start = this.startTime.equals(app.startTime);
-		boolean end = this.endTime.equals(app.endTime);
-		boolean loc = this.location.equals(app.location);
-		boolean pat = this.patient.equals(app.patient);
-		
-		return (start && end && loc && pat);
+		if(obj != null) {
+			Appointment app = (Appointment) obj;
+			boolean start = this.startTime.equals(app.startTime);
+			boolean end = this.endTime.equals(app.endTime);
+			boolean loc = this.location.equals(app.location);
+			boolean pat = this.patient.equals(app.patient);
+			
+			return (start && end && loc && pat);
+		}
+		return false;
 	}
 }

@@ -157,13 +157,16 @@ public class Person {
 	  */
 	@Override
 	public boolean equals(Object obj){
-		Person pers = (Person) obj;
-		boolean names = this.name.equals(pers.name);
-		boolean firstNames = this.firstName.equals(pers.firstName);
-		boolean birthdates = this.birthdate.equals(pers.birthdate);
-		boolean address = this.address.equals(pers.address);
-		boolean phones = this.phone.equals(pers.phone);
-		
-		return (names && firstNames && birthdates && address && phones);
+		if(obj != null) {
+			Person pers = (Person) obj;
+			boolean names = this.name.equals(pers.name);
+			boolean firstNames = this.firstName.equals(pers.firstName);
+			boolean birthdates = this.birthdate.equals(pers.birthdate);
+			boolean address = this.address.equals(pers.address);
+			boolean phones = this.phone.equals(pers.phone);
+			
+			return (names && firstNames && birthdates && address && phones);
+		}
+		return false;
 	}
 }

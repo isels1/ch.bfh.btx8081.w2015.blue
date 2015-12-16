@@ -137,7 +137,7 @@ public class Patient extends Person {
 	public String toString() {
 		String returnString = "";
 		returnString = String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id);
-		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
+//		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
 		return returnString;
 	}
 	 /**

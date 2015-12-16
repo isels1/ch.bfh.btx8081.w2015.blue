@@ -119,7 +119,7 @@ public class AppointmentPopUpController {
 		Appointment app = new Appointment(start, 
 						end, 
 						appView.getTextFieldLocation(), 
-						appView.getcomboboxPatient());
+						appView.getComboboxPatient());
 		
 		app.setComment(com);
 		

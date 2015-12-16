@@ -141,7 +141,7 @@ public class AppointmentPopUpView {
 	 * get patient from pop-up view
 	 * @return patient: Patient
 	 */
-	public Patient getcomboboxPatient() {
+	public Patient getComboboxPatient() {
 		return (Patient) comboboxPatient.getValue();
 	}
 	
@@ -249,7 +249,7 @@ public class AppointmentPopUpView {
 	 * set patient of combobox
 	 * @param patient
 	 */
-	public void setCmBoxPatientState(Patient patient){
+	public void setComboboxPatient(Patient patient){
 		comboboxPatient.setValue(patient);
 	}
 	

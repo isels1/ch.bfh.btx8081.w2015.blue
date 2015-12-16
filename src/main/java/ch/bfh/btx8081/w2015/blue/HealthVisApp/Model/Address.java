@@ -211,12 +211,16 @@ public class Address {
 	  */
 	@Override
 	public boolean equals(Object obj){
-		Address addr = (Address) obj;
-		boolean str = this.aStreet.equals(addr.aStreet);
-		boolean nr = this.aStreetNr == addr.aStreetNr;
-		boolean zip = this.aZIP == addr.aZIP;
-		boolean city = this.aCity.equals(addr.aCity);
+		if (obj != null) {
+			Address addr = (Address) obj;
+			boolean str = this.aStreet.equals(addr.aStreet);
+			boolean nr = this.aStreetNr == addr.aStreetNr;
+			boolean zip = this.aZIP == addr.aZIP;
+			boolean city = this.aCity.equals(addr.aCity);
+			
+			return (str && nr && zip && city);
+		}
+		return false;
 		
-		return (str && nr && zip && city);
 	}
 }
