@@ -49,7 +49,7 @@ import java.util.GregorianCalendar;
  * 				calendar:
  * 			</font> 
  * 			<i>Model.Calendar</i>
- * 			- 
+ * 			- The calendar in which the Appointment is
  * 		</li>
  * 		<li>
  * 			<font face="courier new">
