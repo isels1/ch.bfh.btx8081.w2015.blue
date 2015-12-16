@@ -425,6 +425,11 @@ zwahf1
 	create check availability by new appointment
 	create pop up for error message
 	
+isels1
+	create edit patient view
+	create edit patient logic
+	refactoring code
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
