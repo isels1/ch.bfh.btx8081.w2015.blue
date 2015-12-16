@@ -146,8 +146,11 @@ public class Patient extends Person {
 	  */
 	@Override
 	public boolean equals(Object obj){
-		Patient pat = (Patient) obj;
-		return this.getId() == pat.getId();
+		if (obj != null) {
+			Patient pat = (Patient) obj;
+			return this.getId() == pat.getId();
+		}
+		return false;
 	}
 	
 }
