@@ -12,13 +12,53 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 import com.vaadin.ui.Button.ClickEvent;
 
 /**
- * control all events from the health visitor app
- * 
- * <ul>
- * 	control all made events from the diffrent views in the health visitor app
- * </ul>
- * @author zwahf1
- *
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		UIController
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...control all events from the health visitor app. And the most important the events between the views.
+ * </span>
+ * <br>
+ * <br>
+ * The UIController contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				c:
+ * 			</font> 
+ * 			<i>UIController</i>
+ * 			- UIController object for the singleton class
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				appPopUpCon:
+ * 			</font> 
+ * 			<i>AppointmentPopUpController</i>
+ * 			- To control the open and closing of the popup view
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				patPopUpCon:
+ * 			</font> 
+ * 			<i>PatientPopUpController</i>
+ * 			- To control the open and closing of the popup view
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		xx.xx.2015
+ * </span>
+ * <br><br>
+ * @author zwahf1, dornt1, isels1
+ * @version 1.0
  */
 public class UIController {
 

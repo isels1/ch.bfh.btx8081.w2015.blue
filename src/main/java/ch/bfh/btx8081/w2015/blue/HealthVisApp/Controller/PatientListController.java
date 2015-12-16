@@ -8,12 +8,59 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
 
 import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.ui.Button.ClickEvent;
 
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		PatientListController
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...controls the events from the patient list view
+ * </span>
+ * <br>
+ * <br>
+ * The PatientListController contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				plc:
+ * 			</font> 
+ * 			<i>PatientListController</i>
+ * 			- PatientListController object for sinelton class
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				ddc:
+ * 			</font> 
+ * 			<i>DummyDataCreator</i>
+ * 			- The dummy data creator to get the events... later on it will be replaced with the persistence layer
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				hv:
+ * 			</font> 
+ * 			<i>HealthVisitor</i>
+ * 			- The Health Visitor itself, to retrieve the data from the right health visitor
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		xx.xx.2015
+ * </span>
+ * <br><br>
+ * @author zwahf1, dornt1, isels1
+ * @version 1.0
+ */
 public class PatientListController {
 
 	//================================================================================
@@ -90,6 +137,7 @@ public class PatientListController {
 	
 	/**
 	 * edit
+	 * 
 	 */
 	public void editPatient(Patient pat) {
 	
