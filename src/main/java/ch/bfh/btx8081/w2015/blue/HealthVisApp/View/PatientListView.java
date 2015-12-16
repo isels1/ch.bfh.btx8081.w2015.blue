@@ -183,7 +183,7 @@ public class PatientListView {
 		comboboxFilter.setNewItemsAllowed(false);   
 		// Add some items and specify their item ID.
 		// The item ID is by default used as item caption.
-		comboboxFilter.addItems(str_AllPatinets, str_Stationary, str_Ambulant, str_New,str_Archived);
+		comboboxFilter.addItems(str_AllPatinets, str_New, str_Ambulant, str_Stationary,  str_Archived);
 		comboboxFilter.setValue(comboboxFilter.getItemIds().iterator().next());
 	
 		comboboxFilter.addValueChangeListener(new PatinetListComboBoxChangeListener());

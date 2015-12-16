@@ -320,6 +320,7 @@ public class PatientListPopUpView {
 		if (state instanceof PatientStateArchived) {
 			cmbState.setValue(cmbStateArchived);
 		}
+		cmbState.setEnabled(true);
 	}
 	
 	//================================================================================
@@ -514,7 +515,8 @@ public class PatientListPopUpView {
 	    				  cmbStateAmbulant, 
 	    				  cmbStateStationary, 
 	    				  cmbStateArchived);
-	    cmbState.setValue(cmbStateNew);
+	    cmbState.setValue(cmbStateNew);	   
+		cmbState.setEnabled(false);
 	}
 	
 	/**
