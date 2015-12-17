@@ -9,7 +9,7 @@
       <w>210</w>
       <h>190</h>
     </coordinates>
-    <panel_attributes>&lt;&lt;Component&gt;&gt;
+    <panel_attributes>&lt;&lt;Context&gt;&gt;
 Patient
 --
 -id: int
@@ -60,7 +60,7 @@ PatientState
 +doWhile()
 +doExit()
 +get()
-+set()</panel_attributes>
+#set()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
