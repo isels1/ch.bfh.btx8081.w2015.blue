@@ -4,7 +4,86 @@ import java.util.Date;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 
-
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		Patient
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...creates a patient. 
+ * </span>
+ * <br>
+ * <br>
+ * The Patient contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				id:
+ * 			</font> 
+ * 			<i>integer</i>
+ * 			- The identification number of the Patient
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				comment:
+ * 			</font> 
+ * 			<i>Note</i>
+ * 			-  A potential note for the Patient
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				treatment:
+ * 			</font> 
+ * 			<i>Treatment</i>
+ * 			-
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				appointment:
+ * 			</font> 
+ * 			<i>Appointment</i>
+ * 			- 
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				healthvisitor:
+ * 			</font> 
+ * 			<i>HealthVisitor</i>
+ * 			- 
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				state:
+ * 			</font> 
+ * 			<i>PatientState</i>
+ * 			- 
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a new Patient you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>id</li>
+ * 		<li>comment</li>
+ * 		<li>treatment</li>
+ *		<li>appointment</li>
+ *		<li>healthvisitor</li>
+ *		<li>state</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		17.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */
 public class Patient extends Person {
 	
 	//================================================================================

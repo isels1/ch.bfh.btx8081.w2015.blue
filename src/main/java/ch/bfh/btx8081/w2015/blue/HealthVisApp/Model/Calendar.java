@@ -6,7 +6,7 @@ import java.util.GregorianCalendar;
  * Class
  * <span class="courier">
  * <font face="courier new">
- * 		Appointment
+ * 		Calendar
  * </font>
  * </span>
  * <br>
@@ -29,11 +29,11 @@ import java.util.GregorianCalendar;
  * 				healthvisitor:
  * 			</font> 
  * 			<i>HealthVisitor</i>
- * 			- The responsible HealthVisitor
+ * 			- The responsible healthvisitor
  * 		</li>
  *	 </ul>
  * <br>
- * To create a Calendarobject you need necessary at least following informations:
+ * To create a calendarobject you need necessary at least following informations:
  * 	<ul>
  * 		<li>appointment</li>
  * 		<li>healthvisitor</li>

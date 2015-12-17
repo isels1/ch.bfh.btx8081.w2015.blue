@@ -2,6 +2,78 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.Date;
 
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		Person
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...creates a Person. For example a patient.
+ * </span>
+ * <br>
+ * <br>
+ * The Person contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				name:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The name of the Person
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				comment:
+ * 			</font> 
+ * 			<i>firstName</i>
+ * 			-  The first name of the Person
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				birthdate:
+ * 			</font> 
+ * 			<i>Date</i>
+ * 			- The birthdate of the Person
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				address:
+ * 			</font> 
+ * 			<i>Address</i>
+ * 			- The address of the Person
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				phone:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The phone number of the Person
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a new person you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>name</li>
+ * 		<li>firstName</li>
+ * 		<li>birthdate</li>
+ *		<li>address</li>
+ *		<li>phone</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		17.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */
 public class Person {
 	
 	//================================================================================

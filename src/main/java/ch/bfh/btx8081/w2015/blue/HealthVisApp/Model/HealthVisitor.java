@@ -16,7 +16,7 @@ import java.util.Date;
  * </span>
  * <br>
  * <br>
- * The HealthVisitor contains following information:
+ * The Healthvisitor contains following information:
  * 	<ul>
  * 		<li>
  * 			<font face="courier new">
@@ -48,7 +48,7 @@ import java.util.Date;
  * 		</li>
  *	 </ul>
  * <br>
- * To create a new Healthvisitor you need necessary at least following informations:
+ * To create a new healthvisitor you need necessary at least following informations:
  * 	<ul>
  * 		<li>userName</li>
  * 		<li>password</li>

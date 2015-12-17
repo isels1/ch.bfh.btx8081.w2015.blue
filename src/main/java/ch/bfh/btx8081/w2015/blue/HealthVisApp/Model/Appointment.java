@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
  * </span>
  * <br>
  * <br>
- * The appointment contains following information:
+ * The Appointment contains following information:
  * 	<ul>
  * 		<li>
  * 			<font face="courier new">
@@ -60,7 +60,7 @@ import java.util.GregorianCalendar;
  * 		</li>
  *	 </ul>
  * <br>
- * To create a new address you need necessary at least following informations:
+ * To create a new appointment you need necessary at least following informations:
  * 	<ul>
  * 		<li>startTime</li>
  * 		<li>endTime</li>
