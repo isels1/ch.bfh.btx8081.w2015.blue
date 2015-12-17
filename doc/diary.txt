@@ -359,6 +359,9 @@ dornt1
 	
 hugil1
 	refactoring		
+	
+nosec1
+	create Login
 ################	
 #  11.12.2015  #
 ################
@@ -417,6 +420,9 @@ zwahf1
 isels1
 	edit patient popup view (for states)
 	click handling pation table
+nosec1
+	toString and equals methods
+	login
 	
 ################	
 #  15.12.2015  #
@@ -429,6 +435,8 @@ isels1
 	create edit patient view
 	create edit patient logic
 	refactoring code
+nosec1
+	toString and equals methods
 
 ################	
 #  16.12.2015  #
@@ -440,6 +448,8 @@ daily scrum
 zwahf1
 	add setter to app popup view
 	correct Juint tests
+nosec1
+	toString, equals methods
 	
 ******************************
 *** To Do list Gruppe Blau ***
