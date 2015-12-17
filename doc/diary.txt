@@ -456,9 +456,13 @@ hugil1
 ################	
 #  17.12.2015  #
 ################
-hugil1
-	Javadocs		
+sprint review
+
+plan new sprint 3
+	show sprint backlog
 	
+presentation pattern state
+
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
@@ -466,4 +470,4 @@ hugil1
 --> LOOK INTO THE SPRINT PLANING TO LOOK FOR MORE SPECIFIC TODOS!!!
 Umsetzung review
 
-Task 11 sprint 2
+Task 11 sprint 3
