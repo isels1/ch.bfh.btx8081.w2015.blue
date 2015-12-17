@@ -214,8 +214,8 @@ public class Patient extends Person {
 	 */
 	@Override
 	public String toString() {
-		String returnString = "";
-		returnString = String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id);
+		String returnString = "" + super.getName() + " " + super.getFirstName() +" " + id;
+//		returnString = String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id);
 //		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
 		return returnString;
 	}
