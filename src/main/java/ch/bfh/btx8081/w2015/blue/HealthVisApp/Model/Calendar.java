@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  * </span>
  * <br>
  * <span style="margin-left:60px;">
- * 		represent a calendarobject
+ * 		...creates a calendar
  * </span>
  * <br>
  * <br>
@@ -33,7 +33,7 @@ import java.util.GregorianCalendar;
  * 		</li>
  *	 </ul>
  * <br>
- * To create a calendarobject you need necessary at least following informations:
+ * To create a calendar you need necessary at least following informations:
  * 	<ul>
  * 		<li>appointment</li>
  * 		<li>healthvisitor</li>
