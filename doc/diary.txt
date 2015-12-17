@@ -450,6 +450,14 @@ zwahf1
 	correct Juint tests
 nosec1
 	toString, equals methods
+hugil1
+	Javadocs
+	
+################	
+#  17.12.2015  #
+################
+hugil1
+	Javadocs		
 	
 ******************************
 *** To Do list Gruppe Blau ***
