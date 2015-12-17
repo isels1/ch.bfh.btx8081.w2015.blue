@@ -61,7 +61,7 @@ import java.util.Date;
  * </b>
  * <br>
  * <span style="margin-left:60px;">
- * 		07.12.2015
+ * 		17.12.2015
  * </span>
  * <br><br>
  * @author hugil1
@@ -83,7 +83,7 @@ public class HealthVisitor extends Person {
     // Constructor Section
     //================================================================================
 	/**
-	 * This constructor initialize the HealthVisitor with the necessary information
+	 * This constructor is used for the login
 	 * <br>
 	 * <br>
 	 * @param userName Username of the Healthvisitor /String

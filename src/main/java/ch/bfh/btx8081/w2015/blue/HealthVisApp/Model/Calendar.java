@@ -22,7 +22,7 @@ import java.util.GregorianCalendar;
  * 				appointment:
  * 			</font> 
  * 			<i>ArrayList<Appointment></i>
- * 			- List with appointments
+ * 			- List with the appointments
  * 		</li>
  * 		<li>
  * 			<font face="courier new">

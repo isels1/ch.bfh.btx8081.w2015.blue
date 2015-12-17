@@ -1,47 +1,48 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
+
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		Note
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...creates a note. 
+ * </span>
+ * <br>
+ * <br>
+ * The Note contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				comment:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The comment in the note
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * To create a new Note you need necessary at least following informations:
+ * 	<ul>
+ * 		<li>comment</li>
+ *	 </ul>
+ * <br>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		17.12.2015
+ * </span>
+ * <br><br>
+ * @author hugil1
+ * @version 0.0
+ */	
 public class Note {
 
-	/**
-	 * Class
-	 * <span class="courier">
-	 * <font face="courier new">
-	 * 		Note
-	 * </font>
-	 * </span>
-	 * <br>
-	 * <span style="margin-left:60px;">
-	 * 		...creates a note. 
-	 * </span>
-	 * <br>
-	 * <br>
-	 * The Note contains following information:
-	 * 	<ul>
-	 * 		<li>
-	 * 			<font face="courier new">
-	 * 				comment:
-	 * 			</font> 
-	 * 			<i>String</i>
-	 * 			- The comment in the note
-	 * 		</li>
-	 *	 </ul>
-	 * <br>
-	 * To create a new Note you need necessary at least following informations:
-	 * 	<ul>
-	 * 		<li>comment</li>
-	 *	 </ul>
-	 * <br>
-	 * <b>
-	 * 		Creation date:
-	 * </b>
-	 * <br>
-	 * <span style="margin-left:60px;">
-	 * 		17.12.2015
-	 * </span>
-	 * <br><br>
-	 * @author hugil1
-	 * @version 0.0
-	 */	
 	//================================================================================
     // Note Data
     //================================================================================
