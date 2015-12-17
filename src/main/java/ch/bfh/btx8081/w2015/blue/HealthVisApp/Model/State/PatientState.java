@@ -91,7 +91,7 @@ public abstract class PatientState {
 	 * The function to set the css string
 	 * @param c: String for the bg-color (css property)
 	 */
-	public void setColor(String c){
+	protected void setColor(String c){
 		css = c;
 	}
 	
@@ -99,7 +99,7 @@ public abstract class PatientState {
 	 * The function to set the id (int)
 	 * @param id: int for the identification of the sate
 	 */
-	public void setPatientStateId(int id){
+	protected void setPatientStateId(int id){
 		this.id = id;
 	}
 
@@ -107,7 +107,7 @@ public abstract class PatientState {
 	 * The function to set the name string
 	 * @param n: String for the name of the state (to show in gui)
 	 */
-	public void setPatientStateName(String n){
+	protected void setPatientStateName(String n){
 		name = n;
 	}
 	
