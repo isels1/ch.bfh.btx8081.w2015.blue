@@ -78,8 +78,8 @@ import java.util.GregorianCalendar;
  * 		16.12.2015
  * </span>
  * <br><br>
- * @author hugil1
- * @version 0.0
+ * @author hugil1, nosec1, zwahf1, dornt1, isels1
+ * @version 1.0
  */
 public class Appointment {
 	
