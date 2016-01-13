@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
+import ch.bfh.btx8053.jpa.his.GeneratedValue;
+
 /**
  * Class
  * <span class="courier">
@@ -64,12 +66,17 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * @author isels1, zwahf1
  * @version 1.0
  */
+@Entity
+@Table(name="address")
 public class Address {
 	
 	//================================================================================
     // Address Data
     //================================================================================
-
+	@id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private String id;
+	
 	private String aStreet;
 	private int aStreetNr;
 	private int aZIP;
@@ -87,7 +94,6 @@ public class Address {
 	public Address() {
 		
 	}
-	
 	/**
 	 * This constructor initialize the address with the necessary information
 	 * <br>
