@@ -462,6 +462,22 @@ plan new sprint 3
 	show sprint backlog
 	
 presentation pattern state
+################	
+#  11.01.2016  #
+################
+daily scrum
+	-Database model and create database complet
+	
+	TO DO:
+		isels1 & dornt1 JPA for classes
+		nosec1 Login View & Controller, treatment model
+		hügil1 Documentation Database and start whit presentation
+		zwalf1 Treatment View
+
+################	
+#  13.01.2016  #
+################
+
 
 ******************************
 *** To Do list Gruppe Blau ***
