@@ -81,10 +81,10 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	
-	private String aStreet;
-	private int aStreetNr;
-	private int aZIP;
-	private String aCity;
+	private String street;
+	private int streetNr;
+	private int zip;
+	private String city;
 	
 	//================================================================================
     // Constructor
@@ -128,7 +128,7 @@ public class Address {
 	 * @param street The street /string
 	 */
 	public void setStreet(String street) {
-		aStreet = street;
+		this.street = street;
 	}
 	
 	/**
@@ -136,7 +136,7 @@ public class Address {
 	 * @param streetNr The street number (house number) /integer
 	 */
 	public void setStreetNr(int streetNr) {
-		aStreetNr = streetNr;
+		this.streetNr = streetNr;
 	}
 	
 	/**
@@ -144,7 +144,7 @@ public class Address {
 	 * @param zip The ZIP of the city /integer
 	 */
 	public void setZIP(int zip) {
-		aZIP = zip;
+		this.zip = zip;
 	}
 	
 	/**
@@ -152,7 +152,7 @@ public class Address {
 	 * @param city The name of the city /string
 	 */
 	public void setCity(String city) {
-		aCity = city;
+		this.city = city;
 	}
 	
 	//================================================================================
@@ -164,7 +164,7 @@ public class Address {
 	 * @return Street: string
 	 */
 	public String getStreet() {
-		return aStreet;
+		return street;
 	}
 	
 	/**
@@ -172,7 +172,7 @@ public class Address {
 	 * @return StreetNr: integer
 	 */
 	public int getStreetNr() {
-		return aStreetNr;
+		return streetNr;
 	}
 	
 	/**
@@ -180,7 +180,7 @@ public class Address {
 	 * @return PLZ: integer
 	 */
 	public int getZIP() {
-		return aZIP;
+		return zip;
 	}
 	
 	/**
@@ -188,7 +188,7 @@ public class Address {
 	 * @return City: string
 	 */
 	public String getCity() {
-		return aCity;
+		return city;
 	}
 	
 
@@ -200,17 +200,17 @@ public class Address {
 	public String toString() {
 		String aString = "";
 		
-		if (!(aStreet==null))
-			{aString = aString + ", " + aStreet;}
+		if (!(street==null))
+			{aString = aString + ", " + street;}
 		
-		if (!(aStreetNr==0))
-		{aString = aString + ", " + aStreetNr;}
+		if (!(streetNr==0))
+		{aString = aString + ", " + streetNr;}
 		
-		if (!(aZIP==0))
-		{aString = aString + ", " + aZIP;}
+		if (!(zip==0))
+		{aString = aString + ", " + zip;}
 		
-		if (!(aCity==null))
-		{aString = aString + ", " + aCity;}
+		if (!(city==null))
+		{aString = aString + ", " + city;}
 		
 		return aString;
 	}
@@ -223,10 +223,10 @@ public class Address {
 	public boolean equals(Object obj){
 		if (obj != null) {
 			Address addr = (Address) obj;
-			boolean str = this.aStreet.equals(addr.aStreet);
-			boolean nr = this.aStreetNr == addr.aStreetNr;
-			boolean zip = this.aZIP == addr.aZIP;
-			boolean city = this.aCity.equals(addr.aCity);
+			boolean str = this.street.equals(addr.street);
+			boolean nr = this.streetNr == addr.streetNr;
+			boolean zip = this.zip == addr.zip;
+			boolean city = this.city.equals(addr.city);
 			
 			return (str && nr && zip && city);
 		}

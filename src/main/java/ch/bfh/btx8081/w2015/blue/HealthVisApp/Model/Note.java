@@ -1,5 +1,11 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  * Class
@@ -41,13 +47,18 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * @author hugil1
  * @version 0.0
  */	
+@Entity
+@Table(name="note")
 public class Note {
 
 	//================================================================================
     // Note Data
     //================================================================================
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int id;
 	
-	String comment;
+	private String comment;
 	//================================================================================
     // Constructor Section
     //================================================================================

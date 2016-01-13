@@ -90,13 +90,13 @@ public class HealthVisitor extends Person {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	
-	private String userName;
+	private String username;
 	private String password;
 	
 	@Transient
 	private Calendar calendar;
 	
-	@OneToMany(mappedBy = "healthVisitor")
+	@OneToMany(mappedBy = "healthVisitorId")
 	private ArrayList<Patient> patient = new ArrayList<Patient>();
 
 	//================================================================================
@@ -138,7 +138,7 @@ public class HealthVisitor extends Person {
 	 * @param userName The Username /String
 	 */
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 	/**
 	 * The setter for the password
@@ -171,7 +171,7 @@ public class HealthVisitor extends Person {
 	 * @return The Username /String
 	 */
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	/**
 	 * The getter for the password
@@ -200,8 +200,8 @@ public class HealthVisitor extends Person {
 	@Override
 	public String toString() {
 		String aString = super.toString();
-		if (!(userName==null)) 
-			{aString = aString + ", " + userName;}
+		if (!(username==null)) 
+			{aString = aString + ", " + username;}
 		return aString;
 	}
 	
