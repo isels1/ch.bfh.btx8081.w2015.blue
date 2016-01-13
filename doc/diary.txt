@@ -487,3 +487,11 @@ daily scrum
 Umsetzung review
 
 Task 11 sprint 3
+
+	isels1 remove id from Patient
+		id is now autocreatet
+	edit all classe for patient id
+	remove label for patient id
+
+
+
