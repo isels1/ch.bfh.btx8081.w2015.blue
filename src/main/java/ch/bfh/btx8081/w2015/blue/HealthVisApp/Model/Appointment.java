@@ -1,6 +1,16 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.GregorianCalendar;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+
 /**
  * Class
  * <span class="courier">
@@ -81,18 +91,36 @@ import java.util.GregorianCalendar;
  * @author hugil1, nosec1, zwahf1, dornt1, isels1
  * @version 1.0
  */
+@Entity
+@Table(name = "appointment")
 public class Appointment {
 	
 	//================================================================================
     // Appointment Data
     //================================================================================
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int id;
 	
+    @Temporal(TemporalType.DATE)
 	private GregorianCalendar startTime;
+    
+    @Temporal(TemporalType.DATE)
 	private GregorianCalendar endTime;
+    
 	private String location;
-	private Patient patient;
+	
+	@ManyToOne
+	private Patient patientId;
+	
+	@ManyToOne
+	private HealthVisitor healthVisitorId;
+	
+	@Transient
 	private Calendar calendar;
-	private Note comment;
+	
+	@ManyToOne
+	private Note noteId;
 	
 	//================================================================================
     // Constructor Section
@@ -117,7 +145,7 @@ public class Appointment {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.location = location;
-		this.patient = patient;
+		this.patientId = patient;
 	}
 	
 	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, Calendar calendar){	
@@ -160,7 +188,7 @@ public class Appointment {
 	 * @param patient The Patient who belongs to the Appointment /Patient
 	 */
 	public void setPatient(Patient patient) {
-		this.patient = patient;
+		this.patientId = patient;
 	}
 	
 	/**
@@ -176,7 +204,7 @@ public class Appointment {
 	 * @param comment The note who belongs to the Appointment /Note
 	 */
 	public void setComment(Note comment) {
-		this.comment = comment;
+		this.noteId = comment;
 	}
 	
 	//================================================================================
@@ -211,7 +239,7 @@ public class Appointment {
 	 * @return The Patient who belongs to the Appointment /Patient
 	 */
 	public Patient getPatient() {
-		return patient;
+		return patientId;
 	}
 	
 	/**
@@ -227,7 +255,7 @@ public class Appointment {
 	 * @return comment The Note who belongs to the Appointment /Note
 	 */
 	public Note getComment() {
-		return comment;
+		return noteId;
 	}
 	
 	//================================================================================
@@ -251,7 +279,7 @@ public class Appointment {
 		if (!(location==null))
 		{aString = aString + ", " + location;}
 		
-		aString = aString + ", " + patient.toString();
+		aString = aString + ", " + patientId.toString();
 		
 		return aString;
 	}
@@ -267,7 +295,7 @@ public class Appointment {
 			boolean start = this.startTime.equals(app.startTime);
 			boolean end = this.endTime.equals(app.endTime);
 			boolean loc = this.location.equals(app.location);
-			boolean pat = this.patient.equals(app.patient);
+			boolean pat = this.patientId.equals(app.patientId);
 			
 			return (start && end && loc && pat);
 		}
