@@ -138,8 +138,7 @@ public class DummyDataCreator {
 								"Anna", 
 								new Date(), 
 								new Address("Str1", 1, 3001, "City1"), 
-								"056782924", 
-								1);
+								"056782924");
 		p1.setPatientState(new PatientStateNew());
 		pl.add(p1);
 		
@@ -147,8 +146,7 @@ public class DummyDataCreator {
 								"Peter", 
 								new Date(), 
 								new Address("Str2", 2, 3002, "City2"), 
-								"0567678552", 
-								2);
+								"0567678552");
 		p2.setPatientState(new PatientStateAmbulant());
 		pl.add(p2);
 		
@@ -156,8 +154,7 @@ public class DummyDataCreator {
 								"Maria", 
 								new Date(), 
 								new Address("Str3", 3, 3003, "City3"), 
-								"0567877892", 
-								3);
+								"0567877892");
 		p3.setPatientState(new PatientStateStationary());
 		pl.add(p3);
 		
@@ -165,8 +162,7 @@ public class DummyDataCreator {
 								"Stefanie", 
 								new Date(), 
 								new Address("Str4", 7, 2500, "City3"), 
-								"0567777898", 
-								4);
+								"0567777898");
 						
 		p4.setPatientState(new PatientStateArchived());
 		pl.add(p4);
@@ -175,8 +171,7 @@ public class DummyDataCreator {
 								"Markus", 
 								new Date(), 
 								new Address("Str4", 6, 3050, "City3"), 
-								"0562477898", 
-								5);
+								"0562477898");
 		p5.setPatientState(new PatientStateNew());
 		pl.add(p5);
 		
@@ -184,8 +179,7 @@ public class DummyDataCreator {
 								"Hans-Peter", 
 								new Date(), 
 								new Address("Str4", 4, 3353, "City3"), 
-								"0562477848", 
-								6);
+								"0562477848");
 		p6.setPatientState(new PatientStateNew());
 		pl.add(p6);
 		
