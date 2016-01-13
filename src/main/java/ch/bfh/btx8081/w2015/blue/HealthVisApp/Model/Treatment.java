@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
+import java.util.GregorianCalendar;
+
 /**
  * Class
  * <span class="courier">
@@ -37,15 +39,18 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
  * 		17.12.2015
  * </span>
  * <br><br>
- * @author hugil1
+ * @author hugil1, nosec1
  * @version 0.0
  */
 public class Treatment {
 	//================================================================================
     // Treatment Data
     //================================================================================
-	
-	String treatment;
+	int id;
+	int patientId;
+	String doctor;
+	GregorianCalendar date;
+	String description;
 	//================================================================================
     // Constructor Section
     //================================================================================
@@ -60,31 +65,116 @@ public class Treatment {
     // Setter Section
     //================================================================================
 	/**
-	 * The getter for the treatment
-	 * @return treatment the Treatment /String
+	 * The setter for the id
+	 * @param id The id of the Treatment /int
 	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 	
-	public String getComment() {
-		return treatment;
+	/**
+	 * The setter for the patientId
+	 * @param patientId The id of the Patient /int
+	 */
+	public void setPatientId(int patientId) {
+		this.patientId = patientId;
+	}
+	
+	/**
+	 * The setter for the doctor
+	 * @param doctor The doctor who administered the Treatment /String
+	 */
+	public void setDoctor(String doctor) {
+		this.doctor = doctor;
+	}
+	
+	/**
+	 * The setter for the date
+	 * @param date The date of the Treatment /GregorianCalendar
+	 */
+	public void setDate(GregorianCalendar date) {
+		this.date = date;
+	}
+	
+	/**
+	 * The setter for the description
+	 * @param description The description of the Treatment /String
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	//================================================================================
     // Getter Section
     //================================================================================
 	/**
-	 * The getter for the comment
-	 * @return comment the Comment /String
+	 * The getter for the id
+	 * @return id the id of the Treatment /int
 	 */
-	
-	public String getTreatment() {
-		return treatment;
+		public int getId() {
+		return id;
 	}
 	
 	/**
-	 * The string representation is "treatment"
-	 * @return the string representation of the treatment /String
+	 * The getter for the patientId
+	 * @return patientId the id of the patient /int
 	 */
+		public int getPatientId() {
+		return patientId;
+	}
+		
+	/**
+	 * The getter for the Doctor
+	 * @return Doctor the Doctor who administered the Treatment /String
+	 */
+	
+	public String getDoctor() {
+		return doctor;
+	}
+						
+	/**
+	 * The getter for the date
+ 	 * @return date the date of the Treatment /GregorianCalendar
+ 	 */
+ 	
+ 	public GregorianCalendar getDate() {
+ 		return date;
+ 	}
+		
+ 	/**
+ 	 * The getter for the description
+ 	 * @return description the description of the Treatment /String
+ 	 */
+		
+ 	public String getDescription() {
+ 		return description;
+	}
+	
+ 	
+ 	
+	/**
+	 * The string representation is "id patientId doctor date description"
+	 * @return the String representation of the treatment /String
+	 
 	@Override
 	public String toString() {
-		return treatment;
+		String aString = "";
+		
+		if (!(id==null))
+		{aString = aString + ", " + name;}
+		
+		if (!(firstName==null))
+		{aString = aString + ", " + firstName;}
+		
+		if (!(birthdate==null))
+		{aString = aString + ", " + birthdate;}
+		
+		aString = aString + ", " + addr;
+		
+		if (!(phone==null))
+		{aString = aString + ", " + phone;}
+		
+		return aString;
 	}
+	*/
+
 }
