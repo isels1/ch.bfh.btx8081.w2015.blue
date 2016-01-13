@@ -102,15 +102,15 @@ public class Patient extends Person {
     //================================================================================
 
 	@ManyToOne
-	private Note comment;
+	private Note noteId;
 	@ManyToOne
-	private HealthVisitor healthvisitor;
+	private HealthVisitor healthVisitorId;
 	@ManyToOne
-	private PatientState state;
+	private PatientState stateId;
 	
-	@OneToMany(mappedBy="patient")
+	@OneToMany(mappedBy="patientId")
 	private ArrayList<Treatment> treatments;
-	@OneToMany(mappedBy="patient")
+	@OneToMany(mappedBy="patientId")
 	private ArrayList<Appointment> appointments;
 	
 	
@@ -132,7 +132,7 @@ public class Patient extends Person {
 	 * @param comment The Comment /Note
 	 */
 	public void setComment(Note comment) {
-		this.comment = comment;
+		this.noteId = comment;
 	}
 	/**
 	 * The setter for the treatment
@@ -153,14 +153,14 @@ public class Patient extends Person {
 	 * @param healthvisitor The Healthvisitor /Healthvisitor
 	 */
 	public void setHealthvisitor(HealthVisitor healthvisitor) {
-		this.healthvisitor = healthvisitor;
+		this.healthVisitorId = healthvisitor;
 	}
 	/**
 	 * The setter for the Patient State
 	 * @param state The State of the Patient /PatientState
 	 */
 	public void setPatientState(PatientState state){
-		this.state = state;
+		this.stateId = state;
 	}
 
 	//================================================================================
@@ -178,7 +178,7 @@ public class Patient extends Person {
 	 * @return The Comment /Note
 	 */
 	public Note getComment() {
-		return comment;
+		return noteId;
 	}
 	/**
 	 * The getter for the treatment
@@ -199,14 +199,14 @@ public class Patient extends Person {
 	 * @return The Healthvisitor /Healthvisitor
 	 */
 	public HealthVisitor getHealthvisitor() {
-		return healthvisitor;
+		return healthVisitorId;
 	}
 	/**
 	 * The setter for the Patient State
 	 * @return state The State of the Patient /PatientState
 	 */
 	public PatientState getPatientState(){
-		return state;
+		return stateId;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

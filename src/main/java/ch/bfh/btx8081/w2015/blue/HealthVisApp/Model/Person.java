@@ -101,10 +101,10 @@ public class Person {
 	private int id;
 	
     @Temporal(TemporalType.DATE)
-    private Date birthdate;
+    private Date birthDate;
     
     @OneToOne
-    private Address address; 
+    private Address addressID; 
     
     private String name;
     private String firstName;
@@ -135,8 +135,8 @@ public class Person {
     public Person(String name, String firstName, Date birthdate, Address address, String phone){
         this.name = name;
         this.firstName = firstName;
-        this.address = address;
-        this.birthdate = birthdate;
+        this.addressID = address;
+        this.birthDate = birthdate;
         this.phone = phone;
    
     }
@@ -164,14 +164,14 @@ public class Person {
 	 * @param birtdate The birthdate /Date
 	 */
 	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
+		this.birthDate = birthdate;
 	}
 	/**
 	 * The setter for the address
 	 * @param address The Address /Address
 	 */
 	public void setAddress(Address address) {
-		this.address = address;
+		this.addressID = address;
 	}
 	/**
 	 * The setter for the phone
@@ -203,14 +203,14 @@ public class Person {
 	 * @return The birthdate /Date
 	 */
 	public Date getBirthdate() {
-		return birthdate;
+		return birthDate;
 	}
 	/**
 	 * The getter for the address
 	 * @return The Address /Address
 	 */
 	public Address getAddress() {
-		return address;
+		return addressID;
 	}
 	/**
 	 * The getter for the phone
@@ -227,7 +227,7 @@ public class Person {
 	 */
 	@Override
 	public String toString() {
-		String addr = address.toString();
+		String addr = addressID.toString();
 		String aString = "";
 		
 		if (!(name==null))
@@ -236,8 +236,8 @@ public class Person {
 		if (!(firstName==null))
 		{aString = aString + ", " + firstName;}
 		
-		if (!(birthdate==null))
-		{aString = aString + ", " + birthdate;}
+		if (!(birthDate==null))
+		{aString = aString + ", " + birthDate;}
 		
 		aString = aString + ", " + addr;
 		
@@ -257,8 +257,8 @@ public class Person {
 			Person pers = (Person) obj;
 			boolean names = this.name.equals(pers.name);
 			boolean firstNames = this.firstName.equals(pers.firstName);
-			boolean birthdates = this.birthdate.equals(pers.birthdate);
-			boolean address = this.address.equals(pers.address);
+			boolean birthdates = this.birthDate.equals(pers.birthDate);
+			boolean address = this.addressID.equals(pers.addressID);
 			boolean phones = this.phone.equals(pers.phone);
 			
 			return (names && firstNames && birthdates && address && phones);
