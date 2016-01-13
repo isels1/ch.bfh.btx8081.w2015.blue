@@ -26,10 +26,10 @@ public class PatientTest {
 		int id = 5;
 		Note comm = new Note();
 		Treatment treatm = new Treatment();
-		Appointment appnt = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient(name, fName, date, address, phone, id));
+		Appointment appnt = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient(name, fName, date, address, phone));
 		HealthVisitor hv = new HealthVisitor("Muster", "Max", new Date(), new Address("Strasse",2,2222,"Stadt"), "0987654321");
 	
-		Patient pat = new Patient(name, fName, date, address, phone, id, comm, treatm, appnt, hv);
+		Patient pat = new Patient(name, fName, date, address, phone);
 		assertEquals(name, pat.getName());
 		assertEquals(fName, pat.getFirstName());
 		assertEquals(date, pat.getBirthdate());

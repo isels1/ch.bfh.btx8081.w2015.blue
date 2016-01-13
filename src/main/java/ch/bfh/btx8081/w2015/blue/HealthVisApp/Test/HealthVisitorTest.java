@@ -37,7 +37,7 @@ public class HealthVisitorTest {
 		String pw = "PW";
 		Calendar calendar = new Calendar();
 		ArrayList<Patient> pList = new ArrayList<Patient>();
-		Patient patient = new Patient(" ", " ", null, null, " ", 0, null, null, null, null);
+		Patient patient = new Patient(" ", " ", null, null, " ");
 		HealthVisitor hv = new HealthVisitor(" ", " ", null, null, " ");
 		
 		hv.setUserName(username);

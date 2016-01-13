@@ -32,9 +32,9 @@ public class CalendarTest {
 		ArrayList<Appointment> app = new ArrayList<Appointment>();
 		HealthVisitor hv = new HealthVisitor(null, null, null, null, null);
 		Calendar cal = new Calendar(app, hv);
-		Appointment a = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321", 12));
-		Appointment b = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Biel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321", 12));
-		Appointment c = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Basel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321", 12));
+		Appointment a = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
+		Appointment b = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Biel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
+		Appointment c = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Basel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
 //		Appointment d = new Appointment();
 		ArrayList<Appointment> appList = new ArrayList<Appointment>();
 		appList.add(b);
