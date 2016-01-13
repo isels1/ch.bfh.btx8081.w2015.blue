@@ -2,6 +2,15 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 /**
  * Class
  * <span class="courier">
@@ -74,16 +83,26 @@ import java.util.Date;
  * @author hugil1
  * @version 0.0
  */
+@Entity
+@Table(name = "person")
 public class Person {
 	
 	//================================================================================
     // Person Data
     //================================================================================
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int id;
+	
+    @Temporal(TemporalType.DATE)
+    private Date birthdate;
+    
+    @OneToOne
+    private Address address; 
+    
     private String name;
     private String firstName;
-    private Date birthdate;
-    private Address address; 
     private String phone;
 
     //================================================================================
