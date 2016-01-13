@@ -1,6 +1,10 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
-import ch.bfh.btx8053.jpa.his.GeneratedValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * Class
@@ -73,7 +77,7 @@ public class Address {
 	//================================================================================
     // Address Data
     //================================================================================
-	@id
+	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private String id;
 	

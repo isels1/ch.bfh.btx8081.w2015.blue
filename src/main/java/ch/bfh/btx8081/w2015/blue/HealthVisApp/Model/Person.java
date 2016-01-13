@@ -2,10 +2,13 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.Date;
 
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -84,6 +87,8 @@ import javax.persistence.TemporalType;
  * @version 0.0
  */
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="PERSON_TYPE")
 @Table(name = "person")
 public class Person {
 	
@@ -259,5 +264,9 @@ public class Person {
 			return (names && firstNames && birthdates && address && phones);
 		}
 		return false;
+	}
+
+	public int getId() {
+		return id;
 	}
 }

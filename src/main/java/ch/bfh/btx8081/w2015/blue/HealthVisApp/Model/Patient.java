@@ -1,5 +1,13 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
+import java.util.ArrayList;
 import java.util.Date;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
@@ -84,50 +92,41 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
  * @author hugil1
  * @version 0.0
  */
+@Entity
+@DiscriminatorValue("P")
+@Table(name = "patient")
 public class Patient extends Person {
 	
 	//================================================================================
     // Patient Data
     //================================================================================
-	
-	private int id;
+
+	@ManyToOne
 	private Note comment;
-	private Treatment treatment;
-	private Appointment appointment;
+	@ManyToOne
 	private HealthVisitor healthvisitor;
+	@ManyToOne
 	private PatientState state;
+	
+	@OneToMany(mappedBy="patient")
+	private ArrayList<Treatment> treatments;
+	@OneToMany(mappedBy="patient")
+	private ArrayList<Appointment> appointments;
+	
 	
 	//================================================================================
     // Constructor Section
     //================================================================================
-	public Patient(String name, String firstName, Date birthdate,
-			Address address, String phone, int id) {
-		super(name, firstName, birthdate, address, phone);
-		this.id = id;
-	}
-	
 	
 	public Patient(String name, String firstName, Date birthdate,
-			Address address, String phone, int id, Note comment, Treatment treatment, Appointment appointment, HealthVisitor healthvisitor) {
+			Address address, String phone) {
 		super(name, firstName, birthdate, address, phone);
-		this.id = id;
-		this.comment = comment;
-		this.treatment = treatment;
-		this.appointment = appointment;
-		this.healthvisitor = healthvisitor;
-		this.state = new PatientStateNew();
 	}
-
+	
 	//================================================================================
     // Setter Section
     //================================================================================
-	/**
-	 * The setter for the id
-	 * @param id The Id /Int
-	 */
-	public void setId(int id) {
-		this.id = id;
-	}
+
 	/**
 	 * The setter for the comment
 	 * @param comment The Comment /Note
@@ -139,15 +138,15 @@ public class Patient extends Person {
 	 * The setter for the treatment
 	 * @param treatment The Treatment /Treatment
 	 */
-	public void setTreatment(Treatment treatment) {
-		this.treatment = treatment;
+	public void addTreatment(Treatment treatment) {
+		this.treatments.add(treatment);
 	}
 	/**
 	 * The setter for the appointment
 	 * @param appointment The Appointment /Appointment
 	 */
-	public void setAppointment(Appointment appointment) {
-		this.appointment = appointment;
+	public void addAppointment(Appointment appointment) {
+		this.appointments.add(appointment);
 	}
 	/**
 	 * The setter for the healthvisitor
@@ -172,7 +171,7 @@ public class Patient extends Person {
 	 * @return The Id /Int
 	 */
 	public int getId() {
-		return id;
+		return super.getId();
 	}
 	/**
 	 * The getter for the comment
@@ -185,15 +184,15 @@ public class Patient extends Person {
 	 * The getter for the treatment
 	 * @return The Treatment /Treatment
 	 */
-	public Treatment getTreatment() {
-		return treatment;
+	public ArrayList<Treatment> getTreatment() {
+		return treatments;
 	}
 	/**
 	 * The getter for the appointment
 	 * @return The Appointment /Appointment
 	 */
-	public Appointment getAppointment() {
-		return appointment;
+	public ArrayList<Appointment> getAppointment() {
+		return appointments;
 	}
 	/**
 	 * The getter for the healthvisitor
@@ -214,7 +213,7 @@ public class Patient extends Person {
 	 */
 	@Override
 	public String toString() {
-		String returnString = "" + super.getName() + " " + super.getFirstName() +" " + id;
+		String returnString = "" + super.getName() + " " + super.getFirstName() +" " + super.getId();
 //		returnString = String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id);
 //		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
 		return returnString;

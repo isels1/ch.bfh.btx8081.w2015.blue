@@ -102,9 +102,10 @@ public class PatientPopUpController {
 									patView.getPopupDateFieldDate(), 
 									new Address(addr[0], Integer.parseInt(addr[1]), 
 											Integer.parseInt(addr[2]), addr[3]), 
-									patView.getTextFieldTel(), 
-									patView.getTextFieldId());
+									patView.getTextFieldTel());
 
+		//, patView.getTextFieldId()
+		//TODO: NEW FOR DB
 		pat.setPatientState(patView.getCmBoxPatientState());
 		
 		pat.setComment(com);
