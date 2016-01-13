@@ -3,6 +3,10 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
 import java.util.Date;
 
+import ch.bfh.btx8053.jpa.his.DiscriminatorValue;
+import ch.bfh.btx8053.jpa.his.GeneratedValue;
+import ch.bfh.btx8053.jpa.his.Id;
+
 /**
  * Class
  * <span class="courier">
@@ -67,16 +71,25 @@ import java.util.Date;
  * @author hugil1
  * @version 0.0
  */
-
+@Entity
+@DiscriminatorValue("H")
+@Table(name="healthVisitor")
 public class HealthVisitor extends Person {
 	
 	//================================================================================
     // HealthVisitor Data
     //================================================================================
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private String id;
 	
 	private String userName;
 	private String password;
+	
+	@Transient
 	private Calendar calendar;
+	
+	@OneToMany(mappedBy = "family")
 	private ArrayList<Patient> patient = new ArrayList<Patient>();
 
 	//================================================================================
