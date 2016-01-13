@@ -3,9 +3,16 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
 import java.util.Date;
 
-import ch.bfh.btx8053.jpa.his.DiscriminatorValue;
-import ch.bfh.btx8053.jpa.his.GeneratedValue;
-import ch.bfh.btx8053.jpa.his.Id;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 
 /**
  * Class
@@ -89,7 +96,7 @@ public class HealthVisitor extends Person {
 	@Transient
 	private Calendar calendar;
 	
-	@OneToMany(mappedBy = "family")
+	@OneToMany(mappedBy = "healthVisitor")
 	private ArrayList<Patient> patient = new ArrayList<Patient>();
 
 	//================================================================================
