@@ -1,6 +1,17 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
+import java.util.Date;
 import java.util.GregorianCalendar;
+
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  * Class
@@ -42,15 +53,25 @@ import java.util.GregorianCalendar;
  * @author hugil1, nosec1
  * @version 0.0
  */
+@Entity
+@Table(name = "treatment")
 public class Treatment {
 	//================================================================================
     // Treatment Data
     //================================================================================
-	int id;
-	int patientId;
-	String doctor;
-	GregorianCalendar date;
-	String description;
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private int id;
+	
+	@ManyToOne
+	private int patientId;
+	
+	private String doctor;
+	
+    @Temporal(TemporalType.DATE)
+	private GregorianCalendar date;
+	
+	private String description;
 	//================================================================================
     // Constructor Section
     //================================================================================

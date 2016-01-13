@@ -88,7 +88,7 @@ public class HealthVisitor extends Person {
     //================================================================================
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String id;
+	private int id;
 	
 	private String userName;
 	private String password;

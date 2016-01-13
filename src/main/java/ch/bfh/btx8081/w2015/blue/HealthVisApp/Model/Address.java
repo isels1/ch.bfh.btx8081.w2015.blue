@@ -79,7 +79,7 @@ public class Address {
     //================================================================================
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
-	private String id;
+	private int id;
 	
 	private String aStreet;
 	private int aStreetNr;
