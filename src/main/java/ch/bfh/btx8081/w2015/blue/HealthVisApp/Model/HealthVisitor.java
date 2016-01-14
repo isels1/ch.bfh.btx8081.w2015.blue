@@ -29,6 +29,13 @@ import javax.persistence.Transient;
  * <br>
  * The Healthvisitor contains following information:
  * 	<ul>
+ *  	<li>
+ * 			<font face="courier new">
+ * 				id:
+ * 			</font> 
+ * 			<i>int</i>
+ * 			- The id of the healthvisitor
+ * 		</li>
  * 		<li>
  * 			<font face="courier new">
  * 				userName:
@@ -47,7 +54,7 @@ import javax.persistence.Transient;
  * 			<font face="courier new">
  * 				calendar:
  * 			</font> 
- * 			<i>Model.Calendar</i>
+ * 			<i>Calendar</i>
  * 			- the calendar of the healthvisitor
  * 		</li>
  * 		<li>
@@ -63,8 +70,6 @@ import javax.persistence.Transient;
  * 	<ul>
  * 		<li>userName</li>
  * 		<li>password</li>
- * 		<li>calendar</li>
- *		<li>patient</li>
  *	 </ul>
  * <br>
  * <b>
@@ -123,7 +128,6 @@ public class HealthVisitor extends Person {
 	 * @param address the address of the Healthvisitor /Address
 	 * @param phone the phone number of the Healthvisitor /String
 	 */
-	
 	public HealthVisitor(String name, String firstName, Date birthdate,
 			Address address, String phone){
 		super(name, firstName, birthdate, address, phone);
@@ -154,11 +158,17 @@ public class HealthVisitor extends Person {
 	public void setCalendar(Calendar calendar) {
 		this.calendar = calendar;
 	}
-
+	/**
+	 * The setter for the patients
+	 * @param patient The patients /ArrayList<Patient>
+	 */
 	public void setAllPatients(ArrayList<Patient> patient) {
 		this.patient.addAll(patient);
 	}
-	
+	/**
+	 * adds a new patient to the list
+	 * @param patient The patient /Patient
+	 */
 	public void setPatient(Patient p){
 		this.patient.add(p);
 	}
@@ -187,7 +197,10 @@ public class HealthVisitor extends Person {
 	public Calendar getCalendar() {
 		return calendar;
 	}
-
+	/**
+	 * The getter for the patient
+	 * @return The Calendar /Calendar
+	 */
 	public ArrayList<Patient> getPatient() {
 		return patient;
 	}
