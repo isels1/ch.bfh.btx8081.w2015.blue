@@ -199,7 +199,7 @@ public class HealthVisitor extends Person {
 	}
 	/**
 	 * The getter for the patient
-	 * @return The Calendar /Calendar
+	 * @return The patients /ArrayList<Patient>
 	 */
 	public ArrayList<Patient> getPatient() {
 		return patient;
@@ -207,7 +207,7 @@ public class HealthVisitor extends Person {
 	
 
 	/**
-	 * The string representation is "name firstName birthdate aStreet aStreetNr aZIP aCity phone"
+	 * The string representation is "name, firstName, birthdate, aStreet, aStreetNr, aZIP, aCity, phone, username"
 	 * @return the string representation of the person /String
 	 */
 	@Override
@@ -219,19 +219,14 @@ public class HealthVisitor extends Person {
 	}
 	
 	/**
-	  * Compares two health visitor and tests if they are the same
-	  * @return if the username, password and calendar of the health visitor objects are the same /boolean
+	  * Compares two health visitors and tests if they are the same
+	  * @return if the name, firstName, birthdate, address and phone are the same /boolean
 	  */
 	@Override
 	public boolean equals(Object obj){
 		if(obj != null) {
 			HealthVisitor hv = (HealthVisitor) obj;
 			return super.equals(hv);
-//			boolean username = this.userName.equals(hv.userName);
-//			boolean password = this.password.equals(hv.password);
-//			boolean calendar = this.calendar.equals(hv.calendar);
-			
-//			return (username && password && calendar);
 		}
 		return false;
 	}
