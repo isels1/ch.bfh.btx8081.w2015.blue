@@ -1,6 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 import javax.persistence.DiscriminatorValue;
@@ -30,16 +29,48 @@ import javax.persistence.TemporalType;
  * 	<ul>
  * 		<li>
  * 			<font face="courier new">
- * 				treatment:
+ * 				id:
+ * 			</font> 
+ * 			<i>int</i>
+ * 			- The id of the treatment
+ * 		</li>
+ *  * 	<li>
+ * 			<font face="courier new">
+ * 				patientId:
+ * 			</font> 
+ * 			<i>int</i>
+ * 			- The id of the patient
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				doctor:
  * 			</font> 
  * 			<i>String</i>
- * 			- The treatment for the Patient
+ * 			-  The doctor who administered the treatment
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				date:
+ * 			</font> 
+ * 			<i>GregorianCalendar</i>
+ * 			- The date the treatment was administered
+ * 		</li>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				description:
+ * 			</font> 
+ * 			<i>String</i>
+ * 			- The description of the treatment
  * 		</li>
  *	 </ul>
  * <br>
- * To create a new treatment you need necessary at least following informations:
+ * To create a new treatment you need at least following information:
  * 	<ul>
- * 		<li>treatment</li>
+ * 		<li>id</li>
+ * 		<li>patientId</li>
+ * 		<li>doctor</li>
+ * 		<li>date</li>
+ * 		<li>description</li>
  *	 </ul>
  * <br>
  * <b>
@@ -230,7 +261,7 @@ public class Treatment {
 			Treatment treatm = (Treatment) obj;
 			boolean i = this.id == treatm.id;
 			boolean patId = this.patientId == treatm.patientId;
-			boolean doc = this.doctor == treatm.doctor;
+			boolean doc = this.doctor.equals(treatm.doctor);
 			boolean dat = this.date == treatm.date;
 			boolean descr = this.description.equals(treatm.description);
 			
