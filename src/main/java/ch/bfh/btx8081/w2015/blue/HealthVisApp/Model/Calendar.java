@@ -33,7 +33,7 @@ import java.util.GregorianCalendar;
  * 		</li>
  *	 </ul>
  * <br>
- * To create a calendar you need necessary at least following informations:
+ * To create a calendar you necessarily need at least following informations:
  * 	<ul>
  * 		<li>appointment</li>
  * 		<li>healthvisitor</li>
@@ -142,7 +142,10 @@ public class Calendar {
 	//================================================================================
     // Helper/Private Section
     //================================================================================
-	
+	/**
+	 * Checks that the time of the appointment does not intersect with another appointment.
+	 * @return true if the time-slot is free, false otherwise /boolean
+	 */
 	private boolean checkAvailability(Appointment app)
 	{
 		for (Appointment i: appointment )
