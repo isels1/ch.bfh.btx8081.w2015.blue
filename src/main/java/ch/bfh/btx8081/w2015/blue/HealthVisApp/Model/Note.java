@@ -44,7 +44,7 @@ import javax.persistence.Table;
  * 		17.12.2015
  * </span>
  * <br><br>
- * @author hugil1
+ * @author hugil1, nosec1
  * @version 0.0
  */	
 @Entity

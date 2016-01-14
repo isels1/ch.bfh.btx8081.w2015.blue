@@ -79,9 +79,33 @@ public class Treatment {
 	/**
 	 * This constructor is used for testing.
 	 */
-	
 	public Treatment() {
 	}
+	
+	/**
+	 * This constructor initialises the treatment with the necessary information
+	 * <br>
+	 * <br>
+	 * @param id The id of the treatment /integer
+	 * @param patientId The id of the patient /integer
+	 * @param doctor The doctor who administered the treatment /String
+	 * @param date The date when the treatment was administered /GregorianCalendar
+	 * @param description The description of the treatment /String
+	 */
+	public Treatment( 
+			int id, 
+			int patientId, 
+			String doctor, 
+			GregorianCalendar date,
+			String description) {
+
+		this.id = id;
+		this.patientId = patientId;
+		this.doctor = doctor;
+		this.date = date;
+		this.description = description;
+	}
+	
 	//================================================================================
     // Setter Section
     //================================================================================
@@ -173,29 +197,47 @@ public class Treatment {
  	
  	
 	/**
-	 * The string representation is "id patientId doctor date description"
+	 * The string representation is "id, patientId, doctor, date, description"
 	 * @return the String representation of the treatment /String
-	 
+	 */
 	@Override
 	public String toString() {
 		String aString = "";
 		
-		if (!(id==null))
-		{aString = aString + ", " + name;}
+		aString = aString + ", " + id;
 		
-		if (!(firstName==null))
-		{aString = aString + ", " + firstName;}
+		aString = aString + ", " + patientId;
 		
-		if (!(birthdate==null))
-		{aString = aString + ", " + birthdate;}
+		if (!(doctor==null))
+		{aString = aString + ", " + doctor;}
 		
-		aString = aString + ", " + addr;
+		if (!(date==null))
+		{aString = aString + ", " + date;}
 		
-		if (!(phone==null))
-		{aString = aString + ", " + phone;}
+		if (!(description==null))
+		{aString = aString + ", " + description;}
 		
 		return aString;
 	}
-	*/
+	
+	 /**
+	  * Compares two Treatments and tests if they are the same
+	  * @return if id, patientId, doctor, date and description of the Treatment objects are the same /boolean
+	  */
+	@Override
+	public boolean equals(Object obj){
+		if (obj != null) {
+			Treatment treatm = (Treatment) obj;
+			boolean i = this.id == treatm.id;
+			boolean patId = this.patientId == treatm.patientId;
+			boolean doc = this.doctor == treatm.doctor;
+			boolean dat = this.date == treatm.date;
+			boolean descr = this.description.equals(treatm.description);
+			
+			return (i && patId && doc && dat && descr);
+		}
+		return false;
+		
+	}
 
 }

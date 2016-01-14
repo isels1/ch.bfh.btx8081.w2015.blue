@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp;
 
 import javax.servlet.annotation.WebServlet;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.TabView;
 
 import com.vaadin.annotations.Theme;
@@ -83,8 +84,13 @@ public class HealthVisAppUI extends UI {
         layout.setSpacing(false);
         setContent(layout);
         
-        TabView tabView = TabView.getInstance();
-        layout.addComponent(tabView.getTabSheet());
+       // TabView tabView = TabView.getInstance();
+       // layout.addComponent(tabView.getTabSheet());
+        
+        //For testing LoginView
+        LoginView loginView = LoginView.getInstance();
+        layout.addComponent(loginView.getLayout());
+        layout.removeAllComponents();
     }
 
     @WebServlet(urlPatterns = "/*", name = "HealthVisAppUIServlet", asyncSupported = true)
