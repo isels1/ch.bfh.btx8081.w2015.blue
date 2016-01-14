@@ -2,6 +2,30 @@ USE [HealthVisAppDB]
 GO
 
 INSERT INTO [dbo].[state]
+           ([id])
+     VALUES
+           (1)
+GO
+
+INSERT INTO [dbo].[state]
+           ([id])
+     VALUES
+           (2 )
+GO
+
+INSERT INTO [dbo].[state]
+           ([id])
+     VALUES
+           (3)
+GO
+
+INSERT INTO [dbo].[state]
+           ([id])
+     VALUES
+           (4)
+GO
+
+INSERT INTO [dbo].[stateNew]
            ([id]
            ,[name]
            ,[description]
@@ -13,7 +37,7 @@ INSERT INTO [dbo].[state]
            ,'patientStateNew')
 GO
 
-INSERT INTO [dbo].[state]
+INSERT INTO [dbo].[stateAmbulant]
            ([id]
            ,[name]
            ,[description]
@@ -25,7 +49,7 @@ INSERT INTO [dbo].[state]
            ,'patientStateAmbulant')
 GO
 
-INSERT INTO [dbo].[state]
+INSERT INTO [dbo].[stateStationary]
            ([id]
            ,[name]
            ,[description]
@@ -37,7 +61,7 @@ INSERT INTO [dbo].[state]
            ,'patientStateStationary')
 GO
 
-INSERT INTO [dbo].[state]
+INSERT INTO [dbo].[stateArchived]
            ([id]
            ,[name]
            ,[description]

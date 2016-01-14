@@ -43,6 +43,42 @@ CREATE TABLE state (
 	CONSTRAINT PK_state PRIMARY KEY(id))
 
 USE HealthVisAppDB
+CREATE TABLE stateNew (
+	id INT,
+	name NVARCHAR(50),
+	description NVARCHAR(200),
+	colourCode NVARCHAR(30),
+	CONSTRAINT PK_stateNew PRIMARY KEY(id),
+	CONSTRAINT FK_state_new FOREIGN KEY(id) REFERENCES state)
+
+USE HealthVisAppDB
+CREATE TABLE stateAmbulant (
+	id INT,
+	name NVARCHAR(50),
+	description NVARCHAR(200),
+	colourCode NVARCHAR(30),
+	CONSTRAINT PK_stateAmbulant PRIMARY KEY(id),
+	CONSTRAINT FK_state_ambulant FOREIGN KEY(id) REFERENCES state)
+
+USE HealthVisAppDB
+CREATE TABLE stateStationary (
+	id INT,
+	name NVARCHAR(50),
+	description NVARCHAR(200),
+	colourCode NVARCHAR(30),
+	CONSTRAINT PK_stateStationary PRIMARY KEY(id),
+	CONSTRAINT FK_state_stationary FOREIGN KEY(id) REFERENCES state)
+
+USE HealthVisAppDB
+CREATE TABLE stateArchived (
+	id INT,
+	name NVARCHAR(50),
+	description NVARCHAR(200),
+	colourCode NVARCHAR(30),
+	CONSTRAINT PK_stateArchived PRIMARY KEY(id),
+	CONSTRAINT FK_state_Archived FOREIGN KEY(id) REFERENCES state)
+
+USE HealthVisAppDB
 CREATE TABLE patient (
 	id INT,
 	noteId INT,
