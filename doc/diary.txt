@@ -462,6 +462,14 @@ plan new sprint 3
 	show sprint backlog
 	
 presentation pattern state
+
+################	
+#  17.12.2015  #
+################
+hugil1
+	Database design
+isels1	
+
 ################	
 #  11.01.2016  #
 ################
@@ -471,7 +479,7 @@ daily scrum
 	TO DO:
 		isels1 & dornt1 JPA for classes
 		nosec1 Login View & Controller, treatment model
-		hügil1 Documentation Database and start whit presentation
+		hï¿½gil1 Documentation Database and start whit presentation
 		zwalf1 Treatment View
 
 ################	
