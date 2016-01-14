@@ -58,7 +58,7 @@ import javax.persistence.Transient;
  * 			<font face="courier new">
  * 				calendar:
  * 			</font> 
- * 			<i>Model.Calendar</i>
+ * 			<i>Calendar</i>
  * 			- The calendar in which the Appointment is
  * 		</li>
  * 		<li>
@@ -70,14 +70,12 @@ import javax.persistence.Transient;
  * 		</li>
  *	 </ul>
  * <br>
- * To create a new appointment you need necessary at least following informations:
+ * To create a new appointment you necessarily need at least the following information:
  * 	<ul>
  * 		<li>startTime</li>
  * 		<li>endTime</li>
  * 		<li>location</li>
  *		<li>patient</li>
- *		<li>calendar</li>
- *		<li>comment</li>
  *	 </ul>
  * <br>
  * <b>
@@ -148,13 +146,7 @@ public class Appointment {
 		this.patientId = patient;
 	}
 	
-	public Appointment(GregorianCalendar startTime, GregorianCalendar endTime, Calendar calendar){	
-		this.startTime = startTime;
-		this.endTime = endTime;
-		this.calendar = calendar;
-		//this.location = location;
-		//this.patient = patient;
-	}
+
 
 	//================================================================================
     // Setter Section
@@ -263,7 +255,7 @@ public class Appointment {
 	//================================================================================
 
 	 /**
-	  * The string representation is "startTime endTime location comment"
+	  * The string representation is "startTime, endTime, location, comment"
 	  * @return the string representation of the person /String
 	  */
 	@Override
