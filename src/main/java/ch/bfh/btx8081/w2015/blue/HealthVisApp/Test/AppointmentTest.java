@@ -9,16 +9,18 @@ import org.junit.Test;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 
 public class AppointmentTest {
 
 	@Test
 	public void InitialiseAppointmentTest() {
-		Calendar cal = new Calendar(null, null);
 		GregorianCalendar start = new GregorianCalendar();
 		GregorianCalendar end = new GregorianCalendar();
+		String loc = "location";
+		Patient pat = new Patient(null, null, null, null, null);
 		
-		Appointment app = new Appointment(start, end, cal);
+		Appointment app = new Appointment(start, end, loc, pat);
 		assertEquals(start, app.getStartTime());
 		assertEquals(end, app.getEndTime());
 		
