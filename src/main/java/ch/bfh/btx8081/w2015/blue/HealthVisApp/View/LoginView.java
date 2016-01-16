@@ -78,7 +78,6 @@ public class LoginView {
 		}
 		return loginView;
 	}
-	
 	/**¨
 	 * 
 	 * @return the Layout of the tabView Class
@@ -86,7 +85,12 @@ public class LoginView {
 	public VerticalLayout getLayout (){
 		return headerLayout;
 	}
-	
+	public TextField gettf_Username(){
+		return tf_Username;
+	}
+	public TextField gettf_Pw(){
+		return tf_Pw;
+	}
 	
 	
 }

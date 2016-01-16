@@ -78,10 +78,9 @@ public class DummyDataCreator {
 		hv = new HealthVisitor("Meier", "Hans", new Date(), new Address(), "0910291212");
 		hv.setAllPatients(createPatients());
 		hv.setCalendar(c);
-		
-		
+		hv.setPassword("1234");
+		hv.setUserName("dornt1");
 		c.setHealthVisitor(hv);
-		
 		c.setAppointments(createAppointments());
 	}
 	

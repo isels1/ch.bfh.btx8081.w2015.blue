@@ -479,19 +479,30 @@ daily scrum
 	TO DO:
 		isels1 & dornt1 JPA for classes
 		nosec1 Login View & Controller, treatment model
-		hï¿½gil1 Documentation Database and start whit presentation
+		hügil1 Documentation Database and start whit presentation
 		zwalf1 Treatment View
 
 ################	
 #  13.01.2016  #
 ################
-
+dornt1
+	implementing login 
+	edit sofware designe for login
+	create new mainView
+################	
+#  16.01.2016  #
+################
+dornt1
+	finish login
+	test login
 
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
 "EDIT patient popup view"
---> LOOK INTO THE SPRINT PLANING TO LOOK FOR MORE SPECIFIC TODOS!!!
+
+edit Calendar
+
 Umsetzung review
 
 Task 11 sprint 3

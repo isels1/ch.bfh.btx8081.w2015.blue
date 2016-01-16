@@ -3,11 +3,15 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp;
 import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.TabView;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
+import com.vaadin.navigator.Navigator;
+import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
+import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;
@@ -77,20 +81,17 @@ public class HealthVisAppUI extends UI {
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
+    	
+    	final  VerticalLayout layout = new VerticalLayout();
         layout.setHeight(HEIGHT);
         layout.setWidth(WIDTH);
         layout.setMargin(false);
         layout.setSpacing(false);
         setContent(layout);
         
-       // TabView tabView = TabView.getInstance();
-       // layout.addComponent(tabView.getTabSheet());
-        
         //For testing LoginView
-        LoginView loginView = LoginView.getInstance();
-        layout.addComponent(loginView.getLayout());
-        layout.removeAllComponents();
+        MainView mainView = MainView.getInstance();
+        layout.addComponent(mainView.getHorizontalLayout());
     }
 
     @WebServlet(urlPatterns = "/*", name = "HealthVisAppUIServlet", asyncSupported = true)

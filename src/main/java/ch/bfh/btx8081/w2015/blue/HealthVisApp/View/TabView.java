@@ -36,8 +36,6 @@ public class TabView {
         VerticalLayout tabLayoutCal = cal.getCalendarView();
         
         tabSheet.addTab(tabLayoutCal, " My Calendar ");
-                
-        
         //Second Tab Patient
         
        PatientListView PatListView = PatientListView.getInstance();
