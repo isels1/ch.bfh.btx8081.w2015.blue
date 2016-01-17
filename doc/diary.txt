@@ -495,22 +495,20 @@ dornt1
 dornt1
 	finish login
 	test login
-
+################	
+#  17.01.2016  #
+################
+dornt1
+	edit login and calendar design
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
 "EDIT patient popup view"
-
-edit Calendar
-
-Umsetzung review
-
-Task 11 sprint 3
-
 	isels1 remove id from Patient
 		id is now autocreatet
 	edit all classe for patient id
 	remove label for patient id
-
-
-
+	
+Task 11 sprint 3
+Umsetzung review

@@ -24,7 +24,7 @@ public class LoginController {
 		HealthVisitor hv;
 		LoginView loginView = LoginView.getInstance();
 		
-		String password = loginView.gettf_Pw().getValue();
+		String password = loginView.getptf_Pw().getValue();
 		String username = loginView.gettf_Username().getValue();
 		
 		ddc = DummyDataCreator.getInstance();
