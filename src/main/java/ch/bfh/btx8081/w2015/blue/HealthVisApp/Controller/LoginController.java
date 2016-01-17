@@ -36,8 +36,13 @@ public class LoginController {
 			if(password.equals(hv.getPassword())){
 				this.loadAPP();
 			}
+			else{
+			this.wrongPW();
+			}
 		}
+		else{
 		this.wrongPW();
+		}
 	}
 	private void loadAPP(){
 		MainView mainView = MainView.getInstance();

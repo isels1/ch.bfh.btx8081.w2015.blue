@@ -225,16 +225,16 @@ public class CalendarView {
 			calendar.setStartDate(weekstart.getTime());
 			calendar.setEndDate(weekend.getTime());
 			  
-			calendar.setFirstVisibleDayOfWeek(2);
-			calendar.setLastVisibleDayOfWeek(6);		
+			//calendar.setFirstVisibleDayOfWeek(2);
+			//calendar.setLastVisibleDayOfWeek(6);		
 		}
 		/**
 		 * Set the view of the calendar to the actual Month
 		 */
 		public void changeToMonthly()
 		{
-			calendar.setFirstVisibleDayOfWeek(2);
-			calendar.setLastVisibleDayOfWeek(6);
+			//calendar.setFirstVisibleDayOfWeek(2);
+			//calendar.setLastVisibleDayOfWeek(6);
 
 			// Set start date to first date in this month
 			GregorianCalendar calStart = new GregorianCalendar();

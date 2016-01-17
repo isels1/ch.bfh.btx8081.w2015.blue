@@ -52,6 +52,14 @@ public class LoginView {
 	
 	private static LoginView loginView = null;
 	private VerticalLayout headerLayout = null;
+	private VerticalLayout gapfill = null;
+	
+	final static String LOGINWIDTH = "320";
+	final static String LOGINHEIGHT= "568";
+	
+	final static String BUTTONWIDTH = "200";
+	final static String BUTTONHEIGHT = "30";
+	
 	private Button b_Login = new Button("login");
 	private TextField tf_Username = new TextField("Username");
 	private TextField tf_Pw = new TextField("Password");
@@ -62,10 +70,34 @@ public class LoginView {
 	
 	
 	private LoginView() {
-	headerLayout = new VerticalLayout(tf_Username, tf_Pw, b_Login);
-	b_Login.addClickListener(new LoginButtonClickHandler());
+	headerLayout = new VerticalLayout();
+	headerLayout.setWidth(LOGINWIDTH);
+	headerLayout.setHeight(LOGINHEIGHT);
+	
+	gapfill = new VerticalLayout();
+	gapfill.setHeight(BUTTONHEIGHT);
+	gapfill.setWidth(BUTTONWIDTH);
 
-		
+	tf_Username.setWidth(BUTTONWIDTH);
+	tf_Username.setHeight(BUTTONHEIGHT);
+	
+	tf_Pw.setWidth(BUTTONWIDTH);
+	tf_Pw.setHeight(BUTTONHEIGHT);
+	
+	b_Login.setWidth(BUTTONWIDTH);
+	b_Login.setHeight(BUTTONHEIGHT);
+
+	headerLayout.addComponent(gapfill);
+	headerLayout.addComponent(tf_Username);
+	headerLayout.addComponent(gapfill);
+	headerLayout.addComponent(tf_Pw);
+	headerLayout.addComponent(gapfill);
+	headerLayout.addComponent(b_Login);
+	headerLayout.addComponent(gapfill);
+
+	headerLayout.setMargin(true);
+
+	b_Login.addClickListener(new LoginButtonClickHandler());	
 	}
 	
 	/**
@@ -78,7 +110,7 @@ public class LoginView {
 		}
 		return loginView;
 	}
-	/**¨
+	/**
 	 * 
 	 * @return the Layout of the tabView Class
 	 */
