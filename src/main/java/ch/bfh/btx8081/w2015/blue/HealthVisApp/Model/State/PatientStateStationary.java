@@ -83,9 +83,23 @@ public class PatientStateStationary extends PatientState {
 	 * Sets the css, the id and the state name to abstract parent class.
 	 */
 	public PatientStateStationary() {
-		super.setColor(colourCode);
-		//super.setPatientStateId(id);
-		super.setPatientStateName(name);
+//		super.setColor(colourCode);
+//		//super.setPatientStateId(id);
+//		super.setPatientStateName(name);
 	}
 
+	public String getColorCode(){
+		return colourCode;
+	}
+	
+	public String getPatientStateName(){
+		return name;
+	}
+	
+	
+	@Override
+	public String toString(){
+		return name;
+		
+	}
 }

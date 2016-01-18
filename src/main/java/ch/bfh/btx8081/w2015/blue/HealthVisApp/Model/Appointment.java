@@ -101,10 +101,10 @@ public class Appointment {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
 	private GregorianCalendar startTime;
     
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
 	private GregorianCalendar endTime;
     
 	private String location;

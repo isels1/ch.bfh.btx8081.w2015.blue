@@ -1,7 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
 
@@ -19,8 +18,9 @@ public class LoginController {
 		return loginController;
 	}
 	public void checkPW (){
-			
-		DummyDataCreator ddc;
+		
+		this.loadAPP();
+	/*	DummyDataCreator ddc;
 		HealthVisitor hv;
 		LoginView loginView = LoginView.getInstance();
 		
@@ -42,7 +42,7 @@ public class LoginController {
 		}
 		else{
 		this.wrongPW();
-		}
+		}*/
 	}
 	private void loadAPP(){
 		MainView mainView = MainView.getInstance();
