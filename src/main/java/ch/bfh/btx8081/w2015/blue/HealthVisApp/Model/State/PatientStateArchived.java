@@ -1,5 +1,10 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * Class
  * <span class="courier">
@@ -54,15 +59,20 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State;
  * @author isels1
  * @version 1.0
  */
+@Entity
+@DiscriminatorValue("archived")
+@Table(name="stateArchived")
 public class PatientStateArchived extends PatientState {
 
 	//================================================================================
     // PatientStateArchived Data
     //================================================================================
 	
-	private final String CSS = "patientStateArchived";
-	private final int STATE_ID = 4;
-	private final String NAME = "Archived";
+	@Id
+	private int id;
+	
+	private String colourCode;
+	private String name;
 
 	//================================================================================
     // Constructor Section
@@ -73,8 +83,8 @@ public class PatientStateArchived extends PatientState {
 	 * Sets the css, the id and the state name to abstract parent class.
 	 */
 	public PatientStateArchived() {
-		super.setColor(CSS);
-		super.setPatientStateId(STATE_ID);
-		super.setPatientStateName(NAME);
+		super.setColor(colourCode);
+		//super.setPatientStateId(id);
+		super.setPatientStateName(name);
 	}
 }

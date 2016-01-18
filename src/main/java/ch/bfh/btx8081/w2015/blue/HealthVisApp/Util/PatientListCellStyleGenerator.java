@@ -44,7 +44,7 @@ public class PatientListCellStyleGenerator implements Table.CellStyleGenerator {
 			String s = ((Patient) item.getItemProperty("Patient Name")
 						.getValue())
 						.getPatientState()
-						.doEnter();
+						.getColorCode();
 			return s;
 		} else {
 			return null;

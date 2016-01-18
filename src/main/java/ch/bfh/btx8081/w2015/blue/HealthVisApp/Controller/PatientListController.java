@@ -7,7 +7,7 @@ import java.util.Comparator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
 
 import com.vaadin.data.Property.ValueChangeEvent;
@@ -68,7 +68,7 @@ public class PatientListController {
     //================================================================================
 	
 	private static PatientListController plc = null;
-	private static DummyDataCreator ddc;
+	private static DataProvider dp;
 	private static HealthVisitor hv;
 	
 	//================================================================================
@@ -82,8 +82,8 @@ public class PatientListController {
 		if (plc == null) {
 			plc = new PatientListController();
 		}
-		ddc = DummyDataCreator.getInstance();
-		hv = ddc.getHealthVisitor();
+		dp = DataProvider.getInstance();
+		hv = dp.getHealthVisitor();
 		return plc;
 	}
 	
@@ -102,7 +102,7 @@ public class PatientListController {
 	 * @return patients: ArrayList<Patient>
 	 **/
 	public ArrayList<Patient> getPatients(){
-		return hv.getPatient();
+		return new ArrayList<Patient>(hv.getPatient());
 	}
 	
 	/**

@@ -1,5 +1,13 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
 /**
  * Abstract Class
  * <span class="courier">
@@ -49,15 +57,23 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State;
  * @author isels1
  * @version 1.0
  */
+@Entity
+@Inheritance(strategy=InheritanceType.JOINED)
+@DiscriminatorColumn(name="type")
+@Table(name="state")
 public abstract class PatientState {
 	
 	//================================================================================
     // PatientState Data
     //================================================================================
 	
-	private String css = "";
+	@Id
 	private int id;
-	private String name = "";
+	
+	@Transient
+	private String colourCode;
+	@Transient
+	private String name;
 	
 	//================================================================================
     // State Event Section
@@ -65,11 +81,9 @@ public abstract class PatientState {
 	
 	/**
 	 * Function which is called on enter the state.
-	 * @return css: The name of the custom css for the bg-color
+	 * --DO: NOTHING
 	 */
-	public String doEnter(){
-		return css;
-	}
+	public void doEnter(){}
 	
 	/**
 	 * Function which is executed while in state
@@ -92,7 +106,7 @@ public abstract class PatientState {
 	 * @param c: String for the bg-color (css property)
 	 */
 	protected void setColor(String c){
-		css = c;
+		colourCode = c;
 	}
 	
 	/**
@@ -121,6 +135,14 @@ public abstract class PatientState {
 	 */
 	public int getPatientStateId(){
 		return id;
+	}
+	
+	/**
+	 * The function to get the color code string
+	 * @return css: The name of the custom css for the bg-color
+	 */
+	public String getColorCode(){
+		return colourCode;
 	}
 	
 	/**

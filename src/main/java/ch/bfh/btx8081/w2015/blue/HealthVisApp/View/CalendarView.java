@@ -14,7 +14,6 @@ import java.util.TimeZone;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.AppointmentEventProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 
 import com.vaadin.ui.Button;

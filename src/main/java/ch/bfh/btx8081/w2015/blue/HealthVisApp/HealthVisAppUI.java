@@ -1,9 +1,19 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp;
 
+import java.util.List;
+import java.util.Vector;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceException;
+import javax.persistence.Query;
 import javax.servlet.annotation.WebServlet;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.Connector;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.TabView;
 
 import com.vaadin.annotations.Theme;
@@ -74,6 +84,7 @@ public class HealthVisAppUI extends UI {
     //================================================================================
 	final String HEIGHT = "568";
 	final String WIDTH = "320";
+	Connector c = null;
 	
 	//================================================================================
     // Initialisation Section
@@ -83,6 +94,15 @@ public class HealthVisAppUI extends UI {
     protected void init(VaadinRequest vaadinRequest) {
     	
     	final  VerticalLayout layout = new VerticalLayout();
+    	try {
+    		c = Connector.getConnection();
+    	} catch (PersistenceException e) {
+    		System.out.println(e.getMessage());
+    	}
+    	
+    	fakeLogin();
+        
+    	final VerticalLayout layout = new VerticalLayout();
         layout.setHeight(HEIGHT);
         layout.setWidth(WIDTH);
         layout.setMargin(false);
@@ -97,5 +117,26 @@ public class HealthVisAppUI extends UI {
     @WebServlet(urlPatterns = "/*", name = "HealthVisAppUIServlet", asyncSupported = true)
     @VaadinServletConfiguration(ui = HealthVisAppUI.class, productionMode = false)
     public static class HealthVisAppUIServlet extends VaadinServlet {
+    }
+    
+    private void fakeLogin(){
+    	EntityManager em = c.getEM();
+    	
+    	EntityTransaction transaction = em.getTransaction();
+		transaction.begin();
+		
+    	Query q = em.createQuery("select h from HealthVisitor h where h.username = :name");
+	    q.setParameter("name", "muelh");
+	    
+	    List<HealthVisitor> hvs = new Vector<HealthVisitor>();
+	    hvs = q.getResultList();
+	    HealthVisitor hv = hvs.get(0);
+	    
+	    DataProvider dp = DataProvider.getInstance();
+	    dp.setHealthVisitor(hv);
+
+	    dp.initCalendar();
+	    dp.fillCalendar();
+	    
     }
 }

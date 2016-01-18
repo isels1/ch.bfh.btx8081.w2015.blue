@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -94,15 +95,16 @@ public class Treatment {
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	
-	@ManyToOne
-	private int patientId;
-	
-	private String doctor;
-	
-    @Temporal(TemporalType.DATE)
-	private GregorianCalendar date;
+	private String doctor; 
 	
 	private String description;
+	
+	@Temporal(TemporalType.DATE)
+	private GregorianCalendar date;
+	
+	@ManyToOne
+	@JoinColumn(name="patientId")
+	private Patient patient;
 	//================================================================================
     // Constructor Section
     //================================================================================
@@ -152,8 +154,8 @@ public class Treatment {
 	 * The setter for the patientId
 	 * @param patientId The id of the Patient /int
 	 */
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatientId(Patient patientId) {
+		this.patient = patientId;
 	}
 	
 	/**
@@ -194,8 +196,8 @@ public class Treatment {
 	 * The getter for the patientId
 	 * @return patientId the id of the patient /int
 	 */
-		public int getPatientId() {
-		return patientId;
+		public Patient getPatientId() {
+		return patient;
 	}
 		
 	/**

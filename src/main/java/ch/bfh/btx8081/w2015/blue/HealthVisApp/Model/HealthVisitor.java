@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
@@ -84,7 +85,7 @@ import javax.persistence.Transient;
  * @version 0.0
  */
 @Entity
-@DiscriminatorValue("H")
+@DiscriminatorValue("hv")
 @Table(name="healthVisitor")
 public class HealthVisitor extends Person {
 	
@@ -101,8 +102,10 @@ public class HealthVisitor extends Person {
 	@Transient
 	private Calendar calendar;
 	
-	@OneToMany(mappedBy = "healthVisitorId")
-	private ArrayList<Patient> patient = new ArrayList<Patient>();
+	@OneToMany(mappedBy = "healthVisitor")
+	private List<Patient> patient = new ArrayList<Patient>();
+	@OneToMany(mappedBy="healthVisitor")
+	private List<Appointment> appointments = new ArrayList<Appointment>();
 
 	//================================================================================
     // Constructor Section
@@ -118,21 +121,8 @@ public class HealthVisitor extends Person {
 		super();
 	}
 	
-	/**
-	 * This constructor initialize the HealthVisitor with the necessary information
-	 * <br>
-	 * <br>
-	 * @param name The Name of the Healthvisitor /String
-	 * @param firstName The first Name of the Healthvisitor /String
-	 * @param birthdate the birthdate of the Healthvisitor /Date
-	 * @param address the address of the Healthvisitor /Address
-	 * @param phone the phone number of the Healthvisitor /String
-	 */
-	public HealthVisitor(String name, String firstName, Date birthdate,
-			Address address, String phone){
-		super(name, firstName, birthdate, address, phone);
+	public HealthVisitor(){
 	}
-	
 
 	//================================================================================
     // Setter Section
@@ -173,6 +163,9 @@ public class HealthVisitor extends Person {
 		this.patient.add(p);
 	}
 
+	public void addAppointment(Appointment a){
+		this.appointments.add(a);
+	}
 	//================================================================================
     // Getter Section
     //================================================================================
@@ -201,10 +194,13 @@ public class HealthVisitor extends Person {
 	 * The getter for the patient
 	 * @return The patients /ArrayList<Patient>
 	 */
-	public ArrayList<Patient> getPatient() {
+	public List<Patient> getPatient() {
 		return patient;
 	}
 	
+	public List<Appointment> getAppointment(){
+		return appointments;
+	}
 
 	/**
 	 * The string representation is "name, firstName, birthdate, aStreet, aStreetNr, aZIP, aCity, phone, username"

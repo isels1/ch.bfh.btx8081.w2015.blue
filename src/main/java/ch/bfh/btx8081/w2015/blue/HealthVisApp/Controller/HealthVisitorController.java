@@ -3,7 +3,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Test.DummyDataCreator;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.CalendarView;
 
 /**
@@ -53,15 +53,15 @@ public class HealthVisitorController {
 	//================================================================================
     // HealthVisitorController Data
     //================================================================================
-	private DummyDataCreator ddc;
+	private DataProvider dp;
 	private HealthVisitor hv;
 	
 	/**
 	 * This constructor initialize the healthvisitor controller by loading the data
 	 */
 	public HealthVisitorController(){
-		ddc = DummyDataCreator.getInstance();
-		hv = ddc.getHealthVisitor();
+		dp = DataProvider.getInstance();
+		hv = dp.getHealthVisitor();
 	}
 	
 	/**

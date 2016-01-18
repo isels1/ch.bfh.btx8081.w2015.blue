@@ -97,12 +97,13 @@ public class PatientPopUpController {
 		Note com = new Note();
 		com.setComment(patView.getTextFieldComment());
 				
-		Patient pat = new Patient(patView.getTextFieldName(), 
-									patView.getTextFieldFirstname(), 
-									patView.getPopupDateFieldDate(), 
-									new Address(addr[0], Integer.parseInt(addr[1]), 
-											Integer.parseInt(addr[2]), addr[3]), 
-									patView.getTextFieldTel());
+		Patient pat = new Patient();
+		pat.setName(patView.getTextFieldName());
+		pat.setFirstName(patView.getTextFieldFirstname());
+		pat.setAddress(new Address(addr[0], Integer.parseInt(addr[1]), 
+				Integer.parseInt(addr[2]), addr[3]));
+		pat.setBirthdate(patView.getPopupDateFieldDate());
+		pat.setPhone(patView.getTextFieldTel());							
 
 		//, patView.getTextFieldId()
 		//TODO: NEW FOR DB

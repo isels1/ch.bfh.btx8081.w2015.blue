@@ -1,10 +1,12 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -93,7 +95,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
  * @version 0.0
  */
 @Entity
-@DiscriminatorValue("P")
+@DiscriminatorValue("p")
 @Table(name = "patient")
 public class Patient extends Person {
 	
@@ -102,35 +104,19 @@ public class Patient extends Person {
     //================================================================================
 
 	@ManyToOne
-	private Note noteId;
+	@JoinColumn(name="noteId")
+	private Note note;
 	@ManyToOne
-	private HealthVisitor healthVisitorId;
+	@JoinColumn(name="healthVisitorId")
+	private HealthVisitor healthVisitor;
 	@ManyToOne
-	private PatientState stateId;
+	@JoinColumn(name="stateId")
+	private PatientState state;
 	
-	@OneToMany(mappedBy="patientId")
-	private ArrayList<Treatment> treatments;
-	@OneToMany(mappedBy="patientId")
-	private ArrayList<Appointment> appointments;
-	
-	
-	//================================================================================
-    // Constructor Section
-    //================================================================================
-	/**
-	 * This constructor initialises the Patient with the necessary information
-	 * <br>
-	 * <br>
-	 * @param name the Name of the Person /String
-	 * @param firstName the first Name of the Person /String
-	 * @param birthdate the Birthdate of the Person /Date
-	 * @param address the Address of the Person /Address
-	 * @param phone the Phone Number of the Person /String
-	 */
-	public Patient(String name, String firstName, Date birthdate,
-			Address address, String phone) {
-		super(name, firstName, birthdate, address, phone);
-	}
+	@OneToMany(mappedBy="patient")
+	private List<Treatment> treatments = new ArrayList<Treatment>();
+	@OneToMany(mappedBy="patient")
+	private List<Appointment> appointments = new ArrayList<Appointment>();
 	
 	//================================================================================
     // Setter Section
@@ -141,7 +127,7 @@ public class Patient extends Person {
 	 * @param comment The Comment /Note
 	 */
 	public void setComment(Note comment) {
-		this.noteId = comment;
+		this.note = comment;
 	}
 	/**
 	 * The setter for the treatment
@@ -162,14 +148,14 @@ public class Patient extends Person {
 	 * @param healthvisitor The Healthvisitor /Healthvisitor
 	 */
 	public void setHealthvisitor(HealthVisitor healthvisitor) {
-		this.healthVisitorId = healthvisitor;
+		this.healthVisitor = healthvisitor;
 	}
 	/**
 	 * The setter for the Patient State
 	 * @param state The State of the Patient /PatientState
 	 */
 	public void setPatientState(PatientState state){
-		this.stateId = state;
+		this.state = state;
 	}
 
 	//================================================================================
@@ -187,20 +173,20 @@ public class Patient extends Person {
 	 * @return The Comment /Note
 	 */
 	public Note getComment() {
-		return noteId;
+		return note;
 	}
 	/**
 	 * The getter for the treatment
 	 * @return The Treatment /Treatment
 	 */
-	public ArrayList<Treatment> getTreatment() {
+	public List<Treatment> getTreatment() {
 		return treatments;
 	}
 	/**
 	 * The getter for the appointment
 	 * @return The Appointment /Appointment
 	 */
-	public ArrayList<Appointment> getAppointment() {
+	public List<Appointment> getAppointment() {
 		return appointments;
 	}
 	/**
@@ -208,14 +194,14 @@ public class Patient extends Person {
 	 * @return The Healthvisitor /Healthvisitor
 	 */
 	public HealthVisitor getHealthvisitor() {
-		return healthVisitorId;
+		return healthVisitor;
 	}
 	/**
 	 * The setter for the Patient State
 	 * @return state The State of the Patient /PatientState
 	 */
 	public PatientState getPatientState(){
-		return stateId;
+		return state;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

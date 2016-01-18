@@ -9,10 +9,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  * Class
@@ -88,7 +90,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Inheritance(strategy=InheritanceType.JOINED)
-@DiscriminatorColumn(name="PERSON_TYPE")
+@DiscriminatorColumn(name="type")
 @Table(name = "person")
 public class Person {
 	
@@ -104,7 +106,8 @@ public class Person {
     private Date birthDate;
     
     @OneToOne
-    private Address addressID; 
+    @JoinColumn(name="addressID")
+    private Address address; 
     
     private String name;
     private String firstName;
@@ -132,14 +135,14 @@ public class Person {
 	 * @param birthdate the Birthdate of the Person /Date
 	 * @param phone the Phone Number of the Person /String
 	 */
-    public Person(String name, String firstName, Date birthdate, Address address, String phone){
+   /* public Person(String name, String firstName, Date birthdate, Address address, String phone){
         this.name = name;
         this.firstName = firstName;
-        this.addressID = address;
+        this.address = address;
         this.birthDate = birthdate;
         this.phone = phone;
    
-    }
+    }*/
     
 
     //================================================================================
@@ -171,7 +174,7 @@ public class Person {
 	 * @param address The Address /Address
 	 */
 	public void setAddress(Address address) {
-		this.addressID = address;
+		this.address = address;
 	}
 	/**
 	 * The setter for the phone
@@ -210,7 +213,7 @@ public class Person {
 	 * @return The Address /Address
 	 */
 	public Address getAddress() {
-		return addressID;
+		return address;
 	}
 	/**
 	 * The getter for the phone
@@ -227,7 +230,7 @@ public class Person {
 	 */
 	@Override
 	public String toString() {
-		String addr = addressID.toString();
+		String addr = address.toString();
 		String aString = "";
 		
 		if (!(name==null))
@@ -258,7 +261,7 @@ public class Person {
 			boolean names = this.name.equals(pers.name);
 			boolean firstNames = this.firstName.equals(pers.firstName);
 			boolean birthdates = this.birthDate.equals(pers.birthDate);
-			boolean address = this.addressID.equals(pers.addressID);
+			boolean address = this.address.equals(pers.address);
 			boolean phones = this.phone.equals(pers.phone);
 			
 			return (names && firstNames && birthdates && address && phones);

@@ -1,51 +1,33 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 public class Connector {
 
-	private final String URI = "jdbc:sqlserver://localhost;integratedSecurity=true";
-	private final String USER = "";
-	private final String PW = "";
+	private static final String PERSISTENCE_UNIT_NAME = "healthVisAppDB";
+	private EntityManager em;
+			
+	private static Connector c = null;
 	
-	private ResultSet resSet;
-	
-	private static Connector conn = null;
-	
-	private void Connector(){
-		
+	private Connector(){
+		em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 	}
 	
 	public static Connector getConnection(){
-		if (conn == null) {
-			conn = new Connector();
+		if (c == null) {
+			c = new Connector();
 		}
-		return conn;
+		return c;
 	}
 	
-	public ResultSet executeQuery(String sqlQuery){
-		Connection c = null;
-		Statement stmt = null;
-		ResultSet rs = null;
-		
-		try {
-			c = DriverManager.getConnection(URI, USER, PW);
-			stmt = c.createStatement();
-			rs = stmt.executeQuery(sqlQuery);
-			resSet = rs;
-			
-			rs.close();
-			stmt.close();
-			c.close();
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		
-		return resSet;	
+	public EntityManager getEM(){
+		return em;
 	}
 	
+	public void close(){
+		em.close();
+	}
 }

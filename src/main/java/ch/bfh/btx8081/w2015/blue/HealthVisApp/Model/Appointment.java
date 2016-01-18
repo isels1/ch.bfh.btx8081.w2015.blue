@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -109,16 +110,19 @@ public class Appointment {
 	private String location;
 	
 	@ManyToOne
-	private Patient patientId;
+	@JoinColumn(name="patientId")
+	private Patient patient;
 	
 	@ManyToOne
-	private HealthVisitor healthVisitorId;
+	@JoinColumn(name="healthVisitorId")
+	private HealthVisitor healthVisitor;
 	
 	@Transient
 	private Calendar calendar;
 	
 	@ManyToOne
-	private Note noteId;
+	@JoinColumn(name="noteId")
+	private Note note;
 	
 	//================================================================================
     // Constructor Section
@@ -143,7 +147,7 @@ public class Appointment {
 		this.startTime = startTime;
 		this.endTime = endTime;
 		this.location = location;
-		this.patientId = patient;
+		this.patient = patient;
 	}
 	
 
@@ -180,7 +184,7 @@ public class Appointment {
 	 * @param patient The Patient who belongs to the Appointment /Patient
 	 */
 	public void setPatient(Patient patient) {
-		this.patientId = patient;
+		this.patient = patient;
 	}
 	
 	/**
@@ -196,7 +200,7 @@ public class Appointment {
 	 * @param comment The note who belongs to the Appointment /Note
 	 */
 	public void setComment(Note comment) {
-		this.noteId = comment;
+		this.note = comment;
 	}
 	
 	//================================================================================
@@ -231,7 +235,7 @@ public class Appointment {
 	 * @return The Patient who belongs to the Appointment /Patient
 	 */
 	public Patient getPatient() {
-		return patientId;
+		return patient;
 	}
 	
 	/**
@@ -247,7 +251,7 @@ public class Appointment {
 	 * @return comment The Note who belongs to the Appointment /Note
 	 */
 	public Note getComment() {
-		return noteId;
+		return note;
 	}
 	
 	//================================================================================
@@ -271,7 +275,7 @@ public class Appointment {
 		if (!(location==null))
 		{aString = aString + ", " + location;}
 		
-		aString = aString + ", " + patientId.toString();
+		aString = aString + ", " + patient.toString();
 		
 		return aString;
 	}
@@ -287,7 +291,7 @@ public class Appointment {
 			boolean start = this.startTime.equals(app.startTime);
 			boolean end = this.endTime.equals(app.endTime);
 			boolean loc = this.location.equals(app.location);
-			boolean pat = this.patientId.equals(app.patientId);
+			boolean pat = this.patient.equals(app.patient);
 			
 			return (start && end && loc && pat);
 		}
