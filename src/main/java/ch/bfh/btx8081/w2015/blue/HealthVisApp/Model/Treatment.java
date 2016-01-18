@@ -115,30 +115,6 @@ public class Treatment {
 	public Treatment() {
 	}
 	
-	/**
-	 * This constructor initialises the treatment with the necessary information
-	 * <br>
-	 * <br>
-	 * @param id The id of the treatment /integer
-	 * @param patientId The id of the patient /integer
-	 * @param doctor The doctor who administered the treatment /String
-	 * @param date The date when the treatment was administered /GregorianCalendar
-	 * @param description The description of the treatment /String
-	 */
-	public Treatment( 
-			int id, 
-			int patientId, 
-			String doctor, 
-			GregorianCalendar date,
-			String description) {
-
-		this.id = id;
-		this.patientId = patientId;
-		this.doctor = doctor;
-		this.date = date;
-		this.description = description;
-	}
-	
 	//================================================================================
     // Setter Section
     //================================================================================
@@ -239,7 +215,7 @@ public class Treatment {
 		
 		aString = aString + ", " + id;
 		
-		aString = aString + ", " + patientId;
+		aString = aString + ", " + patient.toString();
 		
 		if (!(doctor==null))
 		{aString = aString + ", " + doctor;}
@@ -262,7 +238,7 @@ public class Treatment {
 		if (obj != null) {
 			Treatment treatm = (Treatment) obj;
 			boolean i = this.id == treatm.id;
-			boolean patId = this.patientId == treatm.patientId;
+			boolean patId = this.patient.getId() == treatm.patient.getId();
 			boolean doc = this.doctor.equals(treatm.doctor);
 			boolean dat = this.date == treatm.date;
 			boolean descr = this.description.equals(treatm.description);

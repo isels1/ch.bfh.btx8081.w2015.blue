@@ -92,8 +92,6 @@ public class HealthVisAppUI extends UI {
 	
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-    	
-    	final  VerticalLayout layout = new VerticalLayout();
     	try {
     		c = Connector.getConnection();
     	} catch (PersistenceException e) {
