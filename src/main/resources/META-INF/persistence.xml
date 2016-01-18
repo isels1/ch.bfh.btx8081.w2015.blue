@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="healthVisAppDB" transaction-type="RESOURCE_LOCAL">
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Person</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Treatment</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew</class>
+		<class>ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary</class>
+		
+		<properties>		
+			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver" />
+		    <property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://localhost:1433;databaseName=HealthVisAppDB" />
+ 			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="sa" />
+ 
+ 			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode"	value="both" />
+		</properties>
+	</persistence-unit>
+</persistence>
