@@ -59,15 +59,19 @@ public class LoginView {
 	
 	private static LoginView loginView = null;
 	private VerticalLayout headerLayout = null;
-	private VerticalLayout gapfill = null;
-	private VerticalLayout loginpicture = null;
+
+	private VerticalLayout vlUsername = null;
+	private VerticalLayout vlPassword = null;
+	private VerticalLayout vlLoginButton = null;
+	
+	private VerticalLayout vlLoginpicture = null;
 	
 	final static String LOGINWIDTH = "320";
 	final static String LOGINHEIGHT= "568";
 	
 	final static String BUTTONWIDTH = "200";
+	final static String  FIELDHEIGHT = "94";
 	final static String BUTTONHEIGHT = "40";
-	final static String GAPPHEIGHT = "15";
 	
 	private Button b_Login = new Button("login");
 	private TextField tf_Username = new TextField("Username");
@@ -78,48 +82,48 @@ public class LoginView {
     // Initialisation Section
     //================================================================================
 	
-	
 	private LoginView() {
 	headerLayout = new VerticalLayout();
-	headerLayout.setWidth(LOGINWIDTH);
-	headerLayout.setHeight(LOGINHEIGHT);
-	
-	gapfill = new VerticalLayout();
-	gapfill.setHeight(GAPPHEIGHT);
 
 	tf_Username.setWidth(BUTTONWIDTH);
 	tf_Username.setHeight(BUTTONHEIGHT);
+	vlUsername = new VerticalLayout();
+	vlUsername.setWidth(LOGINWIDTH);
+	vlUsername.setHeight(FIELDHEIGHT);
+	vlUsername.addComponent(tf_Username);
+	vlUsername.setMargin(true);
 	
 	pf_Pw.setWidth(BUTTONWIDTH);
 	pf_Pw.setHeight(BUTTONHEIGHT);
+	vlPassword = new VerticalLayout();
+	vlPassword.setWidth(LOGINWIDTH);
+	vlPassword.setHeight(FIELDHEIGHT);
+	vlPassword.addComponent(pf_Pw);
+	vlPassword.setMargin(true);
 	
 	b_Login.setWidth(BUTTONWIDTH);
 	b_Login.setHeight(BUTTONHEIGHT);
+	vlLoginButton = new VerticalLayout();
+	vlLoginButton.setWidth(LOGINWIDTH);
+	vlLoginButton.setHeight(FIELDHEIGHT);
+	vlLoginButton.addComponent(b_Login);
+	vlLoginButton.setMargin(true);
 
-	loginpicture = new VerticalLayout();
-	loginpicture.setHeight("288");
-
-	String basepath = VaadinService.getCurrent()
-            .getBaseDirectory().getAbsolutePath();
+	vlLoginpicture = new VerticalLayout();
+	vlLoginpicture.setHeight("287");
+	vlLoginpicture.setMargin(true);
 	
 	// Image as a file resource
-	FileResource resource = new FileResource(new File(basepath +
-	                        "/WEB-INF/images/loignpicture.png"));
+	FileResource resource = new FileResource(new File("src/main/webapp/VAADIN/themes/HealthVisAppTheme/loginpicture.png"));
 
 	// Show the image in the application
-	Image image = new Image("Image from file", resource);
-	loginpicture.addComponent(image);
+	Image image = new Image("", resource);
+	vlLoginpicture.addComponent(image);
 	
-	headerLayout.addComponent(gapfill);
-	headerLayout.addComponent(tf_Username);
-	headerLayout.addComponent(gapfill);
-	headerLayout.addComponent(pf_Pw);
-	headerLayout.addComponent(gapfill);
-	headerLayout.addComponent(b_Login);
-	headerLayout.addComponent(gapfill);
-	headerLayout.addComponent(loginpicture);
-
-	headerLayout.setMargin(true);
+	headerLayout.addComponent(vlUsername);
+	headerLayout.addComponent(vlPassword);
+	headerLayout.addComponent(vlLoginButton);
+	headerLayout.addComponent(vlLoginpicture);
 
 	b_Login.addClickListener(new LoginButtonClickHandler());	
 	}

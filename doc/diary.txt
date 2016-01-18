@@ -280,7 +280,7 @@ start sprint2
 dornt1 zwahf1
 	add apointment popup for calendarView
 	
-isels1 nosec1 hï¿½gil1
+isels1 nosec1 hügil1
 	design statepattern
 	create patview
 
