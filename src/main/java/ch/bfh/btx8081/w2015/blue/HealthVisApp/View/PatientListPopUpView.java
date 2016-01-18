@@ -112,10 +112,10 @@ public class PatientListPopUpView {
 	TextField tfTel;
 	
 	ComboBox cmbState;
-    PatientState cmbStateNew = new PatientStateNew();
-    PatientState cmbStateAmbulant = new PatientStateAmbulant();
-    PatientState cmbStateStationary = new PatientStateStationary();
-    PatientState cmbStateArchived = new PatientStateArchived();
+	PatientStateNew cmbStateNew = new PatientStateNew();
+	PatientStateAmbulant cmbStateAmbulant = new PatientStateAmbulant();
+	PatientStateStationary cmbStateStationary = new PatientStateStationary();
+	PatientStateArchived cmbStateArchived = new PatientStateArchived();
 	
 	PopupDateField dfBDate;
 	
@@ -515,6 +515,8 @@ public class PatientListPopUpView {
 	    				  cmbStateAmbulant, 
 	    				  cmbStateStationary, 
 	    				  cmbStateArchived);
+	    //TODO SETTER FOR USED VALUES
+	    System.out.println(cmbStateNew.getPatientStateName());
 	    cmbState.setValue(cmbStateNew);	   
 		cmbState.setEnabled(false);
 	}

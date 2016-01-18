@@ -4,6 +4,11 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
@@ -233,8 +238,28 @@ public class PatientListView {
 		patientTable.removeAllItems();
 		for(Patient p: patCon.getPatientsDefaultOrder())
 		{	
-			if((status) == p.getPatientState().getPatientStateName()
-					|| (status == str_AllPatinets)){
+			PatientState state = p.getPatientState();
+			
+			String s = "";
+			if (state instanceof PatientStateNew) {
+				PatientStateNew n = (PatientStateNew) state;
+				s = n.getPatientStateName();
+			}
+			if (state instanceof PatientStateAmbulant) {
+				PatientStateAmbulant n = (PatientStateAmbulant) state;
+				s = n.getPatientStateName();
+			}
+			if (state instanceof PatientStateStationary) {
+				PatientStateStationary n = (PatientStateStationary) state;
+				s = n.getPatientStateName();
+			}
+			if (state instanceof PatientStateArchived) {
+				PatientStateArchived n = (PatientStateArchived) state;
+				s = n.getPatientStateName();
+			}
+			
+			if((status.equals(s))
+					|| (status.equals(str_AllPatinets))){
 				Object[] collumn = new Object[]{p};
 				patientTable.addItem(collumn,p.getId());
 			}

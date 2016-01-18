@@ -1,6 +1,11 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 
 import com.vaadin.data.Item;
 import com.vaadin.ui.Table;
@@ -41,10 +46,28 @@ public class PatientListCellStyleGenerator implements Table.CellStyleGenerator {
 	public String getStyle(Table source, Object itemId, Object propertyId) {
 		if (propertyId == null) {
 			Item item = source.getItem(itemId);
-			String s = ((Patient) item.getItemProperty("Patient Name")
-						.getValue())
-						.getPatientState()
-						.getColorCode();
+			PatientState state = ((Patient) item.getItemProperty("Patient Name")
+					.getValue())
+					.getPatientState();
+			
+			String s = "";
+			if (state instanceof PatientStateNew) {
+				PatientStateNew n = (PatientStateNew) state;
+				s = n.getColorCode();
+			}
+			if (state instanceof PatientStateAmbulant) {
+				PatientStateAmbulant n = (PatientStateAmbulant) state;
+				s = n.getColorCode();
+			}
+			if (state instanceof PatientStateStationary) {
+				PatientStateStationary n = (PatientStateStationary) state;
+				s = n.getColorCode();
+			}
+			if (state instanceof PatientStateArchived) {
+				PatientStateArchived n = (PatientStateArchived) state;
+				s = n.getColorCode();
+			}
+			
 			return s;
 		} else {
 			return null;
