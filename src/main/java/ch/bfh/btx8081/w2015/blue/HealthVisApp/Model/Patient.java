@@ -117,7 +117,16 @@ public class Patient extends Person {
 	//================================================================================
     // Constructor Section
     //================================================================================
-	
+	/**
+	 * This constructor initialises the Patient with the necessary information
+	 * <br>
+	 * <br>
+	 * @param name the Name of the Person /String
+	 * @param firstName the first Name of the Person /String
+	 * @param birthdate the Birthdate of the Person /Date
+	 * @param address the Address of the Person /Address
+	 * @param phone the Phone Number of the Person /String
+	 */
 	public Patient(String name, String firstName, Date birthdate,
 			Address address, String phone) {
 		super(name, firstName, birthdate, address, phone);
