@@ -4,6 +4,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 /**
@@ -76,7 +77,7 @@ public class PatientPopUpController {
 		patView.getWindow().setCaption("edit patient");
 		patView.setTextFieldName(p.getName());
 		patView.setTextFieldFirstname(p.getFirstName());
-//		patView.setTextFieldId(p.getId());
+		patView.setPatientId(p.getId());
 		patView.setPopupDateFieldDate(p.getBirthdate());
 		patView.setTextFieldAddress(p.getAddress());
 		if (p.getPhone() != null) {
@@ -110,8 +111,10 @@ public class PatientPopUpController {
 		pat.setPatientState(patView.getCmBoxPatientState());
 		
 		pat.setComment(com);
+		pat.setHealthvisitor(DataProvider.getInstance().getHealthVisitor());
 		
-		if (editPatient) {			
+		if (editPatient) {
+			pat.setId(patView.getPatientId());
 			patc.editPatient(pat);
 		} else {
 			patc.addNewPatient(pat);

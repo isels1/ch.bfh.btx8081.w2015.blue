@@ -97,7 +97,6 @@ public class PatientListPopUpView {
 	
 	Label labName;
 	Label labFName;
-//	Label labId;
 	Label labBDate;
 	Label labAddr;
 	Label labTel;
@@ -106,7 +105,6 @@ public class PatientListPopUpView {
 	
 	TextField tfName;
 	TextField tfFName;
-//	TextField tfId;
 	TextField tfAddr1;
 	TextField tfAddr2;
 	TextField tfAddr3;
@@ -127,6 +125,8 @@ public class PatientListPopUpView {
 	Button butCancel;
 	
 	Window window;
+	
+	private int patientId;
 	
 	//================================================================================
     // Constructor Section
@@ -178,9 +178,9 @@ public class PatientListPopUpView {
 	 * get id from pop-up view
 	 * @return id: int
 	 */
-//	public int getTextFieldId() {
-//		return Integer.parseInt(tfId.getValue());
-//	}
+	public int getPatientId() {
+		return patientId;
+	}
 	
 	/**
 	 * get address value from pop-up view
@@ -273,10 +273,9 @@ public class PatientListPopUpView {
 	 * set id from textfield id
 	 * @param id
 	 */
-//	public void setTextFieldId(int id) {
-//		tfId.setValue(""+id);
-//		tfId.setEnabled(false);
-//	}
+	public void setPatientId(int id) {
+		patientId = id;
+	}
 	
 	/**
 	 * set address from textfields address
@@ -403,8 +402,6 @@ public class PatientListPopUpView {
 	    this.createLabel(labName, "Name", COMPWIDTH);
 	    labFName = new Label();
 	    this.createLabel(labFName, "Firstame", COMPWIDTH);
-//	    labId = new Label();
-//	    this.createLabel(labId, "Patient-Id", COMPWIDTH);
 	    labBDate = new Label();
 	    this.createLabel(labBDate, "Birthdate", COMPWIDTH);
 	    labAddr = new Label();
@@ -420,8 +417,6 @@ public class PatientListPopUpView {
 	    this.createTextField(tfName, COMPWIDTH, "");
 	    tfFName = new TextField();
 	    this.createTextField(tfFName, COMPWIDTH, "");
-//	    tfId = new TextField();
-//	    this.createTextField(tfId, COMPWIDTH, "");
 	    tfAddr1 = new TextField();
 	    this.createTextField(tfAddr1, COMPWIDTH_ADDR1, "Street");
 	    tfAddr2 = new TextField();
@@ -456,9 +451,6 @@ public class PatientListPopUpView {
 	    
 	    layFName.addComponent(labFName);
 	    layFName.addComponent(tfFName);
-	    
-//	    layId.addComponent(labId);
-//	    layId.addComponent(tfId);
 	    
 	    layBDate.addComponent(labBDate);
 	    layBDate.addComponent(dfBDate);
