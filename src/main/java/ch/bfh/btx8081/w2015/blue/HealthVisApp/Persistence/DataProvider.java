@@ -1,10 +1,18 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 
 
 public class DataProvider {
@@ -55,4 +63,5 @@ public class DataProvider {
 	public Calendar getCalendar(){
 		return hv.getCalendar();
 	}
+		
 }

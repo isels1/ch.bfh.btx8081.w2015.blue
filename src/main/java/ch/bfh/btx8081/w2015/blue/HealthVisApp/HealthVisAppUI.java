@@ -136,5 +136,6 @@ public class HealthVisAppUI extends UI {
 	    dp.initCalendar();
 	    dp.fillCalendar();
 	    
+	    c.close();
     }
 }

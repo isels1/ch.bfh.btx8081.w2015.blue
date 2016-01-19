@@ -13,7 +13,6 @@ public class Connector {
 	private static Connector c = null;
 	
 	private Connector(){
-		em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 	}
 	
 	public static Connector getConnection(){
@@ -24,6 +23,7 @@ public class Connector {
 	}
 	
 	public EntityManager getEM(){
+		em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
 		return em;
 	}
 	
