@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataPersister;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
 /**
@@ -122,8 +123,10 @@ public class AppointmentPopUpController {
 						appView.getComboboxPatient());
 		
 		app.setComment(com);
+		app.setHealthVisitor(hvc.getHealthVisitor());
 		
 		if(hvc.getCalendar().newAppointment(app)) {
+			DataPersister.getInstance().addNewAppointment(app);
 			hvc.addNewApp(app);
 			return true;
 		}
