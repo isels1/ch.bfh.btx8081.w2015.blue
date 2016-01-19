@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -92,6 +93,7 @@ public class HealthVisitor extends Person {
 	//================================================================================
     // HealthVisitor Data
     //================================================================================
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;

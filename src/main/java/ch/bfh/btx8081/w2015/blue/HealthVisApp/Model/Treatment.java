@@ -92,7 +92,7 @@ public class Treatment {
     // Treatment Data
     //================================================================================
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String doctor; 

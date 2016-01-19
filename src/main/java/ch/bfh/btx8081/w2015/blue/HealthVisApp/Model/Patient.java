@@ -3,8 +3,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -103,13 +106,17 @@ public class Patient extends Person {
     // Patient Data
     //================================================================================
 
-	@ManyToOne
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="noteId")
 	private Note note;
 	@ManyToOne
 	@JoinColumn(name="healthVisitorId")
 	private HealthVisitor healthVisitor;
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="stateId")
 	private PatientState state;
 	
@@ -122,10 +129,16 @@ public class Patient extends Person {
     // Setter Section
     //================================================================================
 
+	public void setId(int id) {
+		this.id = id;
+		super.setId(id);
+	}
+	
 	/**
 	 * The setter for the comment
 	 * @param comment The Comment /Note
 	 */
+	
 	public void setComment(Note comment) {
 		this.note = comment;
 	}

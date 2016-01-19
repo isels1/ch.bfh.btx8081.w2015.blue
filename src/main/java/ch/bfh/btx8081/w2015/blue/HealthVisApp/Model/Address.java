@@ -78,7 +78,7 @@ public class Address {
     // Address Data
     //================================================================================
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String street;

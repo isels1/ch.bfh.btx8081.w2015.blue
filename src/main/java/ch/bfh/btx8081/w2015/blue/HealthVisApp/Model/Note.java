@@ -55,7 +55,7 @@ public class Note {
     // Note Data
     //================================================================================
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String comment;

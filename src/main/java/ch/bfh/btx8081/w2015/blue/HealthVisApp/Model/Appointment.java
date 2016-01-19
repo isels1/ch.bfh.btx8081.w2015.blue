@@ -1,6 +1,7 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 import java.util.GregorianCalendar;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -98,7 +99,7 @@ public class Appointment {
     // Appointment Data
     //================================================================================
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
     @Temporal(TemporalType.TIMESTAMP)
@@ -120,7 +121,7 @@ public class Appointment {
 	@Transient
 	private Calendar calendar;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name="noteId")
 	private Note note;
 	
@@ -185,6 +186,10 @@ public class Appointment {
 	 */
 	public void setPatient(Patient patient) {
 		this.patient = patient;
+	}
+	
+	public void setHealthVisitor(HealthVisitor hv) {
+		this.healthVisitor = hv;
 	}
 	
 	/**

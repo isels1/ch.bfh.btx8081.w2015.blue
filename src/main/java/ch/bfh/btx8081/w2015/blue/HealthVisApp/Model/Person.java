@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -99,13 +100,13 @@ public class Person {
     //================================================================================
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
     @Temporal(TemporalType.DATE)
     private Date birthDate;
     
-    @OneToOne
+    @OneToOne(cascade=CascadeType.PERSIST)
     @JoinColumn(name="addressID")
     private Address address; 
     
@@ -271,5 +272,9 @@ public class Person {
 
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id2) {
+		id = id2;
 	}
 }
