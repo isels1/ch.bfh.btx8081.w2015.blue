@@ -521,12 +521,19 @@ public class PatientListPopUpView {
 	    cmbState.setNullSelectionAllowed(false);
 	    cmbState.setNewItemsAllowed(false); 
 	    
+	    cmbStateNew.setPatientStateName("New");
+	    cmbStateNew.setColorCode("patientStateNew");
+	    cmbStateAmbulant.setPatientStateName("Ambulant");
+	    cmbStateAmbulant.setColorCode("patientStateAmbulant");
+	    cmbStateStationary.setPatientStateName("Stationary");
+	    cmbStateStationary.setColorCode("patientStateStationary");
+	    cmbStateArchived.setPatientStateName("Archived");
+	    cmbStateArchived.setColorCode("patientStateArchived");
+	    
 	    cmbState.addItems(cmbStateNew,
 	    				  cmbStateAmbulant, 
 	    				  cmbStateStationary, 
 	    				  cmbStateArchived);
-	    //TODO SETTER FOR USED VALUES
-	    System.out.println(cmbStateNew.getPatientStateName());
 	    cmbState.setValue(cmbStateNew);	   
 		cmbState.setEnabled(false);
 	}
