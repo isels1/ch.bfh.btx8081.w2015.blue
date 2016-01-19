@@ -241,6 +241,14 @@ public class PatientListPopUpView {
 		return butCancel;
 	}
 	
+	/**
+	 * get the window from the pop-up
+	 * @return window: Window
+	 */
+	public Window getWindow() {
+		return window;
+	}
+	
 	//================================================================================
     // Setter  Section
     //================================================================================
@@ -576,7 +584,7 @@ public class PatientListPopUpView {
 	 * create window for pop-up layout
 	 */
 	private void createWindow() {
-		window = new Window("Add new patient");
+		window = new Window("add new patient");
 //				window.setModal(true);
 		window.setWidth(WIDTH);
 		window.setHeight(HEIGHT);

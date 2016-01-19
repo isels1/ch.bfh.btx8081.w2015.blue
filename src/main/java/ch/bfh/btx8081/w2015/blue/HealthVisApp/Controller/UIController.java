@@ -64,6 +64,7 @@ public class UIController {
 	private static UIController c = null;
 	AppointmentPopUpController appPopUpCon;
 	PatientPopUpController patPopUpCon;
+	PatientDetailController patDetailCon;
 	
 	//================================================================================
     // Constructor Section
@@ -108,6 +109,18 @@ public class UIController {
 		if(calView.getB_WeeklyView() == event.getSource()){
 			calView.changeToWeekly();
 		}
+	}
+	
+	//================================================================================
+    // Patient Detail Section
+    //================================================================================
+	
+	/**
+	 * get the patient detail controller
+	 * @return patDetailCon: PatientDetailController
+	 */
+	public PatientDetailController getPatDetailController() {
+		return patDetailCon;
 	}
 
 	//================================================================================
@@ -201,5 +214,34 @@ public class UIController {
 									+ "(time already in use)");
 		}
 		
+	}
+	
+	//================================================================================
+    // Patient detail Section
+    //================================================================================
+	
+	/**
+	 * creates and shows the patient detail view
+	 * @param patientId: int
+	 */
+	public void createPatientDetailView(int patientId) {
+		Patient pat = null;
+		
+		for (Patient p : PatientListController.getInstance().getPatients()) {
+			if (p.getId() == patientId) {
+				pat = p;
+			}
+		}
+		
+		patDetailCon = new PatientDetailController();
+		patDetailCon.createPatientDetail(pat);
+	}
+	
+	/**
+	 * close the actual detail view and show patient list
+	 */
+	public void closePatientDetailView() {
+		patDetailCon = new PatientDetailController();
+		patDetailCon.closePatientDetail();
 	}
 }

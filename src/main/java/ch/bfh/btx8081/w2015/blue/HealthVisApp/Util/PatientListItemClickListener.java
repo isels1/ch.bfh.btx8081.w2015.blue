@@ -39,6 +39,6 @@ public class PatientListItemClickListener implements ItemClickEvent.ItemClickLis
 	@Override
 	public void itemClick(ItemClickEvent event) {		
 		int id = (int) event.getItemId();
-		UIController.getInstance().createPatientEditPopUp(id);
+		UIController.getInstance().createPatientDetailView(id);
 	}
 }
