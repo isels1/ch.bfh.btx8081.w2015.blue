@@ -9,6 +9,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientButtonClickHandler;
 
 import com.vaadin.ui.Button;
@@ -92,6 +93,7 @@ public class PatientListPopUpView {
 	
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
+	DataProvider dp = DataProvider.getInstance();
 	
 	Label labName;
 	Label labFName;
