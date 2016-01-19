@@ -234,8 +234,7 @@ public class PatientListView {
 		String status = (String) comboboxFilter.getValue();
 		PatientListController patCon = PatientListController.getInstance();
 		patientTable.removeAllItems();
-		for(Patient p: patCon.getPatientsDefaultOrder())
-		{	
+		for(Patient p: patCon.getPatientsDefaultOrder()) {	
 			PatientState state = p.getPatientState();
 			
 			String s = "";

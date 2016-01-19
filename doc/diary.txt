@@ -489,22 +489,33 @@ dornt1
 	implementing login 
 	edit sofware designe for login
 	create new mainView
+zwahf1
+	create tab view and tabs for patient detail view
 ################	
 #  16.01.2016  #
 ################
 dornt1
 	finish login
 	test login
+zwahf1
+	implement edit pop up in detail view
 ################	
 #  17.01.2016  #
 ################
 dornt1
 	edit login and calendar design
+zwahf1
+	finish detail tab view
+
+################	
+#  17.01.2016  #
+################
+zwahf1
+	finish views for detail view
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-"EDIT patient popup view"
 	isels1 remove id from Patient
 		id is now autocreatet
 	edit all classe for patient id
