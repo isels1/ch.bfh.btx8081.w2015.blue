@@ -15,7 +15,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 
 /**
  * Class
@@ -86,7 +85,7 @@ import javax.persistence.Transient;
  * 		17.12.2015
  * </span>
  * <br><br>
- * @author hugil1, nosec1
+ * @author hugil1, nosec1, isels1, dornt1, zwahf1
  * @version 0.0
  */
 @Entity

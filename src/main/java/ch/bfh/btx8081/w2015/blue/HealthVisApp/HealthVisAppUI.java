@@ -9,19 +9,14 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import javax.servlet.annotation.WebServlet;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.Connector;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.TabView;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.annotations.Widgetset;
-import com.vaadin.navigator.Navigator;
-import com.vaadin.navigator.Navigator.ComponentContainerViewDisplay;
-import com.vaadin.navigator.View;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.UI;

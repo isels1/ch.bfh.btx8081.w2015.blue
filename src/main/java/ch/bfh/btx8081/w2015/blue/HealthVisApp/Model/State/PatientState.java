@@ -70,11 +70,11 @@ public abstract class PatientState {
 	@Id
 	private int id;
 	
-//	@Transient
-//	private String colourCode;
-//	@Transient
-//	private String name;
-//	
+	@Transient
+	private String colourCode;
+	@Transient
+	private String name;
+	
 	//================================================================================
     // State Event Section
     //================================================================================
@@ -105,9 +105,9 @@ public abstract class PatientState {
 	 * The function to set the css string
 	 * @param c: String for the bg-color (css property)
 	 */
-//	protected void setColor(String c){
-//		colourCode = c;
-//	}
+	public void setColor(String c){
+		colourCode = c;
+	}
 	
 	/**
 	 * The function to set the id (int)
@@ -121,9 +121,9 @@ public abstract class PatientState {
 	 * The function to set the name string
 	 * @param n: String for the name of the state (to show in gui)
 	 */
-//	protected void setPatientStateName(String n){
-//		name = n;
-//	}
+	public void setPatientStateName(String n){
+		name = n;
+	}
 	
 	//================================================================================
     // Getter Section
@@ -141,22 +141,21 @@ public abstract class PatientState {
 	 * The function to get the color code string
 	 * @return css: The name of the custom css for the bg-color
 	 */
-//	public String getColorCode(){
-//		return colourCode;
-//	}
+	public String getColorCode(){
+		return colourCode;
+	}
 	
 	/**
 	 * The function to get the name string
 	 * @return name: String for the name of the state (to show in gui)
 	 */
-//	public String getPatientStateName(){
-//		return name;
-//	}
-//	
-//	
-//	@Override
-//	public String toString(){
-//		return name;
-//		
-//	}
+	public String getPatientStateName(){
+		return name;
+	}
+
+	@Override
+	public String toString(){
+		return name;
+		
+	}
 }

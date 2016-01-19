@@ -14,11 +14,9 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
 
-import com.vaadin.event.ItemClickEvent;
 import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 

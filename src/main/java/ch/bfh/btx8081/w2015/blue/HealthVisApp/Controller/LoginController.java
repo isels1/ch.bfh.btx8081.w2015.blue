@@ -1,7 +1,5 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
 
 public class LoginController {

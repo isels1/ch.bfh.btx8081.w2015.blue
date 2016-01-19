@@ -2,17 +2,12 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
 import java.io.File;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.CalendarButtonClickHandler;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.LoginButtonClickHandler;
 
-import com.vaadin.server.ClassResource;
 import com.vaadin.server.FileResource;
-import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TabSheet;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 

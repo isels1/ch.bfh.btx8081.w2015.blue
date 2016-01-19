@@ -2,7 +2,6 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
 
 import java.util.GregorianCalendar;
 
-import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -82,7 +81,7 @@ import javax.persistence.TemporalType;
  * 		17.12.2015
  * </span>
  * <br><br>
- * @author hugil1, nosec1
+ * @author hugil1, nosec1, isels1, dornt1, zwahf1
  * @version 0.0
  */
 @Entity

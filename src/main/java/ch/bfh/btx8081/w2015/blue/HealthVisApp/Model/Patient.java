@@ -1,6 +1,6 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Model;
+
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -15,7 +15,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
 
 /**
  * Class
@@ -94,7 +93,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
  * 		17.12.2015
  * </span>
  * <br><br>
- * @author hugil1, nosec1
+ * @author hugil1, nosec1, isels1, dornt1, zwahf1
  * @version 0.0
  */
 @Entity
@@ -116,7 +115,7 @@ public class Patient extends Person {
 	@ManyToOne
 	@JoinColumn(name="healthVisitorId")
 	private HealthVisitor healthVisitor;
-	@ManyToOne(cascade=CascadeType.PERSIST)
+	@ManyToOne
 	@JoinColumn(name="stateId")
 	private PatientState state;
 	

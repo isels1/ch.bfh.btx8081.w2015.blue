@@ -1,21 +1,11 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientDetailButtonClickHandler;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListButtonClickHandler;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListCellStyleGenerator;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatinetListComboBoxChangeListener;
 
-import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TabSheet;
-import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 

@@ -4,8 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Person;
 
@@ -40,13 +38,13 @@ public class DataPersister {
 		EntityTransaction transaction = em.getTransaction();
 	    transaction.begin();
 	    
-//	    try {
+	    try {
 		    em.persist(p);
 		    em.flush();
 		    transaction.commit();
-//	    } catch (Exception e){
-//	    	System.out.println("ERROR ON INSERT PATIENT: " + e.getMessage());
-//	    }
+	    } catch (Exception e){
+	    	System.out.println("ERROR ON INSERT PATIENT: " + e.getMessage());
+	    }
 	    em.close();
 	}
 	

@@ -2,7 +2,6 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.Util;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.UIController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientDetailView;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;

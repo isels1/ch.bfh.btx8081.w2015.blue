@@ -1,19 +1,13 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Vector;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
-
 
 public class DataProvider {
 	
@@ -63,5 +57,25 @@ public class DataProvider {
 	public Calendar getCalendar(){
 		return hv.getCalendar();
 	}
+	
+	public ArrayList<PatientState> getPatientStates(){
+		Connector c = Connector.getConnection();
+		EntityManager em = c.getEM();
+				
+		PatientState stateNew = em.find(PatientState.class, 1); 
+		PatientState stateAmbulant = em.find(PatientState.class, 2);
+		PatientState stateStatonary = em.find(PatientState.class, 3);
+		PatientState stateArchived = em.find(PatientState.class, 4);
 		
+		em.close();
+		
+		ArrayList<PatientState> psl = new ArrayList<PatientState>();
+		psl.add(stateNew); 
+		psl.add(stateAmbulant); 
+		psl.add(stateStatonary);
+		psl.add(stateArchived);
+		
+		return psl;
+	}
+	
 }

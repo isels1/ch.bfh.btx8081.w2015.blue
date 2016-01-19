@@ -6,7 +6,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
-/**TODO
+/**
  * Class
  * <span class="courier">
  * <font face="courier new">
@@ -76,7 +76,7 @@ public class PatientPopUpController {
 		patView.getWindow().setCaption("edit patient");
 		patView.setTextFieldName(p.getName());
 		patView.setTextFieldFirstname(p.getFirstName());
-		patView.setTextFieldId(p.getId());
+//		patView.setTextFieldId(p.getId());
 		patView.setPopupDateFieldDate(p.getBirthdate());
 		patView.setTextFieldAddress(p.getAddress());
 		if (p.getPhone() != null) {
@@ -107,8 +107,6 @@ public class PatientPopUpController {
 		pat.setBirthdate(patView.getPopupDateFieldDate());
 		pat.setPhone(patView.getTextFieldTel());							
 
-		//, patView.getTextFieldId()
-		//TODO: NEW FOR DB
 		pat.setPatientState(patView.getCmBoxPatientState());
 		
 		pat.setComment(com);

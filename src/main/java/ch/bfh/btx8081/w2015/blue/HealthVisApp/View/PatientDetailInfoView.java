@@ -1,15 +1,11 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 
-import com.vaadin.ui.Button;
-import com.vaadin.ui.ComboBox;
+
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.TextArea;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 
 //TODO
 

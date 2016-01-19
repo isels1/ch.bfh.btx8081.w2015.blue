@@ -7,6 +7,7 @@ import java.util.Comparator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataPersister;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListView;
 
@@ -132,6 +133,7 @@ public class PatientListController {
 	 */
 	public void addNewPatient(Patient pat) {
 		hv.setPatient(pat);
+		DataPersister.getInstance().addNewPatient(pat);
 		PatientListView.getInstance().refreshView();
 	}
 	
@@ -140,11 +142,14 @@ public class PatientListController {
 	 * 
 	 */
 	public void editPatient(Patient pat) {
-	
 		for (int i = 0; i < hv.getPatient().size(); i++) {
 			Patient p = hv.getPatient().get(i);
+			System.out.print("Person to Edit: " + pat.getId() +
+					 " --Person in for: " + p.getId() + "\n");
 			if (p.getId() == pat.getId()) {
-				p = pat;				
+				System.out.print("Person to Edit FOUND" + "\n");
+				p = pat;		
+				DataPersister.getInstance().updatePatient(pat);
 			}
 			hv.getPatient().set(i, p);
 		}

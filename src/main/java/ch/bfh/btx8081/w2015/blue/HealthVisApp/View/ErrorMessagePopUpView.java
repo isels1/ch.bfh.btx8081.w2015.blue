@@ -3,7 +3,6 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
 
 import com.vaadin.ui.Label;
-import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 

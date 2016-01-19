@@ -4,13 +4,7 @@ import java.util.Date;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.HealthVisAppUI;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientState;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateAmbulant;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateArchived;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateNew;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 
 import com.vaadin.ui.Button;

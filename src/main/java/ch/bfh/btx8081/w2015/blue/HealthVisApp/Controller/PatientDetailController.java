@@ -11,7 +11,7 @@ public class PatientDetailController {
 
 	private PatientDetailView detailView;
 	
-	public void PatientDetailController() {
+	public PatientDetailController() {
 	}
 	
 	public void createPatientDetail(Patient pat) {

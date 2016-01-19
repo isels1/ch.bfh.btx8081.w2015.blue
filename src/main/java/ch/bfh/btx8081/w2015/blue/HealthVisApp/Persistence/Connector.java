@@ -1,9 +1,8 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
+
 
 public class Connector {
 
