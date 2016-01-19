@@ -83,9 +83,9 @@ public class PatientStateNew extends PatientState{
 	 * Sets the css, the id and the state name to abstract parent class.
 	 */
 	public PatientStateNew() {
-//		super.setColor(colourCode);
-//		//super.setPatientStateId(id);
-//		super.setPatientStateName(name);
+		if (id == 0) {
+			id = 1;
+		}
 	}
 	
 	public String getColorCode(){
@@ -96,6 +96,13 @@ public class PatientStateNew extends PatientState{
 		return name;
 	}
 	
+	public void setColorCode(String cc){
+		colourCode = cc;
+	}
+
+	public void setPatientStateName(String n){
+		name = n;
+	}
 	
 	@Override
 	public String toString(){
