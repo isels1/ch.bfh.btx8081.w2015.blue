@@ -84,6 +84,7 @@ public class PatientListPopUpView {
 	final static String WIDTH = TabView.WIDTH;
 	final static String COMPHEIGHT = "63";				//568 full
 	final static String HOR_LAY_HEIGHT = "63";			//568 full
+	final static String HOR_LAY_BUT_HEIGHT = "41";		//568 full
 	final static String VER_LAY_HEIGHT = "112";			//568 full
 	final static String LABWIDTH = "130";				//320 full
 	final static String COMPWIDTH = "160";				//320 full
@@ -392,6 +393,8 @@ public class PatientListPopUpView {
 		layCom.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layBut = new HorizontalLayout();
+		layBut.setHeight(HOR_LAY_BUT_HEIGHT);
+		layBut.setDefaultComponentAlignment(Alignment.BOTTOM_CENTER);
 		
 		//================================================================================
 	    // create Section

@@ -464,7 +464,7 @@ plan new sprint 3
 presentation pattern state
 
 ################	
-#  17.12.2015  #
+#  18.12.2015  #
 ################
 hugil1
 	Database design
@@ -549,7 +549,13 @@ nosec1
 	Javadoc, changed to fit changed classes
 	incl tests
 	Presentation
-	
+
+################	
+#  20.01.2016  #
+################
+zwahf1
+	pop up view more fancy
+	javadoc for created classes
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************

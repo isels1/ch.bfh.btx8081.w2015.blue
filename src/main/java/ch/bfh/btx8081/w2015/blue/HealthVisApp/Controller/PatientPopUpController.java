@@ -5,6 +5,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Address;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientDetailView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.PatientListPopUpView;
 
 /**
@@ -123,5 +124,7 @@ public class PatientPopUpController {
 		} else {
 			patc.addNewPatient(pat);
 		}
+		
+		PatientDetailView.getInstance().refreshView(pat);
 	}
 }

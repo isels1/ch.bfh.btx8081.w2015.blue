@@ -78,6 +78,8 @@ public class AppointmentPopUpView {
 	final static String LABWIDTH = "130";				//320 full
 	final static String COMPWIDTH = "160";				//320 full
 	final static String LAYWIDTH = "290";				//320 full
+	final static String HOR_LAY_HEIGHT = "81";			//568 full
+	final static String HOR_LAY_BUT_HEIGHT = "44";		//568 full
 	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
@@ -275,24 +277,26 @@ public class AppointmentPopUpView {
 		layout = new VerticalLayout();
 		
 		HorizontalLayout layPat = new HorizontalLayout();
-		layPat.setHeight(COMPHEIGHT);
+		layPat.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layDate = new HorizontalLayout();
-		layDate.setHeight(COMPHEIGHT);
+		layDate.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layLoc = new HorizontalLayout();
-		layLoc.setHeight(COMPHEIGHT);
+		layLoc.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layFrom = new HorizontalLayout();
-		layFrom.setHeight(COMPHEIGHT);
+		layFrom.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layTo = new HorizontalLayout();
-		layTo.setHeight(COMPHEIGHT);
+		layTo.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layCom = new HorizontalLayout();
-		layCom.setHeight(COMPHEIGHT);
+		layCom.setHeight(HOR_LAY_HEIGHT);
 		
 		HorizontalLayout layBut = new HorizontalLayout();
+		layBut.setHeight(HOR_LAY_BUT_HEIGHT);
+		layBut.setDefaultComponentAlignment(Alignment.BOTTOM_CENTER);
 		
 		//===============================
 	    // create Section

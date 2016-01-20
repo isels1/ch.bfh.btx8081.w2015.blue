@@ -4,6 +4,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentListCellStyleGenerator;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
 
 import com.vaadin.ui.Button;
@@ -66,6 +67,7 @@ public class PatientDetailAppointmentView {
 			if(pat.getId() == app.getPatient().getId()) {
 				Object[] collumn = new Object[]{app};
 				patientTable.addItem(collumn,null);
+//				patientTable.setCellStyleGenerator(new AppointmentListCellStyleGenerator());
 			}
 		}
 	}
