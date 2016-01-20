@@ -7,6 +7,37 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Person;
 
+/**
+ * Class
+ * <span class="courier">
+ * <font face="courier new">
+ * 		DataPersister
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		...singleton class to handle the persist data requests (writing to db).
+ * </span>
+ * <br>
+ * <br>
+ * The DataPersister contains following information:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				dp:
+ * 			</font> 
+ * 			<i>DataPersister</i>
+ * 			- The singleton DataPersister
+ * 		</li>
+ *	 </ul>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		20.01.2016
+ * </span>
+ * <br><br>
+ * @author isels1
+ * @version 1.0
+ */
 public class DataPersister {
 	
 	//================================================================================
@@ -19,10 +50,22 @@ public class DataPersister {
     // Constructor Section
     //================================================================================
 	
+	/**
+	 * The private constructor for the data persister
+	 */
 	private DataPersister(){
 		
 	}
 	
+	//================================================================================
+    // Getter Section
+    //================================================================================
+	
+	/**
+	 * The public static get DataPersister function
+	 * to retrieve the DataPersister object
+	 * @return DataPersister to handle the persist data requests
+	 */
 	public static DataPersister getInstance(){
 		if(dp == null) {
 			dp = new DataPersister();
@@ -30,6 +73,14 @@ public class DataPersister {
 		return dp;
 	}
 	
+	//================================================================================
+    // Persistance Section
+    //================================================================================
+	
+	/**
+	 * Function to persist a newly added patient
+	 * @param p Patient object to insert into db
+	 */
 	public void addNewPatient(Patient p) {
 		Connector c = Connector.getConnection();
 		
@@ -48,6 +99,10 @@ public class DataPersister {
 	    em.close();
 	}
 	
+	/**
+	 * Function to update a patient
+	 * @param p Patient object to update
+	 */
 	public void updatePatient(Patient p) {
 		Connector c = Connector.getConnection();
 		
@@ -70,6 +125,10 @@ public class DataPersister {
 	    em.close();
 	}
 	
+	/**
+	 * Function to persist a newly added appointment
+	 * @param a Appointment object to insert into db
+	 */
 	public void addNewAppointment(Appointment a) {
 		Connector c = Connector.getConnection();
 		
