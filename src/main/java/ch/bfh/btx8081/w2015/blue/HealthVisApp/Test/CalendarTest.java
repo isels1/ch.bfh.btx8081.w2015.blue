@@ -19,7 +19,7 @@ public class CalendarTest {
 	@Test
 	public void InitialiseCalendarTest() {
 		ArrayList<Appointment> app = new ArrayList<Appointment>();
-		HealthVisitor hv = new HealthVisitor("Muster", "Max", new Date(), new Address("Strasse",2,2222,"Stadt"), "0987654321");
+		HealthVisitor hv = new HealthVisitor("usern", "password");
 		
 		Calendar cal = new Calendar(app, hv);
 		assertEquals(app, cal.getAppointments());
@@ -30,11 +30,11 @@ public class CalendarTest {
 	@Test
 	public void AppointmentAddingTest(){
 		ArrayList<Appointment> app = new ArrayList<Appointment>();
-		HealthVisitor hv = new HealthVisitor(null, null, null, null, null);
+		HealthVisitor hv = new HealthVisitor(null, null);
 		Calendar cal = new Calendar(app, hv);
-		Appointment a = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
-		Appointment b = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Biel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
-		Appointment c = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Basel", new Patient("Meister", "Ueli", new Date(), new Address("ds",1,2,"ds"), "0987654321"));
+		Appointment a = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Bern", new Patient());
+		Appointment b = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Biel", new Patient());
+		Appointment c = new Appointment(new GregorianCalendar(), new GregorianCalendar(), "Basel", new Patient());
 //		Appointment d = new Appointment();
 		ArrayList<Appointment> appList = new ArrayList<Appointment>();
 		appList.add(b);
