@@ -86,15 +86,7 @@ public class HealthVisAppUI extends UI {
     //================================================================================
 	
     @Override
-    protected void init(VaadinRequest vaadinRequest) {
-    	try {
-    		c = Connector.getConnection();
-    	} catch (PersistenceException e) {
-    		System.out.println(e.getMessage());
-    	}
-    	
-    	fakeLogin();
-        
+    protected void init(VaadinRequest vaadinRequest) {        
     	final VerticalLayout layout = new VerticalLayout();
         layout.setHeight(HEIGHT);
         layout.setWidth(WIDTH);
@@ -111,26 +103,5 @@ public class HealthVisAppUI extends UI {
     @VaadinServletConfiguration(ui = HealthVisAppUI.class, productionMode = false)
     public static class HealthVisAppUIServlet extends VaadinServlet {
     }
-    
-    private void fakeLogin(){
-    	EntityManager em = c.getEM();
-    	
-    	EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		
-    	Query q = em.createQuery("select h from HealthVisitor h where h.username = :name");
-	    q.setParameter("name", "muelh");
-	    
-	    List<HealthVisitor> hvs = new Vector<HealthVisitor>();
-	    hvs = q.getResultList();
-	    HealthVisitor hv = hvs.get(0);
-	    
-	    DataProvider dp = DataProvider.getInstance();
-	    dp.setHealthVisitor(hv);
 
-	    dp.initCalendar();
-	    dp.fillCalendar();
-	    
-	    c.close();
-    }
 }

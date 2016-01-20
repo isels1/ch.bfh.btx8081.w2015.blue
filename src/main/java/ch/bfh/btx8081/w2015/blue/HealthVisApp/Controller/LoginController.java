@@ -1,5 +1,8 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.LoginView;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.MainView;
 
 public class LoginController {
@@ -17,30 +20,27 @@ public class LoginController {
 	}
 	public void checkPW (){
 		
-		this.loadAPP();
-	/*	DummyDataCreator ddc;
-		HealthVisitor hv;
+		//this.loadAPP();
 		LoginView loginView = LoginView.getInstance();
 		
 		String password = loginView.getptf_Pw().getValue();
 		String username = loginView.gettf_Username().getValue();
 		
-		ddc = DummyDataCreator.getInstance();
-		hv = ddc.getHealthVisitor();
+		DataProvider dp = DataProvider.getInstance();
 		
-		//get list of Health Visitors
-	
-		if(username.equals(hv.getUserName())){
-			if(password.equals(hv.getPassword())){
-				this.loadAPP();
-			}
-			else{
+		HealthVisitor hv = dp.login(username, password);
+		
+		 if(hv != null && hv.getUserName().equals(username)
+				 && hv.getPassword().equals(password)) {
+			    dp.setHealthVisitor(hv);
+
+			    dp.initCalendar();
+			    dp.fillCalendar();
+			    this.loadAPP();
+		    }
+		else {
 			this.wrongPW();
-			}
 		}
-		else{
-		this.wrongPW();
-		}*/
 	}
 	private void loadAPP(){
 		MainView mainView = MainView.getInstance();
