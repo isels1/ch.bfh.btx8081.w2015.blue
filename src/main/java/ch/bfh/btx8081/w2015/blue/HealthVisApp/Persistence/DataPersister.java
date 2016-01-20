@@ -59,7 +59,6 @@ public class DataPersister {
 	    
 	    transaction.begin();
 	    person = p;
-	    System.out.println("EEDIT");
 	    
 	    try {
 		    em.merge(person); 

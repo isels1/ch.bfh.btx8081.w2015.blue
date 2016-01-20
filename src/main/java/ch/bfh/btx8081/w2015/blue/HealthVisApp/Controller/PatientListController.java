@@ -144,10 +144,7 @@ public class PatientListController {
 	public void editPatient(Patient pat) {
 		for (int i = 0; i < hv.getPatient().size(); i++) {
 			Patient p = hv.getPatient().get(i);
-			System.out.print("Person to Edit: " + pat.getId() +
-					 " --Person in for: " + p.getId() + "\n");
 			if (p.getId() == pat.getId()) {
-				System.out.print("Person to Edit FOUND" + "\n");
 				p = pat;		
 				DataPersister.getInstance().updatePatient(pat);
 			}

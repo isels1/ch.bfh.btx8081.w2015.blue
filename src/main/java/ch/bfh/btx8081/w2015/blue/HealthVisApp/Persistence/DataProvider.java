@@ -63,44 +63,57 @@ public class DataProvider {
 	}
 	
 	public ArrayList<PatientState> getPatientStates(){
-		Connector c = Connector.getConnection();
-		EntityManager em = c.getEM();
-				
-		PatientState stateNew = em.find(PatientState.class, 1); 
-		PatientState stateAmbulant = em.find(PatientState.class, 2);
-		PatientState stateStatonary = em.find(PatientState.class, 3);
-		PatientState stateArchived = em.find(PatientState.class, 4);
-		
-		em.close();
 		
 		ArrayList<PatientState> psl = new ArrayList<PatientState>();
-		psl.add(stateNew); 
-		psl.add(stateAmbulant); 
-		psl.add(stateStatonary);
-		psl.add(stateArchived);
-		
+
+		try {
+			Connector c = Connector.getConnection();
+			
+			EntityManager em = c.getEM();
+			
+			PatientState stateNew = em.find(PatientState.class, 1); 
+			PatientState stateAmbulant = em.find(PatientState.class, 2);
+			PatientState stateStatonary = em.find(PatientState.class, 3);
+			PatientState stateArchived = em.find(PatientState.class, 4);
+			
+			psl.add(stateNew); 
+			psl.add(stateAmbulant); 
+			psl.add(stateStatonary);
+			psl.add(stateArchived);
+			
+			em.close();
+		} catch (Exception e){
+			System.out.println("ERROR IN GET PATIENT STATE: " + e.getMessage());	
+		}			
+
 		return psl;
 	}
 
 	public HealthVisitor login(String un, String pw) {
-		Connector c = Connector.getConnection();
-		EntityManager em = c.getEM();
-    	
-    	EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		
-    	Query q = em.createQuery("select h from HealthVisitor h where h.username = :name and h.password = :pw");
-	    q.setParameter("name", un);
-	    q.setParameter("pw", pw);
-	    
-	    List<HealthVisitor> hvs = new Vector<HealthVisitor>();
-	    hvs = q.getResultList();
-	    HealthVisitor hv = null;
-	    if (hvs.size() != 0) {
-	    	hv = hvs.get(0);
-	    }
-	    
-	    em.close();
+		HealthVisitor hv = null;
+		    
+		try {
+			Connector c = Connector.getConnection();
+			EntityManager em = c.getEM();
+	    	
+	    	EntityTransaction transaction = em.getTransaction();
+			transaction.begin();
+			
+	    	Query q = em.createQuery("select h from HealthVisitor h where h.username = :name and h.password = :pw");
+		    q.setParameter("name", un);
+		    q.setParameter("pw", pw);
+		    
+		    List<HealthVisitor> hvs = new Vector<HealthVisitor>();
+		    hvs = q.getResultList();
+		   
+		    if (hvs.size() != 0) {
+		    	hv = hvs.get(0);
+		    }
+		    
+		    em.close();
+		} catch (Exception e){
+			System.out.println("ERROR IN LOGIN: " + e.getMessage());
+		}
 	    
 		return hv;
 	}

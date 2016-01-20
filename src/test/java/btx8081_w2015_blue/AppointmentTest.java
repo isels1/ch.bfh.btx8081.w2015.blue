@@ -1,4 +1,4 @@
-package ch.bfh.btx8081.w2015.blue.HealthVisApp.Test;
+package btx8081_w2015_blue;
 
 import static org.junit.Assert.assertEquals;
 
