@@ -16,15 +16,15 @@ public class HealthVisitorTest {
 
 	@Test
 	public void InitializeHealthVisitorTest() {
-		String name = "Hans";
-		String fName = "Peter";
+		String usern = "Hans";
+		String pw = "Peter";
 		Date date = new Date();
 		Address address = new Address("Strasse",1,1111,"Stadt");
 		String phone = "123123123";
 		
-		HealthVisitor hv = new HealthVisitor(name, fName, date, address, phone);
-		assertEquals(name, hv.getName());
-		assertEquals(fName, hv.getFirstName());
+		HealthVisitor hv = new HealthVisitor(usern, pw);
+		assertEquals(usern, hv.getName());
+		assertEquals(pw, hv.getFirstName());
 		assertEquals(date, hv.getBirthdate());
 		assertEquals(address, hv.getAddress());
 		assertEquals(phone, hv.getPhone());
@@ -37,8 +37,8 @@ public class HealthVisitorTest {
 		String pw = "PW";
 		Calendar calendar = new Calendar();
 		ArrayList<Patient> pList = new ArrayList<Patient>();
-		Patient patient = new Patient(" ", " ", null, null, " ");
-		HealthVisitor hv = new HealthVisitor(" ", " ", null, null, " ");
+		Patient patient = new Patient();
+		HealthVisitor hv = new HealthVisitor();
 		
 		hv.setUserName(username);
 		assertEquals(username, hv.getUserName());
