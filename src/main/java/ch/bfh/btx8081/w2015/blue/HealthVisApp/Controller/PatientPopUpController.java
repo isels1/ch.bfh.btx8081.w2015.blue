@@ -120,7 +120,6 @@ public class PatientPopUpController {
 		if (editPatient) {
 			pat.setId(patView.getPatientId());
 			patc.editPatient(pat);
-			System.out.println("edit");
 		} else {
 			patc.addNewPatient(pat);
 		}

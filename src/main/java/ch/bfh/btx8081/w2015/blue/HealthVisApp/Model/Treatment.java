@@ -213,8 +213,8 @@ public class Treatment {
 		String aString = "";
 		
 		if (!(date == null)){
-			aString = aString + "" + String.valueOf(date.get(GregorianCalendar.DAY_OF_MONTH))
-					+ "." + String.valueOf(date.get(GregorianCalendar.MONTH + 1))
+			aString = aString + "" + getNumberRepresentation(String.valueOf(date.get(GregorianCalendar.DAY_OF_MONTH)))
+					+ "." + getNumberRepresentation(String.valueOf(date.get(GregorianCalendar.MONTH + 1)))
 					+ "." + String.valueOf(date.get(GregorianCalendar.YEAR));
 		}
 		
@@ -227,5 +227,16 @@ public class Treatment {
 		}
 		
 		return aString;
+	}
+	
+	private String getNumberRepresentation(String min) {
+		String rep = "";
+		if(min.length() == 1) {
+			rep = "0" + min;
+		}
+		else {
+			rep = "" + min;
+		}
+		return rep;
 	}
 }

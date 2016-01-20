@@ -273,16 +273,16 @@ public class Appointment {
 		String aString = "";
 		
 		if (!(startTime == null)){
-			aString = aString + "" + String.valueOf(startTime.get(GregorianCalendar.DAY_OF_MONTH))
-								+ "." + String.valueOf(startTime.get(GregorianCalendar.MONTH + 1))
+			aString = aString + "" + getNumberRepresentation(String.valueOf(startTime.get(GregorianCalendar.DAY_OF_MONTH)))
+								+ "." + getNumberRepresentation(String.valueOf(startTime.get(GregorianCalendar.MONTH + 1)))
 								+ "." + String.valueOf(startTime.get(GregorianCalendar.YEAR))
-								+ ", " + getTimeRepresentation(String.valueOf(startTime.get(GregorianCalendar.HOUR_OF_DAY)))
-								+ ":" + getTimeRepresentation(String.valueOf(startTime.get(GregorianCalendar.MINUTE)));
+								+ ", " + getNumberRepresentation(String.valueOf(startTime.get(GregorianCalendar.HOUR_OF_DAY)))
+								+ ":" + getNumberRepresentation(String.valueOf(startTime.get(GregorianCalendar.MINUTE)));
 		}
 		
 		if (!(endTime == null)){
-			aString = aString + " - " + getTimeRepresentation(String.valueOf(endTime.get(GregorianCalendar.HOUR_OF_DAY)))
-					+ ":" + getTimeRepresentation(String.valueOf(endTime.get(GregorianCalendar.MINUTE)));
+			aString = aString + " - " + getNumberRepresentation(String.valueOf(endTime.get(GregorianCalendar.HOUR_OF_DAY)))
+					+ ":" + getNumberRepresentation(String.valueOf(endTime.get(GregorianCalendar.MINUTE)));
 		}
 		
 		if (!(location == null)){
@@ -292,7 +292,7 @@ public class Appointment {
 		return aString;
 	}
 	
-	private String getTimeRepresentation(String min) {
+	private String getNumberRepresentation(String min) {
 		String rep = "";
 		if(min.length() == 1) {
 			rep = "0" + min;

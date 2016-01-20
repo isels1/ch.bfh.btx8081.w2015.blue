@@ -156,7 +156,12 @@ public class PatientDetailView {
 	 * @param pat: Patient
 	 */
 	public void refreshView(Patient pat){
-		this.pat = pat;
+		if(pat == null) {
+			pat = this.pat;
+		}
+		else {
+			this.pat = pat;
+		}
 		patDetInfoView.setPatient(pat);
 		patDetOverView.setPatient(pat);
 		patDetAppView.setPatient(pat);

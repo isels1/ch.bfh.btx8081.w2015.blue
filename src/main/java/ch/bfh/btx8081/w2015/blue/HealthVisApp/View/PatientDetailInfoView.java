@@ -2,6 +2,7 @@ package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 
 
+
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.TextArea;
@@ -174,8 +175,8 @@ public class PatientDetailInfoView {
 	public void setPatient(Patient pat) {
 		this.createLabel(labId2, pat.getId() + "", COMPWIDTH);
 		this.createLabel(labState2, pat.getPatientState().toString(), COMPWIDTH);
-		this.createLabel(labDate2, pat.getBirthdate().getDate() + "." 
-								+ (pat.getBirthdate().getMonth() + 1) + "." 
+		this.createLabel(labDate2, getNumberRepresentation(""+pat.getBirthdate().getDate()) + "." 
+								+ getNumberRepresentation(""+(pat.getBirthdate().getMonth() + 1)) + "." 
 								+ (pat.getBirthdate().getYear() + 1900), COMPWIDTH);
 		this.createLabel(labAddr2, pat.getAddress().getStreet() 
 										+ " " + pat.getAddress().getStreetNr(), COMPWIDTH);
@@ -208,5 +209,16 @@ public class PatientDetailInfoView {
 	    ta.setHeight(height);
 	    ta.setWidth(width);
 	    ta.setInputPrompt(inputPrompt);
+	}
+	
+	private String getNumberRepresentation(String min) {
+		String rep = "";
+		if(min.length() == 1) {
+			rep = "0" + min;
+		}
+		else {
+			rep = "" + min;
+		}
+		return rep;
 	}
 }

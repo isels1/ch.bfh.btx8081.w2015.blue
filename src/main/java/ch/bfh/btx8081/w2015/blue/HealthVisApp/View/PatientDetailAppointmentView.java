@@ -100,9 +100,9 @@ public class PatientDetailAppointmentView {
 			if(pat.getId() == app.getPatient().getId()) {
 				Object[] collumn = new Object[]{app};
 				patientTable.addItem(collumn,null);
-//				patientTable.setCellStyleGenerator(new AppointmentListCellStyleGenerator());
 			}
 		}
+//		patientTable.setCellStyleGenerator(new AppointmentListCellStyleGenerator());
 	}
 	
 	/**

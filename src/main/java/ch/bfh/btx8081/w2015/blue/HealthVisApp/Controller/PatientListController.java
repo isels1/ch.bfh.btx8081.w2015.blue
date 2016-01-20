@@ -149,7 +149,6 @@ public class PatientListController {
 				DataPersister.getInstance().updatePatient(pat);
 			}
 			hv.getPatient().set(i, p);
-			System.out.println(p.getName());
 		}
 		PatientListView.getInstance().refreshView();
 	}
