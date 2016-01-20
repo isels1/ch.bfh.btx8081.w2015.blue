@@ -228,25 +228,4 @@ public class Treatment {
 		
 		return aString;
 	}
-	
-	 /**
-	  * Compares two Treatments and tests if they are the same
-	  * @return if id, patientId, doctor, date and description of the Treatment objects are the same /boolean
-	  */
-	@Override
-	public boolean equals(Object obj){
-		if (obj != null) {
-			Treatment treatm = (Treatment) obj;
-			boolean i = this.id == treatm.id;
-			boolean patId = this.patient.getId() == treatm.patient.getId();
-			boolean doc = this.doctor.equals(treatm.doctor);
-			boolean dat = this.date == treatm.date;
-			boolean descr = this.description.equals(treatm.description);
-			
-			return (i && patId && doc && dat && descr);
-		}
-		return false;
-		
-	}
-
 }

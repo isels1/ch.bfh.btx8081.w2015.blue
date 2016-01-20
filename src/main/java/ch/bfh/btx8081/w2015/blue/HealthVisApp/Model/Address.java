@@ -214,23 +214,4 @@ public class Address {
 		
 		return aString;
 	}
-	
-	 /**
-	  * Compares two Addresses and tests if they are the same
-	  * @return if aStreet, aStreetNr, aZIP and aCity of the Address objects are the same /boolean
-	  */
-	@Override
-	public boolean equals(Object obj){
-		if (obj != null) {
-			Address addr = (Address) obj;
-			boolean str = this.street.equals(addr.street);
-			boolean nr = this.streetNr == addr.streetNr;
-			boolean zip = this.zip == addr.zip;
-			boolean city = this.city.equals(addr.city);
-			
-			return (str && nr && zip && city);
-		}
-		return false;
-		
-	}
 }

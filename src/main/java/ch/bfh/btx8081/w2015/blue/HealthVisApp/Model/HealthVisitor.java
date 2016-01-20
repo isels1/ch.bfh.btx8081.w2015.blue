@@ -212,17 +212,4 @@ public class HealthVisitor extends Person {
 			{aString = aString + ", " + username;}
 		return aString;
 	}
-	
-	/**
-	  * Compares two health visitors and tests if they are the same
-	  * @return if the name, firstName, birthdate, address and phone are the same /boolean
-	  */
-	@Override
-	public boolean equals(Object obj){
-		if(obj != null) {
-			HealthVisitor hv = (HealthVisitor) obj;
-			return super.equals(hv);
-		}
-		return false;
-	}
 }

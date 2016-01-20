@@ -215,6 +215,7 @@ public class Patient extends Person {
 	public PatientState getPatientState(){
 		return state;
 	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -225,17 +226,4 @@ public class Patient extends Person {
 //		System.out.println(String.format("%20s %20s %5s" ,super.getName(),super.getFirstName(),id));
 		return returnString;
 	}
-	 /**
-	  * Compares two patients and tests if they are the same
-	  * @return if the IDs of the Patient objects are the same /boolean
-	  */
-	@Override
-	public boolean equals(Object obj){
-		if (obj != null) {
-			Patient pat = (Patient) obj;
-			return this.getId() == pat.getId();
-		}
-		return false;
-	}
-	
 }

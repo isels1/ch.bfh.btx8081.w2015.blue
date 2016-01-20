@@ -292,24 +292,6 @@ public class Appointment {
 		return aString;
 	}
 	
-	 /**
-	  * Compares two Appointments and tests if they are the same
-	  * @return if the startTime, endTime, location and patient of the Person objects are the same /boolean
-	  */
-	@Override
-	public boolean equals(Object obj){
-		if(obj != null) {
-			Appointment app = (Appointment) obj;
-			boolean start = this.startTime.equals(app.startTime);
-			boolean end = this.endTime.equals(app.endTime);
-			boolean loc = this.location.equals(app.location);
-			boolean pat = this.patient.equals(app.patient);
-			
-			return (start && end && loc && pat);
-		}
-		return false;
-	}
-	
 	private String getTimeRepresentation(String min) {
 		String rep = "";
 		if(min.length() == 1) {

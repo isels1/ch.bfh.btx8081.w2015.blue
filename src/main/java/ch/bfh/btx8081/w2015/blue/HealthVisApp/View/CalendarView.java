@@ -6,9 +6,7 @@ import com.vaadin.server.FontAwesome;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
@@ -181,8 +179,6 @@ public class CalendarView {
 		 * @param cal Model.Calendar
 		 */
 		public void addNewApp(Appointment app, ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Calendar cal) {
-			
-			List<CalendarEvent> events = new ArrayList<CalendarEvent>();
 			
 			BasicEvent e = new BasicEvent(app.getlocation(),
 					app.getPatient().getName() + " " + app.getPatient().getFirstName(),
