@@ -270,18 +270,24 @@ public class Appointment {
 	  */
 	@Override
 	public String toString() {
-		String aString = super.toString();
+		String aString = "";
 		
-		if (!(startTime==null))
-		{aString = aString + ", " + startTime;}
+		if (!(startTime == null)){
+			aString = aString + "" + String.valueOf(startTime.get(GregorianCalendar.DAY_OF_MONTH))
+								+ "." + String.valueOf(startTime.get(GregorianCalendar.MONTH + 1))
+								+ "." + String.valueOf(startTime.get(GregorianCalendar.YEAR))
+								+ ", " + getTimeRepresentation(String.valueOf(startTime.get(GregorianCalendar.HOUR_OF_DAY)))
+								+ ":" + getTimeRepresentation(String.valueOf(startTime.get(GregorianCalendar.MINUTE)));
+		}
 		
-		if (!(endTime==null))
-		{aString = aString + ", " + endTime;}
+		if (!(endTime == null)){
+			aString = aString + " - " + getTimeRepresentation(String.valueOf(endTime.get(GregorianCalendar.HOUR_OF_DAY)))
+					+ ":" + getTimeRepresentation(String.valueOf(endTime.get(GregorianCalendar.MINUTE)));
+		}
 		
-		if (!(location==null))
-		{aString = aString + ", " + location;}
-		
-		aString = aString + ", " + patient.toString();
+		if (!(location == null)){
+			aString = aString + ", " + location;
+		}
 		
 		return aString;
 	}
@@ -302,5 +308,16 @@ public class Appointment {
 			return (start && end && loc && pat);
 		}
 		return false;
+	}
+	
+	private String getTimeRepresentation(String min) {
+		String rep = "";
+		if(min.length() == 1) {
+			rep = "0" + min;
+		}
+		else {
+			rep = "" + min;
+		}
+		return rep;
 	}
 }

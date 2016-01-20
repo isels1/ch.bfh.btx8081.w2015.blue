@@ -212,18 +212,19 @@ public class Treatment {
 	public String toString() {
 		String aString = "";
 		
-		aString = aString + ", " + id;
+		if (!(date == null)){
+			aString = aString + "" + String.valueOf(date.get(GregorianCalendar.DAY_OF_MONTH))
+					+ "." + String.valueOf(date.get(GregorianCalendar.MONTH + 1))
+					+ "." + String.valueOf(date.get(GregorianCalendar.YEAR));
+		}
 		
-		aString = aString + ", " + patient.toString();
+		if (!(doctor == null)){
+			aString = aString + "; " + doctor;
+		}
 		
-		if (!(doctor==null))
-		{aString = aString + ", " + doctor;}
-		
-		if (!(date==null))
-		{aString = aString + ", " + date;}
-		
-		if (!(description==null))
-		{aString = aString + ", " + description;}
+		if (!(description == null)){
+			aString = aString + "; " + description;
+		}
 		
 		return aString;
 	}
