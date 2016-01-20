@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Note;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataPersister;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.View.AppointmentPopUpView;
 
@@ -101,6 +102,7 @@ public class AppointmentPopUpController {
 	 * @return true if appointment has no conflict otherwise false
 	 */
 	public boolean saveAppointment(HealthVisitorController hvc) {
+		Patient pat = appView.getComboboxPatient();
 		Date date = appView.getPopupDateFieldDate();
 		String[] time1 = appView.getTextFieldFrom().split(TIME_DELIMITER);
 		String[] time2 = appView.getTextFieldTo().split(TIME_DELIMITER);
@@ -128,6 +130,7 @@ public class AppointmentPopUpController {
 		if(hvc.getCalendar().newAppointment(app)) {
 			DataPersister.getInstance().addNewAppointment(app);
 			hvc.addNewApp(app);
+			pat.addAppointment(app);
 			return true;
 		}
 		else {

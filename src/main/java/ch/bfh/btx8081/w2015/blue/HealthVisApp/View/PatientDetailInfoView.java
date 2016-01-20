@@ -18,6 +18,7 @@ public class PatientDetailInfoView {
 	final static String WIDTH = TabView.WIDTH;
 	final static String COMPHEIGHT = "44";				//356 full
 	final static String TEXTHEIGHT = "88";				//356 full
+	final static String ADDRHEIGHT = "70";				//356 full
 	final static String COMPWIDTH = "159";				//318 full
 	final static String DATEFORMAT = "dd.MM.yyyy";
 	
@@ -31,10 +32,11 @@ public class PatientDetailInfoView {
 	Label labDate2;
 	Label labAddr1;
 	Label labAddr2;
+	Label labAddr3;
 	Label labTel1;
 	Label labTel2;
+	Label labCom1;
 	
-	TextArea taCom1;
 	TextArea taCom2;
 	
 	//================================================================================
@@ -60,14 +62,17 @@ public class PatientDetailInfoView {
 		HorizontalLayout layDate = new HorizontalLayout();
 		layDate.setHeight(COMPHEIGHT);
 		
-		HorizontalLayout layAddr = new HorizontalLayout();
-		layAddr.setHeight(COMPHEIGHT);
+		HorizontalLayout layAddr1 = new HorizontalLayout();
+		layAddr1.setHeight(ADDRHEIGHT);
 		
 		HorizontalLayout layTel = new HorizontalLayout();
 		layTel.setHeight(COMPHEIGHT);
 		
 		HorizontalLayout layCom = new HorizontalLayout();
-		layCom.setHeight(COMPHEIGHT);
+		layCom.setHeight(TEXTHEIGHT);
+		
+		VerticalLayout layAddr2 = new VerticalLayout();
+		layAddr2.setHeight(ADDRHEIGHT);
 		
 		//===============================
 	    // create Section
@@ -78,7 +83,7 @@ public class PatientDetailInfoView {
 		
 		labState1 = new Label();
 		labState2 = new Label();
-		this.createLabel(labState1, "Id", COMPWIDTH);
+		this.createLabel(labState1, "State", COMPWIDTH);
 		
 		labDate1 = new Label();
 		labDate2 = new Label();
@@ -86,15 +91,16 @@ public class PatientDetailInfoView {
 		
 		labAddr1 = new Label();
 		labAddr2 = new Label();
+		labAddr3 = new Label();
 		this.createLabel(labAddr1, "Address", COMPWIDTH);
 		
 		labTel1 = new Label();
 		labTel2 = new Label();
 		this.createLabel(labTel1, "Phone", COMPWIDTH);
 		
-		taCom1 = new TextArea();
+		labCom1 = new Label();
 		taCom2 = new TextArea();
-		this.createTextArea(taCom1, COMPWIDTH, TEXTHEIGHT, "Note");
+		this.createLabel(labCom1, "Note", COMPWIDTH);
 		
 		//===============================
 	    // Add Section
@@ -108,14 +114,24 @@ public class PatientDetailInfoView {
 	    layDate.addComponent(labDate1);
 	    layDate.addComponent(labDate2);
 	    
-	    layAddr.addComponent(labAddr1);
-	    layAddr.addComponent(labAddr2);
+	    layAddr1.addComponent(labAddr1);
+	    layAddr1.addComponent(layAddr2);
+	    
+	    layAddr2.addComponent(labAddr2);
+	    layAddr2.addComponent(labAddr3);
 	    
 	    layTel.addComponent(labTel1);
 	    layTel.addComponent(labTel2);
 	    
-	    layCom.addComponent(taCom1);
+	    layCom.addComponent(labCom1);
 	    layCom.addComponent(taCom2);
+	    
+	    layout.addComponent(layId);
+	    layout.addComponent(layState);
+	    layout.addComponent(layDate);
+	    layout.addComponent(layAddr1);
+	    layout.addComponent(layTel);
+	    layout.addComponent(layCom);
 	    
 	}
 	
@@ -133,11 +149,13 @@ public class PatientDetailInfoView {
 	public void setPatient(Patient pat) {
 		this.createLabel(labId2, pat.getId() + "", COMPWIDTH);
 		this.createLabel(labState2, pat.getPatientState().toString(), COMPWIDTH);
-		this.createLabel(labDate2, pat.getBirthdate().toString(), COMPWIDTH);
+		this.createLabel(labDate2, pat.getBirthdate().getDate() + "." 
+								+ (pat.getBirthdate().getMonth() + 1) + "." 
+								+ (pat.getBirthdate().getYear() + 1900), COMPWIDTH);
 		this.createLabel(labAddr2, pat.getAddress().getStreet() 
-									+ " " + pat.getAddress().getStreetNr()
-									+ "\n" + pat.getAddress().getZIP() 
-									+ " " + pat.getAddress().getCity(), COMPWIDTH);
+										+ " " + pat.getAddress().getStreetNr(), COMPWIDTH);
+		this.createLabel(labAddr3, pat.getAddress().getZIP() 
+										+ " " + pat.getAddress().getCity(), COMPWIDTH);
 		this.createLabel(labTel2, pat.getPhone(), COMPWIDTH);
 		this.createTextArea(taCom2, COMPWIDTH, TEXTHEIGHT, pat.getComment().toString());
 	}

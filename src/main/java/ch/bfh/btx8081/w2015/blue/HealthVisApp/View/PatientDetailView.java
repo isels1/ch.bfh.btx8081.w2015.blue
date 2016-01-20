@@ -67,7 +67,7 @@ public class PatientDetailView {
 		
 	final static String WIDTH = "318";
 	final static String HEIGHT_COMP = "40";	//396 full
-	final static String HEIGHT_TAB = "356";	//396 full
+	final static String HEIGHT_TAB = "376";	//396 full
 	
 	private VerticalLayout patientViewTab;//the whole patient View is on this Layout
 	
@@ -180,7 +180,8 @@ public class PatientDetailView {
 		patDetInfoView.setPatient(pat);
 		patDetOverView.setPatient(pat);
 		patDetAppView.setPatient(pat);
-		patientTabSheet.setCaption("" + pat.getFirstName() + " " + pat.getName());
+		Label caption = new Label("" + pat.getFirstName() + " " + pat.getName());
+		patientTabSheet.setCaption(caption.getValue());
 	}
 	
 	//================================================================================
@@ -210,13 +211,13 @@ public class PatientDetailView {
         patientTabSheet.addStyleName(ValoTheme.TABSHEET_PADDED_TABBAR);
         
         patDetInfoView = new PatientDetailInfoView();
-        patientTabSheet.addTab(patDetInfoView.getLayout(), "Patient Infos");
+        patientTabSheet.addTab(patDetInfoView.getLayout(), "Infos");
         
         patDetOverView = new PatientDetailOverviewView();
-        patientTabSheet.addTab(patDetOverView.getLayout(), "Patient overview treatment");
+        patientTabSheet.addTab(patDetOverView.getLayout(), "Treatments");
 
         patDetAppView = new PatientDetailAppointmentView();
-        patientTabSheet.addTab(patDetAppView.getLayout(), "Patient appointments");
+        patientTabSheet.addTab(patDetAppView.getLayout(), "Appointments");
 	}
 	
 	/**

@@ -175,6 +175,14 @@ public class UIController {
 		patPopUpCon.getPatView().close();
 	}
 	
+	/**
+	 * edit a patient and add to the health visitor
+	 */
+	public void editPatient() {
+		patPopUpCon.savePatient(PatientListController.getInstance());
+		patPopUpCon.getPatView().close();
+	}
+	
 	//================================================================================
     // Appointment PopUp Section
     //================================================================================

@@ -7,7 +7,7 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
+           ('Dr. Gut'
            ,'Untersuchung1'
            ,'20160105'
            ,8)
@@ -19,7 +19,7 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
+           ('Dr. Med. Gut'
            ,'Untersuchung2'
            ,'20160106'
            ,8)
@@ -31,7 +31,7 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
+           ('Dr. Sommer'
            ,'Untersuchung3'
            ,'20160107'
            ,8)
@@ -43,7 +43,7 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
+           ('Dr. Winter'
            ,'Untersuchung4'
            ,'20160108'
            ,8)
@@ -55,7 +55,7 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
+           ('Dr. Med. Herbst'
            ,'Untersuchung1'
            ,'20160105'
            ,7)
@@ -67,8 +67,8 @@ INSERT INTO [dbo].[treatment]
            ,[date]
            ,[patientId])
      VALUES
-           ('Hans Mueller'
-           ,'Untersuchung'
+           ('Dr. Mueller'
+           ,'Untersuchung2'
            ,'20160105'
            ,7)
 GO

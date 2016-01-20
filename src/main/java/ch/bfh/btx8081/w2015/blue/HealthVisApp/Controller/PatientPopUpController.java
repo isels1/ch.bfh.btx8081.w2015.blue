@@ -102,6 +102,9 @@ public class PatientPopUpController {
 				
 		Patient pat = new Patient();
 		pat.setName(patView.getTextFieldName());
+		
+		System.out.println(patView.getTextFieldName());
+		
 		pat.setFirstName(patView.getTextFieldFirstname());
 		pat.setAddress(new Address(addr[0], Integer.parseInt(addr[1]), 
 				Integer.parseInt(addr[2]), addr[3]));
@@ -116,6 +119,7 @@ public class PatientPopUpController {
 		if (editPatient) {
 			pat.setId(patView.getPatientId());
 			patc.editPatient(pat);
+			System.out.println("edit");
 		} else {
 			patc.addNewPatient(pat);
 		}

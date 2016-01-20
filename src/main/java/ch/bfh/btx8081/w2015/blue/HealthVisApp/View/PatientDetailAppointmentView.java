@@ -1,11 +1,16 @@
 package ch.bfh.btx8081.w2015.blue.HealthVisApp.View;
 
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
+import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.PopupDateField;
+import com.vaadin.ui.Table;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
@@ -16,49 +21,32 @@ import com.vaadin.ui.Window;
 public class PatientDetailAppointmentView {
 
 	//================================================================================
-    // AppointmentPopUpView  Data
+    // AppointmentView  Data
     //================================================================================
 	final static String HEIGHT = TabView.HEIGHT;
 	final static String WIDTH = TabView.WIDTH;
-	final static String COMPHEIGHT = "81";				//568 / 7
-	final static String COMPWIDTH = "160";				//320 / 2
+	final static String TABHEIGHT = "300";				//356 full
 	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
 	VerticalLayout layout = null;
-
-	Label labPat;
-	Label labDate;
-	Label labLoc;
-	Label labFrom;
-	Label labTo;
-	Label labCom;
-	
-	ComboBox comboboxPatient;
-	TextField tfDate;
-	TextField tfLoc;
-	TextField tfFrom;
-	TextField tfTo;
-	
-	PopupDateField dfDate;
-	
-	TextArea taCom;
-	
-	Button butSave;
-	Button butCancel;
-	
-	Window window;
+	Table patientTable;
+	HealthVisitor hv;
 	
 	//================================================================================
     // Constructor Section
     //================================================================================
 	
 	/**
-	 * This constructor initialize the pop-up view for add a new appointment
+	 * This constructor initialize the detail appointment view for add a all appointments
 	 */
 	public PatientDetailAppointmentView() {
-		
 	    
+		layout = new VerticalLayout();
+		
+		initTable();
+		
+		layout.addComponent(patientTable);
 	}
 	
 	/**
@@ -73,23 +61,25 @@ public class PatientDetailAppointmentView {
 	 * Set the patient of the view an refresh it
 	 */
 	public void setPatient(Patient pat) {
-		
+		patientTable.removeAllItems();
+		for(Appointment app : hv.getAppointment()) {
+			if(pat.getId() == app.getPatient().getId()) {
+				Object[] collumn = new Object[]{app};
+				patientTable.addItem(collumn,null);
+			}
+		}
 	}
 	
-	/**TODO
-	 * init the Table for the Patient list and add it to the Vertical Layout
+	/**
+	 * init the Table for the Appointment list and add it to the Vertical Layout
 	 * 
 	 */
 	private void initTable(){
-//		HealthVisitorController hvController = new HealthVisitorController();
-//		HealthVisitor hv = hvController.getHealthVisitor();
-//		patientTable = new Table("Patientlist " + hv.getFirstName()+ " "+ hv.getName());
-//		patientTable.setWidth(WIDTH);
-//		patientTable.setHeight(HEIGHT);
-//		
-//		patientTable.addContainerProperty("Patient Name", Patient.class, null);
-//		patientTable.addItemClickListener(new PatientListItemClickListener());
-//		
-//		insertPatientsInList();
+		HealthVisitorController hvController = new HealthVisitorController();
+		hv = hvController.getHealthVisitor();
+		patientTable = new Table("Appointment list " + hv.getFirstName()+ " "+ hv.getName());
+		patientTable.setWidth(WIDTH);
+		patientTable.setHeight(TABHEIGHT);
+		patientTable.addContainerProperty("Appointments", Appointment.class, null);
 	}
 }
