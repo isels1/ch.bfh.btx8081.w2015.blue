@@ -508,10 +508,17 @@ zwahf1
 	finish detail tab view
 
 ################	
-#  17.01.2016  #
+#  18.01.2016  #
 ################
 zwahf1
 	finish views for detail view
+
+################	
+#  19.01.2016  #
+################
+zwahf1
+	create treatment in db
+	modify toString for views
 	
 ******************************
 *** To Do list Gruppe Blau ***
