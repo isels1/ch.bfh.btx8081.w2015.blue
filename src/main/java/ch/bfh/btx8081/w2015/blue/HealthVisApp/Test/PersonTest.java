@@ -19,7 +19,7 @@ public class PersonTest {
 		Address address = new Address("Strasse",1,1111,"Stadt");
 		String phone = "123123123";
 		
-		Person person = new Person(name, fName, date, address, phone);
+		Person person = new Person();
 		assertEquals(name, person.getName());
 		assertEquals(fName, person.getFirstName());
 		assertEquals(date, person.getBirthdate());
