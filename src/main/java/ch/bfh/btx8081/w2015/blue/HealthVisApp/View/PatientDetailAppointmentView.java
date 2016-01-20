@@ -17,7 +17,40 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Window;
 
-//TODO
+/**
+ * Class 
+ * <span class="courier">
+ * <font face="courier new">
+ * 		PatientDetailAppointmentView
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		creates an instance of a PatientDetailAppointmentView.
+ * </span>
+ * <br>
+ * <br>
+ * the PatientDetailAppointmentView contains following Vaadin Elements:
+ * 	<ul>
+ * 		<li>
+ * 			<font face="courier new">
+ * 				<b>a Table:</b>
+ * 			</font> 
+ * 			<i>Table</i>
+ * 			 - for all treatments of the patient
+ * 		</li>
+ *	 </ul>
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		20.01.2016
+ * </span>
+ * <br><br>
+ * @author zwahf1
+ * @version 1.0
+ */
 
 public class PatientDetailAppointmentView {
 
@@ -59,7 +92,7 @@ public class PatientDetailAppointmentView {
 	}
 	
 	/**
-	 * Set the patient of the view an refresh it
+	 * Set the patient for the appointments of the view an refresh it
 	 */
 	public void setPatient(Patient pat) {
 		patientTable.removeAllItems();

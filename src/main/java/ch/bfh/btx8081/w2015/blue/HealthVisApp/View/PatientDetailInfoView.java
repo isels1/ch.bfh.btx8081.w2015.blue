@@ -7,7 +7,31 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.TextArea;
 import com.vaadin.ui.VerticalLayout;
 
-//TODO
+/**
+ * Class 
+ * <span class="courier">
+ * <font face="courier new">
+ * 		PatientDetailInfoView
+ * </font>
+ * </span>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		creates an instance of a PatientDetailInfoView.
+ * </span>
+ * <br>
+ * <br>
+ * the PatientDetailInfoView contains all informations about the patient
+ * <b>
+ * 		Creation date:
+ * </b>
+ * <br>
+ * <span style="margin-left:60px;">
+ * 		20.01.2016
+ * </span>
+ * <br><br>
+ * @author zwahf1
+ * @version 1.0
+ */
 
 public class PatientDetailInfoView {
 
@@ -144,7 +168,8 @@ public class PatientDetailInfoView {
 	}
 	
 	/**
-	 * Set the patient of the view an refresh it
+	 * Set the patient for the infos of the view an refresh it
+	 * @param pat: Patient
 	 */
 	public void setPatient(Patient pat) {
 		this.createLabel(labId2, pat.getId() + "", COMPWIDTH);

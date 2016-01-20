@@ -10,40 +10,26 @@ import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
 
 /**
- * Class TODO
+ * Class 
  * <span class="courier">
  * <font face="courier new">
- * 		PatietnListView
+ * 		PatientDetailView
  * </font>
  * </span>
  * <br>
  * <span style="margin-left:60px;">
- * 		creates an instance of a PatientListView.
+ * 		creates an instance of a PatientDetailView.
  * </span>
  * <br>
  * <br>
- * the PatietnListView contains following Vaadin Elements:
+ * the PatientDetailView contains following Vaadin Elements:
  * 	<ul>
  * 		<li>
  * 			<font face="courier new">
- * 				<b>a Combobox:</b>
+ * 				<b>a TabSheet:</b>
  * 			</font> 
- * 			<i>Combobox</i>
- * 			 - whit a Filter for each Patient State
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				<b>a Table:</b>
- * 			</font> 
- * 			<i>Table</i>
- * 			- List whit all patients
- * 		</li>
- * 		<li>
- * 			<font face="courier new">
- * 				<b>a Button:</b>
- * 			</font> 
- * 			<i>Button</i>
- * 			- add a new patient Button
+ * 			<i>TabSheet</i>
+ * 			 - for all tab views
  * 		</li>
  *	 </ul>
  * <b>
@@ -51,7 +37,7 @@ import com.vaadin.ui.themes.ValoTheme;
  * </b>
  * <br>
  * <span style="margin-left:60px;">
- * 		01.12.2015
+ * 		20.01.2016
  * </span>
  * <br><br>
  * @author zwahf1
@@ -88,6 +74,7 @@ public class PatientDetailView {
 	/**
 	 * Constructor for the Patient Detail View
 	 * Initializes...
+	 * ... the patient name
 	 * ... the Table View
 	 * ... the edit Button
 	 * ... the quit Button
@@ -108,7 +95,7 @@ public class PatientDetailView {
 	}
 	
 	/**
-	 * Set the patient
+	 * Set the patient and refresh the view
 	 * @param pat: Patient
 	 */
 	public void setPatient(Patient pat) {
@@ -126,8 +113,8 @@ public class PatientDetailView {
 	}
 	
 	/**
-	 * @return patientViewTab 
 	 * return this for the PatientView
+	 * @return patientViewTab 
 	 */
 	public VerticalLayout getPatientDetail(){	
 		return patientViewTab;
@@ -164,17 +151,9 @@ public class PatientDetailView {
 		return patDetailView;
 	}
 	
-	/**TODO
-	 * refresh the Table whit the patient list
-	 * 
-	 * 	 * Filters the PatientList to the Status
-	 * 
-	 * 	- Ambulant
-	 *  - Stationary
-	 *  - New
-	 *  - Archived
-	 *  - All Patinet
-	 *  
+	/**
+	 * refresh the Table whit the patient detail views
+	 * @param pat: Patient
 	 */
 	public void refreshView(Patient pat){
 		this.pat = pat;
@@ -200,7 +179,7 @@ public class PatientDetailView {
 	}
 	
 	/**
-	 * init the Table for the Patient list and add it to the Vertical Layout
+	 * init the Table for the tab sheet and add it to the Vertical Layout
 	 * 
 	 */
 	private void initTabSheet(){
