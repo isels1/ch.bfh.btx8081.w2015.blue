@@ -469,6 +469,7 @@ presentation pattern state
 hugil1
 	Database design
 isels1	
+	"Execute" db design (SQL DB & Data)
 
 ################	
 #  11.01.2016  #
@@ -491,6 +492,9 @@ dornt1
 	create new mainView
 zwahf1
 	create tab view and tabs for patient detail view
+isels1
+	re-write model classes for jpa
+	
 ################	
 #  16.01.2016  #
 ################
@@ -499,6 +503,9 @@ dornt1
 	test login
 zwahf1
 	implement edit pop up in detail view
+isels1
+	re-write model classes for jpa
+	
 ################	
 #  17.01.2016  #
 ################
@@ -506,12 +513,16 @@ dornt1
 	edit login and calendar design
 zwahf1
 	finish detail tab view
-
+isels1
+	re-write model classes for and retrieve data from db
+	
 ################	
 #  18.01.2016  #
 ################
 zwahf1
 	finish views for detail view
+isels1
+	retrieve data from db and write to db
 
 ################	
 #  19.01.2016  #
@@ -519,14 +530,31 @@ zwahf1
 zwahf1
 	create treatment in db
 	modify toString for views
+isels1
+	finished new appointment interaction with db
+	finished new patient interaction with db
+	finished edid patient interaction with db
+	code review
 	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-	isels1 remove id from Patient
-		id is now autocreatet
-	edit all classe for patient id
-	remove label for patient id
+	isels1
+		Code review, javadoc, db-testing
+		scrum review (burndown chart etc.)
+		presentation
+	zwahf1
+		patient popup view --> make more fancy
+		javadoc
+		presentation
+	dornt1
+		finish login (ev.)
+		scrum review (burndown chart etc.)
+		presentation
+	hugil1
+		presentation
+	nosec1
+		presentation
 	
 Task 11 sprint 3
 Umsetzung review
