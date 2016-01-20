@@ -76,10 +76,19 @@ public class LoginView {
 	//================================================================================
     // Initialisation Section
     //================================================================================
-	
+	/**
+	 * Private constructor for the login View
+	 * 
+	 * create a Horizontal Layout for the login View
+	 * add textfiled for username to Layout
+	 * add passwordfield for password to layout
+	 * add login button to layout
+	 * add login picture to layout
+	 */
 	private LoginView() {
 	headerLayout = new VerticalLayout();
 
+	//Textfield for Username
 	tf_Username.setWidth(BUTTONWIDTH);
 	tf_Username.setHeight(BUTTONHEIGHT);
 	vlUsername = new VerticalLayout();
@@ -88,6 +97,7 @@ public class LoginView {
 	vlUsername.addComponent(tf_Username);
 	vlUsername.setMargin(true);
 	
+	//Passwordfield for Password
 	pf_Pw.setWidth(BUTTONWIDTH);
 	pf_Pw.setHeight(BUTTONHEIGHT);
 	vlPassword = new VerticalLayout();
@@ -96,6 +106,7 @@ public class LoginView {
 	vlPassword.addComponent(pf_Pw);
 	vlPassword.setMargin(true);
 	
+	//Login Button
 	b_Login.setWidth(BUTTONWIDTH);
 	b_Login.setHeight(BUTTONHEIGHT);
 	vlLoginButton = new VerticalLayout();
@@ -104,6 +115,7 @@ public class LoginView {
 	vlLoginButton.addComponent(b_Login);
 	vlLoginButton.setMargin(true);
 
+	//Login Picture
 	vlLoginpicture = new VerticalLayout();
 	vlLoginpicture.setHeight("287");
 	vlLoginpicture.setMargin(true);
