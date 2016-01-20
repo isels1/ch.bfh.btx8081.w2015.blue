@@ -7,6 +7,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.PatientListController;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentButtonClickHandler;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.PopupDateField;
@@ -73,8 +74,10 @@ public class AppointmentPopUpView {
     //================================================================================
 	final static String HEIGHT = TabView.HEIGHT;
 	final static String WIDTH = TabView.WIDTH;
-	final static String COMPHEIGHT = "81";				//568 / 7
-	final static String COMPWIDTH = "160";				//320 / 2
+	final static String COMPHEIGHT = "81";				//568 full
+	final static String LABWIDTH = "130";				//320 full
+	final static String COMPWIDTH = "160";				//320 full
+	final static String LAYWIDTH = "290";				//320 full
 	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
@@ -295,17 +298,17 @@ public class AppointmentPopUpView {
 	    // create Section
 	    //===============================
 		labPat = new Label();
-		this.createLabel(labPat, "Patient", COMPWIDTH);
+		this.createLabel(labPat, "Patient", LABWIDTH);
 		labDate = new Label();
-		this.createLabel(labDate, "Date", COMPWIDTH);
+		this.createLabel(labDate, "Date", LABWIDTH);
 		labLoc = new Label();
-		this.createLabel(labLoc, "Location", COMPWIDTH);
+		this.createLabel(labLoc, "Location", LABWIDTH);
 		labFrom = new Label();
-		this.createLabel(labFrom, "From", COMPWIDTH);
+		this.createLabel(labFrom, "From", LABWIDTH);
 		labTo = new Label();
-		this.createLabel(labTo, "To", COMPWIDTH);
+		this.createLabel(labTo, "To", LABWIDTH);
 		labCom = new Label();
-		this.createLabel(labCom, "Comment", COMPWIDTH);
+		this.createLabel(labCom, "Comment", LABWIDTH);
 	    
 	    this.createCombobox();
 	    
@@ -330,27 +333,34 @@ public class AppointmentPopUpView {
 	    //===============================
 	    // Add Section
 	    //===============================
+		layPat.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layPat.addComponent(labPat);
 	    layPat.addComponent(comboboxPatient);
 	    
+	    layDate.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layDate.addComponent(labDate);
 	    layDate.addComponent(dfDate);
 	    
+	    layLoc.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layLoc.addComponent(labLoc);
 	    layLoc.addComponent(tfLoc);
 	    
+	    layFrom.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layFrom.addComponent(labFrom);
 	    layFrom.addComponent(tfFrom);
 	    
+	    layTo.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layTo.addComponent(labTo);
 	    layTo.addComponent(tfTo);
 	    
+	    layCom.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layCom.addComponent(labCom);
 	    layCom.addComponent(taCom);
 	    
 	    layBut.addComponent(butSave);
 	    layBut.addComponent(butCancel);
 	    
+	    layout.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layout.addComponent(layPat);
 	    layout.addComponent(layDate);
 	    layout.addComponent(layLoc);

@@ -177,6 +177,7 @@ public class PatientDetailView {
 	 *  
 	 */
 	public void refreshView(Patient pat){
+		this.pat = pat;
 		patDetInfoView.setPatient(pat);
 		patDetOverView.setPatient(pat);
 		patDetAppView.setPatient(pat);

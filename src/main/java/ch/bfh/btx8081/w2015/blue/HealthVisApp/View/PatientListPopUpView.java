@@ -12,6 +12,7 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.State.PatientStateStationary
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Persistence.DataProvider;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientButtonClickHandler;
 
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.HorizontalLayout;
@@ -81,14 +82,15 @@ public class PatientListPopUpView {
 	
 	final static String HEIGHT = TabView.HEIGHT;
 	final static String WIDTH = TabView.WIDTH;
-	final static String COMPHEIGHT = "54";				//568 / 10
-	final static String HOR_LAY_HEIGHT = "54";			//568 / 10
-	final static String VER_LAY_HEIGHT = "112";			//568 / 10 * 2
-	final static String COMPWIDTH = "160";				//320 / 2
-	final static String COMPWIDTH_ADDR1 = "120";		//320 / 2 - 40
-	final static String COMPWIDTH_ADDR2 = "40";			//320 / 2 - 120
-	final static String COMPWIDTH_ADDR3 = "60";			//320 / 2 - 100
-	final static String COMPWIDTH_ADDR4 = "100";		//320 / 2 - 60
+	final static String COMPHEIGHT = "63";				//568 full
+	final static String HOR_LAY_HEIGHT = "63";			//568 full
+	final static String VER_LAY_HEIGHT = "112";			//568 full
+	final static String LABWIDTH = "130";				//320 full
+	final static String COMPWIDTH = "160";				//320 full
+	final static String COMPWIDTH_ADDR1 = "120";		//320 full
+	final static String COMPWIDTH_ADDR2 = "40";			//320 full
+	final static String COMPWIDTH_ADDR3 = "60";			//320 full
+	final static String COMPWIDTH_ADDR4 = "100";		//320 full
 	final static String DATEFORMAT = "dd.MM.yyyy";
 	
 	AppointmentPopUpView appView = null; 
@@ -363,9 +365,6 @@ public class PatientListPopUpView {
 		HorizontalLayout layFName = new HorizontalLayout();
 		layFName.setHeight(HOR_LAY_HEIGHT);
 		
-		HorizontalLayout layId = new HorizontalLayout();
-		layId.setHeight(HOR_LAY_HEIGHT);
-		
 		HorizontalLayout layBDate = new HorizontalLayout();
 		layBDate.setHeight(HOR_LAY_HEIGHT);
 		
@@ -399,19 +398,19 @@ public class PatientListPopUpView {
 	    //================================================================================
 		
 	    labName = new Label();
-	    this.createLabel(labName, "Name", COMPWIDTH);
+	    this.createLabel(labName, "Name", LABWIDTH);
 	    labFName = new Label();
-	    this.createLabel(labFName, "Firstame", COMPWIDTH);
+	    this.createLabel(labFName, "Firstame", LABWIDTH);
 	    labBDate = new Label();
-	    this.createLabel(labBDate, "Birthdate", COMPWIDTH);
+	    this.createLabel(labBDate, "Birthdate", LABWIDTH);
 	    labAddr = new Label();
-	    this.createLabel(labAddr, "Address", COMPWIDTH);
+	    this.createLabel(labAddr, "Address", LABWIDTH);
 	    labTel = new Label();
-	    this.createLabel(labTel, "Phone", COMPWIDTH);
+	    this.createLabel(labTel, "Phone", LABWIDTH);
 	    labCom = new Label();
-	    this.createLabel(labCom, "Comment", COMPWIDTH);
+	    this.createLabel(labCom, "Comment", LABWIDTH);
 	    labState = new Label();
-	    this.createLabel(labState, "Patient State", COMPWIDTH);
+	    this.createLabel(labState, "Patient State", LABWIDTH);
 	    
 	    tfName = new TextField();
 	    this.createTextField(tfName, COMPWIDTH, "");
@@ -446,18 +445,23 @@ public class PatientListPopUpView {
 	    // Add Section
 	    //================================================================================
 	    
+		layName.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layName.addComponent(labName);
 	    layName.addComponent(tfName);
 	    
+	    layFName.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layFName.addComponent(labFName);
 	    layFName.addComponent(tfFName);
 	    
+	    layBDate.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layBDate.addComponent(labBDate);
 	    layBDate.addComponent(dfBDate);
 	    
+	    layAddr.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layAddr.addComponent(layAddr1);
 	    layAddr.addComponent(layAddr2);
 	    
+	    layAddr1.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layAddr1.addComponent(labAddr);
 	    
 	    layAddr2.addComponent(layAddr2_1);
@@ -468,21 +472,24 @@ public class PatientListPopUpView {
 	    layAddr2_2.addComponent(tfAddr3);
 	    layAddr2_2.addComponent(tfAddr4);
 	    
+	    layTel.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layTel.addComponent(labTel);
 	    layTel.addComponent(tfTel);
 	    
+	    layState.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layState.addComponent(labState);
 	    layState.addComponent(cmbState);
 	    
+	    layCom.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layCom.addComponent(labCom);
 	    layCom.addComponent(tfCom);
 	    
 	    layBut.addComponent(butSave);
 	    layBut.addComponent(butCancel);
 	    
+	    layAll.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 	    layAll.addComponent(layName);
 	    layAll.addComponent(layFName);
-	    layAll.addComponent(layId);
 	    layAll.addComponent(layBDate);
 	    layAll.addComponent(layAddr);
 	    layAll.addComponent(layTel);

@@ -158,6 +158,7 @@ public class PatientDetailInfoView {
 										+ " " + pat.getAddress().getCity(), COMPWIDTH);
 		this.createLabel(labTel2, pat.getPhone(), COMPWIDTH);
 		this.createTextArea(taCom2, COMPWIDTH, TEXTHEIGHT, pat.getComment().toString());
+		taCom2.setEnabled(false);
 	}
 	
 	/**
