@@ -472,6 +472,12 @@ isels1
 	"Execute" db design (SQL DB & Data)
 
 ################	
+#  05.01.2016  #
+################
+nosec1
+	worked on login
+
+################	
 #  11.01.2016  #
 ################
 daily scrum
@@ -480,7 +486,7 @@ daily scrum
 	TO DO:
 		isels1 & dornt1 JPA for classes
 		nosec1 Login View & Controller, treatment model
-		hügil1 Documentation Database and start whit presentation
+		hügil1 Documentation Database and start with presentation
 		zwalf1 Treatment View
 
 ################	
@@ -494,6 +500,8 @@ zwahf1
 	create tab view and tabs for patient detail view
 isels1
 	re-write model classes for jpa
+nosec1
+	finished treatment
 	
 ################	
 #  16.01.2016  #
@@ -523,6 +531,8 @@ zwahf1
 	finish views for detail view
 isels1
 	retrieve data from db and write to db
+nosec1
+	adapted Javadoc
 
 ################	
 #  19.01.2016  #
@@ -535,6 +545,10 @@ isels1
 	finished new patient interaction with db
 	finished edid patient interaction with db
 	code review
+nosec1
+	Javadoc, changed to fit changed classes
+	incl tests
+	Presentation
 	
 ******************************
 *** To Do list Gruppe Blau ***
