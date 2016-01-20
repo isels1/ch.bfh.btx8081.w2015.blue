@@ -18,7 +18,7 @@ public class AppointmentTest {
 		GregorianCalendar start = new GregorianCalendar();
 		GregorianCalendar end = new GregorianCalendar();
 		String loc = "location";
-		Patient pat = new Patient(null, null, null, null, null);
+		Patient pat = new Patient();
 		
 		Appointment app = new Appointment(start, end, loc, pat);
 		assertEquals(start, app.getStartTime());
