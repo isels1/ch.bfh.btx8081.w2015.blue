@@ -533,9 +533,11 @@ isels1
 	retrieve data from db and write to db
 nosec1
 	adapted Javadoc
+dornt1
+	edit login View
 
 ################	
-#  19.01.2016  #
+#  20.01.2016  #
 ################
 zwahf1
 	create treatment in db
@@ -550,31 +552,29 @@ nosec1
 	incl tests
 	Presentation
 
+
 ################	
 #  20.01.2016  #
 ################
 zwahf1
 	pop up view more fancy
 	javadoc for created classes
+dornt1
+	Presentation
+	try to fix database on local computer
+	fix login whit database interaction whit isels1
+isels1
+	fix login whit database interaction whit dornt1
+	review code
+	Presentation
+hügil1
+	Presentation
+nosec1
+	Presentation
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-	isels1
-		Code review, javadoc, db-testing
-		scrum review (burndown chart etc.)
-		presentation
-	zwahf1
-		patient popup view --> make more fancy
-		javadoc
-		presentation
-	dornt1
-		finish login (ev.)
-		scrum review (burndown chart etc.)
-		presentation
-	hugil1
-		presentation
-	nosec1
-		presentation
+
 	
 Task 11 sprint 3
 Umsetzung review
