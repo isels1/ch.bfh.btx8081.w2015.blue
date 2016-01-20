@@ -88,15 +88,19 @@ public class LoginController {
 		String username = loginView.gettf_Username().getValue();
 		
 		DataProvider dp = DataProvider.getInstance();
-		
+		//Get The HealthVisitro whit username and password from the Database
 		HealthVisitor hv = dp.login(username, password);
 		
-		 if(hv != null && hv.getUserName().equals(username)
+		//when password or Username wrong hv = null
+		 if(hv != null && hv.getUserName().equals(username) //Double check whit username and password
 				 && hv.getPassword().equals(password)) {
-			    dp.setHealthVisitor(hv);
-
+			    
+			 	//set HealthVisitor for Database
+			 	dp.setHealthVisitor(hv);
+			 	//get Calendar for the HealthVisitor
 			    dp.initCalendar();
 			    dp.fillCalendar();
+			    //Load application whit data from the current HealthVisitor
 			    this.loadAPP();
 		    }
 		else {
