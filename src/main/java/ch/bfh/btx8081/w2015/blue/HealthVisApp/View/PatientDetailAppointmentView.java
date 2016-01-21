@@ -4,18 +4,9 @@ import ch.bfh.btx8081.w2015.blue.HealthVisApp.Controller.HealthVisitorController
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Appointment;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.HealthVisitor;
 import ch.bfh.btx8081.w2015.blue.HealthVisApp.Model.Patient;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.AppointmentListCellStyleGenerator;
-import ch.bfh.btx8081.w2015.blue.HealthVisApp.Util.PatientListItemClickListener;
 
-import com.vaadin.ui.Button;
-import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.PopupDateField;
 import com.vaadin.ui.Table;
-import com.vaadin.ui.TextArea;
-import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 
 /**
  * Class 
