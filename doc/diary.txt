@@ -576,14 +576,13 @@ nosec1
 #  21.01.2016  #
 ################
 zwahf1
-	finish presentation and demo
+	finish presentation 
+	update final presentation
+	create livedemo if crash
 
 all	
 	final presentation for project
+	
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
-
-	
-Task 11 sprint 3
-Umsetzung review
