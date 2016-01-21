@@ -537,7 +537,7 @@ dornt1
 	edit login View
 
 ################	
-#  20.01.2016  #
+#  19.01.2016  #
 ################
 zwahf1
 	create treatment in db
@@ -571,6 +571,15 @@ hügil1
 	Presentation
 nosec1
 	Presentation
+
+################	
+#  21.01.2016  #
+################
+zwahf1
+	finish presentation and demo
+
+all	
+	final presentation for project
 ******************************
 *** To Do list Gruppe Blau ***
 ******************************
